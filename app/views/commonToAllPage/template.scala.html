@@ -1,0 +1,75 @@
+@(css: Html, sidebar: Html, mainBarColumn: Html, js: Html)
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title here -->
+    <title>FlatMania, Blank Page</title>
+    <!-- Description, Keywords and Author -->
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your,Keywords">
+    <meta name="author" content="ResponsiveWebInc">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+
+
+    @commonToAllPage.css()
+    @css
+
+
+
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+
+<!-- Body Wrapper -->
+<div class="wrapper white">
+
+    <!-- Header-->
+    @commonToAllPage.header()
+
+    <!-- Inner Page Content // Start -->
+
+    <div class="inner-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Inner Page Content Sidebar -->
+                    <div class="page-sidebar"> @sidebar </div>
+                </div>
+
+                <div class="col-md-9">@mainBarColumn </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inner Page Content // End -->
+
+
+    <!-- Footer-->
+    @commonToAllPage.footer()
+
+
+
+
+    <!-- Javascript files -->
+    @js
+
+
+    <!-- This Page JavaScript -->
+    @commonToAllPage.js()
+
+
+
+
+
+
+</body>
+</html>

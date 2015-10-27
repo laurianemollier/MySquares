@@ -1,0 +1,12 @@
+.squares{
+    width: 100%;
+    background: black;
+}
+
+.selectedSquare{
+    background-color: blue;
+}
+#coloredSquareSelect, #graySquareSelect{
+    position: absolute;
+    background-color: transparent;
+}

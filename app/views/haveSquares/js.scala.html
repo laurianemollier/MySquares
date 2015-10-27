@@ -1,0 +1,53 @@
+@(month: String, colors: Array[Array[Int]], freeSquares: Array[Boolean], nbSquaresOneEdge: Int)
+
+<!-- select the month in the sidebar -->
+<script src="@routes.Assets.versioned("javascripts/haveSquares/sidebar-select-date.js")"> </script>
+
+<script> selectMonth("@month"); </script>
+
+<script src="@routes.Assets.versioned("javascripts/select-squares.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/square-canvas.js")"></script>
+
+<script>
+    // common for the 2 canvas
+
+    // array of colors and free squares
+    var jsColors = [@colors.map(array => "[" + array.mkString(",") + "]").mkString(",")];
+    var freeSquares = [@freeSquares.map( bool  => if(bool) "true,"; else "false,") false];
+    var selectedSquare = []; // contains the index of the selected square
+
+
+    var coloredSquare = document.getElementById("coloredSquare");
+    var graySquare = document.getElementById("graySquare");
+    var canvasWidth = coloredSquare.clientWidth;
+
+    // use for compute and draw the little squares
+    var nbSquaresOneEdge = @nbSquaresOneEdge;
+    var littleSL = canvasWidth / nbSquaresOneEdge;
+
+    // the both where we will draw when then is event
+    var grayCanvasToDraw = document.getElementById("graySquareSelect");
+    var coloredCanvasToDraw = document.getElementById("coloredSquareSelect");
+
+    grayCanvasToDraw.width = canvasWidth;
+    grayCanvasToDraw.height = canvasWidth;
+    coloredCanvasToDraw.width = canvasWidth;
+    coloredCanvasToDraw.height = canvasWidth;
+
+    var coloredContextToDraw = coloredCanvasToDraw.getContext('2d');
+    var grayContextToDraw = grayCanvasToDraw.getContext('2d');
+
+
+
+    // draw the square
+    drawSquares(jsColors, freeSquares, @nbSquaresOneEdge, coloredSquare, canvasWidth);
+
+    // add event for select squares
+
+    selectSquares(coloredSquare, coloredCanvasToDraw);
+
+    //draw gray square
+    drawSquares(jsColors, freeSquares, @nbSquaresOneEdge, graySquare, canvasWidth, true);
+    // add event for select squares
+    selectSquares(graySquare, grayCanvasToDraw);
+</script>

@@ -1,0 +1,40 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Documentation play
+GET     /icon                           controllers.Application.icon
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /css/*file                  controllers.Assets.at(path="/boostrap/theme/css", file)
+
+
+
+
+# Home page
+GET           /                       controllers.Application.home
+
+GET           /how-it-works                       controllers.Application.howItWorks
+
+GET           /blog                controllers.Application.blog
+
+GET           /contact                     controllers.Application.contact
+
+GET           /about                     controllers.Application.about
+
+GET           /improve                     controllers.Application.improve
+
+GET           /register                     controllers.Application.register
+
+# get Square
+
+#current month
+
+GET           /get-squares/:month                      controllers.Application.haveSquares(month: String)
+
+
+
+
+
