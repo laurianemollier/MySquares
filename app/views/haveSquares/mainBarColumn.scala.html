@@ -1,36 +1,29 @@
 <div class="page-mainbar career">
+
+
+
     <!-- Heading -->
     <h3>Career Opportunity</h3>
     <!-- Careers Content -->
     <div class="career-content">
         <!-- Navigation Bar Menu list -->
-        <ul id="mytab" class="nav nav-tabs">
-            <li class="active"><a href="#one" class="br-red" data-toggle="tab">Web Designing</a></li>
-            <li><a href="#two" class="br-lblue" data-toggle="tab">Web Techniques</a></li>
+        <ul class="nav nav-tabs">
+            <li class="active" id="coloredSquareButton"><a href="#one" class="br-red" data-toggle="tab">Web Designing</a></li>
+            <li id="graySquareButton"><a href="#two" class="br-grey" data-toggle="tab">Web Techniques</a></li>
         </ul>
         <!-- Content for each menu item -->
-        <div class="tab-content">
-            <!-- First Content for Nav bar -->
-            <div class="tab-pane fade in active br-red" id="one">
-                <canvas id="coloredSquareSelect">
+        <div class="">
+            <div class="tab-pane">
+                <canvas id="selectedSquare">
                     <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour!!!!!</p>
                 </canvas>
-                <canvas id="coloredSquare" class="squares">
+                <canvas id="coloredSquare" >
+                    <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour!!!!!</p>
+                </canvas>
+                <canvas id="graySquare" class="squares">
                     <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour!!!!!</p>
                 </canvas>
 
-
-
-            </div>
-
-            <!-- Second Content for Nav bar -->
-            <div class="tab-pane fade br-lblue" id="two">
-                <canvas id="graySquareSelect">
-                    <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour!!!!!</p>
-                </canvas>
-                <canvas id="graySquare"coloredSquare class="squares">
-                    <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour!!!!!</p>
-                </canvas>
             </div>
 
         </div>

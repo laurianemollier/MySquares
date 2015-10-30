@@ -39,10 +39,10 @@ function drawCrossInCheck(x, y, edgeLength, context){
 
 function selectASquare(event){
     var coords = coordsIntheCanvas(this.relMouseCoords(event));
-    selectASquareCoords(coords, false);
+    selectASquareCoords(coords);
 }
 
-function selectASquareCoords(coords, justSelect){
+function selectASquareCoords(coords){
 
         // if the square can be selected
         if(freeSquares[coords.squareIndexEvent]){
@@ -51,12 +51,12 @@ function selectASquareCoords(coords, justSelect){
 
             drawSelectedSquare();
         }
-        else if(!justSelect){
+        else{
             var squareIndexArraySelected = selectedSquare.indexOf(coords.squareIndexEvent);
             // if the square was selected
             if(squareIndexArraySelected != -1){
                 selectedSquare.splice(squareIndexArraySelected, 1);
-                freeSquares[coords.squareIndexEvent] = false;
+                freeSquares[coords.squareIndexEvent] = true;
                 drawSelectedSquare();
             }
         }
@@ -65,21 +65,16 @@ function selectASquareCoords(coords, justSelect){
 };
 
 function drawSelectedSquare(){
-    grayContextToDraw.clearRect(0, 0, canvasWidth, canvasWidth);
-    coloredContextToDraw.clearRect(0, 0, canvasWidth, canvasWidth);
-    drawSelectedSquareOnContext(grayContextToDraw);
-    drawSelectedSquareOnContext(coloredContextToDraw);
+    contextToDraw.clearRect(0, 0, canvasWidth, canvasWidth);
+    drawSelectedSquareOnContext(contextToDraw);
 }
 
 
 
 
 // littleSquareIncrease must be even
-function selectSquares(canvasColored, canvasToDraw){
-
-
+function selectSquares(canvasToDraw){
     var lastFlyOverSquareIndex = -1;
-
 
     // for select square when mouse down
     var mouseDown = false;
@@ -89,10 +84,10 @@ function selectSquares(canvasColored, canvasToDraw){
         var coords = coordsIntheCanvas(this.relMouseCoords(e));
         if(lastFlyOverSquareIndex != coords.squareIndexEvent){ // don't recompute if it is the same square than before
             if(mouseDown){
-                selectASquareCoords(coords, true);
+                // TODO: FAire la selection avec le mouse down
             }
             else{
-                biggerSquareMouseOver(coords, canvasColored, canvasToDraw);
+                biggerSquareMouseOver(coords, canvasToDraw);
             }
         }
         lastFlyOverSquareIndex = coords.squareIndexEvent;
@@ -112,7 +107,7 @@ function selectSquares(canvasColored, canvasToDraw){
 };
 
 
-function biggerSquareMouseOver(coords, canvasColored, canvasToDraw){
+function biggerSquareMouseOver(coords, canvasToDraw){
 
     var littleSquareIncrease = 4;
 
@@ -120,12 +115,8 @@ function biggerSquareMouseOver(coords, canvasColored, canvasToDraw){
 
     // if the square can be selected
     if(freeSquares[coords.squareIndexEvent]){
-        var contextColored = canvasColored.getContext('2d');
-        var p = contextColored.getImageData(coords.x + littleSL/2, coords.y + littleSL/2, 1, 1).data;
-        var color = "rgba("+ p[0]+ ", "+ p[1]+ ", "+ p[2]+ ", 1)";
-
         var contextToDraw = canvasToDraw.getContext('2d');
-        contextToDraw.fillStyle = color;
+        contextToDraw.fillStyle = "white";
         contextToDraw.fillRect(coords.x - littleSquareIncrease/2, coords.y - littleSquareIncrease/2, littleSL + littleSquareIncrease, littleSL + littleSquareIncrease);
     }
 }

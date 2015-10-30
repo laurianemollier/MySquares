@@ -2,11 +2,21 @@
     width: 100%;
     background: black;
 }
-
 .selectedSquare{
     background-color: blue;
 }
-#coloredSquareSelect, #graySquareSelect{
+
+#graySquare{
+    z-index: 1;
+}
+#coloredSquare{
+    position: absolute;
+    z-index: 0;
+    background: black;
+}
+
+#selectedSquare{
     position: absolute;
     background-color: transparent;
+    z-index: 2;
 }
