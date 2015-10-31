@@ -84,7 +84,7 @@ function selectSquares(canvasToDraw){
         var coords = coordsIntheCanvas(this.relMouseCoords(e));
         if(lastFlyOverSquareIndex != coords.squareIndexEvent){ // don't recompute if it is the same square than before
             if(mouseDown){
-                // TODO: FAire la selection avec le mouse down
+                selectASquareCoords(coords);
             }
             else{
                 biggerSquareMouseOver(coords, canvasToDraw);

@@ -1,6 +1,6 @@
 .squares{
     width: 100%;
-    background: black;
+    background-color: #222;
 }
 .selectedSquare{
     background-color: blue;
@@ -8,6 +8,7 @@
 
 #graySquare{
     z-index: 1;
+    background-color: gray;
 }
 #coloredSquare{
     position: absolute;

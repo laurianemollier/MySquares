@@ -18,7 +18,7 @@ function drawSquares(colors, freeSquares, nbSquaresOneEdge, canvas, canvasWidth,
 
             var index = i*nbSquaresOneEdge + j;
 
-            if(freeSquares[index]) context.fillStyle = "white";
+            if(freeSquares[index]) context.fillStyle = "#222";
             else if(gray) context.fillStyle = "gray";
             else {
                 context.fillStyle = "rgba("+ colors[index][0] +", "+ colors[index][1] +", "+ colors[index][2] +", 1)";

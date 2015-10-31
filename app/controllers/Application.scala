@@ -13,7 +13,7 @@ class Application extends Controller {
   // TODO: Connecter ca a la base de donne et refaire
   val colorsModel = Array.ofDim[Int](nbSquaresOneEdge*nbSquaresOneEdge, 3).map{array =>
     val i = r.nextInt(256)
-    if(i < 70) null
+    if(i < 230) null
     else array.map(x => r.nextInt(256))
   }
 
