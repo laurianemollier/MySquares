@@ -34,7 +34,7 @@ class Application extends Controller {
   }
 
   def home = Action{
-    Ok(views.html.home.home(colors, nbSquaresOneEdge))
+    Ok(views.html.home.home(colors, freeSquares, nbSquaresOneEdge))
   }
 
   def haveSquares(month: String) = Action{

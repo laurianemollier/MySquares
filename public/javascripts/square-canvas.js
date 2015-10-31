@@ -7,6 +7,7 @@ function drawSquares(colors, freeSquares, nbSquaresOneEdge, canvas, canvasWidth,
     canvas.width = canvasWidth;
     canvas.height = canvasWidth;
 
+
 // nbSquaresOneEdge, littleSL
 
 
