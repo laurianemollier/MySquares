@@ -7,7 +7,7 @@ import scala.util.Random
 
 class Application extends Controller {
 
-  val nbSquaresOneEdge = 100
+  val nbSquaresOneEdge = 50
   val r = new Random()
 
   // TODO: Connecter ca a la base de donne et refaire
