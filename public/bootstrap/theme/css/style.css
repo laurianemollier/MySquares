@@ -1,6 +1,11 @@
 /************************
 Designed by : http://responsivewebinc.com
 ************************/
+
+
+/* less import*/
+@import "main.less";
+
 /* Fonts */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
@@ -22,6 +27,7 @@ h1,h2,h3,h4,h5,h6{
 p{
 	margin:0;
 	padding:0;
+	text-align: justify;
 }
 
 a{
@@ -106,8 +112,8 @@ hr{
 	background:#fff !important;
 }
 
-.br-black{
-	background: #444 !important;
+.br-light-black{
+	background: @light-black !important;
 }
 .br-grey{
 	background: grey !important;
@@ -1372,7 +1378,7 @@ a.btn-default i{
 .inner-page .page-title h2{
 	margin: 0px;
 	margin-bottom: 10px;
-	font-size: 35px;
+	font-size: 30px;
 	line-height: 45px;
 }
 
@@ -1438,9 +1444,6 @@ a.btn-default i{
 	border-radius: 2px;
 }
 
-.br-red {
-    background: #e63131 !important;
-}
 
 .inner-page  .sidebar-link ul li a{
 	opacity: 0;
@@ -2496,12 +2499,16 @@ div.ppt {
 	border-top-right-radius: 2px;
 	border-top-left-radius: 2px;
 	border: 0px;
-	background: #292929;
+	/*background: #292929;*/
+	margin-bottom: 1%;
 }
 
 .inner-page .career .nav-tabs li{
-	margin-bottom: 0;
-	width: 50%;
+ 	margin-bottom: 0;
+ 	width: 49.5%;
+}
+.inner-page .career .nav-tabs li:first-child{
+	margin-right: 1%;
 }
 
 .inner-page .career .nav-tabs li a{
@@ -2517,17 +2524,19 @@ div.ppt {
 	-ms-transition: all 0.35s ease-in;
 	-o-transition: all 0.35s ease-in;
 	transition: all 0.35s ease-in;
-
 }
-
-.inner-page .career .nav-tabs .active a:hover{
-
-}
-
-.inner-page .career .nav-tabs li a:hover{
+/* colors menu when hover */
+.inner-page .career .nav-tabs .active a{
 	background: transparent !important;
-	color: #fff;
 }
+.inner-page .career .nav-tabs li a:hover{
+	background: @light-black !important;
+}
+.inner-page .career .nav-tabs .active a:hover{
+	background: transparent !important;
+}
+
+
 
 .inner-page .career .nav-tabs li:first-child a{
 	border-top-left-radius: 2px;
@@ -3501,8 +3510,8 @@ div.ppt {
 
 .footer{
 	margin-top: 40px;
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 30px;
+	padding-bottom: 20px;
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 }
 
@@ -3587,6 +3596,7 @@ div.ppt {
 .footer .footer-widget p{
 	font-size: 13px;
 	line-height: 23px;
+	margin-top: 5px;
 }
 
 .footer .footer-widget address{
@@ -3684,7 +3694,7 @@ div.ppt {
 .footer .footer-copyright{
 	margin-top: 20px;
 	border-top: 1px solid #2a2a2a;
-	padding-top: 35px;
+	padding-top: 20px;
 	text-align: center;
 }
 
@@ -3697,6 +3707,7 @@ div.ppt {
 .footer .footer-copyright p{
 	font-size: 14px;
 	line-height: 24px;
+	text-align: center;
 }
 
 /* Scroll to top */

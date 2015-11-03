@@ -45,24 +45,16 @@ class Application extends Controller {
     Ok(views.html.howItWorks.howItWorks())
   }
 
-  def blog = Action{
-    Ok(views.html.blog.blog())
+  def company = Action{
+    Ok(views.html.company.company())
   }
 
-  def about = Action{
-    Ok(views.html.about.about())
-  }
-
-  def contact = Action{
-    Ok(views.html.contact.contact())
-  }
-  def improve = Action{
-    Ok(views.html.improve.improve())
-  }
 
   def register = Action{
     Ok(views.html.register.register())
   }
+
+
 
 
 //  register

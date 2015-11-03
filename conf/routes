@@ -18,13 +18,7 @@ GET           /                       controllers.Application.home
 
 GET           /how-it-works                       controllers.Application.howItWorks
 
-GET           /blog                controllers.Application.blog
-
-GET           /contact                     controllers.Application.contact
-
-GET           /about                     controllers.Application.about
-
-GET           /improve                     controllers.Application.improve
+GET           /company                controllers.Application.company
 
 GET           /register                     controllers.Application.register
 
