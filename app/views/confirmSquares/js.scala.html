@@ -1,0 +1,21 @@
+@(colors: Array[Array[Int]], freeSquares: Array[Boolean], nbSquaresOneEdge: Int)
+
+<!-- display gray and colored mySquare MySquare-->
+<script src="@routes.Assets.versioned("javascripts/square-canvas.js")"></script>
+<script>
+
+    var jsColors = [@colors.map(array => "[" + array.mkString(",") + "]").mkString(",")];
+    var freeSquares = [@freeSquares.map( bool  => if(bool) "true,"; else "false,") false];
+
+    var coloredSquare = document.getElementById("coloredSquare");
+    var graySquare = document.getElementById("graySquare");
+
+    var canvasWidth = graySquare.clientWidth;
+    drawSquares(jsColors, freeSquares, @nbSquaresOneEdge, coloredSquare, canvasWidth);
+    drawSquares(jsColors, freeSquares, @nbSquaresOneEdge, graySquare, canvasWidth, true);
+
+</script>
+
+
+<!-- deal with the display of the register and login form-->
+<script src="@routes.Assets.versioned("javascripts/confirmSquares/display-login-register.js")"></script>

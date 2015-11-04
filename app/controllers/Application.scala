@@ -49,6 +49,10 @@ class Application extends Controller {
     Ok(views.html.company.company())
   }
 
+  def confirmSquares = Action{
+    Ok(views.html.confirmSquares.confirmSquares(colors, freeSquares, nbSquaresOneEdge))
+  }
+
 
   def register = Action{
     Ok(views.html.register.register())

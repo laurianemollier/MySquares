@@ -5,6 +5,8 @@
 # Documentation play
 GET     /icon                           controllers.Application.icon
 
+GET     /doc                           controllers.Application.doc
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
@@ -27,6 +29,8 @@ GET           /register                     controllers.Application.register
 #current month
 
 GET           /get-squares/:month                      controllers.Application.haveSquares(month: String)
+
+GET  /confirmSquares  controllers.Application.confirmSquares
 
 
 
