@@ -15,7 +15,7 @@ class Application extends Controller {
   //contact data
   val contactData = Map("phoneNumber" -> "+33 4 50 62 29 24",
     "email" -> "mollierlaurian@gmail.com",
-    "address" -> "Note yet available"
+    "address" -> "Not yet available"
   )
 
 
