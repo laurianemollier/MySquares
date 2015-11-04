@@ -7,8 +7,17 @@ import scala.util.Random
 
 class Application extends Controller {
 
+  // square data
   val nbSquaresOneEdge = 50
   val r = new Random()
+
+  // TODO: Mettre dans le footer aussi et reoganiser le code
+  //contact data
+  val contactData = Map("phoneNumber" -> "+33 4 50 62 29 24",
+    "email" -> "mollierlaurian@gmail.com",
+    "address" -> "Note yet available"
+  )
+
 
   // TODO: Connecter ca a la base de donne et refaire
   val colorsModel = Array.ofDim[Int](nbSquaresOneEdge*nbSquaresOneEdge, 3).map{array =>
@@ -46,7 +55,7 @@ class Application extends Controller {
   }
 
   def company = Action{
-    Ok(views.html.company.company())
+    Ok(views.html.company.company(contactData))
   }
 
   def confirmSquares = Action{

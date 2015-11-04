@@ -1,2 +1,3 @@
+@(contactData: Map[String, String])
 
-@commonToAllPage.template(css(), sidebar(), mainBarColumn(), js())
+@commonToAllPage.template(css(), sidebar(), mainBarColumn(contactData), js())
