@@ -1,8 +1,9 @@
 function coordsIntheCanvas(coordsMouse){
 
+
     // index of the little square that have the event
-    var xi = Math.floor(coordsMouse.x/littleSL);
-    var yi = Math.floor(coordsMouse.y/littleSL);
+    var xi = Math.floor((coordsMouse.x)/littleSL);
+    var yi = Math.floor((coordsMouse.y + 16)/littleSL); // minus the misplace of the the brush
 
     // coord in pixel of the little square that have the event
     var x = xi * littleSL;

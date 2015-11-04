@@ -1,9 +1,12 @@
+@import "main.less";
+
 .squares{
     width: 100%;
     background-color: #222;
 }
 .selectedSquare{
     background-color: blue;
+
 }
 
 #graySquare{
@@ -20,4 +23,42 @@
     position: absolute;
     background-color: transparent;
     z-index: 2;
+    cursor: url("/assets/images/brush.png"), copy !important;
+}
+
+
+
+
+/* for the palette */
+/* TODO: Faire ca en less */
+#palette{
+    background-color: #222;
+    border: 3px groove #e63131;
+    padding: 5px;
+    padding-left: 6px;
+
+}
+#palette > div>div{
+    margin-bottom: 5px;
+}
+
+#palette img{
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: url("/assets/images/pipette.png"), copy !important;
+
+}
+#palette span{
+    width: 96%;
+    height: 34px;
+    margin: 1%;
+    border: 2px solid black !important;
+    cursor: default;
+    background-color: white;
+}
+
+#palette button{
+    width: 96%;
+    height: 32px;
+    margin: 1%;
 }

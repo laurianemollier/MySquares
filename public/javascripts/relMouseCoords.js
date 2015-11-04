@@ -17,3 +17,4 @@ function relMouseCoords(event){
     return {x:canvasX, y:canvasY}
 }
 HTMLCanvasElement.prototype.relMouseCoords = relMouseCoords;
+HTMLImageElement.prototype.relMouseCoords = relMouseCoords;
