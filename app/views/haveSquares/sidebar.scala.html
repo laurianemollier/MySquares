@@ -7,26 +7,37 @@
 
 
 
+
+
+
         <!-- Sidebar Links -->
         <div class="sidebar-link col-disable">
-            <ul class="list-unstyled">
-                <li id="january">
-                    <a href="/get-squares/january" class="animated"> January <i class="fa fa-angle-double-right"></i></a>
-                    <div id="palette">
-                        <img id="paletteImg" src="@routes.Assets.versioned("images/paletteHor.png")"">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <span class="btn" id="selectedColor"></span>
-                            </div>
 
-                            <!-- Button -->
-                            <div class="col-md-9">
-                                <button class="btn btn-default btn-circle">coucou <i class="fa fa-angle-right"></i></button>
-                            </div>
-
+            <!-- palette displayed on the bottom of each month -->
+            <div id="palette">
+                <form method="get" action="/confirmSquares">
+                    <img id="paletteImg" src="@routes.Assets.versioned("images/paletteHor.png")"">
+                    <div class="row">
+                        <div class="col-md-1" >
+                            <img id="pipetteIcon" src="@routes.Assets.versioned("images/pipette.png")"">
+                            <img id="eraserIcon" src="@routes.Assets.versioned("images/eraser.png")"">
                         </div>
+                        <div class="col-md-3">
+                            <span class="btn" id="selectedColor" style="background-color: rgb(255, 255, 255);"></span>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="col-md-8">
+                            <button class="btn btn-default btn-circle">Purchase <i class="fa fa-angle-right"></i></button>
+                        </div>
+
                     </div>
-                </li>
+                </form>
+
+            </div>
+
+            <ul class="list-unstyled">
+                <li id="january"><a href="/get-squares/january" class="animated"> January <i class="fa fa-angle-double-right"></i></a></li>
                 <li id="february"><a href="/get-squares/february" class="animated"> February <i class="fa fa-angle-double-right"></i></a></li>
                 <li id="march"><a href="/get-squares/march" class="animated"> March <i class="fa fa-angle-double-right"></i></a></li>
 

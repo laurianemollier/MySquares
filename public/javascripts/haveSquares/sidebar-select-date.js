@@ -5,6 +5,11 @@ function selectMonth(month){
     var icon = selected.firstChild.lastChild;
     icon.className = "fa fa-angle-double-down";
 
+    var palette = document.getElementById("palette");
+    selected.appendChild(palette);
+
+
+
 }
 
 

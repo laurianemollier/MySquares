@@ -10,20 +10,23 @@
 }
 
 #graySquare{
-    z-index: 1;
+    position: absolute;
+    z-index: 0;
     background-color: gray;
 }
 #coloredSquare{
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     background: black;
 }
 
+/* the cursor is set in tha javascript file*/
 #selectedSquare{
-    position: absolute;
+    position: relative;
+    top: -15px;
+    padding-top: 15px;
     background-color: transparent;
     z-index: 2;
-    cursor: url("/assets/images/brush.png"), copy !important;
 }
 
 
@@ -41,24 +44,40 @@
 #palette > div>div{
     margin-bottom: 5px;
 }
-
-#palette img{
+/* */
+#palette form > img{
     width: 100%;
     margin-bottom: 10px;
     cursor: url("/assets/images/pipette.png"), copy !important;
 
 }
+/* icon */
+#palette  div img{
+     width: 120%;
+     cursor: pointer;
+
+}
+#palette  div img.selected{
+    background-color: #363636;
+}
+#palette div img:last-child{
+    position: relative;
+    top: -6px;
+}
+
+
+/* selection of color*/
 #palette span{
     width: 96%;
-    height: 34px;
+    height: 40px;
     margin: 1%;
     border: 2px solid black !important;
     cursor: default;
-    background-color: white;
 }
 
+/* button for continue*/
 #palette button{
     width: 96%;
-    height: 32px;
+    height: 38px;
     margin: 1%;
 }

@@ -1,4 +1,4 @@
-@(month: String, colors: Array[Array[Int]], freeSquares: Array[Boolean], nbSquaresOneEdge: Int)
+@(month: String, colors: Array[Array[Int]], nbSquaresOneEdge: Int)
 
 <!-- select the month in the sidebar -->
 <script src="@routes.Assets.versioned("javascripts/haveSquares/sidebar-select-date.js")"> </script>
@@ -15,8 +15,7 @@
 
     // array of colors and free squares
     var jsColors = [@colors.map(array => "[" + array.mkString(",") + "]").mkString(",")];
-    var freeSquares = [@freeSquares.map( bool  => if(bool) "true,"; else "false,") false];
-    var selectedSquare = []; // contains the index of the selected square
+    var selectedSquare = [@colors.map( array  => "false,") false];
 
     var coloredSquare = document.getElementById("coloredSquare");
     var graySquare = document.getElementById("graySquare");
@@ -28,8 +27,8 @@
 
 
     // draw the square
-    drawSquares(jsColors, freeSquares, @nbSquaresOneEdge, coloredSquare, canvasWidth);
-    drawSquares(jsColors, freeSquares, @nbSquaresOneEdge, graySquare, canvasWidth, true);
+    drawSquares(jsColors, @nbSquaresOneEdge, coloredSquare, canvasWidth);
+    drawSquares(jsColors, @nbSquaresOneEdge, graySquare, canvasWidth, true);
 
     // add event for select the squares
 
@@ -46,3 +45,5 @@
 
 <!--deal with the color selection in the palette-->
 <script src="@routes.Assets.versioned("javascripts/haveSquares/select-color.js")"> </script>
+<script src="@routes.Assets.versioned("javascripts/haveSquares/select-tool.js")"> </script>
+

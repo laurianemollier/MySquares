@@ -8,7 +8,7 @@ import scala.util.Random
 class Application extends Controller {
 
   // square data
-  val nbSquaresOneEdge = 50
+  val nbSquaresOneEdge = 100
   val r = new Random()
 
   // TODO: Mettre dans le footer aussi et reoganiser le code
@@ -22,17 +22,13 @@ class Application extends Controller {
   // TODO: Connecter ca a la base de donne et refaire
   val colorsModel = Array.ofDim[Int](nbSquaresOneEdge*nbSquaresOneEdge, 3).map{array =>
     val i = r.nextInt(256)
-    if(i < 230) null
+    if(i < 250) null
     else array.map(x => r.nextInt(256))
   }
 
   val colors = colorsModel.map{ array =>
-    if(array == null) Array(255, 255, 255)
+    if(array == null) Array(-1, -1, -1)
     else array
-  }
-  val freeSquares = colorsModel.map{ array =>
-    if(array == null) true
-    else false
   }
 
   def icon = Action {
@@ -43,11 +39,11 @@ class Application extends Controller {
   }
 
   def home = Action{
-    Ok(views.html.home.home(colors, freeSquares, nbSquaresOneEdge))
+    Ok(views.html.home.home(colors, nbSquaresOneEdge))
   }
 
   def haveSquares(month: String) = Action{
-    Ok(views.html.haveSquares.haveSquares(month, colors, freeSquares, nbSquaresOneEdge))
+    Ok(views.html.haveSquares.haveSquares(month, colors, nbSquaresOneEdge))
   }
 
   def howItWorks = Action{
@@ -59,7 +55,7 @@ class Application extends Controller {
   }
 
   def confirmSquares = Action{
-    Ok(views.html.confirmSquares.confirmSquares(colors, freeSquares, nbSquaresOneEdge))
+    Ok(views.html.confirmSquares.confirmSquares(colors, nbSquaresOneEdge))
   }
 
 

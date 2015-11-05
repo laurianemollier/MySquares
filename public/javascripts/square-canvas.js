@@ -1,6 +1,5 @@
 // colors : Array[Array[]], gray: Boolean
-// freeSquares: Array[Boolean] if true this square is free
-function drawSquares(colors, freeSquares, nbSquaresOneEdge, canvas, canvasWidth, gray){
+function drawSquares(colors, nbSquaresOneEdge, canvas, canvasWidth, gray){
 
     var littleSL = canvasWidth / nbSquaresOneEdge;
     //littleSL = Math.ceil(littleSL)
@@ -18,10 +17,11 @@ function drawSquares(colors, freeSquares, nbSquaresOneEdge, canvas, canvasWidth,
 
             var index = i*nbSquaresOneEdge + j;
 
-            if(freeSquares[index]) context.fillStyle = "#222";
+            if(colors[index][0] < 0) context.fillStyle = "#222";
             else if(gray) context.fillStyle = "gray";
             else {
-                context.fillStyle = "rgba("+ colors[index][0] +", "+ colors[index][1] +", "+ colors[index][2] +", 1)";
+                var rgba = "rgba("+ colors[index][0] +", "+ colors[index][1] +", "+ colors[index][2] +", 255)";
+                context.fillStyle = rgba;
             }
             var x = j%nbSquaresOneEdge * littleSL;
             var y = i%nbSquaresOneEdge * littleSL;

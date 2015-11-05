@@ -1,4 +1,4 @@
-@(colors: Array[Array[Int]], freeSquares: Array[Boolean], nbSquaresOneEdge: Int)
+@(colors: Array[Array[Int]], nbSquaresOneEdge: Int)
 
 
 <script src="@routes.Assets.versioned("javascripts/square-canvas.js")"></script>
@@ -6,11 +6,10 @@
 <script>
 
     var jsColors = [@colors.map(array => "[" + array.mkString(",") + "]").mkString(",")];
-    var freeSquares = [@freeSquares.map( bool  => if(bool) "true,"; else "false,") false];
 
     var square = document.getElementById("square");
     var canvasWidth = square.clientWidth;
-    drawSquares(jsColors, freeSquares, @nbSquaresOneEdge, square, canvasWidth);
+    drawSquares(jsColors, @nbSquaresOneEdge, square, canvasWidth);
 
 </script>
 
