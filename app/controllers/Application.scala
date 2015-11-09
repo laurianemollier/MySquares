@@ -31,6 +31,9 @@ class Application extends Controller {
     else array
   }
 
+
+
+
   def icon = Action {
     Ok(views.html.icon())
   }
@@ -63,6 +66,9 @@ class Application extends Controller {
     Ok(views.html.register.register())
   }
 
+  def termsConditions = Action{
+    Ok(views.html.termsConditions.termsConditions())
+  }
 
 
 
