@@ -34,6 +34,8 @@ GET           /get-squares/:month                      controllers.Application.h
 
 GET  /confirmSquares  controllers.Application.confirmSquares
 
+GET /terms-and-conditions controllers.Application.termsConditions
+
 
 
 
