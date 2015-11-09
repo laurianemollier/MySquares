@@ -5,7 +5,7 @@ import play.api.mvc._
 
 import scala.util.Random
 
-class Application extends Controller {
+object Application extends Controller {
 
   // square data
   val nbSquaresOneEdge = 100
