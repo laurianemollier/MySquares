@@ -2,6 +2,12 @@ package controllers
 
 import play.api._
 import play.api.mvc._
+import play.api.data.Form
+import play.api.data.Forms._
+import play.api.libs.json.Json
+
+//import models._
+import models.{DB, User}
 
 import scala.util.Random
 
@@ -72,6 +78,32 @@ object Application extends Controller {
 
 
 
-//  register
+
+  // user
+
+  val userForm: Form[User] = Form{
+    mapping("email" -> email,
+      "password" -> text
+    )(User.apply)(User.unapply)
+  }
+
+  def addUser = Action{ implicit request =>
+    request.toString()
+    val user = userForm.bindFromRequest.get
+    DB.save(user)
+    Redirect(routes.Application.home())
+  }
+
+
+  def getUsers = Action{
+    val users = DB.query[User].fetch
+    Ok(Json.toJson(users))
+  }
+
+
 
 }
+
+
+
+

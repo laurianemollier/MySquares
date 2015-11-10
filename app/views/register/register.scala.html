@@ -94,7 +94,7 @@
                             <!-- Heading -->
                             <h2>Login</h2>
                             <!-- Sign in Form Start -->
-                            <form class="form-horizontal" role="form">
+                            <form class="form-horizontal" role="form" >
                                 <div class="form-group">
                                     <div class="col-sm-12">
                                         <input type="text" class="form-control" id="username" placeholder="Username">
@@ -131,27 +131,27 @@
                             <!-- Heading -->
                             <h2>Registration</h2>
                             <!-- Sign Up Form Start -->
-                            <form class="form-horizontal" role="form">
+                            <form class="form-horizontal" role="form" action="@routes.Application.addUser" method="post">
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                        <input type="email" class="form-control" id="emailReg" name="email" placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <input type="password" class="form-control" id="password" placeholder="Password">
+                                        <input type="password" class="form-control" id="passwordReg" name="password" placeholder="Password">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">
+                                        <!--<input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">-->
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox"> Accept All Terms & Conditions
+                                                <!--<input type="checkbox"> Accept All Terms & Conditions-->
                                             </label>
                                             <span class="pull-right"><a href="#">View</a></span>
                                             <div class="clearfix"></div>

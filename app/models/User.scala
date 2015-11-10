@@ -4,11 +4,10 @@ package models
 import play.api.libs.json.Json
 
 // TODO: Faire que je mot de passe ne sois pas stoker comme ca et tout le tralala
-case class Person(email: Email, password: String) {
+case class User(email: String, password: String)
 
 
 
-}
-object Person{
-//  implicit val format = Json.format[Person]
+object User{
+  implicit val format = Json.format[User]
 }
