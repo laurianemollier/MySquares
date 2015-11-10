@@ -1,4 +1,4 @@
-name := "paws"
+name := "tutorial"
 
 Common.settings
 
@@ -21,7 +21,7 @@ lazy val users = (project in file("modules/users"))
   .enablePlugins(PlayScala)
   .dependsOn(web, db).aggregate(web, db)
 
-lazy val paws = (project in file("."))
+lazy val tutorial = (project in file("."))
   .enablePlugins(PlayScala)
   .dependsOn(web, db, users)
   .aggregate(web, db, users)
