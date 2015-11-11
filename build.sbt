@@ -1,4 +1,14 @@
-name := "tutorial"
+import sbt._
+import Keys._
+import play.Play.autoImport._
+import PlayKeys._
+
+
+name := "MySquares"
+
+version := "1.0-SNAPSHOT"
+
+scalaVersion := "2.11.6"
 
 Common.settings
 
@@ -8,6 +18,7 @@ libraryDependencies ++= Seq(
   "org.webjars" % "bootstrap" % "3.2.0" exclude("org.webjars", "jquery"),
   "org.webjars" % "requirejs" % "2.1.14-1" exclude("org.webjars", "jquery")
 )
+
 
 pipelineStages := Seq(rjs, digest, gzip)
 
@@ -21,7 +32,7 @@ lazy val users = (project in file("modules/users"))
   .enablePlugins(PlayScala)
   .dependsOn(web, db).aggregate(web, db)
 
-lazy val tutorial = (project in file("."))
+lazy val root = (project in file("."))
   .enablePlugins(PlayScala)
   .dependsOn(web, db, users)
   .aggregate(web, db, users)
@@ -39,3 +50,15 @@ scalacOptions in ThisBuild ++= Seq(
   "-Ywarn-dead-code",
   "-language:reflectiveCalls"
 )
+
+
+
+
+
+
+
+
+
+
+includeFilter in (Assets, LessKeys.less) := "*.less"
+//excludeFilter in (Assets, LessKeys.less) := "_*.less"
