@@ -1,4 +1,25 @@
-@(colors: Array[Array[Int]], nbSquaresOneEdge: Int)
+@(colors: Array[Array[Int]], nbSquaresOneEdge: Int, login: Boolean)
 
 
-@commonToAllPage.template(css(), sidebar(), mainBarColumn(), js(colors,  nbSquaresOneEdge))
+
+
+@css = {
+    <!-- For this page-->
+    <link href="@routes.Assets.versioned("stylesheets/home.css")" rel="stylesheet">
+}
+
+@js(colors: Array[Array[Int]], nbSquaresOneEdge: Int) = {
+<script src="@routes.Assets.versioned("javascripts/square-canvas.js")"></script>
+
+<script>
+
+    var jsColors = [@colors.map(array => "[" + array.mkString(",") + "]").mkString(",")];
+
+    var square = document.getElementById("square");
+    var canvasWidth = square.clientWidth;
+    drawSquares(jsColors, @nbSquaresOneEdge, square, canvasWidth);
+
+</script>
+}
+
+@commonToAllPage.template(css, sidebar(), mainBarColumn(), js(colors, nbSquaresOneEdge), login)

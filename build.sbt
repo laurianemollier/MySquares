@@ -19,6 +19,7 @@ libraryDependencies ++= Seq(
   "org.webjars" % "requirejs" % "2.1.14-1" exclude("org.webjars", "jquery")
 )
 
+libraryDependencies += filters
 
 pipelineStages := Seq(rjs, digest, gzip)
 

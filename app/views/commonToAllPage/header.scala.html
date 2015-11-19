@@ -1,4 +1,4 @@
-
+@(login: Boolean)
 
 <!-- Header Start -->
 <div class="header">
@@ -70,11 +70,23 @@
                                 </li>
 
                                 <li>
-                                    <a href="/register" class="br-black small">
+                                    <!-- TODO: Create logout-->
                                         <!-- Link Icon -->
-                                        <i class="fa fa-sign-in link-icon"></i>
+                                        @if(login){
+                                        <a href="/logout" class="br-black small">
+                                            <i class="fa fa-sign-out link-icon"></i>
+                                        }else {
+                                        <a href="/register" class="br-black small">
+                                            <i class="fa fa-sign-in link-icon"></i>
+                                        }
                                         <!-- Link Title -->
-                                        <span class="link-title">Login</span>
+                                        <span class="link-title">
+                                            @if(login){
+                                                Logout
+                                            }else{
+                                                Login
+                                            }
+                                        </span>
                                     </a>
                                 </li>
 

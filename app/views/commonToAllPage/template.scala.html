@@ -1,5 +1,4 @@
-@(css: Html, sidebar: Html, mainBarColumn: Html, js: Html)
-
+@(css: Html, sidebar: Html, mainBarColumn: Html, js: Html, login: Boolean, justOneColonm: Boolean = false)
 
 <!DOCTYPE html>
 <html>
@@ -33,20 +32,25 @@
 <div class="wrapper white">
 
     <!-- Header-->
-    @commonToAllPage.header()
+    @commonToAllPage.header(login)
 
     <!-- Inner Page Content // Start -->
 
+
+
     <div class="inner-page">
         <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <!-- Inner Page Content Sidebar -->
-                    <div class="page-sidebar"> @sidebar </div>
+            @if(justOneColonm){
+                @mainBarColumn
+            }else{
+                <div class="row">
+                    <div class="col-md-3">
+                        <!-- Inner Page Content Sidebar -->
+                        <div class="page-sidebar"> @sidebar </div>
+                    </div>
+                    <div class="col-md-9">@mainBarColumn </div>
                 </div>
-
-                <div class="col-md-9">@mainBarColumn </div>
-            </div>
+            }
         </div>
     </div>
 

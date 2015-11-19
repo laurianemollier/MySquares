@@ -1,1 +1,6 @@
-@commonToAllPage.template(css(), sidebar(), mainBarColumn(), js())
+@(login: Boolean)
+
+@css = {}
+@js = {}
+
+@commonToAllPage.template(css, sidebar(), mainBarColumn(), js, login)

@@ -39,9 +39,19 @@ GET /terms-and-conditions controllers.Application.termsConditions
 
 
 
-POST /user     controllers.Application.addUser
 
-GET /users     controllers.Application.getUsers
+#API
+
+POST /user     controllers.Api.addUser
+
+GET /users     controllers.Api.getUsers
+
+
+
+
+POST /login   controllers.Api.login
+
+GET /logout  controllers.Api.logout
 
 
 
