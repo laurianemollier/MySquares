@@ -47,23 +47,25 @@ object Application extends Controller {
   }
 
 
-  def register = Action{ implicit request =>
-    Ok(views.html.register.register(Api.userForm, Api.loginForm))
+// login - register - contact
+  object LogRegCont extends Enumeration {
+    type LogRegCont = Value
+    val login, register, contact = Value
   }
+
+  def register = loginRegisterContact(LogRegCont.register)
+  def login = loginRegisterContact(LogRegCont.login)
+  def contact = loginRegisterContact(LogRegCont.contact)
+
+  def loginRegisterContact(redirect: LogRegCont.LogRegCont) = Action{ implicit request =>
+    Ok(views.html.loginRegisterContact.loginRegisterContact(redirect, Api.userForm, Api.loginForm))
+  }
+
+
 
   def termsConditions = Action{ implicit request =>
     Ok(views.html.termsConditions.termsConditions(connected))
   }
-
-
-
-
-
-
-
-
-
-
 }
 
 

@@ -1,7 +1,9 @@
 @import settings.Helpers._
 @import helper._
+@import controllers.Application.LogRegCont._
 
-@(userForm: Form[UserData], loginForm: Form[LoginData], errorMessage: String = "")(implicit message: RequestHeader)
+@(redirect: LogRegCont, userForm: Form[UserData], loginForm: Form[LoginData], errorMessage: String = "")(implicit message: RequestHeader)
+
 
 <!-- Main-bar Column -->
 <div class="inner-page">
@@ -11,21 +13,21 @@
             <div class="login-content">
                 <!-- Nab Bar Tan Menu list -->
                 <ul id="mytab" class="nav nav-tabs nav-justify">
-                    <li class="active">
+                    <li @if(redirect == login) {class="active"}>
                         <a href="#login" class="br-red" data-toggle="tab">
                             <!-- Icon -->
                             <i class="fa fa-sign-in"></i>
                             <span>Login</span>
                         </a>
                     </li>
-                    <li>
+                    <li @if(redirect == register) {class="active"}>
                         <a href="#register" class="br-lblue" data-toggle="tab">
                             <!-- Icon -->
-                            <i class="fa fa-sign-out"></i>
+                            <i class="fa fa-user-plus"></i>
                             <span>Sign Up</span>
                         </a>
                     </li>
-                    <li>
+                    <li @if(redirect == contact) {class="active"}>
                         <a href="#contact" class="br-green" data-toggle="tab">
                             <!-- Icon -->
                             <i class="fa fa-user"></i>
@@ -36,7 +38,7 @@
                 <!-- Content for each menu item -->
                 <div class="tab-content">
                     <!-- First Content for Nav bar -->
-                    <div class="tab-pane fade in active br-red" id="login">
+                    <div class="tab-pane fade @if(redirect == login) {in active} br-red" id="login">
                         <!-- Heading -->
                         <h2>Login</h2>
                         <!-- Sign in Form Start -->
@@ -81,7 +83,7 @@
                     </div>
 
                     <!-- Second Content for Nav bar -->
-                    <div class="tab-pane fade br-lblue" id="register">
+                    <div class=" tab-pane fade @if(redirect == register){in active} br-lblue" id="register">
                         <!-- Heading -->
                         <h2>Registration</h2>
 
@@ -121,11 +123,11 @@
                         <div class="form-group">
                             <div class="col-sm-12">
                                 <div class="checkbox">
-                                    <label id="labetTermCondition">
+                                    <label id="labelTermCondition">
                                         @helper.checkbox(field = userForm("termCondition"), args = 'id -> "checkboxReg")
                                         Accept All Terms & Conditions
                                     </label>
-                                    <span class="pull-right"><a href="/terms-and-conditions">View</a></span>
+                                    <span class="pull-right"><a target="_blank" href="/terms-and-conditions">View</a></span>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -142,7 +144,7 @@
                     </div>
 
                     <!-- Third Content for Nav bar -->
-                    <div class="tab-pane fade br-green" id="contact">
+                    <div class="tab-pane fade @if(redirect == contact) {in active} br-green" id="contact">
                         <!-- Heading -->
                         <h2>Contact Us</h2>
                         <form role="form">

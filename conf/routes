@@ -24,7 +24,11 @@ GET           /how-it-works                       controllers.Application.howItW
 
 GET           /company                controllers.Application.company
 
-GET           /register                     controllers.Application.register
+GET           /register    controllers.Application.register
+
+GET           /login    controllers.Application.login
+
+GET           /contact    controllers.Application.contact
 
 # get Square
 

@@ -1,5 +1,6 @@
 package controllers
 
+import controllers.Application.LogRegCont
 import org.mindrot.jbcrypt.BCrypt
 import play.api.mvc._
 import play.api.data.Form
@@ -9,6 +10,7 @@ import settings.Global._
 import sorm.Persisted
 
 import models._
+
 
 // TODO: SQL injection
 object Api extends Controller {
@@ -21,7 +23,7 @@ object Api extends Controller {
   def addUser = Action{ implicit request =>
     userForm.bindFromRequest.fold(
       errorFrom => {
-        BadRequest(views.html.register.register(errorFrom, loginForm))
+        BadRequest(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, errorFrom, loginForm))
       },
       userData => {
         val user = userForm.bindFromRequest.get

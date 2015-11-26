@@ -1,4 +1,6 @@
-@(userForm: Form[UserData], loginForm: Form[LoginData], errorMessage: String = "")(implicit message: RequestHeader)
+@import controllers.Application.LogRegCont._
+
+@(redirect: LogRegCont,userForm: Form[UserData], loginForm: Form[LoginData], errorMessage: String = "")(implicit message: RequestHeader)
 
 
 @css = {}
@@ -12,7 +14,7 @@
     var formLogin = document.getElementById('loginForm');
     document.getElementById("loginButton").onclick = function(){
         var result = emailCheck("emailLogin");
-        result = passwordCheck("passwordLogin") && result;
+        result = inputNonEmpty("passwordLogin") && result;
         if(result){
            formLogin.submit();
         }
@@ -22,7 +24,7 @@
     document.getElementById("buttonReg").onclick = function(){
         var result = emailCheck("emailReg");
         result = passwordCheck("passwordReg", "confirmPassword") && result;
-        result = checkboxCheck("checkboxReg", "labetTermCondition") && result;
+        result = checkboxCheck("checkboxReg", "labelTermCondition") && result;
         if(result){
            formRegister.submit();
         }
@@ -33,4 +35,4 @@
 </script>
 }
 
-@commonToAllPage.template(css, Html(""), mainBarColumn(userForm, loginForm, errorMessage)(message), js, false, true)
+@commonToAllPage.template(css, Html(""), mainBarColumn(redirect, userForm, loginForm, errorMessage)(message), js, false, true)
