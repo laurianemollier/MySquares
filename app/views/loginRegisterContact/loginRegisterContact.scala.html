@@ -1,38 +1,14 @@
 @import controllers.Application.LogRegCont._
 
-@(redirect: LogRegCont,userForm: Form[UserData], loginForm: Form[LoginData], errorMessage: String = "")(implicit message: RequestHeader)
+@(redirect: LogRegCont, registerForm: Form[RegisterData], loginForm: Form[LoginData], errorMessage: String = "")(implicit message: RequestHeader)
 
 
 @css = {}
 
 @js = {
-<script src="@routes.Assets.versioned("javascripts/formValidation.js")"></script>
-
-
-<script>
-
-    var formLogin = document.getElementById('loginForm');
-    document.getElementById("loginButton").onclick = function(){
-        var result = emailCheck("emailLogin");
-        result = inputNonEmpty("passwordLogin") && result;
-        if(result){
-           formLogin.submit();
-        }
-    }
-
-    var formRegister = document.getElementById("formRegister");
-    document.getElementById("buttonReg").onclick = function(){
-        var result = emailCheck("emailReg");
-        result = passwordCheck("passwordReg", "confirmPassword") && result;
-        result = checkboxCheck("checkboxReg", "labelTermCondition") && result;
-        if(result){
-           formRegister.submit();
-        }
-    }
-
-
-
-</script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/formValidation.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/loginFormValidation.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/registerFormValidation.js")"></script>
 }
 
-@commonToAllPage.template(css, Html(""), mainBarColumn(redirect, userForm, loginForm, errorMessage)(message), js, false, true)
+@commonToAllPage.template(css, Html(""), mainBarColumn(redirect, registerForm, loginForm, errorMessage)(message), js, false, true)

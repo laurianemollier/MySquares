@@ -4,12 +4,12 @@ package models
 import play.api.libs.json.Json
 import settings.Global._
 
-case class UserData(email: String, password: String, verifyingPassword: String, termCondition: Boolean){
+case class RegisterData(email: String, password: String, verifyingPassword: String, termCondition: Boolean){
   def getUser = User(email, password)
 }
 
-object UserData{
-  implicit  val format = Json.format[UserData]
+object RegisterData{
+  implicit  val format = Json.format[RegisterData]
 
 }
 

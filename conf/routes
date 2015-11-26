@@ -10,9 +10,9 @@ GET     /doc                           controllers.Application.doc
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
 
-GET     /css/*file                  controllers.Assets.at(path="/boostrap/theme/css", file)
+GET     /css/*file                    controllers.Assets.at(path="/boostrap/theme/css", file)
 
 
 
@@ -20,25 +20,25 @@ GET     /css/*file                  controllers.Assets.at(path="/boostrap/theme/
 # Home page
 GET           /                       controllers.Application.home
 
-GET           /how-it-works                       controllers.Application.howItWorks
+GET           /how-it-works           controllers.Application.howItWorks
 
 GET           /company                controllers.Application.company
 
-GET           /register    controllers.Application.register
+GET           /register               controllers.Application.register
 
-GET           /login    controllers.Application.login
+GET           /login                  controllers.Application.login
 
-GET           /contact    controllers.Application.contact
+GET           /contact                controllers.Application.contact
 
 # get Square
 
 #current month
 
-GET           /get-squares/:month                      controllers.Application.haveSquares(month: String)
+GET           /get-squares/:month     controllers.Application.haveSquares(month: String)
 
-GET  /confirmSquares  controllers.Application.confirmSquares
+GET           /confirmSquares         controllers.Application.confirmSquares
 
-GET /terms-and-conditions controllers.Application.termsConditions
+GET           /terms-and-conditions   controllers.Application.termsConditions
 
 
 
@@ -46,16 +46,16 @@ GET /terms-and-conditions controllers.Application.termsConditions
 
 #API
 
-POST /user     controllers.Api.addUser
+POST          /user                   controllers.Api.addUser
 
-GET /users     controllers.Api.getUsers
-
-
+GET           /users                  controllers.Api.getUsers
 
 
-POST /login   controllers.Api.login
 
-GET /logout  controllers.Api.logout
+
+POST          /login                  controllers.Api.login
+
+GET           /logout                 controllers.Api.logout
 
 
 

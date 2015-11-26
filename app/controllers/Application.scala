@@ -30,7 +30,6 @@ object Application extends Controller {
   }
 
   def haveSquares(month: String) = Action{ implicit request =>
-
     Ok(views.html.haveSquares.haveSquares(month, colors, nbSquaresOneEdge, connected))
   }
 

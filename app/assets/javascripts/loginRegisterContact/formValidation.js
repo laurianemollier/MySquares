@@ -42,7 +42,7 @@ function passwordCheck(idPassword, idVerifyingPassword) {
 
     var inputPass = document.getElementById(idPassword);
     var inputVerify = document.getElementById(idVerifyingPassword);
-    var regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30}$/i; //TODO
+    var regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30}$/i; //TODO: verifier que la regex sois bien la meme que dan le scala form
 
     // if the password do not set to the regex
     if(!regexPassword.test(inputPass.value)){
