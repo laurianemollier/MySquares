@@ -1,4 +1,4 @@
-@(colors: Array[Array[Int]], nbSquaresOneEdge: Int, login: Boolean)
+@(colors: Array[Array[Int]], nbSquaresOneEdge: Int, login: Boolean, registerForm: Form[RegisterData], loginForm: Form[LoginData], errorMessage: String = "")(implicit message: RequestHeader)
 
 @css = {}
 
@@ -22,9 +22,12 @@
 
 <!-- deal with the display of the register and login form-->
 <script src="@routes.Assets.versioned("javascripts/confirmSquares/display-login-register.js")"></script>
-
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/formValidation.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/loginFormValidation.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/registerFormValidation.js")"></script>
 }
 
 
 
-@commonToAllPage.template(css, sidebar(), mainBarColumn(), js(colors, nbSquaresOneEdge), login)
+
+@commonToAllPage.template(css, sidebar(), mainBarColumn(registerForm, loginForm, errorMessage)(message), js(colors, nbSquaresOneEdge), login)

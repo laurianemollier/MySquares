@@ -1,149 +1,102 @@
 package controllers
 
+
 import controllers.Application.LogRegCont
 import org.mindrot.jbcrypt.BCrypt
-import play.api.data.validation._
-import play.api.data.Mapping
 import play.api.mvc._
-import play.api.data.Form
-import play.api.data.Forms._
 import play.api.libs.json.Json
 import settings.Global._
-import sorm.Persisted
+
 
 import models._
+import models.SelectedSquares._
 
-
-// TODO: SQL injection
 object Api extends Controller {
 
 
 
-  // user
-  def addUser = Action{ implicit request =>
-    userForm.bindFromRequest.fold(
-      errorFrom => {
-        // TODO: Faire le css des erreurs + ajouter une belle erreurs + Rediriger
-       BadRequest(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.register, errorFrom, loginForm))
-      },
-      userData => {
-        val user = userForm.bindFromRequest.get
-        val email: Option[User with Persisted] = DB.query[User].whereEqual("email", user.email).fetchOne()
-        email match{
-          //TODO: not set ok quand c'estd deja  ou creer un page pour ca
-            // the user is already register
-          case Some(email) => Ok("already registered")
-          case None => {
-            val hashPassword = BCrypt.hashpw(user.password, BCrypt.gensalt())
-            DB.save(User(user.email, hashPassword))
-            Redirect(routes.Application.home())
-          }
-        }
-      }
-    )
-  }
-
+  def addUser = Authentication.addUser
 
   def getUsers = Action{
     val users = DB.query[User].fetch
     Ok(Json.toJson(users))
   }
 
-
+  // TODO: protection
   def getUser(email: String): Option[User] ={
     DB.query[User].whereEqual("email", email).fetchOne()
   }
 
-
-
-/** constains and form for register **/
-
-  val acceptedTermsAndConditions: Constraint[Boolean] = Constraint("constraints.termAndConditions")({
-    bool => {
-      if(bool) Valid
-      else Invalid(Seq(ValidationError("You must accepte termes and conditions")))
-    }
-  })
-  val termCondition : Mapping[Boolean] = boolean.verifying(acceptedTermsAndConditions)
-
-
-  // Password matching expression. Password must be at least 8 characters, no more than 30 characters,
-  // and must include at least one upper case letter, one lower case letter, and one numeric digit.
-  val reg = """^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30}$""".r
-  val passwordCheck: Constraint[String] = Constraint("constraints.passwordCheck")({
-    plainText =>
-      val errors = plainText match {
-        case reg() => Nil
-        case _ => Seq(ValidationError("Password must have between 8 and 30 characters, must contain at " +
-          "least 1 number, 1 lower case and one upper case."))
-      }
-      if (errors.isEmpty) Valid
-      else Invalid(errors)
-  })
-  val password = nonEmptyText(minLength = 8, maxLength = 30).verifying(passwordCheck)
-
-  val samePassword: Constraint[RegisterData] = Constraint("constraints.samePassword")({
-    fields =>
-      if (fields.password == fields.verifyingPassword) Valid
-      else Invalid(Seq(ValidationError("The two given password are not matching")))
-  })
-
-  val userForm: Form[RegisterData] = Form{
-    mapping("email" -> email,
-      "password" -> password,
-      "verifyingPassword" -> nonEmptyText(minLength = 8, maxLength = 30),
-      "termCondition" -> termCondition
-    )(RegisterData.apply)(RegisterData.unapply) verifying(samePassword)
+  def getSquares = Action {
+    val squares = DB.query[Square].fetch
+    Ok(Json.toJson(squares))
   }
 
-
-
-
-
-
-
-
-
-
-
-
-  def loginForm: Form[LoginData] = Form{
-    mapping("email" -> email,
-      "password" -> nonEmptyText
-    )(LoginData.apply)(LoginData.unapply)
-  }
-
-
-
-// TODO: Faire les bonnes redirection
-  def login = Action { implicit request =>
-    loginForm.bindFromRequest.fold(
-      errorForm => {
-        Ok("Pas les bons argument")
-      },
-      login => {
-        val loginData = loginForm.bindFromRequest.get
-        getUser(loginData.email) match {
-          case None => Ok("Email existe pas ") //TODO: change that
-          case Some(userDB) => {
-            if(BCrypt.checkpw(loginData.password, userDB.password)){
-              Ok(views.html.home.home(colors, nbSquaresOneEdge, true)).withSession("connected" -> loginData.email)
-            }
-            else{
-              Ok("mauvais mot de passe!")
-            }
-          }
+  // TODO: protection et refaire
+  def getColorSquare(id: Int) = {
+    val squarePersist = DB.query[Square].whereEqual("id", id).fetchOne()
+    squarePersist match {
+      case None => null
+      case Some(square) => {
+        val colors = square.getArray.map { case (idUser ,c) =>
+          if(idUser == -1) Array(-1, -1, -1)
+          else Array(Square.r(c), Square.g(c), Square.b(c))
         }
-
-
+        (colors, square.nbSquaresOneEdge)
       }
-    )
-
+    }
   }
+
+  def login = Authentication.login
 
   def logout = Action{ implicit request =>
     Redirect(routes.Application.home()).withNewSession
   }
 
+  def selectSquares = Action{ implicit request =>
+    selectedSquaresForm.bindFromRequest.fold(
+      errorsForm => {
+        Ok("Error -> Contacte the compagni Erruer dans le fomulaire") // TODO: faire une page speciale pour ca
+      },
+      selectedSquaresSting => {
+        // TODO: partie dure avec la concurnce et tout le bordel + a optimiser
 
+        val MSOp = DB.query[Square].whereEqual("id", selectedSquaresSting.idMS).fetchOne()
+        MSOp match {
+          case null => Ok("le MS n'existe pas contacte la compagnie") //  // TODO: faire une page speciale pour ca
+          case Some(ms) => {
+            val selectedSquares :  Seq[(Int, Int)] = stringToSelectedSquare(selectedSquaresSting.seq)
+
+            // verify that all the selected Squares are free
+            val valid = selectedSquares.forall{ case (idx, color) =>
+              ms.squares(idx)._1 == -1
+            }
+
+            if(valid){
+              DB.save(ms.copy(squares = ms.squares.zipWithIndex.map{case (tupple, i) => {
+                val selectedSquare = selectedSquares.filter{
+                  case (idx, _) => idx == i
+                }
+                if(selectedSquare.nonEmpty) {
+                  (2222.toLong, selectedSquare.head._2)
+                }
+                else tupple
+              }}))
+              Ok("C'est bon")
+            }
+            else Ok("Error -> Contacte the compagnie les square selectionne sont deja pris   " + selectedSquaresSting.seq) // TODO: faire une page speciale pour ca
+          }
+        }
+
+      }
+    )
+  }
+
+// must be format 1,2~3,3
+  def stringToSelectedSquare(s: String): Seq[(Int, Int)] = {
+    s.split("~").map{ a =>
+      val t = a.split(",")
+      (t(0).toInt, t(1).toInt)
+    }
+  }
 }

@@ -3,6 +3,9 @@
 
 @(loginForm: Form[LoginData])(implicit message: RequestHeader)
 
+
+
+
 <!--Login Form -->
 @helper.form(action = routes.Api.login, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "loginForm") {
 @CSRF.formField
@@ -26,10 +29,6 @@
 <div class="form-group">
     <div class="col-sm-12">
         <div class="checkbox">
-            <label>
-                <!--helper.checkbox(field = loginForm("termCondition"))-->
-                Remember me
-            </label>
             <span class="pull-right"><a href="#">Forget Password</a></span>
             <div class="clearfix"></div>
         </div>

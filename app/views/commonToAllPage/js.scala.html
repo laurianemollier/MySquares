@@ -33,3 +33,33 @@
 <!-- Function for have the relative coordonate-->
 <!--TODO: Verify it works for all browsers-->
 <script src="@routes.Assets.versioned("javascripts/relMouseCoords.js")"></script>
+
+
+<!--Close the parent element of a close button-->
+<script>
+(function(){
+    var closesButton = document.getElementsByClassName("close");
+    for(i in closesButton){
+        closesButton[i].onclick = function(){
+        this.parentElement.style.display = "none";
+        }
+    }
+})();
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

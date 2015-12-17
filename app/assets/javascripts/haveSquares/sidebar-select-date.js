@@ -1,5 +1,5 @@
-function selectMonth(month){
-    var selected = document.getElementById(month);
+function selectMonth(id){
+    var selected = document.getElementById(id + "MS");
     selected.className = "selected";
 
     var icon = selected.firstChild.lastChild;
@@ -7,9 +7,6 @@ function selectMonth(month){
 
     var palette = document.getElementById("palette");
     selected.appendChild(palette);
-
-
-
 }
 
 

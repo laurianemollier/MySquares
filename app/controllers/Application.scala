@@ -1,24 +1,18 @@
 package controllers
 
+
 import play.api._
 import play.api.mvc._
-import controllers.Api._
 
-//import models._
-import models.{DB, User}
+import models._
+import models.RegisterData.registerForm
+import models.LoginData.loginForm
 
-import scala.util.Random
 
 import settings.Global._
 
 object Application extends Controller {
 
-  def icon = Action {
-    Ok(views.html.icon())
-  }
-  def doc = Action {
-    Ok(views.html.index("C'est la doc!!!!"))
-  }
 
   def connected(implicit request : RequestHeader) = request.session.get("connected") match{
     case Some(s) => true
@@ -26,11 +20,21 @@ object Application extends Controller {
   }
 
   def home = Action{ implicit request =>
-    Ok(views.html.home.home(colors, nbSquaresOneEdge, connected))
+    Api.getColorSquare(idCurrentMS) match {
+      case null => BadRequest(views.html.errorPage.error404(connected)) // TODO: dire qu'il faut contacter
+      case (colors: Array[Array[Int]], nbSquaresOneEdge: Int) => {
+        Ok(views.html.home.home(colors, nbSquaresOneEdge, connected))
+      }
+    }
   }
 
-  def haveSquares(month: String) = Action{ implicit request =>
-    Ok(views.html.haveSquares.haveSquares(month, colors, nbSquaresOneEdge, connected))
+  def haveSquares(id: Int) = Action{ implicit request =>
+    Api.getColorSquare(id) match {
+      case null => BadRequest(views.html.errorPage.error404(connected)) // TODO: mettre un message
+      case (colors: Array[Array[Int]], nbSquaresOneEdge: Int) => {
+        Ok(views.html.haveSquares.haveSquares(id, colors, nbSquaresOneEdge, connected)(SelectedSquares.selectedSquaresForm))
+      }
+    }
   }
 
   def howItWorks = Action{ implicit request =>
@@ -40,11 +44,6 @@ object Application extends Controller {
   def company = Action{ implicit request =>
     Ok(views.html.company.company(contactData, connected))
   }
-
-  def confirmSquares = Action{ implicit request =>
-    Ok(views.html.confirmSquares.confirmSquares(colors, nbSquaresOneEdge, connected))
-  }
-
 
 // login - register - contact
   object LogRegCont extends Enumeration {
@@ -57,14 +56,24 @@ object Application extends Controller {
   def contact = loginRegisterContact(LogRegCont.contact)
 
   def loginRegisterContact(redirect: LogRegCont.LogRegCont) = Action{ implicit request =>
-    Ok(views.html.loginRegisterContact.loginRegisterContact(redirect, Api.userForm, Api.loginForm))
+    Ok(views.html.loginRegisterContact.loginRegisterContact(redirect, registerForm, loginForm))
   }
-
 
 
   def termsConditions = Action{ implicit request =>
     Ok(views.html.termsConditions.termsConditions(connected))
   }
+
+
+  def confirmSquares = Action{ implicit request =>
+    Ok(views.html.confirmSquares.confirmSquares(colors, nbSquaresOneEdge, connected, registerForm, loginForm))
+  }
+
+
+  def noFound = Action{ implicit request =>
+    Ok(views.html.errorPage.error404(connected))
+  }
+
 }
 
 

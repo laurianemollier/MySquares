@@ -45,7 +45,7 @@
     margin-bottom: 5px;
 }
 /* */
-#palette form > img{
+#palette > img{
     width: 100%;
     margin-bottom: 10px;
     cursor: url("/assets/images/pipette.png"), copy !important;

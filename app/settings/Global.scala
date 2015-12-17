@@ -1,5 +1,6 @@
 package settings
 
+import models._
 import play.api._
 import play.api.mvc._
 import com.typesafe.config.{Config, ConfigFactory}
@@ -9,8 +10,10 @@ import scala.util.Random
 
 object Global extends WithFilters(CSRFFilter()) with GlobalSettings {
 
-  val nbSquaresOneEdge = 100
+  val nbSquaresOneEdge = 2
   val nbSquares = nbSquaresOneEdge*nbSquaresOneEdge
+
+  val idCurrentMS = 1
 
   // square data
   //val nbSquaresOneEdge = 100
@@ -23,6 +26,10 @@ object Global extends WithFilters(CSRFFilter()) with GlobalSettings {
     "address" -> "Not yet available"
   )
 
+  object MySquareName extends Enumeration {
+    type MySquareName = Value
+    val January, February, March = Value
+  }
 
   // TODO: Connecter ca a la base de donne et refaire
   val colorsModel = Array.ofDim[Int](nbSquares, 3).map{array =>
@@ -36,8 +43,9 @@ object Global extends WithFilters(CSRFFilter()) with GlobalSettings {
     else array
   }
 
-//  override def onStart(app: Application) {
-//
+  override def onStart(app: Application) {
+
+
 //    // Here I use typesafe config to get config data out of application conf
 //    val cfg: Config = ConfigFactory.load()
 //
@@ -45,5 +53,5 @@ object Global extends WithFilters(CSRFFilter()) with GlobalSettings {
 //    val initialValue = cfg.getInt(shared.initial)
 //    // set initial value for shared
 //    Shared.setData(initialValue)
-//  }
+  }
 }

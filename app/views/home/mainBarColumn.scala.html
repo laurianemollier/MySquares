@@ -1,3 +1,15 @@
+@(flash: Flash)
+
+@flash.get("login").map{ _ =>
+<p class="progress-bar-success">
+    <!-- TODO: Faire l'angalis-->
+    Welcome!!!!!
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</p>
+}
+
+
+
 <div id="main-bar-column">
     <canvas id="square" >
         <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour!!!!!</p>

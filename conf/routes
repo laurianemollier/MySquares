@@ -2,10 +2,15 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Documentation play
-GET     /icon                           controllers.Application.icon
+# Documentation play and developement
+GET     /icon                          controllers.Development.icon
 
-GET     /doc                           controllers.Application.doc
+GET     /doc                           controllers.Development.doc
+
+GET     /init                          controllers.Development.init
+
+GET     /mail                          controllers.Development.mailtest
+
 
 
 
@@ -30,11 +35,13 @@ GET           /login                  controllers.Application.login
 
 GET           /contact                controllers.Application.contact
 
+GET           /no-found               controllers.Application.noFound
+
 # get Square
 
 #current month
 
-GET           /get-squares/:month     controllers.Application.haveSquares(month: String)
+GET           /get-squares/:id        controllers.Application.haveSquares(id: Int)
 
 GET           /confirmSquares         controllers.Application.confirmSquares
 
@@ -51,11 +58,25 @@ POST          /user                   controllers.Api.addUser
 GET           /users                  controllers.Api.getUsers
 
 
-
-
 POST          /login                  controllers.Api.login
 
 GET           /logout                 controllers.Api.logout
+
+
+GET           /squares                controllers.Api.getSquares
+
+
+POST          /selectSquares          controllers.Api.selectSquares
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -74,6 +74,7 @@ a:hover{
 a:hover,a:active,a:focus {
 	outline: 0;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 hr{
@@ -194,22 +195,33 @@ hr{
 
 .progress-bar-success{
 	background: #6fae26 !important;
+	padding: @little-padding;
+    text-align: center;
 }
 
 .progress-bar-info{
 	background: #14b9e8 !important;
+	padding: @little-padding;
+    text-align: center;
 }
 
 .progress-bar-danger{
 	background: #e63131 !important;
+	padding: @little-padding;
+  	text-align: center;
 }
 
 .progress-bar-warning{
 	background: #ed450c !important;
+	padding: @little-padding;
+	text-align: center;
+
 }
 
 .progress-bar-primary{
 	background: #0275d7 !important;
+	padding: @little-padding;
+    text-align: center;
 }
 
 /* Button */
@@ -1969,8 +1981,10 @@ strong{
 	box-shadow: inset 0px 0px 0px 4px rgba(0,0,0,0.1);
 }
 .inner-page .pricing-table .pricing-item div span,
-.inner-page .pricing-table .pricing-item div label{
+.inner-page .pricing-table .pricing-item div label,
+.inner-page .pricing-table .pricing-item div.checkbox{
 	font-size: 14px !important;
+	text-align: left;
 }
 .inner-page .pricing-table .pricing-item span.p-tag{
 	position: absolute;

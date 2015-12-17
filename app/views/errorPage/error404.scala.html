@@ -1,0 +1,54 @@
+@(login: Boolean)
+
+@css = {}
+
+@js = {}
+
+@mainBarColumn = {
+
+<!-- Body Wrapper -->
+<div class="wrapper white">
+
+    <!-- Inner Page Content // Start -->
+
+    <div class="inner-page">
+        <div class="container">
+            <div class="page-mainbar error">
+                <!-- Coming Soon Content -->
+                <div class="error-content br-red">
+                    <!-- Heading -->
+                    <h2>Oops<span>!!!</span> it<span>'</span>s <span>404!!!</span></h2>
+                    <!-- paragraph -->
+                    <p>We are sorry, the page you requested cannot be found.</p>
+                    <!-- Border design for page -->
+                    <div class="line-border"></div>
+                    <!-- Form, search button and input box -->
+                    <form role="form" class="form-inline eform">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Type to search">
+                        </div>
+                        <button type="button" class="btn btn-info">Search</button>
+                    </form>
+                    <!-- Visited link list -->
+                    <div class="link-list">
+                        <a href="index.html">Home</a>
+                        <a href="#">About us</a>
+                        <a href="contactus.html">Contact</a>
+                        <a href="#">Testimonial</a>
+                        <a href="#">Careers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+}
+
+@commonToAllPage.template(css, Html(""), mainBarColumn, js, login, true)
+
+
+
+

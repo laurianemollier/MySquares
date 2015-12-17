@@ -1,3 +1,11 @@
+@import settings.Helpers._
+@import helper._
+@import controllers.Application.LogRegCont._
+
+@(registerForm: Form[RegisterData], loginForm: Form[LoginData], errorMessage: String = "")(implicit message: RequestHeader)
+
+
+
 <div class="page-mainbar pricing">
     <!-- Heading -->
     <h3>Our Best Plans</h3>
@@ -17,48 +25,13 @@
                         <!-- Heading -->
                         <h2>Registration</h2>
                         <!-- Sign Up Form Start -->
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="email" class="form-control" id="email" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="password" class="form-control" id="password" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <div class="checkbox">
-                                        <span>
-                                            <label>
-                                                <input type="checkbox"> Accept
-                                                <a href="/terms-and-conditions" target="_blank">
-                                                    All Terms & Conditions </a>
-                                            </label>
-                                        </span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group text-center">
-                                <div class="col-sm-12">
-                                    <button type="submit" class="btn btn-black">Registration</button>&nbsp;
-                                </div>
-                            </div>
-                        </form>
+                        @loginRegisterContact.registerFormHtml(registerForm)(message)
                         <!-- Sign Up form End -->
                     </div>
 
 
                     <!-- Button -->
-                    <a id="registerButton" class="btn btn-default btn-circle">Register <i class="fa fa-angle-right"></i></a>
+                    <a id="registerDisplayButton" class="btn btn-default btn-circle">Register <i class="fa fa-angle-right"></i></a>
                 </div>
             </div>
 
@@ -86,35 +59,14 @@
                     <h4>For member</h4>
 
                     <!-- Button -->
-                    <a id="loginButton" class="btn btn-default btn-circle">Login <i class="fa fa-angle-right"></i></a>
+                    <a id="loginDisplayButton" class="btn btn-default btn-circle">Login <i class="fa fa-angle-right"></i></a>
 
                     <!-- Login -->
                     <div id="loginDiv">
                         <!-- Heading -->
                         <h2>Login</h2>
                         <!-- Sign in Form Start -->
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="text" class="form-control" id="username" placeholder="Username">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="password" class="form-control" id="password" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <span class="pull-right"><a href="#">Forget Password</a></span>
-                                </div>
-                            </div>
-                            <div class="form-group text-center">
-                                <div class="col-sm-12">
-                                    <button type="submit" class="btn btn-black">Login</button>&nbsp;
-                                </div>
-                            </div>
-                        </form>
+                        @loginRegisterContact.loginFormHtml(loginForm)(message)
                         <!-- Sign in form End -->
                     </div>
                 </div>

@@ -1,13 +1,10 @@
+@import settings.Helpers._
+@import helper._
 
-
+@(idMS: Int, squareForm: Form[SelectedSquares])(implicit message: RequestHeader)
 
 <!-- Inner Page Content Sidebar -->
-
 @commonToAllPage.sidebar("br-red")("Get my Squares")("Display your creativity to the whole world by owning your little space on the Internet")
-
-
-
-
 
 
         <!-- Sidebar Links -->
@@ -15,35 +12,48 @@
 
             <!-- palette displayed on the bottom of each month -->
             <div id="palette">
-                <form method="get" action="/confirmSquares">
-                    <img id="paletteImg" src="@routes.Assets.versioned("images/paletteHor.png")"">
-                    <div class="row">
-                        <div class="col-md-1" >
-                            <img id="pipetteIcon" src="@routes.Assets.versioned("images/pipette.png")"">
-                            <img id="eraserIcon" src="@routes.Assets.versioned("images/eraser.png")"">
-                        </div>
-                        <div class="col-md-3">
-                            <span class="btn" id="selectedColor" style="background-color: rgb(255, 255, 255);"></span>
-                        </div>
 
-                        <!-- Button -->
-                        <div class="col-md-8">
-                            <button class="btn btn-default btn-circle">Purchase <i class="fa fa-angle-right"></i></button>
-                        </div>
+                <img id="paletteImg" src="@routes.Assets.versioned("images/paletteHor.png")"">
+                <div class="row">
+                    <div class="col-md-1" >
+                        <img id="pipetteIcon" src="@routes.Assets.versioned("images/pipette.png")"">
+                        <img id="eraserIcon" src="@routes.Assets.versioned("images/eraser.png")"">
+                    </div>
+                    <div class="col-md-3">
+                        <span class="btn" id="selectedColor" style="background-color: rgb(255, 255, 255);"></span>
+                    </div>
+
+                    <!-- Button -->
+                    @helper.form(action = routes.Api.selectSquares, args = 'id -> "purchaseForm") {
+                    @CSRF.formField
+
+                    <div style="display: block;">
+                        @inputText(squareForm("seq"), args = 'id -> "selectedSquares", 'type -> "hidden")
+                        <input type="hidden" id="idMS" name="idMS" value=@idMS>
+                        <!--inputText(squareForm("idMS"), args = 'type -> "hidden", 'value -> idMS)-->
 
                     </div>
-                </form>
+                    <div class="col-md-8">
+                            <button id="purchaseSquares" type="button" class="btn btn-default btn-circle">
+                                Purchase
+                                <i class="fa fa-angle-right"></i>
+                            </button>
+                        </div>
+                    }
+
+                </div>
+
 
             </div>
 
             <ul class="list-unstyled">
-                <li id="january"><a href="/get-squares/january" class="animated"> January <i class="fa fa-angle-double-right"></i></a></li>
-                <li id="february"><a href="/get-squares/february" class="animated"> February <i class="fa fa-angle-double-right"></i></a></li>
-                <li id="march"><a href="/get-squares/march" class="animated"> March <i class="fa fa-angle-double-right"></i></a></li>
+                <li id="1MS"><a href="/get-squares/1" class="animated"> January <i class="fa fa-angle-double-right"></i></a></li>
+                <li id="2MS"><a href="/get-squares/2" class="animated"> February <i class="fa fa-angle-double-right"></i></a></li>
+                <li id="3MS"><a href="/get-squares/3" class="animated"> March <i class="fa fa-angle-double-right"></i></a></li>
 
-                <li id="april"><a href="/get-squares/april" class="animated">April <i class="fa fa-angle-double-right"></i></a></li>
-                <li id="may"><a href="/get-squares/may" class="animated">May <i class="fa fa-angle-double-right"></i></a></li>
-                <li id="june"><a href="/get-squares/june" class="animated">June <i class="fa fa-angle-double-right"></i></a></li>
+                <li id="4MS"><a href="/get-squares/4" class="animated">April <i class="fa fa-angle-double-right"></i></a></li>
+                <li id="5MS"><a href="/get-squares/5" class="animated">May <i class="fa fa-angle-double-right"></i></a></li>
+                <li id="6MS"><a href="/get-squares/6" class="animated">June <i class="fa fa-angle-double-right"></i></a></li>
 
 
                 <!-- time line + Do you want to contribute-->

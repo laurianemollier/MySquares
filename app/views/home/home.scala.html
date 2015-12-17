@@ -1,4 +1,4 @@
-@(colors: Array[Array[Int]], nbSquaresOneEdge: Int, login: Boolean)
+@(colors: Seq[Array[Int]], nbSquaresOneEdge: Int, login: Boolean)(implicit flash: Flash)
 
 
 
@@ -8,7 +8,7 @@
     <link href="@routes.Assets.versioned("stylesheets/home.css")" rel="stylesheet">
 }
 
-@js(colors: Array[Array[Int]], nbSquaresOneEdge: Int) = {
+@js(colors: Seq[Array[Int]], nbSquaresOneEdge: Int) = {
 <script src="@routes.Assets.versioned("javascripts/square-canvas.js")"></script>
 
 <script>
@@ -22,4 +22,4 @@
 </script>
 }
 
-@commonToAllPage.template(css, sidebar(), mainBarColumn(), js(colors, nbSquaresOneEdge), login)
+@commonToAllPage.template(css, sidebar(), mainBarColumn(flash), js(colors, nbSquaresOneEdge), login)

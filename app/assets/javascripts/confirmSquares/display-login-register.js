@@ -7,7 +7,7 @@
     loginDiv.style.display = "none";
 
     // display login div when click on the login button
-    var loginButton = document.getElementById("loginButton");
+    var loginButton = document.getElementById("loginDisplayButton");
     loginButton.onclick = function(){
         this.style.display = "none";
         loginDiv.style.display = "block";
@@ -22,7 +22,7 @@
     registerDiv.style.display = "none";
 
     // display register div when click on the register button
-    var registerButton = document.getElementById("registerButton");
+    var registerButton = document.getElementById("registerDisplayButton");
     registerButton.onclick = function(){
         this.style.display = "none";
         registerDiv.style.display = "block";

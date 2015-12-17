@@ -1,16 +1,17 @@
-@(month: String, colors: Array[Array[Int]], nbSquaresOneEdge: Int, login: Boolean)
+@(idMS: Int, colors: Array[Array[Int]], nbSquaresOneEdge: Int, login: Boolean)(squareForm: Form[SelectedSquares])(implicit message: RequestHeader)
 
+<input type="hidden" id="selectedSquareJson" value="">
 @css = {
 <!-- For this page-->
 <link href="@routes.Assets.versioned("stylesheets/haveSquares.css")" rel="stylesheet">
 }
 
-@js(month: String, colors: Array[Array[Int]], nbSquaresOneEdge: Int) = {
+@js(idMS: Int, colors: Array[Array[Int]], nbSquaresOneEdge: Int) = {
 <!-- select the month in the sidebar -->
 <script src="@routes.Assets.versioned("javascripts/haveSquares/sidebar-select-date.js")"> </script>
 <script src="@routes.Assets.versioned("javascripts/haveSquares/fade-colored-gray-square.js")"> </script>
 
-<script> selectMonth("@month"); </script>
+<script> selectMonth(@idMS); </script>
 
 <script src="@routes.Assets.versioned("javascripts/select-squares.js")"></script>
 <script src="@routes.Assets.versioned("javascripts/square-canvas.js")"></script>
@@ -21,7 +22,7 @@
 
     // array of colors and free squares
     var jsColors = [@colors.map(array => "[" + array.mkString(",") + "]").mkString(",")];
-    var selectedSquare = [@colors.map( array  => "false,") false];
+    var selectedSquare = [@colors.map( array  => "false,") false]; // TODO: enlever le dernier false
 
     var coloredSquare = document.getElementById("coloredSquare");
     var graySquare = document.getElementById("graySquare");
@@ -53,7 +54,26 @@
 <script src="@routes.Assets.versioned("javascripts/haveSquares/select-color.js")"> </script>
 <script src="@routes.Assets.versioned("javascripts/haveSquares/select-tool.js")"> </script>
 
+
+<!--Submit form for selected square-->
+<script src="@routes.Assets.versioned("javascripts/color.js")"> </script>
+<script>
+    var purchase = document.getElementById("purchaseSquares");
+    purchase.onclick = function(){
+        var selectedSquareString = "";
+        for(i in selectedSquare){
+            if(selectedSquare[i]){
+                if(selectedSquareString != "") selectedSquareString += "~";
+                var rgb = selectedSquare[i].replace(/[^\d,]/g, '').split(',')
+                selectedSquareString += i + "," + rgbaToInt(rgb[0], rgb[1], rgb[2], 255);
+            }
+        }
+        document.getElementById("selectedSquares").value = selectedSquareString;
+        document.getElementById("purchaseForm").submit();
+    }
+</script>
+
 }
 
 
-@commonToAllPage.template(css, sidebar(), mainBarColumn(), js(month, colors, nbSquaresOneEdge), login)
+@commonToAllPage.template(css, sidebar(idMS, squareForm)(message), mainBarColumn(), js(idMS, colors, nbSquaresOneEdge), login)

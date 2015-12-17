@@ -48,6 +48,8 @@ function drawSelectedSquare(){
 
 
 
+
+
 // littleSquareIncrease must be even
 function selectSquares(canvasToDraw){
     var lastFlyOverSquareIndex = -1;
@@ -82,8 +84,10 @@ function selectSquares(canvasToDraw){
     }, false);
 
     canvasToDraw.addEventListener('mousedown', function(e) {
+        var coords = coordsIntheCanvas(this.relMouseCoords(e));
+        eventMouseOnTheCanvas(coords);
         mouseDown = true;
-        drawSelectedSquare();
+
     }, false);
 
     canvasToDraw.addEventListener('mouseup', function(e) {
@@ -93,6 +97,11 @@ function selectSquares(canvasToDraw){
 
     canvasToDraw.addEventListener('click', function(event){
         var coords = coordsIntheCanvas(this.relMouseCoords(event));
+        eventMouseOnTheCanvas(coords);
+    }, false);
+
+    function eventMouseOnTheCanvas(coords) {
+
 
         // if the pipette tool was selected and select color
         if(pipette.className == "selected"){
@@ -105,16 +114,12 @@ function selectSquares(canvasToDraw){
             //TODO: Comprendre pourquoi
             var rgba = 'rgba(' + data[4] + ',' + data[5] + ',' + data[6] + ',' + data[7] + ')';
 
-
             selectedColor.style.backgroundColor = rgba;
 
         }
         else if(eraser.className == "selected") unselectASquare(coords);
         else selectASquare(coords);
-
-
-
-    }, false);
+    }
 };
 
 
@@ -132,7 +137,12 @@ function biggerSquareMouseOver(coords, canvasToDraw, selectedColor){
         contextToDraw.fillStyle = selectedColor.style.backgroundColor;
         contextToDraw.fillRect(coords.x - littleSquareIncrease/2, coords.y - littleSquareIncrease/2, littleSL + littleSquareIncrease, littleSL + littleSquareIncrease);
     }
-}
+};
+
+
+
+
+
 
 
 
