@@ -26,8 +26,7 @@
                     <!-- Button -->
                     @helper.form(action = routes.Api.selectSquares, args = 'id -> "purchaseForm") {
                     @CSRF.formField
-
-                    <div style="display: block;">
+                    <div style="display: none;">
                         @inputText(squareForm("seq"), args = 'id -> "selectedSquares", 'type -> "hidden")
                         <input type="hidden" id="idMS" name="idMS" value=@idMS>
                         <!--inputText(squareForm("idMS"), args = 'type -> "hidden", 'value -> idMS)-->

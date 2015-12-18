@@ -10,7 +10,7 @@ import scala.util.Random
 
 object Global extends WithFilters(CSRFFilter()) with GlobalSettings {
 
-  val nbSquaresOneEdge = 2
+  val nbSquaresOneEdge = 100
   val nbSquares = nbSquaresOneEdge*nbSquaresOneEdge
 
   val idCurrentMS = 1

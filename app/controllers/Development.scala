@@ -18,20 +18,13 @@ object Development extends Controller  {
   }
 
 
-  val r = new Random()
   def init = Action {
-    def square(p: Int) = Array.ofDim[(Long, Int)](nbSquares).map{ tupple =>
-      val i = r.nextInt(256)
-      if(i < p) (-1.toLong, -1)
-      else {
-        val color = Square.rgbaToInt(r.nextInt(256), r.nextInt(256), r.nextInt(256), 255).get
-        (1.toLong, color)
-      }
+    def square = Array.ofDim[(Long, Int)](nbSquares).map{ tupple =>
+      (-1.toLong, -1)
     }
 
     for(i <- 0 until 6){
-      if(i < 2) DB.save(Square(nbSquaresOneEdge, square(250)))
-      else DB.save(Square(nbSquaresOneEdge, square(500)))
+      DB.save(Square(nbSquaresOneEdge, square))
     }
     Ok("tout est bien: 6 MySquares ont ete ajouter a la base de donne")
   }

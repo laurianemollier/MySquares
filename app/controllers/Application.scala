@@ -14,9 +14,14 @@ import settings.Global._
 object Application extends Controller {
 
 
-  def connected(implicit request : RequestHeader) = request.session.get("connected") match{
+  def connected(implicit request : RequestHeader) = request.session.get("email") match{
     case Some(s) => true
     case None => false
+  }
+
+  def getUserId(implicit request : RequestHeader): Option[Long] = request.session.get("idUser") match{
+    case Some(id) => Some(id.toLong)
+    case None => None
   }
 
   def home = Action{ implicit request =>
@@ -30,7 +35,7 @@ object Application extends Controller {
 
   def haveSquares(id: Int) = Action{ implicit request =>
     Api.getColorSquare(id) match {
-      case null => BadRequest(views.html.errorPage.error404(connected)) // TODO: mettre un message
+      case null => BadRequest(views.html.errorPage.error404(connected))
       case (colors: Array[Array[Int]], nbSquaresOneEdge: Int) => {
         Ok(views.html.haveSquares.haveSquares(id, colors, nbSquaresOneEdge, connected)(SelectedSquares.selectedSquaresForm))
       }

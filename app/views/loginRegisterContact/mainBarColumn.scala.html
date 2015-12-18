@@ -26,6 +26,22 @@
                 <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </p>
             }
+            @flash.get("haveToLogin").map{ _ =>
+            <p class="progress-bar-warning">
+                <!-- TODO: correction de l'anglais -->
+                Before select your squares, you have to login or to register yourself
+                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </p>
+            }
+
+<!--TODO: Add the message to textarea-->
+            @flash.get("mainError").map{ _ =>
+            <p class="progress-bar-danger">
+                A error occur during the process. It is the Beta version, please send us the following message. <br>
+                Thank you for your comprehension.
+                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </p>
+            }
 
 
             <!-- Login/Register Content -->

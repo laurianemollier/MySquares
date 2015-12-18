@@ -5,9 +5,7 @@ import play.api.data.{Form, Mapping}
 import play.api.data.validation.{ValidationError, Invalid, Valid, Constraint}
 import play.api.libs.json.Json
 
-case class RegisterData(email: String, password: String, verifyingPassword: String, termCondition: Boolean){
-  def getUser = User(email, password)
-}
+case class RegisterData(email: String, password: String, verifyingPassword: String, termCondition: Boolean)
 
 object RegisterData{
   implicit val format = Json.format[RegisterData]
@@ -24,7 +22,7 @@ object RegisterData{
   val termCondition : Mapping[Boolean] = boolean.verifying(acceptedTermsAndConditions)
 
 
-  // Password matching expression. Password must be at least 8 characters, no more than 30 characters,
+  // Password matching expression. Password must be at least 8 characters, no more than 30 characters, // TODO: Change to 10 et fair le meme pour javascript
   // and must include at least one upper case letter, one lower case letter, and one numeric digit.
   val reg = """^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30}$""".r
   val passwordCheck: Constraint[String] = Constraint("constraints.passwordCheck")({
@@ -59,7 +57,7 @@ object RegisterData{
 }
 
 
-case class User(email: String, password: String)
+case class User(email: String, passwordHash: String, salt1: Seq[Int], salt2: Int)
 
 object User{
   implicit val format = Json.format[User]
