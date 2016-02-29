@@ -64,6 +64,10 @@ function selectSquares(canvasToDraw){
     var pipette = document.getElementById("pipetteIcon");
     var eraser = document.getElementById("eraserIcon");
 
+     canvasToDraw.addEventListener('mouseout', function(e) {
+        drawSelectedSquare();
+        lastFlyOverSquareIndex = -1;
+     }, false);
 
     canvasToDraw.addEventListener('mousemove', function(e) {
         var coords = coordsIntheCanvas(this.relMouseCoords(e));
