@@ -54,10 +54,10 @@ object Api extends Controller {
   def selectSquares = Action{ implicit request =>
     getUserId match {
       case None => {
-        Ok("Got: " + request.body)
-//        Redirect(routes.Application.login()).flashing(
-//          "haveToLogin" -> ""
-//        )
+//        Ok("Got: " + request.body)
+        Redirect(routes.Application.login()).flashing(
+          "haveToLogin" -> ""
+        )
       }
       case Some(idUser) => {
         selectedSquaresForm.bindFromRequest.fold(

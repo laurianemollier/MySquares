@@ -55938,3 +55938,93 @@ DROP TABLE public [42102-180]
 02-26 11:42:27 jdbc[8]: exception
 org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
 DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:03 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]
+02-29 21:44:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "PUBLIC" not found; SQL statement:
+DROP TABLE public [42102-180]

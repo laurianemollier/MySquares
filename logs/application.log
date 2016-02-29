@@ -970,3 +970,42 @@ encrypt Data08b8b7b6266f21a1bd2097ac993155d4a6e2169e28b7dfdb380fa73ac7bdf
 2016-02-29 21:33:57,303 - [DEBUG] - from application in play-akka.actor.default-dispatcher-42 
 [securesocial] calling deleteExpiredTokens()
 
+2016-02-29 21:38:57,314 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+[securesocial] calling deleteExpiredTokens()
+
+2016-02-29 21:43:57,326 - [DEBUG] - from application in play-akka.actor.default-dispatcher-62 
+[securesocial] calling deleteExpiredTokens()
+
+2016-02-29 21:44:02,882 - [INFO] - from application in play-internal-execution-context-1 
+[securesocial] unloaded identity provider: userpass
+
+2016-02-29 21:44:02,886 - [INFO] - from application in play-internal-execution-context-1 
+[securesocial] unloaded password hasher bcrypt
+
+2016-02-29 21:44:02,889 - [INFO] - from play in play-internal-execution-context-1 
+Shutdown application default Akka system.
+
+2016-02-29 21:44:14,166 - [INFO] - from application in play-internal-execution-context-1 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-02-29 21:44:14,182 - [INFO] - from play in play-internal-execution-context-1 
+Starting application default Akka system.
+
+2016-02-29 21:44:14,182 - [DEBUG] - from application in play-akka.actor.default-dispatcher-62 
+[securesocial] calling deleteExpiredTokens()
+
+2016-02-29 21:44:14,183 - [INFO] - from application in play-internal-execution-context-1 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-02-29 21:44:14,185 - [INFO] - from application in play-internal-execution-context-1 
+[securesocial] loaded password hasher bcrypt
+
+2016-02-29 21:44:14,191 - [INFO] - from application in play-internal-execution-context-1 
+[securesocial] loaded identity provider: userpass
+
+2016-02-29 21:44:14,193 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2016-02-29 21:45:01,940 - [INFO] - from application in play-akka.actor.default-dispatcher-75 
+encrypt Data08b8b7b6266f21a1bd2097ac993155d4a6e2169e28b7dfdb380fa73ac7bdf
+
