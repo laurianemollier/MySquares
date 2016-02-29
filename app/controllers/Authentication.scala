@@ -3,14 +3,10 @@ package controllers
 import controllers.Api._
 import controllers.Application.LogRegCont
 
-import org.mindrot.jbcrypt.BCrypt
-import play.api.data.Forms._
 import play.api.mvc.Action
-import settings.Global._
 import sorm.Persisted
 
 import java.security.MessageDigest
-import org.apache.commons.lang3.RandomStringUtils
 import play.api.Logger
 import play.api.libs.Crypto
 

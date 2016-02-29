@@ -1,8 +1,5 @@
 import sbt._
 import Keys._
-import play.Play.autoImport._
-import PlayKeys._
-
 
 name := "MySquares"
 
