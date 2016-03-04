@@ -1,3 +1,7 @@
+
+    var lastFlyOverSquareIndex = -1;
+    var selectedSquareIndex  = -1;
+
 function coordsIntheCanvas(coordsMouse){
     // index of the little square that have the event
     var xi = Math.floor((coordsMouse.x)/littleSL);
@@ -13,56 +17,26 @@ function coordsIntheCanvas(coordsMouse){
 
 
 
-function selectASquare(coords){
+function selectDeselectASquare(coords){
     // if the square can be selected
-    if(jsColors[coords.squareIndexEvent][0] < 0){
-        selectedSquare[coords.squareIndexEvent] = selectedColor.style.backgroundColor;
+    if(jsColors[coords.squareIndexEvent][0] < 0 ){
+        selectedSquareIndex = coords.squareIndexEvent;
         drawSelectedSquare();
     }
 };
 
-function unselectASquare(coords){
-    // if the square was selected
-    if(selectedSquare[coords.squareIndexEvent]){
-        selectedSquare[coords.squareIndexEvent] = false;
-        drawSelectedSquare();
-    }
-};
-
-// TODO: May be to slow
 function drawSelectedSquare(){
     contextToDraw.clearRect(0, 0, canvasWidth, canvasWidth);
-    for(var i=0; i<selectedSquare.length; ++i){
-        // if the square was selected
-        if(selectedSquare[i]){
-            var x = i % nbSquaresOneEdge * littleSL;
-            var y = Math.floor(i / nbSquaresOneEdge) * littleSL;
-
-            contextToDraw.fillStyle = selectedSquare[i];
-            contextToDraw.fillRect(x, y, littleSL, littleSL);
-
-        }
-    }
+    var x = selectedSquareIndex % nbSquaresOneEdge * littleSL;
+    var y = Math.floor(selectedSquareIndex / nbSquaresOneEdge) * littleSL;
+    drawCheck(x, y, littleSL, contextToDraw, "green");
 };
-
-
-
-
 
 
 // littleSquareIncrease must be even
 function selectSquares(canvasToDraw){
-    var lastFlyOverSquareIndex = -1;
 
-    // for select square when mouse down
-    var mouseDown = false;
-
-    // the selected color Element
-    var selectedColor = document.getElementById('selectedColor');
-
-    // selected tool
-    var pipette = document.getElementById("pipetteIcon");
-    var eraser = document.getElementById("eraserIcon");
+    var colorForSelection = "white";
 
      canvasToDraw.addEventListener('mouseout', function(e) {
         drawSelectedSquare();
@@ -73,64 +47,23 @@ function selectSquares(canvasToDraw){
         var coords = coordsIntheCanvas(this.relMouseCoords(e));
 
         // if not mode pipette
-        if(pipette.className != "selected" && lastFlyOverSquareIndex != coords.squareIndexEvent){ // don't recompute if it is the same square than before
-            if(mouseDown && eraser.className != "selected"){
-                selectASquare(coords);
-            }
-            else if(mouseDown){ // eraser mode
-                unselectASquare(coords);
-            }
-            else{
-                biggerSquareMouseOver(coords, canvasToDraw, selectedColor);
-            }
+        if(lastFlyOverSquareIndex != coords.squareIndexEvent){ // don't recompute if it is the same square than before
+            eventOnMouseOver(coords, canvasToDraw, colorForSelection);
         }
         lastFlyOverSquareIndex = coords.squareIndexEvent;
     }, false);
 
-    canvasToDraw.addEventListener('mousedown', function(e) {
+    canvasToDraw.addEventListener('click', function(e){
         var coords = coordsIntheCanvas(this.relMouseCoords(e));
-        eventMouseOnTheCanvas(coords);
-        mouseDown = true;
-
+        selectDeselectASquare(coords);
     }, false);
 
-    canvasToDraw.addEventListener('mouseup', function(e) {
-        mouseDown = false;
-    }, false);
-
-
-    canvasToDraw.addEventListener('click', function(event){
-        var coords = coordsIntheCanvas(this.relMouseCoords(event));
-        eventMouseOnTheCanvas(coords);
-    }, false);
-
-    function eventMouseOnTheCanvas(coords) {
-
-
-        // if the pipette tool was selected and select color
-        if(pipette.className == "selected"){
-            var context;
-
-            // if the square can be selected
-            if(jsColors[coords.squareIndexEvent][0] < 0) context = canvasToDraw.getContext('2d');
-            else context = coloredSquare.getContext('2d');
-            var data = context.getImageData(coords.x, coords.y, 1, 1).data; // minus the misplace of the the pipette
-            //TODO: Comprendre pourquoi
-            var rgba = 'rgba(' + data[4] + ',' + data[5] + ',' + data[6] + ',' + data[7] + ')';
-
-            selectedColor.style.backgroundColor = rgba;
-
-        }
-        else if(eraser.className == "selected") unselectASquare(coords);
-        else selectASquare(coords);
-    }
 };
 
 
-function biggerSquareMouseOver(coords, canvasToDraw, selectedColor){
+function eventOnMouseOver(coords, canvasToDraw, colorForSelection){
 
     var littleSquareIncrease = 4;
-
     drawSelectedSquare();
 
     // if the square can be selected
@@ -138,8 +71,13 @@ function biggerSquareMouseOver(coords, canvasToDraw, selectedColor){
         var contextToDraw = canvasToDraw.getContext('2d');
 
         // take the color selected on the palette
-        contextToDraw.fillStyle = selectedColor.style.backgroundColor;
-        contextToDraw.fillRect(coords.x - littleSquareIncrease/2, coords.y - littleSquareIncrease/2, littleSL + littleSquareIncrease, littleSL + littleSquareIncrease);
+        var x = coords.x - littleSquareIncrease * 0.5;
+        var y = coords.y - littleSquareIncrease * 0.5;
+        var edgeLength = littleSL + littleSquareIncrease;
+        contextToDraw.fillStyle = "#292929";
+        contextToDraw.fillRect(x, y, edgeLength, edgeLength);
+
+        drawCheck(x, y, edgeLength, contextToDraw, "darkSlateGray");
     }
 };
 

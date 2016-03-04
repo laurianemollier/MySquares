@@ -13,9 +13,9 @@
 
 <script> selectMonth(@idMS); </script>
 
+<script src="@routes.Assets.versioned("javascripts/drawCheck.js")"></script>
 <script src="@routes.Assets.versioned("javascripts/select-squares.js")"></script>
 <script src="@routes.Assets.versioned("javascripts/square-canvas.js")"></script>
-<script src="@routes.Assets.versioned("javascripts/fade.js")"></script>
 
 <script>
     // common for the 2 canvas
@@ -25,8 +25,7 @@
     var selectedSquare = [@colors.map( array  => "false,") false]; // TODO: enlever le dernier false
 
     var coloredSquare = document.getElementById("coloredSquare");
-    var graySquare = document.getElementById("graySquare");
-    var canvasWidth = graySquare.clientWidth;
+    var canvasWidth = coloredSquare.clientWidth;
 
     // use for compute and draw the little squares
     var nbSquaresOneEdge = @nbSquaresOneEdge;
@@ -34,8 +33,7 @@
 
 
     // draw the square
-    drawSquares(jsColors, @nbSquaresOneEdge, coloredSquare, canvasWidth);
-    drawSquares(jsColors, @nbSquaresOneEdge, graySquare, canvasWidth, true);
+    drawSquares(jsColors, nbSquaresOneEdge, coloredSquare, canvasWidth);
 
     // add event for select the squares
 
