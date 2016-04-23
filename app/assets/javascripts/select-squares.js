@@ -5,7 +5,7 @@
 function coordsIntheCanvas(coordsMouse){
     // index of the little square that have the event
     var xi = Math.floor((coordsMouse.x)/littleSL);
-    var yi = Math.floor((coordsMouse.y + 16 - 15)/littleSL); // plus the misplace of the the brush minus the canvas misplace
+    var yi = Math.floor((coordsMouse.y - 15)/littleSL); // plus the misplace of the the brush minus the canvas misplace
 
     // coord in pixel of the little square that have the event
     var x = xi * littleSL;
@@ -20,16 +20,25 @@ function coordsIntheCanvas(coordsMouse){
 function selectDeselectASquare(coords){
     // if the square can be selected
     if(jsColors[coords.squareIndexEvent][0] < 0 ){
-        selectedSquareIndex = coords.squareIndexEvent;
+        // deselect square
+        if(selectedSquareIndex == coords.squareIndexEvent){
+            selectedSquareIndex = -1;
+        }
+        // select new square and deselect the previus one
+        else{
+            selectedSquareIndex = coords.squareIndexEvent;
+        }
         drawSelectedSquare();
     }
 };
 
 function drawSelectedSquare(){
     contextToDraw.clearRect(0, 0, canvasWidth, canvasWidth);
-    var x = selectedSquareIndex % nbSquaresOneEdge * littleSL;
-    var y = Math.floor(selectedSquareIndex / nbSquaresOneEdge) * littleSL;
-    drawCheck(x, y, littleSL, contextToDraw, "green");
+    if(selectedSquareIndex > -1){
+        var x = selectedSquareIndex % nbSquaresOneEdge * littleSL;
+        var y = Math.floor(selectedSquareIndex / nbSquaresOneEdge) * littleSL;
+        drawCheck(x, y, littleSL, contextToDraw, "green");
+    }
 };
 
 
@@ -46,7 +55,6 @@ function selectSquares(canvasToDraw){
     canvasToDraw.addEventListener('mousemove', function(e) {
         var coords = coordsIntheCanvas(this.relMouseCoords(e));
 
-        // if not mode pipette
         if(lastFlyOverSquareIndex != coords.squareIndexEvent){ // don't recompute if it is the same square than before
             eventOnMouseOver(coords, canvasToDraw, colorForSelection);
         }
@@ -56,6 +64,9 @@ function selectSquares(canvasToDraw){
     canvasToDraw.addEventListener('click', function(e){
         var coords = coordsIntheCanvas(this.relMouseCoords(e));
         selectDeselectASquare(coords);
+        if(selectedSquareIndex > -1){
+            goToStep2(selectedSquareIndex);
+        }
     }, false);
 
 };

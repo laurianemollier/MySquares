@@ -8,15 +8,19 @@
 
 @js(idMS: Int, colors: Array[Array[Int]], nbSquaresOneEdge: Int) = {
 <!-- select the month in the sidebar -->
-<script src="@routes.Assets.versioned("javascripts/haveSquares/sidebar-select-date.js")"> </script>
-<script src="@routes.Assets.versioned("javascripts/haveSquares/fade-colored-gray-square.js")"> </script>
+<!--<script src="@routes.Assets.versioned("javascripts/haveSquares/sidebar-select-date.js")"> </script>-->
 
-<script> selectMonth(@idMS); </script>
+<!--<script> selectMonth(@idMS); </script>-->
 
+<!--Step selection -->
+<script src="@routes.Assets.versioned("javascripts/haveSquares/sept-selection.js")"> </script>
+
+<!-- Selection of the square-->
 <script src="@routes.Assets.versioned("javascripts/drawCheck.js")"></script>
 <script src="@routes.Assets.versioned("javascripts/select-squares.js")"></script>
 <script src="@routes.Assets.versioned("javascripts/square-canvas.js")"></script>
 
+<!-- First Step: Set the MySquare where we selection the square we want -->
 <script>
     // common for the 2 canvas
 
@@ -48,28 +52,40 @@
 
 </script>
 
+
+<!--Second step: Draw into the square -->
+<script>
+    // set the square height
+    var squareWeDraw = $("#square-where-we-draw");
+    var width = squareWeDraw.width();
+    squareWeDraw.height(width).width(width);
+    squareWeDraw.attr("height", width).attr("width", width);
+
+    // set the textArea height
+    var textArea = $("#writeTextTextArea")
+    textArea.height(textArea.width());
+</script>
+<!--able to draw text and change color-->
+<script src="@routes.Assets.versioned("javascripts/haveSquares/writeTextInCanvas.js")"> </script>
+
 <!--deal with the color selection in the palette-->
 <script src="@routes.Assets.versioned("javascripts/haveSquares/select-color.js")"> </script>
-<script src="@routes.Assets.versioned("javascripts/haveSquares/select-tool.js")"> </script>
 
 
-<!--Submit form for selected square-->
-<script src="@routes.Assets.versioned("javascripts/color.js")"> </script>
+
+
+
+<!--Third step: Confirm you square, login, share-->
+
 <script>
-    var purchase = document.getElementById("purchaseSquares");
-    purchase.onclick = function(){
-        var selectedSquareString = "";
-        for(i in selectedSquare){
-            if(selectedSquare[i]){
-                if(selectedSquareString != "") selectedSquareString += "~";
-                var rgb = selectedSquare[i].replace(/[^\d,]/g, '').split(',')
-                selectedSquareString += i + "," + rgbaToInt(rgb[0], rgb[1], rgb[2], 255);
-            }
-        }
-        document.getElementById("selectedSquares").value = selectedSquareString;
-        document.getElementById("purchaseForm").submit();
-    }
+    var purchaseButton = $("#purchaseSquares");
+    purchaseButton.click(function(){
+        goToStep3();
+    });
+
+
 </script>
+
 
 }
 

@@ -27,13 +27,51 @@
     padding-top: 15px;
     background-color: transparent;
     z-index: 2;
+    cursor: pointer;
+}
+
+
+
+#draw-square{
+    margin-top: 30px;
+}
+
+#square-where-we-draw{
+    cursor:text;
+    z-index: 1;
+}
+
+#writeTextDiv{
+    position: absolute;
+    z-index: 2;
+}
+
+#writeTextDiv textarea{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    color: black;
+}
+
+#writeTextDiv button{
+    margin-top: 20px;
 }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 /* for the palette */
-/* TODO: Faire ca en less */
 #palette{
     background-color: #222;
     border: 3px groove #e63131;
@@ -43,26 +81,21 @@
 }
 #palette > div>div{
     margin-bottom: 5px;
+    cursor: pointer;
+    text-align: center;
 }
+
+
 /* */
-#palette > img{
+#palette > div> img{
     width: 100%;
     margin-bottom: 10px;
     cursor: url("/assets/images/pipette.png"), copy !important;
 
 }
-/* icon */
-#palette  div img{
-     width: 120%;
-     cursor: pointer;
 
-}
-#palette  div img.selected{
+#palette .selected{
     background-color: #363636;
-}
-#palette div img:last-child{
-    position: relative;
-    top: -6px;
 }
 
 

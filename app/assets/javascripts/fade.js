@@ -14,6 +14,7 @@ function fade(element) {
 
 function unfade(element) {
     var op = 0.1;  // initial opacity
+    element.style.opacity = op;
     element.style.display = 'block';
     var timer = setInterval(function () {
         if (op >= 1){
@@ -24,3 +25,4 @@ function unfade(element) {
         op += op * 0.1;
     }, 50);
 };
+

@@ -1,36 +1,60 @@
-(function(){
 
+$(function(){
+    var selectColorId = 'selectColor';
+    var selectedClass = 'selected';
+
+    var iconText = $('#iconText');
+    var iconBackground = $('#iconBackground');
+
+    var textColorSelector = $('#textColorSelector');
+    var backgroundColorSelector = $('#backgroundColorSelector');
+
+    var palette = $('#paletteImg');
+    var write = $('#writeTextButton');
 
 //    create a canvas for get the color
-    var img = document.getElementById('paletteImg');
     var canvas = document.createElement('canvas');
-    canvas.width = img.width;
-    canvas.height = img.height;
-    var context = canvas.getContext('2d')
-    context.drawImage(img, 0, 0, img.width, img.height);
+    var context = canvas.getContext('2d');
 
-//  tool
-    var pipette = document.getElementById("pipetteIcon");
-    var eraser = document.getElementById("eraserIcon");
-    var selectedSquare = document.getElementById("selectedSquare");
 
-//   display the color in the square for the color colected
-    var selectedColor = document.getElementById('selectedColor');
+    /* deal with the selection of tools. Witch one select the color and display the palette */
+    textColorSelector.click(function(){
+        iconText.addClass(selectColorId);
+        iconBackground.removeClass(selectColorId);
 
-    img.addEventListener('click', function(e) {
-        var coords = this.relMouseCoords(e);
+        $(this).addClass(selectedClass);
+        backgroundColorSelector.removeClass(selectedClass);
+        palette.show("slow");
+    });
+
+    backgroundColorSelector.click(function(){
+        iconBackground.addClass(selectColorId);
+        iconText.removeClass(selectColorId);
+
+        $(this).addClass(selectedClass);
+        textColorSelector.removeClass(selectedClass);
+        palette.show("slow");
+    });
+
+    /* deal with the color selection */
+    palette.click(function(e){
+        var img = $(this).get(0);
+        if(canvas.width != img.width || canvas.height != img.height){
+            canvas.width = img.width;
+            canvas.height = img.height;
+            context.drawImage(img, 0, 0, img.width, img.height);
+        }
+        var coords = img.relMouseCoords(e);
         var data = context.getImageData(coords.x, coords.y + 14, 1, 1).data; // minus the misplace of the the brush
         var rgba = 'rgba(' + data[0] + ',' + data[1] + ',' + data[2] + ',' + data[3] + ')';
-        selectedColor.style.backgroundColor = rgba;
 
-        // unselect tool
-        pipette.className = "";
-        eraser.className = "";
-        selectedSquare.style.cursor = "url(\"/assets/images/brush.png\"), copy";
+        $('.selectColor').css("color", rgba);
 
-    }, false);
+        // redraw the text with the right color
+        write.click();
+    });
 
+});
 
-})();
 
 
