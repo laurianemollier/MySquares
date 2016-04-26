@@ -11,7 +11,6 @@ object RegisterData{
   implicit val format = Json.format[RegisterData]
 
 
-
   /** constains and form for registeration **/
   val acceptedTermsAndConditions: Constraint[Boolean] = Constraint("constraints.termAndConditions")({
     bool => {

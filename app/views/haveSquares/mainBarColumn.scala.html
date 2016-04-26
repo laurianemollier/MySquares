@@ -1,4 +1,11 @@
+@import settings.Helpers._
+@import helper._
+@import controllers.Application.LogRegCont._
+
+@(submitSquareForm: Form[SubmitSquare])(implicit message: RequestHeader)
+
 <div class="page-mainbar career">
+
 
 <!-- in progress: inprogress,  done: fdone-->
     <ul id="green_and_orange_step_menu" class="row">
@@ -7,14 +14,16 @@
         <li id="septMenuLi3" class="col-md-4 last"> Share with friends<span></span></li>
     </ul>
 
-    <div id="select-square">
+
+
+    <!-- 1• step: select the square-->
+    <div id="select-square" >
         <!-- TODO: Changer le mois a chaque fois-->
         <!-- Heading -->
         <!--<h3>Welcome to the Square of January</h3>-->
         <!--<h3>Select you square</h3>-->
         <!-- Careers Content -->
         <div class="career-content">
-
             <!-- Content for each menu item -->
             <div class="">
                 <div class="tab-pane">
@@ -33,8 +42,9 @@
         </div>
     </div>
 
-    <div id="draw-square" >
 
+    <!-- 2• step: draw the square-->
+    <div id="draw-square">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div id="writeTextDiv" style="display: none;" class="col-md-offset-2 col-md-8">
@@ -52,9 +62,71 @@
         </div>
     </div>
 
-    <div id="share-with-friend"  style="display: none;">
-        hewfkabf fahr fbjahrb fjah fblah flajrhbljarh blajrehg
-    </div>
 
+
+    <!-- 3• step: Share and connect-->
+    <div id="share-with-friend" style="display: none;">
+        <div class="page-mainbar pricing">
+            <!-- Pricing Table -->
+            <div class="pricing-table">
+                <div class="row">
+                    <div class="col-md-4 col-sm-8 col-md-offset-4 col-sm-offset-2">
+
+                        <div class="pricing-item br-lblack">
+
+                            <!-- Login -->
+                            <div id="loginDv">
+                                <h2>Login</h2>
+                                <!-- Sign in Form Start -->
+
+                                <!-- Sign in form End -->
+                            </div>
+
+                            <hr/>
+
+                            @helper.form(action = routes.Api.login, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "submitSquareForm") {
+                                @CSRF.formField
+                                @repeat(submitSquareForm("emailsToSend"), min = 3){ emailField =>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            @inputText(emailField, args = 'class -> "form-control", 'placeholder -> "Email")
+
+                                        </div>
+                                    </div>
+                                }
+
+                                @inputText(submitSquareForm("idSquare"), args = 'type -> "hidden", 'id -> "idSelectedSquare")
+                                @inputText(submitSquareForm("img"), args = 'type -> "hidden", 'id -> "finalSquareString")
+                            }
+                            <!-- Registration-->
+                            <div id="registerDiv" >
+                                <!-- Heading -->
+                                <h2>Registration</h2>
+                                <!-- Sign Up Form Start -->
+
+                                <!-- Sign Up form End -->
+                            </div>
+
+
+                            <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                            <!-- Button -->
+                            <a id="registerDisplayButton" class="btn btn-default btn-circle">Register <i class="fa fa-angle-right"></i></a>
+                            </div>
+
+                            <div  class="col-md-6 col-sm-12">
+                            <a id="loginDisplayButton" class="btn btn-default btn-circle">Login <i class="fa fa-angle-right"></i></a>
+                            </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>

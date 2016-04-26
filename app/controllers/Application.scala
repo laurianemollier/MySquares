@@ -37,7 +37,14 @@ object Application extends Controller {
     Api.getColorSquare(id) match {
       case null => BadRequest(views.html.errorPage.error404(connected))
       case (colors: Array[Array[Int]], nbSquaresOneEdge: Int) => {
-        Ok(views.html.haveSquares.haveSquares(id, colors, nbSquaresOneEdge, connected)(SelectedSquares.selectedSquaresForm))
+
+        // You need to be authentified if you want to have a square
+        if(connected){
+          Ok(views.html.haveSquares.haveSquares(id, colors, nbSquaresOneEdge, connected)(SubmitSquare.submitSquareForm))
+        }
+        else {
+          Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm)) // TODO: imbriquer les actions
+        }
       }
     }
   }

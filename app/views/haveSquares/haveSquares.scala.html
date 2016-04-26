@@ -1,4 +1,4 @@
-@(idMS: Int, colors: Array[Array[Int]], nbSquaresOneEdge: Int, login: Boolean)(squareForm: Form[SelectedSquares])(implicit message: RequestHeader)
+@(idMS: Int, colors: Array[Array[Int]], nbSquaresOneEdge: Int, login: Boolean)(submitSquareForm: Form[SubmitSquare])(implicit message: RequestHeader)
 
 <input type="hidden" id="selectedSquareJson" value="">
 @css = {
@@ -60,6 +60,7 @@
     var width = squareWeDraw.width();
     squareWeDraw.height(width).width(width);
     squareWeDraw.attr("height", width).attr("width", width);
+    $("#draw-square").hide();
 
     // set the textArea height
     var textArea = $("#writeTextTextArea")
@@ -79,15 +80,33 @@
 
 <script>
     var purchaseButton = $("#purchaseSquares");
+    var previewSquare = $("#previewSquare");
+
     purchaseButton.click(function(){
+
         goToStep3();
+
+        var width = previewSquare.width();
+        previewSquare.height(width).width(width);
+        previewSquare.attr("height", width).attr("width", width);
+
+        var dataURL = squareWeDraw.get(0).toDataURL();
+        var ctx = previewSquare.get(0).getContext("2d");
+
+        var image = new Image();
+        image.onload = function() {
+            ctx.drawImage(image, 0, 0, width, width);
+        };
+        image.src = dataURL;
     });
-
-
 </script>
 
-
+<!-- deal with the display of the register and login form-->
+<script src="@routes.Assets.versioned("javascripts/haveSquares/display-login-register.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/formValidation.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/loginFormValidation.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/registerFormValidation.js")"></script>
 }
 
 
-@commonToAllPage.template(css, sidebar(idMS, squareForm)(message), mainBarColumn(), js(idMS, colors, nbSquaresOneEdge), login)
+@commonToAllPage.template(css, sidebar(idMS)(message), mainBarColumn(submitSquareForm)(message), js(idMS, colors, nbSquaresOneEdge), login)

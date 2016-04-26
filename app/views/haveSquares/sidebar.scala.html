@@ -1,7 +1,7 @@
 @import settings.Helpers._
 @import helper._
 
-@(idMS: Int, squareForm: Form[SelectedSquares])(implicit message: RequestHeader)
+@(idMS: Int)(implicit message: RequestHeader)
 
 <!-- Inner Page Content Sidebar -->
 @commonToAllPage.sidebar("br-red")("Get my Squares")("Display your creativity to the whole world by owning your little space on the Internet")
@@ -61,7 +61,16 @@
 
                 <!--&lt;!&ndash; time line + Do you want to contribute&ndash;&gt;-->
                 <!--&lt;!&ndash; question + presentation&ndash;&gt;-->
-
             <!--</ul>-->
+
+
+            <!-- Preview selected square-->
+            <div id="previewSquareArea" style="display: none;">
+                <h3>Your squares </h3>
+                <!-- Other Plans Item -->
+                <canvas id="previewSquare" style="width: 100%;">
+                    <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour!!!!!</p>
+                </canvas>
+            </div>
         </div>
 

@@ -13,6 +13,7 @@ import play.api.libs.Crypto
 import models._
 import models.RegisterData.registerForm
 import models.LoginData.loginForm
+import sun.security.util.Password
 
 import scala.util.Random
 
@@ -53,29 +54,41 @@ object Authentication {
         BadRequest(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, errorForm))
       },
       loginData => {
-        getUser(loginData.email) match {
-          case None => Redirect(routes.Api.login()).flashing(
-            "errorLogin" -> "Not registered"
-          )
-          case Some(userDB) => {
-            if(verifyPassword(loginData.password, userDB.passwordHash, userDB.salt1.map{i => i.toByte}, userDB.salt2)){
-              val idUser = DB.query[User].whereEqual("email", loginData.email).fetchOneId().get // TODO: ne pas le refaire deux fois
-              Redirect(routes.Application.home()).flashing(
-                "login" -> "success"
-              ).withSession(
-                "email" -> loginData.email,
-                "idUser" -> idUser.toString
-              )
-            }
-            else{
-              Redirect(routes.Api.login()).flashing(
-                "errorLogin" -> "Wrong password"
-              )
-            }
+        askLogin(loginData.email, loginData.password) match {
+          case 200 => {
+            Redirect(routes.Application.home()).flashing(
+              "login" -> "success"
+            ).withSession(
+              "email" -> loginData.email,
+              "idUser" -> getIdUser(loginData.email).toString
+            )
           }
+          case 401 => Redirect(routes.Api.login()).flashing(
+            "errorLogin" -> ""
+          )
+          case _ => Redirect(routes.Api.login()).flashing(
+            "errorLogin" -> "Wrong password or user d'ont exist"
+          )
         }
       }
-   )
+    )
+  }
+
+  def askLogin(email: String, password: String): Int = {
+    getUser(email) match {
+      case None => 401
+      case Some(userDB) => {
+        if(verifyPassword(password, userDB.passwordHash, userDB.salt1.map{i => i.toByte}, userDB.salt2)){
+          200
+        }
+        else 401
+      }
+    }
+
+  }
+
+  def getIdUser(email: String) ={
+    DB.query[User].whereEqual("email", email).fetchOneId().get
   }
 
   /**

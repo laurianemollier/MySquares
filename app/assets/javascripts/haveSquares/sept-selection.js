@@ -10,7 +10,9 @@
     var div3 = document.getElementById("share-with-friend");
 
 
-    var palette = document.getElementById("palette");
+    // in the side bare
+    var palette = $("#palette");
+    var preview = $("#previewSquareArea");
 
 
     var classFirstDone = "fdone";
@@ -41,8 +43,9 @@ function goToStep1(){
     li2.removeClass(classProgress).removeClass(classDone);
     li3.removeClass(classLastProgress).removeClass(classLastDone);
 
-    // hide palette
-    fade(palette);
+    // side bare displayed
+    palette.hide();
+    preview.hide();
 }
 
 function goToStep2(indexSelectedSquare){
@@ -54,7 +57,9 @@ function goToStep2(indexSelectedSquare){
     div3.style.display = "none";
     unfade(div2);
 
-    unfade(palette);
+    // side bare displayed
+    palette.show();
+    preview.hide();
 }
 
 function goToStep3(){
@@ -64,8 +69,10 @@ function goToStep3(){
     div2.style.display = "none";
     unfade(div3);
 
-    // hide palette
-    fade(palette);
+    // side bare displayed
+    palette.hide();
+    preview.show();
+
 }
 
 

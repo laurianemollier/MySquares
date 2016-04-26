@@ -73,6 +73,6 @@ $(function(){
     $('#writeTextButton').click(function(){
         writeDiv.hide("slow");
         writeTextInCanvas(canvas.get(0), text.val(), colorText.css('color'), "Calibri,Geneva,Arial", 30, colorBackground.css('color'));
-        var dataURL = canvas.get(0).toDataURL();
+
     });
 });
