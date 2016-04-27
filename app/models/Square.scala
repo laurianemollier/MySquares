@@ -6,82 +6,48 @@ import play.api.data.Forms._
 import play.api.data.{Form, Mapping}
 import scala.util.matching.Regex
 
-
-case class Square(nbSquaresOneEdge: Int, squares: Seq[(Long, Int)]){
+/**
+ *
+ * @param nbSquaresOneEdge the square number in one edge. The total amount of square is nbSquaresOneEdge*nbSquaresOneEdge
+ * @param squares the hole MySquare. Caracterized by the image produce by the user in base 64, and the user id who produce it
+ */
+case class Square(nbSquaresOneEdge: Int, squares: Seq[(String, Int)]){
 
   if(squares.length != nbSquaresOneEdge*nbSquaresOneEdge){
     throw new IllegalArgumentException("Array must be of size nbSquaresOneEdge*nbSquaresOneEdge")
     // TODO: Faire les autres verifications
   }
-
-  def index(x: Int, y: Int) = x + nbSquaresOneEdge * y
-
-  def coordX(n: Int) = n % nbSquaresOneEdge
-
-  def coordY(n: Int) = n / nbSquaresOneEdge
-
-  def coord(n: Int) = (coordX(n), coordY(n))
-
-  def getArray = {
-    val copy = Array.ofDim[(Long, Int)](nbSquaresOneEdge*nbSquaresOneEdge)
-    squares.copyToArray(copy)
-    copy
-  } // TODO: uhhhhhhhhhhhhhhhhh mais je ne vois pas comment faire pour el moment
-
-
-//  def update(x: Int, y: Int, idUser: Long, color: (Int, Int, Int, Int)) = ?
 }
 
 object Square{
-
-  def rgbaToInt(r: Int, g: Int, b: Int, a: Int): Option[Int] = {
-    if(!(0<= r && r <= 255)) None
-    else if(!(0<= g && g <= 255)) None
-    else if(!(0<= b && b <= 255)) None
-    else if(!(0<= a && a <= 255)) None
-    else {
-      Some(r << 8*3 | g<< 8*2 | b << 8 | a)
-    }
-  }
-
-  def r(i: Int) = i >>> 8*3
-  def g(i: Int) = i >>> 8*2 & 255
-  def b(i: Int) = i >>> 8 & 255
-  def a(i: Int) = i & 255
-
-
-  implicit def tuple2[A : Writes, B : Writes] = Writes[(A, B)] ( t =>  Json.obj("User" -> t._1, "color" -> t._2))
+  implicit def tuple2[A : Writes, B : Writes] = Writes[(A, B)] ( t =>  Json.obj("Image" -> t._1, "User" -> t._2))
 
   implicit val write: Writes[Square] = (
   (JsPath \ "number of square on one edge").write[Int] and
-  (JsPath \ "squares").write[Seq[(Long, Int)]]
+  (JsPath \ "squares").write[Seq[(String, Int)]]
   )(unlift(Square.unapply))
-
-
-
 }
 
-
-//TODO: A faire tout ca
-
 /**
- * idMS: id of the MySquares that we want to select the squares in the seq
- * seq: seq of (idUser, r, g, b)
+ *
+ * @param idMS id of the MySquares that we want to select the squares in the seq
+ * @param idxSquare the index of the selected square
+ * @param img the image produce by the user in base 64
+ * @param emailsToSend The list of friend you want to notify
  */
-case class SelectedSquares(idMS: Int, seq: String)
+case class SelectedSquare(idMS: Int, idxSquare: Int, img: String, emailsToSend: List[String])
 
-object SelectedSquares{
+object SelectedSquare{
 
-  def selectedSquaresForm: Form[SelectedSquares] = Form{
+  def selectedSquareForm: Form[SelectedSquare] = Form{
     mapping(
       "idMS" -> number,
-      "seq" -> text
-    )(SelectedSquares.apply)(SelectedSquares.unapply) verifying("Not the correct strign format for the seq", fields => fields match{
+      "idxSquare" -> number,
+      "img" -> text,
+      "emailsToSend" -> list(text) //Todo: option emails
+    )(SelectedSquare.apply)(SelectedSquare.unapply) verifying("Not the correct strign format for the seq", fields => fields match{
       case squares => {
-// TODO: faire la verification: pas deux de meme indice 1,2~7,2
-
-
-
+        // TODO: faire la verification: pas deux de meme indice 1,2~7,2
         true
       }
     })

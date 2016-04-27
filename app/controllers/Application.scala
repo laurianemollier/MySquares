@@ -4,9 +4,12 @@ package controllers
 import play.api._
 import play.api.mvc._
 
+
 import models._
 import models.RegisterData.registerForm
 import models.LoginData.loginForm
+import models.SelectedSquare.selectedSquareForm
+
 
 
 import settings.Global._
@@ -19,28 +22,27 @@ object Application extends Controller {
     case None => false
   }
 
-  def getUserId(implicit request : RequestHeader): Option[Long] = request.session.get("idUser") match{
-    case Some(id) => Some(id.toLong)
+  def getUserId(implicit request : RequestHeader): Option[Int] = request.session.get("idUser") match{
+    case Some(id) => Some(id.toInt)
     case None => None
   }
 
   def home = Action{ implicit request =>
-    Api.getColorSquare(idCurrentMS) match {
+    Api.getSquare(idCurrentMS) match {
       case null => BadRequest(views.html.errorPage.error404(connected)) // TODO: dire qu'il faut contacter
-      case (colors: Array[Array[Int]], nbSquaresOneEdge: Int) => {
-        Ok(views.html.home.home(colors, nbSquaresOneEdge, connected))
+      case square: Square => {
+        Ok(views.html.home.home(square, connected))
       }
     }
   }
 
   def haveSquares(id: Int) = Action{ implicit request =>
-    Api.getColorSquare(id) match {
+    Api.getSquare(id) match {
       case null => BadRequest(views.html.errorPage.error404(connected))
-      case (colors: Array[Array[Int]], nbSquaresOneEdge: Int) => {
-
+      case square: Square => {
         // You need to be authentified if you want to have a square
         if(connected){
-          Ok(views.html.haveSquares.haveSquares(id, colors, nbSquaresOneEdge, connected)(SubmitSquare.submitSquareForm))
+          Ok(views.html.haveSquares.haveSquares(square, connected)(selectedSquareForm))
         }
         else {
           Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm)) // TODO: imbriquer les actions

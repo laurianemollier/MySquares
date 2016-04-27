@@ -11,6 +11,8 @@ GET     /init                          controllers.Development.init
 
 GET     /mail                          controllers.Development.mailtest
 
+GET    /addRandomSquare                  controllers.Development.addRandomSquare
+
 
 
 
@@ -66,7 +68,7 @@ GET           /logout                 controllers.Api.logout
 GET           /squares                controllers.Api.getSquares
 
 
-POST          /selectSquares          controllers.Api.selectSquares
+POST          /selectSquare          controllers.Api.selectSquare
 
 
 

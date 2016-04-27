@@ -2,7 +2,7 @@
 @import helper._
 @import controllers.Application.LogRegCont._
 
-@(submitSquareForm: Form[SubmitSquare])(implicit message: RequestHeader)
+@(submitSquareForm: Form[SelectedSquare])(implicit message: RequestHeader)
 
 <div class="page-mainbar career">
 
@@ -17,7 +17,7 @@
 
 
     <!-- 1• step: select the square-->
-    <div id="select-square" >
+    <div id="select-square">
         <!-- TODO: Changer le mois a chaque fois-->
         <!-- Heading -->
         <!--<h3>Welcome to the Square of January</h3>-->
@@ -70,63 +70,47 @@
             <!-- Pricing Table -->
             <div class="pricing-table">
                 <div class="row">
-                    <div class="col-md-4 col-sm-8 col-md-offset-4 col-sm-offset-2">
+                    <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
 
                         <div class="pricing-item br-lblack">
 
                             <!-- Login -->
                             <div id="loginDv">
-                                <h2>Login</h2>
-                                <!-- Sign in Form Start -->
-
-                                <!-- Sign in form End -->
+                                <h2>Share your Square with your friends: </h2>
                             </div>
 
                             <hr/>
 
-                            @helper.form(action = routes.Api.login, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "submitSquareForm") {
-                                @CSRF.formField
-                                @repeat(submitSquareForm("emailsToSend"), min = 3){ emailField =>
+                            <div>
+                                @helper.form(action = routes.Api.selectSquare, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "submitSquareForm") {
+                                    @CSRF.formField
+                                    @repeat(submitSquareForm("emailsToSend"), min = 3){ emailField =>
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            @inputText(emailField, args = 'class -> "form-control", 'placeholder -> "Email")
+                                            @inputText(emailField, args = 'class -> "form-control", 'placeholder -> "Email to your friend !")
+                                        </div>
+                                    </div>
+                                    }
 
+                                    @inputText(submitSquareForm("idMS"), args = 'type -> "hidden", 'id -> "idMySquare")
+                                    @inputText(submitSquareForm("idxSquare"), args = 'type -> "hidden", 'id -> "idxSelectedSquare")
+                                    @inputText(submitSquareForm("img"), args = 'type -> "hidden", 'id -> "finalSquareString")
+
+                                    <div class="row">
+                                        <div class="col-md-offset-2 col-md-8 col-sm-12">
+                                            <!-- Button -->
+                                            <button type="submit" id="registerDisplayButton" class="btn btn-default btn-circle">Have your Square <i class="fa fa-angle-right"></i></button>
                                         </div>
                                     </div>
                                 }
-
-                                @inputText(submitSquareForm("idSquare"), args = 'type -> "hidden", 'id -> "idSelectedSquare")
-                                @inputText(submitSquareForm("img"), args = 'type -> "hidden", 'id -> "finalSquareString")
-                            }
-                            <!-- Registration-->
-                            <div id="registerDiv" >
-                                <!-- Heading -->
-                                <h2>Registration</h2>
-                                <!-- Sign Up Form Start -->
-
-                                <!-- Sign Up form End -->
                             </div>
 
-
-                            <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                            <!-- Button -->
-                            <a id="registerDisplayButton" class="btn btn-default btn-circle">Register <i class="fa fa-angle-right"></i></a>
-                            </div>
-
-                            <div  class="col-md-6 col-sm-12">
-                            <a id="loginDisplayButton" class="btn btn-default btn-circle">Login <i class="fa fa-angle-right"></i></a>
-                            </div>
-
-                            </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
 
 </div>

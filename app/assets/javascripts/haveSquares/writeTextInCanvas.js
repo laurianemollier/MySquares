@@ -46,7 +46,6 @@ function writeTextInCanvas(canvas, text, colorText, font, lineHeight, colorBackg
     ctx.font = lineHeight + "px " + font;
     ctx.fillStyle = colorText;
 
-
     var padding = 20;
     wrapText(ctx, text, padding, padding + lineHeight, canvas.width - 2*padding, lineHeight + 10);
 };

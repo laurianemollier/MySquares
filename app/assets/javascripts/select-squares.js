@@ -19,7 +19,7 @@ function coordsIntheCanvas(coordsMouse){
 
 function selectDeselectASquare(coords){
     // if the square can be selected
-    if(jsColors[coords.squareIndexEvent][0] < 0 ){
+    if(jsSquares[coords.squareIndexEvent] == ""){
         // deselect square
         if(selectedSquareIndex == coords.squareIndexEvent){
             selectedSquareIndex = -1;
@@ -44,8 +44,8 @@ function drawSelectedSquare(){
 
 // littleSquareIncrease must be even
 function selectSquares(canvasToDraw){
-
     var colorForSelection = "white";
+    var idSelectedSquare = document.getElementById("idxSelectedSquare");
 
      canvasToDraw.addEventListener('mouseout', function(e) {
         drawSelectedSquare();
@@ -66,6 +66,10 @@ function selectSquares(canvasToDraw){
         selectDeselectASquare(coords);
         if(selectedSquareIndex > -1){
             goToStep2(selectedSquareIndex);
+
+            // add the selected square to the final form
+            idSelectedSquare.value = selectedSquareIndex;
+            document.getElementById("idMySquare").value = "1"; //TODO: change
         }
     }, false);
 
@@ -78,7 +82,7 @@ function eventOnMouseOver(coords, canvasToDraw, colorForSelection){
     drawSelectedSquare();
 
     // if the square can be selected
-    if(jsColors[coords.squareIndexEvent][0] < 0){
+    if(jsSquares[coords.squareIndexEvent] == ""){
         var contextToDraw = canvasToDraw.getContext('2d');
 
         // take the color selected on the palette
