@@ -9,8 +9,13 @@
 }
 
 @js(square: Square) = {
-<script src="@routes.Assets.versioned("javascripts/square-canvas.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/drawMS/highlight-square.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/drawMS/coords-in-canvas.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/drawMS/select-squares.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/drawMS/draw-ms.js")"></script>
 
+
+<!--Set the Square-->
 <script>
     var square = document.getElementById("square");
     var canvasWidth = square.clientWidth;
@@ -25,6 +30,21 @@
     drawSquares(jsSquares, @square.nbSquaresOneEdge, square, canvasWidth);
 
 </script>
+
+
+<!--Set the square previus-->
+
+<script>
+
+    var previewSquare = $("#previewSquare");
+    var width = previewSquare.width();
+    previewSquare.height(width).width(width);
+    previewSquare.attr("height", width).attr("width", width);
+
+    highlightSquare(square, previewSquare.get(0), jsSquares, @square.nbSquaresOneEdge);
+</script>
+
+
 }
 
 @commonToAllPage.template(css, sidebar(), mainBarColumn(flash), js(square), login)

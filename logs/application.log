@@ -758,3 +758,880 @@ Application started (Dev)
 2016-04-27 22:14:10,910 - [DEBUG] - from application in play-akka.actor.default-dispatcher-150 
 [securesocial] calling deleteExpiredTokens()
 
+2016-04-27 22:19:10,935 - [DEBUG] - from application in play-akka.actor.default-dispatcher-167 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 22:24:10,951 - [DEBUG] - from application in play-akka.actor.default-dispatcher-167 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 22:31:28,740 - [DEBUG] - from application in play-akka.actor.default-dispatcher-167 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 22:32:48,924 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 22:32:48,924 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 22:32:48,924 - [INFO] - from play in play-internal-execution-context-17 
+Shutdown application default Akka system.
+
+2016-04-27 22:32:55,678 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 22:32:55,686 - [INFO] - from play in play-internal-execution-context-17 
+Starting application default Akka system.
+
+2016-04-27 22:32:55,687 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 22:32:55,687 - [DEBUG] - from application in play-akka.actor.default-dispatcher-167 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 22:32:55,689 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 22:32:55,690 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 22:32:55,690 - [INFO] - from play in play-internal-execution-context-17 
+Application started (Dev)
+
+2016-04-27 22:37:55,717 - [DEBUG] - from application in play-akka.actor.default-dispatcher-191 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 22:39:23,809 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 22:39:23,809 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 22:39:23,810 - [INFO] - from play in play-internal-execution-context-17 
+Shutdown application default Akka system.
+
+2016-04-27 22:39:29,679 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 22:39:29,690 - [INFO] - from play in play-internal-execution-context-17 
+Starting application default Akka system.
+
+2016-04-27 22:39:29,690 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 22:39:29,690 - [DEBUG] - from application in play-akka.actor.default-dispatcher-191 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 22:39:29,694 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 22:39:29,695 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 22:39:29,695 - [INFO] - from play in play-internal-execution-context-17 
+Application started (Dev)
+
+2016-04-27 22:40:49,396 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 22:40:49,396 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 22:40:49,396 - [INFO] - from play in play-internal-execution-context-17 
+Shutdown application default Akka system.
+
+2016-04-27 22:40:55,270 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 22:40:55,276 - [INFO] - from play in play-internal-execution-context-17 
+Starting application default Akka system.
+
+2016-04-27 22:40:55,278 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 22:40:55,279 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 22:40:55,278 - [DEBUG] - from application in play-akka.actor.default-dispatcher-204 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 22:40:55,280 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 22:40:55,282 - [INFO] - from play in play-internal-execution-context-17 
+Application started (Dev)
+
+2016-04-27 22:44:13,977 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 22:44:13,977 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 22:44:13,977 - [INFO] - from play in play-internal-execution-context-17 
+Shutdown application default Akka system.
+
+2016-04-27 22:44:20,049 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 22:44:20,063 - [INFO] - from play in play-internal-execution-context-17 
+Starting application default Akka system.
+
+2016-04-27 22:44:20,064 - [DEBUG] - from application in play-akka.actor.default-dispatcher-204 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 22:44:20,068 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 22:44:20,069 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 22:44:20,070 - [INFO] - from application in play-internal-execution-context-17 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 22:44:20,070 - [INFO] - from play in play-internal-execution-context-17 
+Application started (Dev)
+
+2016-04-27 22:46:21,570 - [INFO] - from application in play-internal-execution-context-20 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 22:46:21,570 - [INFO] - from application in play-internal-execution-context-20 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 22:46:21,572 - [INFO] - from play in play-internal-execution-context-20 
+Shutdown application default Akka system.
+
+2016-04-27 22:46:27,856 - [INFO] - from application in play-internal-execution-context-20 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 22:46:27,866 - [INFO] - from play in play-internal-execution-context-20 
+Starting application default Akka system.
+
+2016-04-27 22:46:27,866 - [DEBUG] - from application in play-akka.actor.default-dispatcher-210 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 22:46:27,875 - [INFO] - from application in play-internal-execution-context-20 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 22:46:27,875 - [INFO] - from application in play-internal-execution-context-20 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 22:46:27,875 - [INFO] - from application in play-internal-execution-context-20 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 22:46:27,875 - [INFO] - from play in play-internal-execution-context-20 
+Application started (Dev)
+
+2016-04-27 22:48:46,433 - [INFO] - from application in play-internal-execution-context-21 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 22:48:46,434 - [INFO] - from application in play-internal-execution-context-21 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 22:48:46,435 - [INFO] - from play in play-internal-execution-context-21 
+Shutdown application default Akka system.
+
+2016-04-27 22:48:53,147 - [INFO] - from application in play-internal-execution-context-21 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 22:48:53,153 - [INFO] - from play in play-internal-execution-context-21 
+Starting application default Akka system.
+
+2016-04-27 22:48:53,155 - [INFO] - from application in play-internal-execution-context-21 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 22:48:53,155 - [DEBUG] - from application in play-akka.actor.default-dispatcher-210 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 22:48:53,157 - [INFO] - from application in play-internal-execution-context-21 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 22:48:53,158 - [INFO] - from application in play-internal-execution-context-21 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 22:48:53,158 - [INFO] - from play in play-internal-execution-context-21 
+Application started (Dev)
+
+2016-04-27 22:53:53,175 - [DEBUG] - from application in play-akka.actor.default-dispatcher-230 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 22:58:53,189 - [DEBUG] - from application in play-akka.actor.default-dispatcher-230 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:03:53,214 - [DEBUG] - from application in play-akka.actor.default-dispatcher-230 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:08:53,230 - [DEBUG] - from application in play-akka.actor.default-dispatcher-230 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:11:43,617 - [INFO] - from application in play-internal-execution-context-21 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 23:11:43,617 - [INFO] - from application in play-internal-execution-context-21 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 23:11:43,617 - [INFO] - from play in play-internal-execution-context-21 
+Shutdown application default Akka system.
+
+2016-04-27 23:11:49,484 - [INFO] - from application in play-internal-execution-context-21 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 23:11:49,495 - [INFO] - from play in play-internal-execution-context-21 
+Starting application default Akka system.
+
+2016-04-27 23:11:49,495 - [INFO] - from application in play-internal-execution-context-21 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 23:11:49,495 - [DEBUG] - from application in play-akka.actor.default-dispatcher-230 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:11:49,497 - [INFO] - from application in play-internal-execution-context-21 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 23:11:49,500 - [INFO] - from application in play-internal-execution-context-21 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 23:11:49,500 - [INFO] - from play in play-internal-execution-context-21 
+Application started (Dev)
+
+2016-04-27 23:12:23,982 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 23:12:23,985 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 23:12:23,987 - [INFO] - from play in play-internal-execution-context-22 
+Shutdown application default Akka system.
+
+2016-04-27 23:12:30,048 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 23:12:30,056 - [INFO] - from play in play-internal-execution-context-22 
+Starting application default Akka system.
+
+2016-04-27 23:12:30,057 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 23:12:30,057 - [DEBUG] - from application in play-akka.actor.default-dispatcher-239 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:12:30,058 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 23:12:30,062 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 23:12:30,062 - [INFO] - from play in play-internal-execution-context-22 
+Application started (Dev)
+
+2016-04-27 23:14:38,154 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 23:14:38,155 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 23:14:38,155 - [INFO] - from play in play-internal-execution-context-22 
+Shutdown application default Akka system.
+
+2016-04-27 23:14:44,303 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 23:14:44,314 - [INFO] - from play in play-internal-execution-context-22 
+Starting application default Akka system.
+
+2016-04-27 23:14:44,315 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 23:14:44,315 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 23:14:44,315 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 23:14:44,315 - [INFO] - from play in play-internal-execution-context-22 
+Application started (Dev)
+
+2016-04-27 23:14:44,315 - [DEBUG] - from application in play-akka.actor.default-dispatcher-244 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:15:11,905 - [DEBUG] - from application in play-akka.actor.default-dispatcher-244 
+Unforseen error for bootstrap/theme/js/jquery.min.map at /public
+java.lang.RuntimeException: no resource
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.getOrElse(Option.scala:120) [scala-library.jar:na]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread$$anon$3.block(ThreadPoolBuilder.scala:169) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.managedBlock(ForkJoinPool.java:3640) [scala-library.jar:na]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread.blockOn(ThreadPoolBuilder.scala:167) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.package$.blocking(package.scala:50) ~[scala-library.jar:na]
+	at controllers.Assets$.controllers$Assets$$assetInfoFromResource(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfo(Assets.scala:245) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfoForRequest(Assets.scala:253) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:394) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:393) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) ~[play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.scala$concurrent$impl$Promise$DefaultPromise$$dispatchOrAddCallback(Promise.scala:280) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.onComplete(Promise.scala:270) ~[scala-library.jar:na]
+	at scala.concurrent.Future$class.flatMap(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.flatMap(Promise.scala:153) ~[scala-library.jar:na]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:393) [play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:389) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:556) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:555) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.ActionBuilder$$anon$1.apply(Action.scala:518) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.10-2.3.3.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+
+2016-04-27 23:18:49,359 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 23:18:49,360 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 23:18:49,361 - [INFO] - from play in play-internal-execution-context-22 
+Shutdown application default Akka system.
+
+2016-04-27 23:18:55,678 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 23:18:55,686 - [INFO] - from play in play-internal-execution-context-22 
+Starting application default Akka system.
+
+2016-04-27 23:18:55,687 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 23:18:55,687 - [DEBUG] - from application in play-akka.actor.default-dispatcher-271 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:18:55,689 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 23:18:55,692 - [INFO] - from application in play-internal-execution-context-22 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 23:18:55,692 - [INFO] - from play in play-internal-execution-context-22 
+Application started (Dev)
+
+2016-04-27 23:23:49,337 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 23:23:49,339 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 23:23:49,340 - [INFO] - from play in play-internal-execution-context-25 
+Shutdown application default Akka system.
+
+2016-04-27 23:23:55,508 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 23:23:55,518 - [INFO] - from play in play-internal-execution-context-25 
+Starting application default Akka system.
+
+2016-04-27 23:23:55,520 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 23:23:55,520 - [DEBUG] - from application in play-akka.actor.default-dispatcher-300 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:23:55,523 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 23:23:55,524 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 23:23:55,524 - [INFO] - from play in play-internal-execution-context-25 
+Application started (Dev)
+
+2016-04-27 23:27:16,584 - [DEBUG] - from application in play-akka.actor.default-dispatcher-319 
+Unforseen error for bootstrap/theme/js/jquery.min.map at /public
+java.lang.RuntimeException: no resource
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.getOrElse(Option.scala:120) [scala-library.jar:na]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread$$anon$3.block(ThreadPoolBuilder.scala:169) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.managedBlock(ForkJoinPool.java:3640) [scala-library.jar:na]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread.blockOn(ThreadPoolBuilder.scala:167) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.package$.blocking(package.scala:50) ~[scala-library.jar:na]
+	at controllers.Assets$.controllers$Assets$$assetInfoFromResource(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfo(Assets.scala:245) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfoForRequest(Assets.scala:253) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:394) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:393) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) ~[play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.scala$concurrent$impl$Promise$DefaultPromise$$dispatchOrAddCallback(Promise.scala:280) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.onComplete(Promise.scala:270) ~[scala-library.jar:na]
+	at scala.concurrent.Future$class.flatMap(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.flatMap(Promise.scala:153) ~[scala-library.jar:na]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:393) [play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:389) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:556) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:555) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.ActionBuilder$$anon$1.apply(Action.scala:518) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.10-2.3.3.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+
+2016-04-27 23:27:51,527 - [DEBUG] - from application in play-akka.actor.default-dispatcher-324 
+Unforseen error for bootstrap/theme/js/jquery.min.map at /public
+java.lang.RuntimeException: no resource
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.getOrElse(Option.scala:120) [scala-library.jar:na]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread$$anon$3.block(ThreadPoolBuilder.scala:169) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.managedBlock(ForkJoinPool.java:3640) [scala-library.jar:na]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread.blockOn(ThreadPoolBuilder.scala:167) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.package$.blocking(package.scala:50) ~[scala-library.jar:na]
+	at controllers.Assets$.controllers$Assets$$assetInfoFromResource(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfo(Assets.scala:245) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfoForRequest(Assets.scala:253) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:394) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:393) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) ~[play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.scala$concurrent$impl$Promise$DefaultPromise$$dispatchOrAddCallback(Promise.scala:280) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.onComplete(Promise.scala:270) ~[scala-library.jar:na]
+	at scala.concurrent.Future$class.flatMap(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.flatMap(Promise.scala:153) ~[scala-library.jar:na]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:393) [play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:389) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:556) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:555) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.ActionBuilder$$anon$1.apply(Action.scala:518) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.10-2.3.3.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+
+2016-04-27 23:28:55,548 - [DEBUG] - from application in play-akka.actor.default-dispatcher-336 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:29:46,553 - [DEBUG] - from application in play-akka.actor.default-dispatcher-339 
+Unforseen error for bootstrap/theme/js/jquery.min.map at /public
+java.lang.RuntimeException: no resource
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.getOrElse(Option.scala:120) [scala-library.jar:na]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread$$anon$3.block(ThreadPoolBuilder.scala:169) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.managedBlock(ForkJoinPool.java:3640) [scala-library.jar:na]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread.blockOn(ThreadPoolBuilder.scala:167) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.package$.blocking(package.scala:50) ~[scala-library.jar:na]
+	at controllers.Assets$.controllers$Assets$$assetInfoFromResource(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfo(Assets.scala:245) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfoForRequest(Assets.scala:253) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:394) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:393) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) ~[play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.scala$concurrent$impl$Promise$DefaultPromise$$dispatchOrAddCallback(Promise.scala:280) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.onComplete(Promise.scala:270) ~[scala-library.jar:na]
+	at scala.concurrent.Future$class.flatMap(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.flatMap(Promise.scala:153) ~[scala-library.jar:na]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:393) [play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:389) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:556) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:555) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.ActionBuilder$$anon$1.apply(Action.scala:518) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.10-2.3.3.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+
+2016-04-27 23:30:13,812 - [DEBUG] - from application in play-akka.actor.default-dispatcher-348 
+Unforseen error for bootstrap/theme/js/jquery.min.map at /public
+java.lang.RuntimeException: no resource
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.getOrElse(Option.scala:120) [scala-library.jar:na]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread$$anon$3.block(ThreadPoolBuilder.scala:169) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.managedBlock(ForkJoinPool.java:3640) [scala-library.jar:na]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread.blockOn(ThreadPoolBuilder.scala:167) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.package$.blocking(package.scala:50) ~[scala-library.jar:na]
+	at controllers.Assets$.controllers$Assets$$assetInfoFromResource(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfo(Assets.scala:245) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfoForRequest(Assets.scala:253) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:394) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:393) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) ~[play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.scala$concurrent$impl$Promise$DefaultPromise$$dispatchOrAddCallback(Promise.scala:280) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.onComplete(Promise.scala:270) ~[scala-library.jar:na]
+	at scala.concurrent.Future$class.flatMap(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.flatMap(Promise.scala:153) ~[scala-library.jar:na]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:393) [play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:389) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:556) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:555) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.ActionBuilder$$anon$1.apply(Action.scala:518) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.10-2.3.3.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+
+2016-04-27 23:31:18,001 - [DEBUG] - from application in play-akka.actor.default-dispatcher-355 
+Unforseen error for bootstrap/theme/js/jquery.min.map at /public
+java.lang.RuntimeException: no resource
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.getOrElse(Option.scala:120) [scala-library.jar:na]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread$$anon$3.block(ThreadPoolBuilder.scala:169) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.managedBlock(ForkJoinPool.java:3640) [scala-library.jar:na]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread.blockOn(ThreadPoolBuilder.scala:167) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.package$.blocking(package.scala:50) ~[scala-library.jar:na]
+	at controllers.Assets$.controllers$Assets$$assetInfoFromResource(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfo(Assets.scala:245) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfoForRequest(Assets.scala:253) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:394) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:393) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) ~[play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.scala$concurrent$impl$Promise$DefaultPromise$$dispatchOrAddCallback(Promise.scala:280) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.onComplete(Promise.scala:270) ~[scala-library.jar:na]
+	at scala.concurrent.Future$class.flatMap(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.flatMap(Promise.scala:153) ~[scala-library.jar:na]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:393) [play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:389) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:556) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:555) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.ActionBuilder$$anon$1.apply(Action.scala:518) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.10-2.3.3.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+
+2016-04-27 23:31:19,117 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 23:31:19,117 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 23:31:19,117 - [INFO] - from play in play-internal-execution-context-25 
+Shutdown application default Akka system.
+
+2016-04-27 23:31:26,726 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 23:31:26,734 - [INFO] - from play in play-internal-execution-context-25 
+Starting application default Akka system.
+
+2016-04-27 23:31:26,736 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 23:31:26,736 - [DEBUG] - from application in play-akka.actor.default-dispatcher-350 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:31:26,739 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 23:31:26,742 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 23:31:26,742 - [INFO] - from play in play-internal-execution-context-25 
+Application started (Dev)
+
+2016-04-27 23:32:15,867 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 23:32:15,867 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 23:32:15,867 - [INFO] - from play in play-internal-execution-context-25 
+Shutdown application default Akka system.
+
+2016-04-27 23:32:20,863 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 23:32:20,875 - [INFO] - from play in play-internal-execution-context-25 
+Starting application default Akka system.
+
+2016-04-27 23:32:20,876 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 23:32:20,877 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 23:32:20,878 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 23:32:20,878 - [INFO] - from play in play-internal-execution-context-25 
+Application started (Dev)
+
+2016-04-27 23:32:20,877 - [DEBUG] - from application in play-akka.actor.default-dispatcher-354 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:32:50,455 - [DEBUG] - from application in play-akka.actor.default-dispatcher-365 
+Unforseen error for bootstrap/theme/js/jquery.min.map at /public
+java.lang.RuntimeException: no resource
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.getOrElse(Option.scala:120) [scala-library.jar:na]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread$$anon$3.block(ThreadPoolBuilder.scala:169) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.managedBlock(ForkJoinPool.java:3640) [scala-library.jar:na]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread.blockOn(ThreadPoolBuilder.scala:167) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.package$.blocking(package.scala:50) ~[scala-library.jar:na]
+	at controllers.Assets$.controllers$Assets$$assetInfoFromResource(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfo(Assets.scala:245) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfoForRequest(Assets.scala:253) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:394) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:393) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) ~[play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.scala$concurrent$impl$Promise$DefaultPromise$$dispatchOrAddCallback(Promise.scala:280) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.onComplete(Promise.scala:270) ~[scala-library.jar:na]
+	at scala.concurrent.Future$class.flatMap(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.flatMap(Promise.scala:153) ~[scala-library.jar:na]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:393) [play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:389) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:556) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:555) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.ActionBuilder$$anon$1.apply(Action.scala:518) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.10-2.3.3.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+
+2016-04-27 23:34:58,913 - [DEBUG] - from application in play-akka.actor.default-dispatcher-371 
+Unforseen error for bootstrap/theme/js/jquery.min.map at /public
+java.lang.RuntimeException: no resource
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1$$anonfun$13.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.getOrElse(Option.scala:120) [scala-library.jar:na]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:237) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$$anonfun$controllers$Assets$$assetInfoFromResource$1.apply(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread$$anon$3.block(ThreadPoolBuilder.scala:169) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.managedBlock(ForkJoinPool.java:3640) [scala-library.jar:na]
+	at akka.dispatch.MonitorableThreadFactory$AkkaForkJoinWorkerThread.blockOn(ThreadPoolBuilder.scala:167) ~[akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.package$.blocking(package.scala:50) ~[scala-library.jar:na]
+	at controllers.Assets$.controllers$Assets$$assetInfoFromResource(Assets.scala:236) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfo(Assets.scala:245) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.Assets$.assetInfoForRequest(Assets.scala:253) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:394) ~[play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1$$anonfun$17.apply(Assets.scala:393) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) ~[play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.scala$concurrent$impl$Promise$DefaultPromise$$dispatchOrAddCallback(Promise.scala:280) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.onComplete(Promise.scala:270) ~[scala-library.jar:na]
+	at scala.concurrent.Future$class.flatMap(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.flatMap(Promise.scala:153) ~[scala-library.jar:na]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:393) [play_2.10-2.3.1.jar:2.3.1]
+	at controllers.AssetsBuilder$$anonfun$at$1.apply(Assets.scala:389) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:556) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:555) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.ActionBuilder$$anon$1.apply(Action.scala:518) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.10-2.3.1.jar:2.3.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) [play-iteratees_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.10-2.3.3.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.10-2.3.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+
+2016-04-27 23:35:03,515 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 23:35:03,515 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 23:35:03,515 - [INFO] - from play in play-internal-execution-context-25 
+Shutdown application default Akka system.
+
+2016-04-27 23:35:08,699 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 23:35:08,705 - [INFO] - from play in play-internal-execution-context-25 
+Starting application default Akka system.
+
+2016-04-27 23:35:08,707 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 23:35:08,707 - [DEBUG] - from application in play-akka.actor.default-dispatcher-371 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:35:08,709 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 23:35:08,717 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 23:35:08,717 - [INFO] - from play in play-internal-execution-context-25 
+Application started (Dev)
+
+2016-04-27 23:37:08,343 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-27 23:37:08,344 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-27 23:37:08,344 - [INFO] - from play in play-internal-execution-context-25 
+Shutdown application default Akka system.
+
+2016-04-27 23:37:13,607 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-27 23:37:13,619 - [INFO] - from play in play-internal-execution-context-25 
+Starting application default Akka system.
+
+2016-04-27 23:37:13,620 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-27 23:37:13,620 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-27 23:37:13,620 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded identity provider: userpass
+
+2016-04-27 23:37:13,620 - [INFO] - from play in play-internal-execution-context-25 
+Application started (Dev)
+
+2016-04-27 23:37:13,620 - [DEBUG] - from application in play-akka.actor.default-dispatcher-381 
+[securesocial] calling deleteExpiredTokens()
+

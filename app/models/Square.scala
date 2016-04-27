@@ -35,7 +35,7 @@ object Square{
  * @param img the image produce by the user in base 64
  * @param emailsToSend The list of friend you want to notify
  */
-case class SelectedSquare(idMS: Int, idxSquare: Int, img: String, emailsToSend: List[String])
+case class SelectedSquare(idMS: Int, idxSquare: Int, img: String, emailsToSend: List[Option[String]])
 
 object SelectedSquare{
 
@@ -44,7 +44,7 @@ object SelectedSquare{
       "idMS" -> number,
       "idxSquare" -> number,
       "img" -> text,
-      "emailsToSend" -> list(text) //Todo: option emails
+      "emailsToSend" -> list(optional(email)) //Todo: option emails
     )(SelectedSquare.apply)(SelectedSquare.unapply) verifying("Not the correct strign format for the seq", fields => fields match{
       case squares => {
         // TODO: faire la verification: pas deux de meme indice 1,2~7,2
