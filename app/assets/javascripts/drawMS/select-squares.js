@@ -48,7 +48,7 @@ function selectSquares(canvasToDraw){
     }, false);
 
     canvasToDraw.addEventListener('click', function(e){
-        var coords = coordsIntheCanvas(this.relMouseCoords(e), nbSquaresOneEdge, littleSL. - 15);
+        var coords = coordsIntheCanvas(this.relMouseCoords(e), nbSquaresOneEdge, littleSL, - 15);
         selectDeselectASquare(coords);
         if(selectedSquareIndex > -1){
             goToStep2(selectedSquareIndex);

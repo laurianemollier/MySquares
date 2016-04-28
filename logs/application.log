@@ -1635,3 +1635,399 @@ Application started (Dev)
 2016-04-27 23:37:13,620 - [DEBUG] - from application in play-akka.actor.default-dispatcher-381 
 [securesocial] calling deleteExpiredTokens()
 
+2016-04-27 23:42:13,646 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:47:13,658 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:52:13,674 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-27 23:57:13,689 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 00:02:13,703 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 00:07:13,717 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 00:12:13,731 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 00:17:13,745 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 00:22:13,760 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 00:27:13,772 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 00:32:13,787 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 00:37:13,797 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 00:42:13,812 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 00:47:13,825 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 00:52:13,839 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 00:57:13,841 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 01:02:13,866 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 01:07:13,867 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 01:12:13,891 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 01:17:13,905 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 01:22:13,917 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 01:27:13,930 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 01:32:13,944 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 01:37:13,959 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 01:42:13,971 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 01:47:13,974 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 01:52:13,996 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:24:08,834 - [DEBUG] - from application in play-akka.actor.default-dispatcher-399 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:25:22,723 - [INFO] - from application in play-akka.actor.default-dispatcher-417 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-28 10:29:08,847 - [DEBUG] - from application in play-akka.actor.default-dispatcher-426 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:31:13,027 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-28 10:31:13,027 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-28 10:31:13,027 - [INFO] - from play in play-internal-execution-context-25 
+Shutdown application default Akka system.
+
+2016-04-28 10:31:18,373 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-28 10:31:18,386 - [INFO] - from play in play-internal-execution-context-25 
+Starting application default Akka system.
+
+2016-04-28 10:31:18,389 - [DEBUG] - from application in play-akka.actor.default-dispatcher-432 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:31:18,389 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-28 10:31:18,396 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-28 10:31:18,397 - [INFO] - from application in play-internal-execution-context-25 
+[securesocial] loaded identity provider: userpass
+
+2016-04-28 10:31:18,397 - [INFO] - from play in play-internal-execution-context-25 
+Application started (Dev)
+
+2016-04-28 10:32:00,693 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-28 10:32:00,693 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-28 10:32:00,694 - [INFO] - from play in play-internal-execution-context-30 
+Shutdown application default Akka system.
+
+2016-04-28 10:32:05,924 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-28 10:32:05,931 - [INFO] - from play in play-internal-execution-context-30 
+Starting application default Akka system.
+
+2016-04-28 10:32:05,934 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-28 10:32:05,934 - [DEBUG] - from application in play-akka.actor.default-dispatcher-431 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:32:05,938 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-28 10:32:05,938 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded identity provider: userpass
+
+2016-04-28 10:32:05,939 - [INFO] - from play in play-internal-execution-context-30 
+Application started (Dev)
+
+2016-04-28 10:33:04,445 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-28 10:33:04,445 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-28 10:33:04,445 - [INFO] - from play in play-internal-execution-context-30 
+Shutdown application default Akka system.
+
+2016-04-28 10:33:10,600 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-28 10:33:10,609 - [INFO] - from play in play-internal-execution-context-30 
+Starting application default Akka system.
+
+2016-04-28 10:33:10,611 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-28 10:33:10,611 - [DEBUG] - from application in play-akka.actor.default-dispatcher-447 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:33:10,618 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-28 10:33:10,620 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded identity provider: userpass
+
+2016-04-28 10:33:10,620 - [INFO] - from play in play-internal-execution-context-30 
+Application started (Dev)
+
+2016-04-28 10:38:10,627 - [DEBUG] - from application in play-akka.actor.default-dispatcher-454 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:41:38,350 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-28 10:41:38,350 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-28 10:41:38,350 - [INFO] - from play in play-internal-execution-context-30 
+Shutdown application default Akka system.
+
+2016-04-28 10:41:43,486 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-28 10:41:43,493 - [INFO] - from play in play-internal-execution-context-30 
+Starting application default Akka system.
+
+2016-04-28 10:41:43,495 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-28 10:41:43,495 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-28 10:41:43,495 - [DEBUG] - from application in play-akka.actor.default-dispatcher-454 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:41:43,498 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded identity provider: userpass
+
+2016-04-28 10:41:43,504 - [INFO] - from play in play-internal-execution-context-30 
+Application started (Dev)
+
+2016-04-28 10:46:43,523 - [DEBUG] - from application in play-akka.actor.default-dispatcher-458 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:49:54,013 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-28 10:49:54,013 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-28 10:49:54,013 - [INFO] - from play in play-internal-execution-context-30 
+Shutdown application default Akka system.
+
+2016-04-28 10:50:00,360 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-28 10:50:00,373 - [INFO] - from play in play-internal-execution-context-30 
+Starting application default Akka system.
+
+2016-04-28 10:50:00,373 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-28 10:50:00,373 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-28 10:50:00,373 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded identity provider: userpass
+
+2016-04-28 10:50:00,373 - [INFO] - from play in play-internal-execution-context-30 
+Application started (Dev)
+
+2016-04-28 10:50:00,373 - [DEBUG] - from application in play-akka.actor.default-dispatcher-458 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:53:22,043 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-28 10:53:22,043 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-28 10:53:22,043 - [INFO] - from play in play-internal-execution-context-30 
+Shutdown application default Akka system.
+
+2016-04-28 10:53:29,710 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-28 10:53:29,767 - [INFO] - from play in play-internal-execution-context-30 
+Starting application default Akka system.
+
+2016-04-28 10:53:29,768 - [DEBUG] - from application in play-akka.actor.default-dispatcher-477 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:53:29,777 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-28 10:53:29,779 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-28 10:53:29,779 - [INFO] - from application in play-internal-execution-context-30 
+[securesocial] loaded identity provider: userpass
+
+2016-04-28 10:53:29,779 - [INFO] - from play in play-internal-execution-context-30 
+Application started (Dev)
+
+2016-04-28 10:54:30,868 - [INFO] - from application in play-internal-execution-context-31 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-28 10:54:30,868 - [INFO] - from application in play-internal-execution-context-31 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-28 10:54:30,870 - [INFO] - from play in play-internal-execution-context-31 
+Shutdown application default Akka system.
+
+2016-04-28 10:54:35,933 - [INFO] - from application in play-internal-execution-context-31 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-28 10:54:35,949 - [INFO] - from play in play-internal-execution-context-31 
+Starting application default Akka system.
+
+2016-04-28 10:54:35,949 - [INFO] - from application in play-internal-execution-context-31 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-28 10:54:35,950 - [INFO] - from application in play-internal-execution-context-31 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-28 10:54:35,950 - [INFO] - from application in play-internal-execution-context-31 
+[securesocial] loaded identity provider: userpass
+
+2016-04-28 10:54:35,950 - [INFO] - from play in play-internal-execution-context-31 
+Application started (Dev)
+
+2016-04-28 10:54:35,950 - [DEBUG] - from application in play-akka.actor.default-dispatcher-480 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:55:11,907 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-28 10:55:11,908 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-28 10:55:11,911 - [INFO] - from play in play-internal-execution-context-32 
+Shutdown application default Akka system.
+
+2016-04-28 10:55:16,975 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-28 10:55:16,983 - [INFO] - from play in play-internal-execution-context-32 
+Starting application default Akka system.
+
+2016-04-28 10:55:16,985 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-28 10:55:16,985 - [DEBUG] - from application in play-akka.actor.default-dispatcher-489 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:55:16,989 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-28 10:55:16,991 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] loaded identity provider: userpass
+
+2016-04-28 10:55:16,991 - [INFO] - from play in play-internal-execution-context-32 
+Application started (Dev)
+
+2016-04-28 10:58:39,168 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-28 10:58:39,171 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-28 10:58:39,172 - [INFO] - from play in play-internal-execution-context-32 
+Shutdown application default Akka system.
+
+2016-04-28 10:58:44,734 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-28 10:58:44,741 - [INFO] - from play in play-internal-execution-context-32 
+Starting application default Akka system.
+
+2016-04-28 10:58:44,743 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-28 10:58:44,743 - [DEBUG] - from application in play-akka.actor.default-dispatcher-509 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 10:58:44,747 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-28 10:58:44,748 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] loaded identity provider: userpass
+
+2016-04-28 10:58:44,749 - [INFO] - from play in play-internal-execution-context-32 
+Application started (Dev)
+
+2016-04-28 10:59:29,582 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-28 10:59:29,582 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-28 10:59:29,583 - [INFO] - from play in play-internal-execution-context-32 
+Shutdown application default Akka system.
+
+2016-04-28 10:59:35,090 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-28 10:59:35,098 - [INFO] - from play in play-internal-execution-context-32 
+Starting application default Akka system.
+
+2016-04-28 10:59:35,098 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-28 10:59:35,098 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-28 10:59:35,098 - [INFO] - from application in play-internal-execution-context-32 
+[securesocial] loaded identity provider: userpass
+
+2016-04-28 10:59:35,098 - [INFO] - from play in play-internal-execution-context-32 
+Application started (Dev)
+
+2016-04-28 10:59:35,098 - [DEBUG] - from application in play-akka.actor.default-dispatcher-519 
+[securesocial] calling deleteExpiredTokens()
+

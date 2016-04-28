@@ -1,9 +1,30 @@
-function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+function wrapSentence(context, text, x, y, maxWidth, lineHeight) {
+    var words = text.split(' ');
+    var line = '';
+
+    for(var n = 0; n < words.length; n++) {
+      var testLine = line + words[n] + ' ';
+      var metrics = context.measureText(testLine);
+      var testWidth = metrics.width;
+      if (testWidth > maxWidth && n > 0) {
+        context.fillText(line, x, y);
+        line = words[n] + ' ';
+        y += lineHeight;
+      }
+      else {
+        line = testLine;
+      }
+    }
+    context.fillText(line, x, y);
+}
+
+function wrapText(context, text, x, y, maxWidth, lineHeight){
     var lines = text.split('\n');
     for (var i = 0; i < lines.length; i++) {
-        ctx.fillText(lines[i], x, y + lineHeight*i, maxWidth);
+        wrapSentence(context, lines[i], x, y + lineHeight*i, maxWidth, lineHeight);
     }
 }
+
 
 function scaleCanvas(canvas, ctx){
 
@@ -45,7 +66,6 @@ function writeTextInCanvas(canvas, text, colorText, font, lineHeight, colorBackg
 
     ctx.font = lineHeight + "px " + font;
     ctx.fillStyle = colorText;
-
     var padding = 20;
     wrapText(ctx, text, padding, padding + lineHeight, canvas.width - 2*padding, lineHeight + 10);
 };
@@ -72,6 +92,6 @@ $(function(){
     $('#writeTextButton').click(function(){
         writeDiv.hide("slow");
         writeTextInCanvas(canvas.get(0), text.val(), colorText.css('color'), "Calibri,Geneva,Arial", 30, colorBackground.css('color'));
-
+        var dataURL = canvas.get(0).toDataURL();
     });
 });
