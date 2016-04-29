@@ -2031,3 +2031,1348 @@ Application started (Dev)
 2016-04-28 10:59:35,098 - [DEBUG] - from application in play-akka.actor.default-dispatcher-519 
 [securesocial] calling deleteExpiredTokens()
 
+2016-04-28 11:04:35,117 - [DEBUG] - from application in play-akka.actor.default-dispatcher-535 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 11:09:35,131 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 11:14:35,154 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 11:19:35,168 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 11:24:35,182 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 11:29:35,196 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 11:34:35,210 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 20:39:05,806 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 20:44:05,820 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 20:49:05,834 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 20:54:05,847 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 22:07:45,256 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 22:12:45,259 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 22:17:45,284 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 22:22:58,111 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 22:27:58,126 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 22:32:58,141 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 22:37:58,154 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 22:42:58,168 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 22:47:58,180 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 22:52:58,196 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 22:57:58,209 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 23:02:58,223 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 23:07:58,235 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 23:12:58,250 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 23:17:58,264 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 23:22:58,278 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 23:28:40,767 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 23:33:40,780 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 23:38:40,796 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 23:43:40,808 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 23:48:40,823 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 23:53:40,836 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-28 23:58:40,851 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 00:03:40,864 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 00:08:40,877 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 00:13:40,891 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 00:18:40,896 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 00:23:40,919 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 00:28:40,933 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 00:33:40,947 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 00:38:40,960 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 00:43:40,974 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 08:10:33,305 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 08:14:04,575 - [ERROR] - from application in New I/O worker #6 
+
+
+! @7009mn3f5 - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[overloaded method redirection needs result type]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 09:38:21,335 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 09:43:13,372 - [ERROR] - from application in New I/O worker #4 
+
+
+! @700a8fc0h - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[Missing closing brace `}' assumed here]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 09:43:21,348 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 09:43:24,851 - [ERROR] - from application in New I/O worker #4 
+
+
+! @700a8g301 - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[Cannot find any HTTP Request Header here]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 09:44:11,044 - [ERROR] - from application in New I/O worker #4 
+
+
+! @700a8ij8l - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[Cannot find any HTTP Request Header here]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 09:44:14,716 - [ERROR] - from application in New I/O worker #4 
+
+
+! @700a8iok1 - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[Cannot find any HTTP Request Header here]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 09:44:21,768 - [ERROR] - from application in New I/O worker #4 
+
+
+! @700a8j957 - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[reference to BadRequest is ambiguous;
+it is imported twice in the same scope by
+import controllers.Application._
+and import controllers.Api._]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 09:45:36,785 - [ERROR] - from application in New I/O worker #4 
+
+
+! @700a8ng4e - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[Cannot find any HTTP Request Header here]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 09:46:20,308 - [ERROR] - from application in New I/O worker #4 
+
+
+! @700a902ed - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[Cannot find any HTTP Request Header here]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 09:47:59,182 - [ERROR] - from application in New I/O worker #4 
+
+
+! @700a95il8 - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[Cannot find any HTTP Request Header here]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 09:48:19,589 - [ERROR] - from application in New I/O worker #4 
+
+
+! @700a96n06 - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[reference to BadRequest is ambiguous;
+it is imported twice in the same scope by
+import controllers.Application._
+and import controllers.Api._]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 09:48:21,373 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 09:53:21,386 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 09:58:21,400 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:01:32,178 - [ERROR] - from application in New I/O worker #5 
+
+
+! @700aappc6 - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[reference to BadRequest is ambiguous;
+it is imported twice in the same scope by
+import controllers.Application._
+and import controllers.Api._]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 10:01:34,668 - [ERROR] - from application in New I/O worker #5 
+
+
+! @700ab0346 - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[reference to BadRequest is ambiguous;
+it is imported twice in the same scope by
+import controllers.Application._
+and import controllers.Api._]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 10:03:19,253 - [ERROR] - from application in New I/O worker #5 
+
+
+! @700ab61mg - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[not found: value redirectBySession]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 10:03:21,413 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:03:59,431 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:03:59,431 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:03:59,433 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:04:07,067 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:04:07,079 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:04:07,080 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:04:07,080 - [DEBUG] - from application in play-akka.actor.default-dispatcher-538 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:04:07,085 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:04:07,086 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:04:07,087 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:04:51,442 - [INFO] - from application in play-akka.actor.default-dispatcher-546 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-29 10:09:07,105 - [DEBUG] - from application in play-akka.actor.default-dispatcher-559 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:13:36,165 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:13:36,165 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:13:36,165 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:13:41,913 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:13:41,926 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:13:41,926 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:13:41,926 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:13:41,926 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:13:41,926 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:13:41,926 - [DEBUG] - from application in play-akka.actor.default-dispatcher-559 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:13:47,480 - [INFO] - from application in play-akka.actor.default-dispatcher-559 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-29 10:13:54,705 - [INFO] - from application in play-akka.actor.default-dispatcher-565 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-29 10:14:21,782 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:14:21,782 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:14:21,782 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:14:27,255 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:14:27,264 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:14:27,266 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:14:27,266 - [DEBUG] - from application in play-akka.actor.default-dispatcher-564 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:14:27,270 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:14:27,273 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:14:27,273 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:14:32,092 - [WARN] - from play in play-akka.actor.default-dispatcher-563 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:14:32,770 - [WARN] - from play in play-akka.actor.default-dispatcher-572 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:14:34,723 - [INFO] - from application in play-akka.actor.default-dispatcher-572 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-29 10:14:44,920 - [WARN] - from play in play-akka.actor.default-dispatcher-573 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:14:45,598 - [WARN] - from play in play-akka.actor.default-dispatcher-564 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:14:49,656 - [INFO] - from application in play-akka.actor.default-dispatcher-573 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-29 10:17:26,018 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:17:26,019 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:17:26,019 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:17:33,008 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:17:33,023 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:17:33,025 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:17:33,025 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:17:33,027 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:17:33,027 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:17:33,025 - [DEBUG] - from application in play-akka.actor.default-dispatcher-570 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:17:42,812 - [WARN] - from play in play-akka.actor.default-dispatcher-578 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:17:43,493 - [WARN] - from play in play-akka.actor.default-dispatcher-570 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:17:45,174 - [INFO] - from application in play-akka.actor.default-dispatcher-570 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-29 10:17:52,366 - [WARN] - from play in play-akka.actor.default-dispatcher-582 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:17:52,995 - [WARN] - from play in play-akka.actor.default-dispatcher-576 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:17:54,859 - [INFO] - from application in play-akka.actor.default-dispatcher-576 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-29 10:18:51,183 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:18:51,183 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:18:51,183 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:18:57,153 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:18:57,163 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:18:57,165 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:18:57,165 - [DEBUG] - from application in play-akka.actor.default-dispatcher-582 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:18:57,170 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:18:57,172 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:18:57,172 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:18:58,473 - [WARN] - from play in play-akka.actor.default-dispatcher-582 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:18:59,225 - [WARN] - from play in play-akka.actor.default-dispatcher-586 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:20:44,579 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:20:44,579 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:20:44,580 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:20:50,253 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:20:50,262 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:20:50,264 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:20:50,264 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:20:50,264 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:20:50,264 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:20:50,266 - [DEBUG] - from application in play-akka.actor.default-dispatcher-582 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:20:54,720 - [WARN] - from play in play-akka.actor.default-dispatcher-595 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:20:55,427 - [WARN] - from play in play-akka.actor.default-dispatcher-597 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:21:23,801 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:21:23,801 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:21:23,801 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:21:29,356 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:21:29,364 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:21:29,366 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:21:29,368 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:21:29,366 - [DEBUG] - from application in play-akka.actor.default-dispatcher-593 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:21:29,369 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:21:29,375 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:21:30,587 - [WARN] - from play in play-akka.actor.default-dispatcher-593 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:21:30,883 - [WARN] - from play in play-akka.actor.default-dispatcher-593 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:21:31,601 - [WARN] - from play in play-akka.actor.default-dispatcher-602 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:21:35,040 - [INFO] - from application in play-akka.actor.default-dispatcher-592 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-29 10:21:52,576 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:21:52,576 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:21:52,576 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:21:58,246 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:21:58,255 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:21:58,257 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:21:58,257 - [DEBUG] - from application in play-akka.actor.default-dispatcher-601 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:21:58,264 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:21:58,265 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:21:58,265 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:21:59,584 - [WARN] - from play in play-akka.actor.default-dispatcher-601 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:22:00,363 - [WARN] - from play in play-akka.actor.default-dispatcher-607 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:22:56,709 - [WARN] - from play in play-akka.actor.default-dispatcher-592 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:22:59,658 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:22:59,658 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:22:59,658 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:23:06,481 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:23:06,489 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:23:06,491 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:23:06,491 - [DEBUG] - from application in play-akka.actor.default-dispatcher-592 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:23:06,493 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:23:06,498 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:23:06,498 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:25:45,628 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:25:45,628 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:25:45,628 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:25:51,163 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:25:51,171 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:25:51,173 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:25:51,174 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:25:51,173 - [DEBUG] - from application in play-akka.actor.default-dispatcher-615 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:25:51,176 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:25:51,185 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:26:06,919 - [WARN] - from play in play-akka.actor.default-dispatcher-617 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:26:07,689 - [WARN] - from play in play-akka.actor.default-dispatcher-619 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:26:08,823 - [WARN] - from play in play-akka.actor.default-dispatcher-619 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:26:09,439 - [WARN] - from play in play-akka.actor.default-dispatcher-617 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:26:11,199 - [WARN] - from play in play-akka.actor.default-dispatcher-617 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:26:11,841 - [WARN] - from play in play-akka.actor.default-dispatcher-617 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:26:30,905 - [WARN] - from play in play-akka.actor.default-dispatcher-623 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:26:32,291 - [WARN] - from play in play-akka.actor.default-dispatcher-628 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:26:35,894 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:26:35,894 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:26:35,894 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:26:41,478 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:26:41,488 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:26:41,493 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:26:41,491 - [DEBUG] - from application in play-akka.actor.default-dispatcher-627 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:26:41,495 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:26:41,500 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:26:41,500 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:26:42,630 - [INFO] - from application in play-akka.actor.default-dispatcher-627 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-29 10:26:51,344 - [WARN] - from play in play-akka.actor.default-dispatcher-619 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:26:52,089 - [WARN] - from play in play-akka.actor.default-dispatcher-629 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:26:57,694 - [INFO] - from application in play-akka.actor.default-dispatcher-615 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-29 10:27:53,591 - [INFO] - from application in play-akka.actor.default-dispatcher-640 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-29 10:28:33,694 - [WARN] - from play in play-akka.actor.default-dispatcher-636 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:28:34,440 - [WARN] - from play in play-akka.actor.default-dispatcher-627 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:28:37,607 - [INFO] - from application in play-akka.actor.default-dispatcher-639 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-29 10:28:41,990 - [WARN] - from play in play-akka.actor.default-dispatcher-648 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:28:42,726 - [WARN] - from play in play-akka.actor.default-dispatcher-636 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:29:43,374 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:29:43,375 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:29:43,375 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:29:49,125 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:29:49,135 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:29:49,137 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:29:49,138 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:29:49,137 - [DEBUG] - from application in play-akka.actor.default-dispatcher-644 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:29:49,140 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:29:49,146 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:30:04,495 - [WARN] - from play in play-akka.actor.default-dispatcher-653 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:30:05,213 - [WARN] - from play in play-akka.actor.default-dispatcher-653 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:30:52,022 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:30:52,022 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:30:52,022 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:30:58,722 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:30:58,734 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:30:58,736 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:30:58,736 - [DEBUG] - from application in play-akka.actor.default-dispatcher-654 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:30:58,741 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:30:58,749 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:30:58,749 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:32:01,865 - [ERROR] - from application in New I/O worker #8 
+
+
+! @700af022p - Internal server error, for (GET) [/login] ->
+
+play.PlayExceptions$CompilationException: Compilation error[Cannot write an instance of play.api.mvc.Call to HTTP response. Try to define a Writeable[play.api.mvc.Call]]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 10:32:22,808 - [ERROR] - from application in New I/O worker #8 
+
+
+! @700af172b - Internal server error, for (GET) [/login] ->
+
+play.PlayExceptions$CompilationException: Compilation error[Cannot write an instance of play.api.mvc.Call to HTTP response. Try to define a Writeable[play.api.mvc.Call]]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 10:35:58,759 - [DEBUG] - from application in play-akka.actor.default-dispatcher-651 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:39:15,530 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 10:39:15,531 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 10:39:15,531 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 10:39:22,157 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 10:39:22,167 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 10:39:22,169 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 10:39:22,171 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 10:39:22,172 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 10:39:22,169 - [DEBUG] - from application in play-akka.actor.default-dispatcher-651 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:39:22,180 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 10:39:33,710 - [WARN] - from play in play-akka.actor.default-dispatcher-665 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:39:34,422 - [WARN] - from play in play-akka.actor.default-dispatcher-671 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 10:39:40,374 - [INFO] - from application in play-akka.actor.default-dispatcher-668 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+
+2016-04-29 10:44:22,194 - [DEBUG] - from application in play-akka.actor.default-dispatcher-665 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:49:22,209 - [DEBUG] - from application in play-akka.actor.default-dispatcher-665 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:54:22,222 - [DEBUG] - from application in play-akka.actor.default-dispatcher-665 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 10:59:22,235 - [DEBUG] - from application in play-akka.actor.default-dispatcher-665 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 11:04:22,240 - [DEBUG] - from application in play-akka.actor.default-dispatcher-665 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 11:09:22,265 - [DEBUG] - from application in play-akka.actor.default-dispatcher-665 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 11:13:40,897 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 11:13:40,898 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 11:13:40,898 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 11:13:52,242 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 11:13:52,260 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 11:13:52,260 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 11:13:52,260 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 11:13:52,260 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 11:13:52,260 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 11:13:52,260 - [DEBUG] - from application in play-akka.actor.default-dispatcher-665 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 11:18:52,291 - [DEBUG] - from application in play-akka.actor.default-dispatcher-677 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 11:23:52,305 - [DEBUG] - from application in play-akka.actor.default-dispatcher-677 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 11:28:52,320 - [DEBUG] - from application in play-akka.actor.default-dispatcher-677 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 11:33:52,325 - [DEBUG] - from application in play-akka.actor.default-dispatcher-677 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 11:38:52,348 - [DEBUG] - from application in play-akka.actor.default-dispatcher-677 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 11:43:52,352 - [DEBUG] - from application in play-akka.actor.default-dispatcher-677 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 11:48:52,369 - [DEBUG] - from application in play-akka.actor.default-dispatcher-677 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 19:00:28,522 - [DEBUG] - from application in play-akka.actor.default-dispatcher-677 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 19:05:28,526 - [DEBUG] - from application in play-akka.actor.default-dispatcher-677 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 19:10:28,540 - [DEBUG] - from application in play-akka.actor.default-dispatcher-677 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 19:15:28,555 - [DEBUG] - from application in play-akka.actor.default-dispatcher-677 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 19:20:28,573 - [DEBUG] - from application in play-akka.actor.default-dispatcher-685 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 19:25:28,598 - [DEBUG] - from application in play-akka.actor.default-dispatcher-685 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 19:28:53,896 - [ERROR] - from application in New I/O worker #4 
+
+
+! @700d7cl14 - Internal server error, for (GET) [/get-squares/1] ->
+
+play.PlayExceptions$CompilationException: Compilation error[type mismatch;
+ found   : Int(331)
+ required: Option[String]]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 19:30:12,070 - [ERROR] - from application in New I/O worker #4 
+
+
+! @700d7h6ho - Internal server error, for (GET) [/get-squares/1] ->
+
+play.PlayExceptions$CompilationException: Compilation error[type mismatch;
+ found   : Int(331)
+ required: String]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:297) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$play$PlayReloader$$anon$$taskFailureHandler$1.apply(PlayReloader.scala:292) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.play$PlayReloader$$anon$$taskFailureHandler(PlayReloader.scala:292) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:325) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:325) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:107) ~[play_2.10-2.3.1.jar:2.3.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:105) ~[play_2.10-2.3.1.jar:2.3.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2016-04-29 19:30:28,621 - [DEBUG] - from application in play-akka.actor.default-dispatcher-685 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 19:30:47,627 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded identity provider: userpass
+
+2016-04-29 19:30:47,627 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] unloaded password hasher bcrypt
+
+2016-04-29 19:30:47,627 - [INFO] - from play in play-internal-execution-context-35 
+Shutdown application default Akka system.
+
+2016-04-29 19:30:53,842 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-04-29 19:30:53,862 - [INFO] - from play in play-internal-execution-context-35 
+Starting application default Akka system.
+
+2016-04-29 19:30:53,864 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-04-29 19:30:53,864 - [DEBUG] - from application in play-akka.actor.default-dispatcher-685 
+[securesocial] calling deleteExpiredTokens()
+
+2016-04-29 19:30:53,867 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded password hasher bcrypt
+
+2016-04-29 19:30:53,876 - [INFO] - from application in play-internal-execution-context-35 
+[securesocial] loaded identity provider: userpass
+
+2016-04-29 19:30:53,880 - [INFO] - from play in play-internal-execution-context-35 
+Application started (Dev)
+
+2016-04-29 19:31:30,784 - [WARN] - from play in play-akka.actor.default-dispatcher-687 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 19:31:31,674 - [WARN] - from play in play-akka.actor.default-dispatcher-689 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 19:31:44,677 - [INFO] - from application in play-akka.actor.default-dispatcher-697 
+encrypt Data454703e82e34b51dbfdc3f95af0422402619d0f0ba11495d460799a0a6cf
+
+2016-04-29 19:33:36,915 - [WARN] - from play in play-akka.actor.default-dispatcher-706 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 19:33:37,626 - [WARN] - from play in play-akka.actor.default-dispatcher-705 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 19:33:54,219 - [INFO] - from application in play-akka.actor.default-dispatcher-708 
+encrypt Data87c18a0b578740345e6fcdf66a8003d5be42155c2d30df6b1c1ec8175c45
+
+2016-04-29 19:34:24,003 - [WARN] - from play in play-akka.actor.default-dispatcher-718 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 19:34:24,680 - [WARN] - from play in play-akka.actor.default-dispatcher-709 
+You are using status code '200' with flashing, which should only be used with a redirect status!
+
+2016-04-29 19:34:48,109 - [INFO] - from application in play-akka.actor.default-dispatcher-720 
+encrypt Data29c78d1431bf2238b349d266c42dbe809e202f0cc1f3b75db1b6282cfe8f4ba
+

@@ -2,6 +2,10 @@ package controllers
 
 import controllers.Api._
 import controllers.Application.LogRegCont
+import controllers.Application.redirectByFlash
+import controllers.Application.getRedirectionFlashString
+
+
 
 import play.api.mvc.Action
 import sorm.Persisted
@@ -26,28 +30,47 @@ object Authentication {
         BadRequest(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.register, errorFrom, loginForm))
       },
       user => {
-        val email: Option[User with Persisted] = DB.query[User].whereEqual("email", user.email).fetchOne()
-        email match{
-          // the user is already register
-          case Some(email) => Redirect(routes.Application.login()).flashing(
+        val responseUser = askAddUser(user.email, user.password)
+        responseUser.get("FTP").get.toInt match {
+          case 331 => Redirect(routes.Application.login()).flashing(
             "email" -> user.email
           )
-          case None => {
-            val (hashPassword, salt1, salt2) = encryptPassword(user.password)
-            DB.save(User(user.email, hashPassword, salt1.map{b => b.toInt}, salt2))
-            val idUser = DB.query[User].whereEqual("email", user.email).fetchOneId().get // TODO: verrifer que ce truc est bon
-            Redirect(routes.Application.home()).flashing(
-              "login" -> "success"
-            ).withSession(
-              "email" -> user.email,
-              "idUser" -> idUser.toString
-            )
-          }
+          case 200 => Redirect(redirectByFlash(request)).flashing(
+            "login" -> "success"
+          ).withSession(
+            "email" -> user.email,
+            "idUser" -> responseUser.get("idUser").get
+          )
         }
       }
     )
   }
 
+  def askAddUser(email: String, password: String): Map[String, String] ={
+    DB.query[User].whereEqual("email", email).fetchOne() match {
+      case Some(user) => Map(
+        "FTP" -> 331.toString,
+        "email" -> email // User name exists already, need password
+      )
+      case None => {
+        val (hashPassword, salt1, salt2) = encryptPassword(password)
+        DB.save(User(email, hashPassword, salt1.map{b => b.toInt}, salt2))
+        val idUser = DB.query[User].whereEqual("email", email).fetchOneId().get // TODO: verrifer que ce truc est bon
+
+        Map(
+          "FTP" -> 200.toString,
+          "email" -> email,
+          "idUser" -> idUser.toString
+        )
+      }
+    }
+  }
+
+
+  /**
+   * Action for login. Form: loginForm
+   * @return
+   */
   def login = Action { implicit request =>
     loginForm.bindFromRequest.fold(
       errorForm => {
@@ -55,39 +78,46 @@ object Authentication {
       },
       loginData => {
         askLogin(loginData.email, loginData.password) match {
-          case 200 => {
-            Redirect(routes.Application.home()).flashing(
-              "login" -> "success"
-            ).withSession(
-              "email" -> loginData.email,
-              "idUser" -> getIdUser(loginData.email).toString
-            )
-          }
-          case 401 => Redirect(routes.Api.login()).flashing(
-            "errorLogin" -> ""
+          case 200 => Redirect(redirectByFlash(request)).flashing(
+            "login" -> "success"
+          ).withSession(
+            "email" -> loginData.email,
+            "idUser" -> getIdUser(loginData.email).toString
           )
           case _ => Redirect(routes.Api.login()).flashing(
-            "errorLogin" -> "Wrong password or user d'ont exist"
+            "errorLogin" -> "",
+            "redirection" -> getRedirectionFlashString // TODO: redirection after the second login does not work
           )
         }
       }
     )
   }
 
+  /**
+   * Aks to login
+   * @param email The given email
+   * @param password The given password
+   * @return FTP server return codes
+   */
   def askLogin(email: String, password: String): Int = {
     getUser(email) match {
-      case None => 401
+      case None => 430
       case Some(userDB) => {
         if(verifyPassword(password, userDB.passwordHash, userDB.salt1.map{i => i.toByte}, userDB.salt2)){
           200
         }
-        else 401
+        else 331 // User name okay, need password
       }
     }
 
   }
 
-  def getIdUser(email: String) ={
+  /**
+   * Get the user's id
+   * @param email The given email
+   * @return The user's id
+   */
+  def getIdUser(email: String): Long ={
     DB.query[User].whereEqual("email", email).fetchOneId().get
   }
 

@@ -17,6 +17,12 @@ import settings.Global._
 object Application extends Controller {
 
 
+
+
+
+
+
+// get the session params
   def connected(implicit request : RequestHeader) = request.session.get("email") match{
     case Some(s) => true
     case None => false
@@ -26,6 +32,24 @@ object Application extends Controller {
     case Some(id) => Some(id.toInt)
     case None => None
   }
+
+
+
+
+  def redirectByFlash(implicit request : RequestHeader, default: Call = routes.Application.home()): Call = {
+    val redirection = Map(
+      "haveSquares" -> routes.Application.haveSquares(idCurrentMS),
+      "home" -> routes.Application.home()
+    )
+
+    request.flash.get("redirection") match {
+      case None => default
+      case Some(redirect) => redirection.get(redirect).getOrElse(default)
+    }
+  }
+
+  def getRedirectionFlashString(implicit request : RequestHeader): String =
+    request.flash.get("redirection").getOrElse("")
 
   def home = Action{ implicit request =>
     Api.getSquare(idCurrentMS) match {
@@ -45,7 +69,9 @@ object Application extends Controller {
           Ok(views.html.haveSquares.haveSquares(square, connected)(selectedSquareForm))
         }
         else {
-          Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm)) // TODO: imbriquer les actions
+          Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm)).flashing{
+            "redirection" -> "haveSquares"
+          }
         }
       }
     }
