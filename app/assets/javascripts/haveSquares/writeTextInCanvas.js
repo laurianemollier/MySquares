@@ -66,7 +66,7 @@ function wrapText(context, text, x, y, maxWidth, lineHeight, paddingBottomLine){
 }
 
 
-function writeTextInCanvas(canvas, ctx, text, colorText, font, lineHeight, colorBackground){
+function writeTextInCanvas(x, y, canvas, ctx, text, colorText, font, lineHeight, colorBackground){
 
     ctx.beginPath();
     ctx.fillStyle = colorBackground;
@@ -77,8 +77,11 @@ function writeTextInCanvas(canvas, ctx, text, colorText, font, lineHeight, color
     ctx.fillStyle = colorText;
     var padding = 20;
 
-    var x = padding;
-    var y = padding;
+    if(x == null || y == null){
+        x = padding;
+        y = padding;
+    }
+
     var textDimensions = wrapText(ctx, text, x, y + lineHeight, canvas.width - 2 * padding, lineHeight, 10);
 
     return {x: x, y: y, width: textDimensions.x, height: textDimensions.y};
@@ -118,34 +121,79 @@ $(function(){
     var width = null;
     var height = null;
 
-    // if we click in the canvas, appears the textArea where we can draw
-    canvas.click(function(){
-        writeDiv.show("slow");
-        text.focus();
+    var drag = false;
 
-        //selection the button text color
-        $('#textColorSelector').click();
-    });
+    // set the event coordinate relatively to the text. Top-left of the text => (0, 0)
+    var xEventText = 0;
+    var yEventText = 0;
 
     canvas.mousedown(function(e){
         if(x != null){
             var coords = this.relMouseCoords(e);
             //if the mouse is inside the canvas
             if(x <= coords.x && coords.x <= x + width && y <= coords.y && coords.y <= y + height){
-                surroundText(ctx, x, y, width, height);
+                //surroundText(ctx, x, y, width, height);
+                drag = true;
+                xEventText = coords.x - x;
+                yEventText = coords.y - y;
             }
         }
     });
 
+    canvas.mousemove(function(e){
+        var coords = this.relMouseCoords(e);
+        if(drag){
+            x = coords.x - xEventText;
+            y = coords.y - yEventText;
+            writeText();
+
+        //if the mouse is inside the canvas put an other cursor
+        }else if(x <= coords.x && coords.x <= x + width && y <= coords.y && coords.y <= y + height){
+            canvas.css('cursor', 'move');
+        }
+        else{
+            canvas.css('cursor', 'text');
+        }
+    });
+
+
+
+    canvas.mouseup(function(e){
+        if(drag) drag = false;
+        else{
+        // if we click in the canvas, appears the textArea where we can draw
+            writeDiv.show("slow");
+            text.focus();
+
+            //selection the button text color
+            $('#textColorSelector').click();
+        }
+    });
+
+    canvas.click(function(e){
+        if(!drag){
+            // if we click in the canvas, appears the textArea where we can draw
+            writeDiv.show("slow");
+            text.focus();
+
+            //selection the button text color
+            $('#textColorSelector').click();
+        }
+    });
 
     // When we click "ok", the text we have entered is written over the canvas
     $('#writeTextButton').click(function(){
         writeDiv.hide("slow");
-        var txt = writeTextInCanvas(canvas.get(0), ctx, text.val(), colorText.css('color'), "Calibri,Geneva,Arial", 30, colorBackground.css('color'));
+        var txt = writeText();
         x = txt.x;
         y = txt.y;
         width = txt.width;
         height = txt.height;
         var dataURL = canvas.get(0).toDataURL();
     });
+
+    function writeText(){
+        var txt = writeTextInCanvas(x, y, canvas.get(0), ctx, text.val(), colorText.css('color'), "Calibri,Geneva,Arial", 30, colorBackground.css('color'));
+        return txt;
+    }
 });
