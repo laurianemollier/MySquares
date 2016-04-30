@@ -32,6 +32,8 @@ function wrapSentence(context, text, x, y, maxWidth, lineHeight) {
     var words = text.split(' ');
     var line = '';
 
+    var maxTextWidth = 0;
+
     for(var n = 0; n < words.length; n++) {
       var testLine = line + words[n] + ' ';
       var metrics = context.measureText(testLine);
@@ -43,18 +45,24 @@ function wrapSentence(context, text, x, y, maxWidth, lineHeight) {
       }
       else {
         line = testLine;
+        var metrics = context.measureText(testLine);
+        maxTextWidth = Math.max(metrics.width, maxTextWidth);
       }
     }
     context.fillText(line, x, y);
+
+    return maxTextWidth - 9;
 }
 
-function wrapText(context, text, x, y, maxWidth, lineHeight){
+function wrapText(context, text, x, y, maxWidth, lineHeight, paddingBottomLine){
     var lines = text.split('\n');
+    var maxTextWidth = 0;
     for (var i = 0; i < lines.length; i++) {
-        wrapSentence(context, lines[i], x, y, maxWidth, lineHeight);
+        var textWidth = wrapSentence(context, lines[i], x, y, maxWidth, lineHeight + paddingBottomLine);
+        maxTextWidth = Math.max(textWidth, maxTextWidth);
         y += lineHeight;
     }
-    return y - lineHeight;
+    return {y: y - lineHeight - paddingBottomLine, x: maxTextWidth};
 }
 
 
@@ -71,21 +79,27 @@ function writeTextInCanvas(canvas, ctx, text, colorText, font, lineHeight, color
 
     var x = padding;
     var y = padding;
-    var textWidth = canvas.width - 2 * padding;
-    var textHeight = wrapText(ctx, text, x, y + lineHeight, textWidth, lineHeight + 10);
+    var textDimensions = wrapText(ctx, text, x, y + lineHeight, canvas.width - 2 * padding, lineHeight, 10);
 
-    return {x: x, y: y, width: textWidth, height: textHeight};
+    return {x: x, y: y, width: textDimensions.x, height: textDimensions.y};
 };
 
 
-function surroundText(ctx, x, y, width, height){
+function surroundTextColor(ctx, x, y, width, height, color){
     ctx.beginPath();
     ctx.setLineDash([5]);
-    ctx.strokeStyle = "black";
-    ctx.lineWidth="2";
+    ctx.strokeStyle = color;
+    ctx.lineWidth="1";
     ctx.rect(x, y, width, height);
     ctx.stroke();
 };
+
+function surroundText(ctx, x, y, width, height){
+    surroundTextColor(ctx, x, y, width, height, "black");
+    surroundTextColor(ctx, x-1, y-1, width+1, height+1, "white");
+}
+
+
 
 
 $(function(){
