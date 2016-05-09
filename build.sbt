@@ -7,7 +7,7 @@ version := "1.0-SNAPSHOT"
 
 scalaVersion := "2.11.6"
 
-//Common.settings
+Common.settings
 
 libraryDependencies ++= Seq(
   "org.webjars" %% "webjars-play" % "2.3.0",
