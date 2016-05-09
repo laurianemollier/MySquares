@@ -170,16 +170,16 @@ $(function(){
         }
     });
 
-    canvas.click(function(e){
-        if(!drag){
-            // if we click in the canvas, appears the textArea where we can draw
-            writeDiv.show("slow");
-            text.focus();
-
-            //selection the button text color
-            $('#textColorSelector').click();
-        }
-    });
+//    canvas.click(function(e){
+//        if(!drag){
+//            // if we click in the canvas, appears the textArea where we can draw
+//            writeDiv.show("slow");
+//            text.focus();
+//
+//            //selection the button text color
+//            $('#textColorSelector').click();
+//        }
+//    });
 
     // When we click "ok", the text we have entered is written over the canvas
     $('#writeTextButton').click(function(){

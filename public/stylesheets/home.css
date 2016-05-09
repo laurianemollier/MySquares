@@ -2,4 +2,17 @@
     width: 100%;
     background-color: #222;
     cursor: crosshair;
+    z-index: 0;
+}
+
+
+/* the cursor is set in tha javascript file*/
+#highlightSquare{
+    width: 100%;
+    position: relative;
+    top: -15px;
+    padding-top: 15px;
+    background-color: transparent;
+    z-index: 2;
+    cursor: pointer;
 }

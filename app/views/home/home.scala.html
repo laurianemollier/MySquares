@@ -29,13 +29,23 @@
 
     drawSquares(jsSquares, @square.nbSquaresOneEdge, square, canvasWidth);
 
+
+
+    // canvas where we will draw the selected squares and event
+    var canvasToDraw = document.getElementById("selectedSquare");
+    canvasToDraw.width = canvasWidth;
+    canvasToDraw.height = canvasWidth;
+    var contextToDraw = canvasToDraw.getContext('2d');
+
+    // add event to the canvas to draw
+    selectSquares(canvasToDraw);
+
 </script>
 
 
 <!--Set the square previus-->
 
 <script>
-
     var previewSquare = $("#previewSquare");
     var width = previewSquare.width();
     previewSquare.height(width).width(width);
