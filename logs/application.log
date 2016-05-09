@@ -1074,3 +1074,9 @@ encrypt Data7d319f022b03ae3fff8b9869ce7261d2195544d394d40967169f9f6b2c5619b
 2016-05-09 12:39:38,646 - [DEBUG] - from application in play-akka.actor.default-dispatcher-115 
 [securesocial] calling deleteExpiredTokens()
 
+2016-05-09 19:30:26,967 - [DEBUG] - from application in play-akka.actor.default-dispatcher-115 
+[securesocial] calling deleteExpiredTokens()
+
+2016-05-09 19:40:17,671 - [DEBUG] - from application in play-akka.actor.default-dispatcher-115 
+[securesocial] calling deleteExpiredTokens()
+
