@@ -19,9 +19,6 @@ object Application extends Controller {
 
 
 
-
-
-
 // get the session params
   def connected(implicit request : RequestHeader) = request.session.get("email") match{
     case Some(s) => true
@@ -32,7 +29,6 @@ object Application extends Controller {
     case Some(id) => Some(id.toInt)
     case None => None
   }
-
 
 
 
@@ -55,7 +51,16 @@ object Application extends Controller {
     Api.getSquare(idCurrentMS) match {
       case null => BadRequest(views.html.errorPage.error404(connected)) // TODO: dire qu'il faut contacter
       case square: Square => {
-        Ok(views.html.home.home(square, connected))
+        val idxSquaresUser: Seq[Int] = getUserId match {
+          case None => Seq()
+          case Some(userId) => square.squares.zipWithIndex.filter({
+            case ((img, idUsers), idxSquare) => userId == idUsers
+          }).map{
+            case ((img, idUsers), idxSquare) =>  idxSquare
+          }
+        }
+
+        Ok(views.html.home.home(square, idxSquaresUser, connected))
       }
     }
   }

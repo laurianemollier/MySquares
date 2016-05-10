@@ -22,9 +22,8 @@ function selectDeselectASquare(coords){
 function drawSelectedSquare(){
     contextToDraw.clearRect(0, 0, canvasWidth, canvasWidth);
     if(selectedSquareIndex > -1){
-        var x = selectedSquareIndex % nbSquaresOneEdge * littleSL;
-        var y = Math.floor(selectedSquareIndex / nbSquaresOneEdge) * littleSL;
-        drawCheck(x, y, littleSL, contextToDraw, "green");
+        var coord = coordTopLeft(selectedSquareIndex, nbSquaresOneEdge, littleSL);
+        drawCheck(coord.x, coord.y, littleSL, contextToDraw, "green");
     }
 };
 

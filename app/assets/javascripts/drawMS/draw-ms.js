@@ -14,8 +14,8 @@ function drawSquares(squares, nbSquaresOneEdge, canvas, canvasWidth){
     for(var i=0; i<nbSquaresOneEdge; ++i){
         for(var j=0; j<nbSquaresOneEdge; ++j){
             var index = i*nbSquaresOneEdge + j;
-            var x = j%nbSquaresOneEdge * littleSL;
-            var y = i%nbSquaresOneEdge * littleSL;
+            var x = j * littleSL;
+            var y = i * littleSL;
 
             if(squares[index] == ""){
                 context.fillStyle = "#222";

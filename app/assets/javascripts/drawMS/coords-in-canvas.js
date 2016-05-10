@@ -10,3 +10,11 @@ function coordsIntheCanvas(coordsMouse, nbSquaresOneEdge, littleSL, misplace){
     var squareIndexEvent = yi*nbSquaresOneEdge + xi;
     return {xi: xi, yi: yi, x: x, y: y, squareIndexEvent: squareIndexEvent}
 };
+
+
+function coordTopLeft(idx, nbSquaresOneEdge, littleSL){
+    var x = idx % nbSquaresOneEdge * littleSL;
+    var y = Math.floor(idx / nbSquaresOneEdge) * littleSL;
+
+    return {x: x, y: y}
+}
