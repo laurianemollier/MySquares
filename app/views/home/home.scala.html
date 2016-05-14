@@ -65,7 +65,21 @@
     previewSquare.height(width).width(width);
     previewSquare.attr("height", width).attr("width", width);
 
-    showPreviewSquare(canvasToDraw, previewSquare.get(0), jsSquares, @square.nbSquaresOneEdge);
+    showPreviewSquare(canvasToDraw.get(0), previewSquare.get(0), jsSquares, @square.nbSquaresOneEdge);
+</script>
+
+
+<!--Set the legend for the square that the user owned-->
+<script>
+    var highlightEx = $("#highlightYourSquareEx");
+    var widthH = highlightEx.width();
+    highlightEx.height(widthH).width(widthH);
+    highlightEx.attr("height", widthH).attr("width", widthH);
+
+    var widthEx = Math.min(littleSL, widthH);
+
+    highlight(1, 1, widthEx, highlightEx.get(0).getContext('2d'));
+
 </script>
 
 
