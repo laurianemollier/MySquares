@@ -13787,3 +13787,63 @@ Starting application default Akka system.
 2016-05-15 22:15:48,343 - [INFO] - from play in play-internal-execution-context-78 
 Application started (Dev)
 
+2016-05-15 22:16:52,859 - [INFO] - from application in play-internal-execution-context-78 
+[securesocial] unloaded identity provider: userpass
+
+2016-05-15 22:16:52,859 - [INFO] - from application in play-internal-execution-context-78 
+[securesocial] unloaded password hasher bcrypt
+
+2016-05-15 22:16:52,859 - [INFO] - from play in play-internal-execution-context-78 
+Shutdown application default Akka system.
+
+2016-05-15 22:16:58,601 - [INFO] - from application in play-internal-execution-context-78 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-05-15 22:16:58,615 - [INFO] - from play in play-internal-execution-context-78 
+Starting application default Akka system.
+
+2016-05-15 22:16:58,618 - [INFO] - from application in play-internal-execution-context-78 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-05-15 22:16:58,618 - [INFO] - from application in play-internal-execution-context-78 
+[securesocial] loaded password hasher bcrypt
+
+2016-05-15 22:16:58,618 - [INFO] - from application in play-internal-execution-context-78 
+[securesocial] loaded identity provider: userpass
+
+2016-05-15 22:16:58,618 - [INFO] - from play in play-internal-execution-context-78 
+Application started (Dev)
+
+2016-05-15 22:16:58,615 - [DEBUG] - from application in play-akka.actor.default-dispatcher-957 
+[securesocial] calling deleteExpiredTokens()
+
+2016-05-15 22:19:46,541 - [INFO] - from application in play-internal-execution-context-78 
+[securesocial] unloaded identity provider: userpass
+
+2016-05-15 22:19:46,541 - [INFO] - from application in play-internal-execution-context-78 
+[securesocial] unloaded password hasher bcrypt
+
+2016-05-15 22:19:46,541 - [INFO] - from play in play-internal-execution-context-78 
+Shutdown application default Akka system.
+
+2016-05-15 22:19:52,402 - [INFO] - from application in play-internal-execution-context-78 
+[securesocial] loaded templates plugin: plugins.users.CustomTemplatesPlugin
+
+2016-05-15 22:19:52,420 - [INFO] - from play in play-internal-execution-context-78 
+Starting application default Akka system.
+
+2016-05-15 22:19:52,423 - [INFO] - from application in play-internal-execution-context-78 
+[securesocial] loaded user service: class plugins.users.sorm.SormUserServicePlugin
+
+2016-05-15 22:19:52,423 - [DEBUG] - from application in play-akka.actor.default-dispatcher-986 
+[securesocial] calling deleteExpiredTokens()
+
+2016-05-15 22:19:52,429 - [INFO] - from application in play-internal-execution-context-78 
+[securesocial] loaded password hasher bcrypt
+
+2016-05-15 22:19:52,435 - [INFO] - from application in play-internal-execution-context-78 
+[securesocial] loaded identity provider: userpass
+
+2016-05-15 22:19:52,436 - [INFO] - from play in play-internal-execution-context-78 
+Application started (Dev)
+
