@@ -70,6 +70,7 @@
     legendDiv.click(function(){
         setTimeout(function(){
             clearInterval(period);
+            canvasToDraw.hide();
         }, 3000);
 
         period = setInterval(flash, 200);
