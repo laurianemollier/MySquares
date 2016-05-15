@@ -50,9 +50,24 @@
     canvasToDraw.attr("height", width).attr("width", width);
 
 
+    // when click on the legend, highlight user's square
+
     var idxSquares = [@idxSquaresUser.mkString(",")];
 
-    highlightSquares(canvasToDraw.get(0), idxSquares, nbSquaresOneEdge, littleSL);
+    var legendDiv = $("#legendDiv");
+    var classLegendActive = "legendActive";
+    legendDiv.click(function(){
+        if(legendDiv.hasClass(classLegendActive)){
+            legendDiv.removeClass(classLegendActive);
+            canvasToDraw.get(0).getContext('2d').clearRect(0, 0, width, width);
+        }
+        else{
+            legendDiv.addClass(classLegendActive);
+            highlightSquares(canvasToDraw.get(0), idxSquares, nbSquaresOneEdge, littleSL);
+        }
+    });
+
+
 
 </script>
 
@@ -61,25 +76,29 @@
 <script src="@routes.Assets.versioned("javascripts/home/showPreviewSquare.js")"></script>
 <script>
     var previewSquare = $("#previewSquare");
-    var width = previewSquare.width();
-    previewSquare.height(width).width(width);
-    previewSquare.attr("height", width).attr("width", width);
+    var widthP = previewSquare.width();
+    previewSquare.height(widthP).width(widthP);
+    previewSquare.attr("height", widthP).attr("width", widthP);
+
 
     showPreviewSquare(canvasToDraw.get(0), previewSquare.get(0), jsSquares, @square.nbSquaresOneEdge);
+
+
+
 </script>
 
 
 <!--Set the legend for the square that the user owned-->
 <script>
     var highlightEx = $("#highlightYourSquareEx");
-    var widthH = highlightEx.width();
+    var widthH = Math.min(littleSL + 2, highlightEx.width() + 2);
     highlightEx.height(widthH).width(widthH);
     highlightEx.attr("height", widthH).attr("width", widthH);
 
     var widthEx = Math.min(littleSL, widthH);
-
     highlight(1, 1, widthEx, highlightEx.get(0).getContext('2d'));
-
+    // set the canvas div height
+    $("#highlightYourSquareExDiv").height(widthH);
 </script>
 
 

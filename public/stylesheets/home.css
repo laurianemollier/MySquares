@@ -16,3 +16,20 @@
     z-index: 2;
     cursor: crosshair;
 }
+
+
+#legendDiv{
+    cursor: pointer;
+    padding: 10px 10px 10px 5px;
+}
+#legendDiv:hover, .legendActive{
+    background-color: #292929;
+    box-shadow: inset 0px 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+#legendDiv:active{
+
+}
+
+#legendDiv h4{
+    font-size: 20px;
+}

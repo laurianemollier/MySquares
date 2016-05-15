@@ -26,9 +26,8 @@ function highlightSquares(canvasToDraw, idxSquares, nbSquaresOneEdge, littleSL){
         highlight(coord.x, coord.y, littleSL, cxt);
 
     }
-
-
 };
+
 
 
 
