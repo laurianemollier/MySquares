@@ -3,7 +3,7 @@
 
 #square{
     width: 100%;
-    position: absolute;
+    position: relative;
     z-index: 1;
     background-color: #222;
     cursor: crosshair;
@@ -12,7 +12,7 @@
 /* the cursor is set in tha javascript file*/
 #highlightSquare{
     width: 100%;
-    position: relative;
+    position: absolute;
     background-color: transparent;
     z-index: 2;
     cursor: crosshair;
