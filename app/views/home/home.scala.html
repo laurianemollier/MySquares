@@ -53,18 +53,26 @@
     // when click on the legend, highlight user's square
 
     var idxSquares = [@idxSquaresUser.mkString(",")];
+    highlightSquares(canvasToDraw.get(0), idxSquares, nbSquaresOneEdge, littleSL);
+    canvasToDraw.hide();
 
-    var legendDiv = $("#legendDiv");
-    var classLegendActive = "legendActive";
-    legendDiv.click(function(){
-        if(legendDiv.hasClass(classLegendActive)){
-            legendDiv.removeClass(classLegendActive);
-            canvasToDraw.get(0).getContext('2d').clearRect(0, 0, width, width);
+    function flash(){
+        if(canvasToDraw.css("display") == "none"){
+            canvasToDraw.show();
         }
         else{
-            legendDiv.addClass(classLegendActive);
-            highlightSquares(canvasToDraw.get(0), idxSquares, nbSquaresOneEdge, littleSL);
+            canvasToDraw.hide();
         }
+    };
+
+    var legendDiv = $("#legendDiv");
+    var period;
+    legendDiv.click(function(){
+        setTimeout(function(){
+            clearInterval(period);
+        }, 3000);
+
+        period = setInterval(flash, 200);
     });
 
 

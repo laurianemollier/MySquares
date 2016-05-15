@@ -6,6 +6,7 @@
     position: absolute;
     z-index: 1;
     background-color: #222;
+    cursor: crosshair;
 }
 
 /* the cursor is set in tha javascript file*/
