@@ -1,6 +1,8 @@
 @(login: Boolean)
 
-@css = {}
+@css = {
+<link href="@routes.Assets.versioned("stylesheets/howItWorks.css")" rel="stylesheet">
+}
 @js = {}
 
 @commonToAllPage.template(css, sidebar(), mainBarColumn(), js, login)

@@ -3,7 +3,9 @@
 @(redirect: LogRegCont, registerForm: Form[RegisterData], loginForm: Form[LoginData])(implicit message: RequestHeader, flash: Flash)
 
 
-@css = {}
+@css = {
+<link href="@routes.Assets.versioned("stylesheets/loginRegisterContact.css")" rel="stylesheet">
+}
 
 @js = {
 <script src="@routes.Assets.versioned("javascripts/loginRegisterContact/formValidation.js")"></script>
