@@ -21,6 +21,10 @@
     var classProgress = "inprogress";
     var classLastProgress = "lastinprogress";
 
+    var clickableClass = "clickable";
+
+    var canGoBackTo2 = false;
+
     li1.click(function(){
         if($(this).hasClass(classFirstDone)){
             goToStep1();
@@ -28,7 +32,7 @@
     });
 
     li2.click(function(){
-        if($(this).hasClass(classDone)){
+        if($(this).hasClass(classDone) || $(this).hasClass(clickableClass)){
             goToStep2();
         }
     });
@@ -60,6 +64,9 @@ function goToStep2(indexSelectedSquare){
     // side bare displayed
     palette.show();
     preview.hide();
+
+    // we can come back to this step just by clicking in it
+    li2.addClass(clickableClass);
 }
 
 function goToStep3(){
