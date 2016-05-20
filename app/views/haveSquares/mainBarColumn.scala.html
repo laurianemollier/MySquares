@@ -7,7 +7,7 @@
 <div class="page-mainbar career">
 
 
-<!-- in progress: inprogress,  done: fdone-->
+    <!-- in progress: inprogress,  done: fdone-->
     <ul id="green_and_orange_step_menu" class="row">
         <li id="septMenuLi1" class="col-md-4 frist inprogress" >Select a square</li>
         <li id="septMenuLi2" class="col-md-4 "> Model you square<span></span></li>
@@ -17,7 +17,8 @@
 
 
     <!-- 1• step: select the square-->
-    <div id="select-square">
+    <div id="select-square" >
+        <!-- style="display: none;"-->
         <!-- TODO: Changer le mois a chaque fois-->
         <!-- Heading -->
         <!--<h3>Welcome to the Square of January</h3>-->
@@ -43,21 +44,33 @@
     <!-- 2• step: draw the square-->
     <div id="draw-square">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div id="writeTextDiv" style="display: none;" class="col-md-offset-2 col-md-8">
-                    <textarea id="writeTextTextArea" maxlength="100" ></textarea>
-                    <div>
-                        <div class="col-md-offset-9 col-md-3">
-                            <button id="writeTextButton" type="button" class="btn btn-info">Ok</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-3">
+                <button class="btn btn-default" type="button">
+                    <i class="fa fa-undo"></i>
+                </button>
+            </div>
+            <div class="col-md-6">
                 <canvas id="square-where-we-draw" style="width: 100%; height: 100px">
                     <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour!!!!!</p>
                 </canvas>
             </div>
+            <div class="col-md-3" id="dealWithText">
+                <button class="btn btn-default" id="addTextButton" type="button"> + Add text</button>
+                @for(i <- 1 to 8) {
+                <div class="row">
+                    <div class="col-md-6"> Text @i: </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-default" type="button">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+
+                </div>
+                }
+            </div>
         </div>
     </div>
+
 
 
 
@@ -79,25 +92,25 @@
 
                             <div>
                                 @helper.form(action = routes.Api.selectSquare, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "submitSquareForm") {
-                                    @CSRF.formField
-                                    @repeat(submitSquareForm("emailsToSend"), min = 3){ emailField =>
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            @inputText(emailField, args = 'class -> "form-control", 'placeholder -> "Email to your friend !")
-                                        </div>
+                                @CSRF.formField
+                                @repeat(submitSquareForm("emailsToSend"), min = 3){ emailField =>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        @inputText(emailField, args = 'class -> "form-control", 'placeholder -> "Email to your friend !")
                                     </div>
-                                    }
+                                </div>
+                                }
 
-                                    @inputText(submitSquareForm("idMS"), args = 'type -> "hidden", 'id -> "idMS")
-                                    @inputText(submitSquareForm("idxSquare"), args = 'type -> "hidden", 'id -> "idxSelectedSquare")
-                                    @inputText(submitSquareForm("img"), args = 'type -> "hidden", 'id -> "finalSquareString")
+                                @inputText(submitSquareForm("idMS"), args = 'type -> "hidden", 'id -> "idMS")
+                                @inputText(submitSquareForm("idxSquare"), args = 'type -> "hidden", 'id -> "idxSelectedSquare")
+                                @inputText(submitSquareForm("img"), args = 'type -> "hidden", 'id -> "finalSquareString")
 
-                                    <div class="row">
-                                        <div class="col-md-offset-2 col-md-8 col-sm-12">
-                                            <!-- Button -->
-                                            <button type="submit" id="registerDisplayButton" class="btn btn-default btn-circle">Have your Square <i class="fa fa-angle-right"></i></button>
-                                        </div>
+                                <div class="row">
+                                    <div class="col-md-offset-2 col-md-8 col-sm-12">
+                                        <!-- Button -->
+                                        <button type="submit" id="registerDisplayButton" class="btn btn-default btn-circle">Have your Square <i class="fa fa-angle-right"></i></button>
                                     </div>
+                                </div>
                                 }
                             </div>
                         </div>
@@ -106,10 +119,7 @@
             </div>
         </div>
     </div>
-
 </div>
-
-<!--TODO: basic-->
 <script>
     document.getElementById('idMS').value = "1";
 </script>

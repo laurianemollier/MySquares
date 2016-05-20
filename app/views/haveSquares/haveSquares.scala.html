@@ -59,7 +59,7 @@
     var width = squareWeDraw.width();
     squareWeDraw.height(width).width(width);
     squareWeDraw.attr("height", width).attr("width", width);
-    $("#draw-square").hide();
+    //$("#draw-square").hide();
 
     // set the textArea height
     var textArea = $("#writeTextTextArea")
@@ -67,6 +67,7 @@
 </script>
 <!--able to draw text and change color-->
 <script src="@routes.Assets.versioned("javascripts/haveSquares/writeTextInCanvas.js")"> </script>
+<!--<script src="@routes.Assets.versioned("javascripts/haveSquares/wrapText.js")"> </script>-->
 
 <!--deal with the color selection in the palette-->
 <script src="@routes.Assets.versioned("javascripts/haveSquares/select-color.js")"> </script>

@@ -1,199 +1,800 @@
-function scaleCanvas(canvas, ctx){
-
-    devicePixelRatio = window.devicePixelRatio || 1,
-    backingStoreRatio = ctx.webkitBackingStorePixelRatio ||
-                        ctx.mozBackingStorePixelRatio ||
-                        ctx.msBackingStorePixelRatio ||
-                        ctx.oBackingStorePixelRatio ||
-                        ctx.backingStorePixelRatio || 1,
-
-    ratio = devicePixelRatio / backingStoreRatio;
-
- // upscale the canvas if the two ratios don't match
-    if (devicePixelRatio !== backingStoreRatio) {
-
-        var oldWidth = canvas.width;
-        var oldHeight = canvas.height;
-
-        canvas.width = oldWidth * ratio;
-        canvas.height = oldHeight * ratio;
-
-        canvas.style.width = oldWidth + 'px';
-        canvas.style.height = oldHeight + 'px';
-
-        // now scale the ctx to counter
-        // the fact that we've manually scaled
-        // our canvas element
-        ctx.scale(ratio, ratio);
-    }
-}
-
-function wrapSentence(context, text, x, y, maxWidth, lineHeight) {
-    var words = text.split(' ');
-    var line = '';
-
-    var maxTextWidth = 0;
-
-    for(var n = 0; n < words.length; n++) {
-      var testLine = line + words[n] + ' ';
-      var metrics = context.measureText(testLine);
-      var testWidth = metrics.width;
-      if (testWidth > maxWidth && n > 0) {
-        context.fillText(line, x, y);
-        line = words[n] + ' ';
-        y += lineHeight;
-      }
-      else {
-        line = testLine;
-        var metrics = context.measureText(testLine);
-        maxTextWidth = Math.max(metrics.width, maxTextWidth);
-      }
-    }
-    context.fillText(line, x, y);
-
-    return maxTextWidth - 9;
-}
-
-function wrapText(context, text, x, y, maxWidth, lineHeight, paddingBottomLine){
-    var lines = text.split('\n');
-    var maxTextWidth = 0;
-    for (var i = 0; i < lines.length; i++) {
-        var textWidth = wrapSentence(context, lines[i], x, y, maxWidth, lineHeight + paddingBottomLine);
-        maxTextWidth = Math.max(textWidth, maxTextWidth);
-        y += lineHeight;
-    }
-    return {y: y - lineHeight - paddingBottomLine, x: maxTextWidth};
-}
 
 
-function writeTextInCanvas(x, y, canvas, ctx, text, colorText, font, lineHeight, colorBackground){
-
-    ctx.beginPath();
-    ctx.fillStyle = colorBackground;
-    ctx.rect(0, 0, canvas.width, canvas.height);
-    ctx.fill();
-
-    ctx.font = lineHeight + "px " + font;
-    ctx.fillStyle = colorText;
-    var padding = 20;
-
-    if(x == null || y == null){
-        x = padding;
-        y = padding;
-    }
-
-    var textDimensions = wrapText(ctx, text, x, y + lineHeight, canvas.width - 2 * padding, lineHeight, 10);
-
-    return {x: x, y: y, width: textDimensions.x, height: textDimensions.y};
-};
-
-
-function surroundTextColor(ctx, x, y, width, height, color){
-    ctx.beginPath();
-    ctx.setLineDash([5]);
-    ctx.strokeStyle = color;
-    ctx.lineWidth="1";
-    ctx.rect(x, y, width, height);
-    ctx.stroke();
-};
-
-function surroundText(ctx, x, y, width, height){
-    surroundTextColor(ctx, x, y, width, height, "black");
-    surroundTextColor(ctx, x-1, y-1, width+1, height+1, "white");
-}
-
-
-
-
-$(function(){
-
-    var text = $('#writeTextTextArea');
-    var colorText = $('#iconText');
-    var colorBackground = $('#iconBackground');
-
-    var canvas = $('#square-where-we-draw');
-    var ctx = canvas.get(0).getContext("2d");
-    var writeDiv = $('#writeTextDiv');
-
-    // dimension of the text
-    var x = null;
-    var y = null;
-    var width = null;
-    var height = null;
-
-    var drag = false;
-
-    // set the event coordinate relatively to the text. Top-left of the text => (0, 0)
-    var xEventText = 0;
-    var yEventText = 0;
-
-    canvas.mousedown(function(e){
-        if(x != null){
-            var coords = this.relMouseCoords(e);
-            //if the mouse is inside the canvas
-            if(x <= coords.x && coords.x <= x + width && y <= coords.y && coords.y <= y + height){
-                //surroundText(ctx, x, y, width, height);
-                drag = true;
-                xEventText = coords.x - x;
-                yEventText = coords.y - y;
-            }
-        }
-    });
-
-    canvas.mousemove(function(e){
-        var coords = this.relMouseCoords(e);
-        if(drag){
-            x = coords.x - xEventText;
-            y = coords.y - yEventText;
-            writeText();
-
-        //if the mouse is inside the canvas put an other cursor
-        }else if(x <= coords.x && coords.x <= x + width && y <= coords.y && coords.y <= y + height){
-            canvas.css('cursor', 'move');
-        }
-        else{
-            canvas.css('cursor', 'text');
-        }
-    });
-
-
-
-    canvas.mouseup(function(e){
-        if(drag) drag = false;
-        else{
-        // if we click in the canvas, appears the textArea where we can draw
-            writeDiv.show("slow");
-            text.focus();
-
-            //selection the button text color
-            $('#textColorSelector').click();
-        }
-    });
-
-//    canvas.click(function(e){
-//        if(!drag){
-//            // if we click in the canvas, appears the textArea where we can draw
-//            writeDiv.show("slow");
-//            text.focus();
+// Last updated November 2010 by Simon Sarris
+// www.simonsarris.com
+// sarris@acm.org
 //
-//            //selection the button text color
-//            $('#textColorSelector').click();
-//        }
-//    });
+// Free to use and distribute at will
+// So long as you are nice to people, etc
 
-    // When we click "ok", the text we have entered is written over the canvas
-    $('#writeTextButton').click(function(){
-        writeDiv.hide("slow");
-        var txt = writeText();
-        x = txt.x;
-        y = txt.y;
-        width = txt.width;
-        height = txt.height;
-        var dataURL = canvas.get(0).toDataURL();
-    });
+// This is a self-executing function that I added only to stop this
+// new script from interfering with the old one. It's a good idea in general, but not
+// something I wanted to go over during this tutorial
+(function(window) {
 
-    function writeText(){
-        var txt = writeTextInCanvas(x, y, canvas.get(0), ctx, text.val(), colorText.css('color'), "Calibri,Geneva,Arial", 30, colorBackground.css('color'));
-        return txt;
+
+    // for the colors
+    var colorText = document.getElementById('iconText');
+    var colorBackground = document.getElementById('iconBackground');
+
+    // holds all our boxes
+    var boxes = [];
+
+    // New, holds the 8 tiny boxes that will be our selection handles
+    // the selection handles will be in this order:
+    // 0  1  2
+    // 3     4
+    // 5  6  7
+    var selectionHandles = [];
+
+    // Hold canvas information
+    var canvas;
+    var ctx;
+    var WIDTH;
+    var HEIGHT;
+    var INTERVAL = 20;  // how often, in milliseconds, we check to see if a redraw is needed
+
+    var isDrag = false;
+    var isResizeDrag = false;
+    var expectResize = -1; // New, will save the # of the selection handle if the mouse is over one.
+    var resizingByBottom = false;
+    var isWriting = false;
+
+    var mx, my; // mouse coordinates
+
+     // when set to true, the canvas will redraw everything
+     // invalidate() just sets this to false right now
+     // we want to call invalidate() whenever we make a change
+    var canvasValid = false;
+
+    // The node (if any) being selected.
+    // If in the future we want to select multiple objects, this will get turned into an array
+    var mySel = null;
+
+    // The selection color and width. Right now we have a red selection with a small width
+    var mySelColor = 'black';
+    var mySelWidth = 2;
+    var mySelBoxColor = 'black'; // New for selection boxes
+    var mySelBoxSize = 6;
+
+    // we use a fake canvas to draw individual shapes for selection testing
+    var ghostcanvas;
+    var gctx; // fake canvas context
+
+    // since we can drag from anywhere in a node
+    // instead of just its x/y corner, we need to save
+    // the offset of the mouse when we start dragging.
+    var offsetx, offsety;
+
+    // Padding and border style widths for mouse offsets
+    var stylePaddingLeft, stylePaddingTop, styleBorderLeft, styleBorderTop;
+
+
+
+
+    // Box object to hold data
+    function Box() {
+      this.fill = 'rgba(220, 220, 220, 0)';
+
+      this.defaultText = 'Type your text here';
+      this.text = this.defaultText;
+      this.font = "Calibri,Geneva,Arial";
+      this.fontSize = 30;
+      this.fontColor = colorText.style.color;
+      this.fontOpacity = 1;
+      this.padding = 0;
+      this.paddingInterLine = 10;
+      this.lineH = this.fontSize + this.paddingInterLine;
+
+      this.w = 300; // default width and height?
+      this.h = this.fontSize*1.4 + this.padding*2;
+      this.x = canvas.width/2 - this.w/2;
+      this.y = canvas.height/3;
+
+      this.minH = this.h;
+      this.minW = this.w;
+      this.minFontSize = 15;
+
+      this.cursorLine = 0;
+      this.cursorX = this.padding;
+      this.cursorY = this.padding + this.cursorLine;
+      this.cursorH = this.lineH;
+      this.cursorIdx = this.text.length;   // couc|ou => this.cursorIdx == 4
+
+      this.txtDim = [];
+
     }
-});
+
+    // New methods on the Box class
+    Box.prototype = {
+      // we used to have a solo draw function
+      // but now each box is responsible for its own drawing
+      // mainDraw() will call this with the normal canvas
+      // myDown will call this with the ghost canvas with 'black'
+      draw: function(context, optionalColor) {
+
+          // We can skip the drawing of elements that have moved off the screen:
+          if (this.x > WIDTH || this.y > HEIGHT) return;
+          if (this.x + this.w < 0 || this.y + this.h < 0) return;
+
+          // write the text
+          context.font = this.fontSize + "px " + this.font;
+          context.fillStyle = colorText.style.color;
+          this.txtDim = wrapText(context, this.text, this.x + this.padding,
+                                                            this.y + this.padding + this.fontSize,
+                                                            this.w - 2*this.padding,
+                                                            this.lineH);
+
+          // redimension the square
+          if(resizingByBottom){
+            this.y += this.h - this.txtDim.height;
+          }
+          this.h = this.txtDim.height;
+          if (context === gctx) context.fillStyle = 'black';
+          else context.fillStyle = this.fill;
+
+          context.fillRect(this.x,this.y,this.w,this.h);
+
+          this.minW = this.txtDim.maxWidthWold;
+          this.minH = this.fontSize*1.4 + this.padding*2;
+
+          // set position cursor
+          this.lineH = this.fontSize + this.paddingInterLine;
+          this.cursorH = this.lineH;
+
+          var infoLines = this.txtDim.infoLines;
+          var nbKeys = 0;
+          var i = 0;
+          while((i < (infoLines.length)) && (this.cursorIdx >= nbKeys)){
+             nbKeys += infoLines[i].nbKey;
+             ++i;
+          }
+
+          this.cursorLine = i - 1;
+          nbKeys -= infoLines[this.cursorLine].nbKey;
+          this.cursorY = this.cursorLine * this.lineH + this.y ;
+          var line = infoLines[this.cursorLine].txt;
+          var txt = line.substring(0, this.cursorIdx - nbKeys);
+          this.cursorX = context.measureText(txt).width + this.x;
+
+          if(mySel === this) this.setCursor(context);
+
+
+
+        // draw selection
+        // this is a stroke along the box and also 8 new selection handles
+        if (mySel === this) {
+          context.strokeStyle = mySelColor;
+          context.lineWidth = mySelWidth;
+          context.strokeRect(this.x,this.y,this.w,this.h);
+
+          // draw the boxes
+
+          var half = mySelBoxSize / 2;
+
+          // 0  1  2
+          // 3     4
+          // 5  6  7
+
+          // top left, middle, right
+          selectionHandles[0].x = this.x-half;
+          selectionHandles[0].y = this.y-half;
+
+          selectionHandles[1].x = this.x+this.w/2-half;
+          selectionHandles[1].y = this.y-half;
+
+          selectionHandles[2].x = this.x+this.w-half;
+          selectionHandles[2].y = this.y-half;
+
+          //middle left
+          selectionHandles[3].x = this.x-half;
+          selectionHandles[3].y = this.y+this.h/2-half;
+
+          //middle right
+          selectionHandles[4].x = this.x+this.w-half;
+          selectionHandles[4].y = this.y+this.h/2-half;
+
+          //bottom left, middle, right
+          selectionHandles[6].x = this.x+this.w/2-half;
+          selectionHandles[6].y = this.y+this.h-half;
+
+          selectionHandles[5].x = this.x-half;
+          selectionHandles[5].y = this.y+this.h-half;
+
+          selectionHandles[7].x = this.x+this.w-half;
+          selectionHandles[7].y = this.y+this.h-half;
+
+
+          context.fillStyle = mySelBoxColor;
+          for (var i = 0; i < 8; i ++) {
+            var cur = selectionHandles[i];
+            context.fillRect(cur.x, cur.y, mySelBoxSize, mySelBoxSize);
+          }
+        }
+
+      }, // end draw
+
+
+      isInBox: function(mx, my){
+        return this.x <= mx && mx <= (this.x + this.w) && this.y <= my && my <= (this.y + this.h);
+      },
+
+      selectText: function(){
+
+      },
+      setCursor: function(ctx){
+        ctx.beginPath();
+        ctx.moveTo(this.cursorX, this.cursorY);
+        ctx.lineTo(this.cursorX, this.cursorY + this.cursorH);
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = this.fontColor;
+        ctx.stroke();
+      }
+
+    }
+
+    //Initialize a new Box, add it, and invalidate the canvas
+    function addRect() {
+      var rect = new Box;
+      boxes.push(rect);
+      invalidate();
+    }
+
+    // initialize our canvas, add a ghost canvas, set draw loop
+    // then add everything we want to intially exist on the canvas
+    function init() {
+      canvas = document.getElementById('square-where-we-draw');
+      HEIGHT = canvas.height;
+      WIDTH = canvas.width;
+      ctx = canvas.getContext('2d');
+      ghostcanvas = document.createElement('canvas');
+      ghostcanvas.height = HEIGHT;
+      ghostcanvas.width = WIDTH;
+      gctx = ghostcanvas.getContext('2d');
+
+      //fixes a problem where double clicking causes text to get selected on the canvas
+      canvas.onselectstart = function () { return false; }
+
+      // fixes mouse co-ordinate problems when there's a border or padding
+      // see getMouse for more detail
+      if (document.defaultView && document.defaultView.getComputedStyle) {
+        stylePaddingLeft = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingLeft'], 10)     || 0;
+        stylePaddingTop  = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingTop'], 10)      || 0;
+        styleBorderLeft  = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderLeftWidth'], 10) || 0;
+        styleBorderTop   = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderTopWidth'], 10)  || 0;
+      }
+
+      // make mainDraw() fire every INTERVAL milliseconds
+      setInterval(mainDraw, INTERVAL);
+
+      // set our events. Up and down are for dragging,
+      // double click is for making new boxes
+      canvas.onmousedown = myDown;
+      canvas.onmouseup = myUp;
+//      canvas.ondblclick = myDblClick;
+      canvas.onmousemove = myMove;
+
+      canvas.tabIndex = 1000;
+      canvas.style.outline = "none";
+      canvas.onkeypress = keyPress;
+      canvas.onkeydown = keyDown;
+      canvas.focusout = focusOut;
+
+      // set up the selection handle boxes
+      for (var i = 0; i < 8; i ++) {
+        var rect = new Box;
+        selectionHandles.push(rect);
+      }
+
+      // add a large green rectangle
+      addRect();
+    }
+
+
+    //wipes the canvas context
+    function clear(c){
+        c.clearRect(0, 0, WIDTH, HEIGHT);
+    }
+
+    // Main draw loop.
+    // While draw is called as often as the INTERVAL variable demands,
+    // It only ever does something if the canvas gets invalidated by our code
+    function mainDraw() {
+      if (canvasValid == false) {
+        ctx.fillStyle = colorBackground.style.color;
+        ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+        // Add stuff you want drawn in the background all the time here
+
+        // draw all boxes
+        var l = boxes.length;
+        for (var i = 0; i < l; i++) {
+          boxes[i].draw(ctx); // we used to call drawshape, but now each box draws itself
+        }
+
+        // Add stuff you want drawn on top all the time here
+
+        canvasValid = true;
+      }
+    }
+
+    // Happens when the mouse is moving inside the canvas
+    function myMove(e){
+      getMouse(e);
+
+      if (isDrag) {
+        mySel.x = mx - offsetx;
+        mySel.y = my - offsety;
+
+        // something is changing position so we better invalidate the canvas!
+        invalidate();
+      }
+      else if (isResizeDrag) {
+        // time ro resize!
+        var oldx = mySel.x;
+        var oldy = mySel.y;
+
+        var oldw = mySel.w;
+        var oldh = mySel.h;
+
+
+        var coefFontResizing = 0.4;
+        // 0  1  2
+        // 3     4
+        // 5  6  7
+        switch (expectResize) {
+          case 0:
+            mySel.x = mx;
+            mySel.y = my;
+            mySel.w += oldx - mx;
+            mySel.h += oldy - my;
+            mySel.fontSize += (oldy - my) * coefFontResizing;
+            break;
+          case 1:
+            mySel.y = my;
+            mySel.h += oldy - my;
+            mySel.fontSize += (oldy - my) * coefFontResizing;
+            break;
+          case 2:
+            mySel.y = my;
+            mySel.w = mx - oldx;
+            mySel.h += oldy - my;
+            mySel.fontSize += (oldy - my) * coefFontResizing;
+            break;
+          case 3:
+            mySel.x = mx;
+            mySel.w += oldx - mx;
+            break;
+          case 4:
+            mySel.w = mx - oldx;
+            break;
+          case 5:
+            resizingByBottom = true;
+            mySel.x = mx;
+            mySel.w += oldx - mx;
+            mySel.h = my - oldy;
+            mySel.fontSize += (oldx - mx) * coefFontResizing * 0.8;
+            break;
+          case 6:
+            resizingByBottom = true;
+            mySel.h = my - oldy;
+            mySel.fontSize += (my - oldy - oldh) * coefFontResizing * 0.8;
+            break;
+          case 7:
+            resizingByBottom = true;
+            mySel.w = mx - oldx;
+            mySel.h = my - oldy;
+            mySel.fontSize += (mySel.w - oldw) * coefFontResizing * 0.8;
+            break;
+        }
+
+        if(mySel.fontSize <= mySel.minFontSize){
+            mySel.fontSize = mySel.minFontSize;
+            mySel.y = oldy;
+            mySel.h = oldh;
+        }
+        if(mySel.w < mySel.minW){
+            mySel.w = mySel.minW;
+            mySel.x = oldx;
+        }
+
+        invalidate();
+      }
+      else{
+        // set the cursor to pointer if hover inputText
+        if(isInsideBox(mx, my)){
+           this.style.cursor = "pointer";
+        }
+        else{
+           this.style.cursor = "default";
+        }
+      }
+
+      // if there's a selection see if we grabbed one of the selection handles
+      if (mySel !== null && !isResizeDrag) {
+        for (var i = 0; i < 8; i++) {
+          // 0  1  2
+          // 3     4
+          // 5  6  7
+
+          var cur = selectionHandles[i];
+
+          // we dont need to use the ghost context because
+          // selection handles will always be rectangles
+          if (mx >= cur.x && mx <= cur.x + mySelBoxSize &&
+              my >= cur.y && my <= cur.y + mySelBoxSize) {
+            // we found one!
+            expectResize = i;
+            invalidate();
+
+            switch (i) {
+              case 0:
+                this.style.cursor='nw-resize';
+                break;
+              case 1:
+                this.style.cursor='n-resize';
+                break;
+              case 2:
+                this.style.cursor='ne-resize';
+                break;
+              case 3:
+                this.style.cursor='w-resize';
+                break;
+              case 4:
+                this.style.cursor='e-resize';
+                break;
+              case 5:
+                this.style.cursor='sw-resize';
+                break;
+              case 6:
+                this.style.cursor='s-resize';
+                break;
+              case 7:
+                this.style.cursor='se-resize';
+                break;
+            }
+            return;
+          }
+
+        }
+        // not over a selection box, return to normal
+        isResizeDrag = false;
+        expectResize = -1;
+      }
+
+    }
+
+    // Happens when the mouse is clicked in the canvas
+    function myDown(e){
+      getMouse(e);
+
+      //we are over a selection box
+      if (expectResize !== -1) {
+        isResizeDrag = true;
+        return;
+      }
+
+      clear(gctx);
+      var l = boxes.length;
+      for (var i = l-1; i >= 0; i--) {
+        // draw shape onto ghost context
+        boxes[i].draw(gctx, 'black');
+
+        // get image data at the mouse x,y pixel
+        var imageData = gctx.getImageData(mx, my, 1, 1);
+        var index = (mx + my * imageData.width) * 4;
+
+        // if the mouse pixel exists, select and break
+        if (imageData.data[3] > 0) {
+          mySel = boxes[i];
+          offsetx = mx - mySel.x;
+          offsety = my - mySel.y;
+          mySel.x = mx - offsetx;
+          mySel.y = my - offsety;
+          isDrag = true;
+
+          invalidate();
+          clear(gctx);
+          return;
+        }
+
+      }
+      // havent returned means we have selected nothing
+      mySel = null;
+      // clear the ghost canvas for next time
+      clear(gctx);
+      // invalidate because we might need the selection border to disappear
+      invalidate();
+    }
+
+    function myUp(e){
+      getMouse(e);
+      var box = isInsideBox(mx, my);
+      if(box){
+        if(box.text == box.defaultText){
+//          box.text = "";
+//          box.fontColor = "back";
+        }
+        box.setCursor(ctx);
+      }
+
+      isDrag = false;
+      isResizeDrag = false;
+      resizingByBottom = false;
+//    isWriting = false;
+
+      expectResize = -1;
+      invalidate();
+    }
+
+
+    // get key code
+    function keyDown(e){
+
+       if(mySel){
+          var key =  e.which || e.keyCode;
+
+          // arrow left
+          if(key == 37){
+            e.preventDefault();
+            if(mySel.cursorIdx > 0){
+               mySel.cursorIdx += -1;
+            }
+          }
+          // arrow top
+          else if(key == 38){
+            e.preventDefault();
+            var ifLs = mySel.txtDim.infoLines;
+            if(mySel.cursorLine > 0){
+                mySel.cursorIdx -= mySel.txtDim.infoLines[mySel.cursorLine - 1].nbKey;
+
+                // be sure that the cursor have jump to the line
+                var totalLine = 0;
+                for(var i=0; i < mySel.cursorLine; ++i){
+                    totalLine += ifLs[i].nbKey;
+                }
+                if(mySel.cursorIdx > totalLine) mySel.cursorIdx = totalLine;
+            }
+          }
+          // arrow right
+          else if(key == 39){
+            e.preventDefault();
+            if(mySel.cursorIdx < mySel.text.length){
+               mySel.cursorIdx += 1;
+            }
+          }
+          // arrow dow
+          else if(key == 40){
+            e.preventDefault();
+            var ifLs = mySel.txtDim.infoLines;
+            if(mySel.cursorLine < ifLs.length - 1){
+                mySel.cursorIdx += ifLs[mySel.cursorLine].nbKey;
+
+                // see if the cursor do not jump to line
+                var totalLine = 0;
+                for(var i=0; i <= mySel.cursorLine + 1; ++i){
+                    totalLine += ifLs[i].nbKey;
+                }
+                if(mySel.cursorIdx > totalLine) mySel.cursorIdx = totalLine;
+            }
+          }
+          // delete
+          else if(key == 8){
+            // prevent default behaviour
+            e.preventDefault();
+            if(mySel.cursorIdx > 0){
+               mySel.cursorIdx += -1;
+               mySel.text = mySel.text.substring(0, mySel.cursorIdx) + mySel.text.substring(mySel.cursorIdx + 1, mySel.text.length);
+            }
+          }
+       }
+       // clear the ghost canvas for next time
+       clear(gctx);
+       // invalidate because we might need the selection border to disappear
+       invalidate();
+    }
+    // get char code
+    function keyPress(e){
+       if(mySel){
+            var char = e.which || e.keyCode;
+
+            // prevent default behaviour
+            e.preventDefault();
+            var c;
+            if(char == 13) c = '\n'; // enter
+            else c = String.fromCharCode(char);
+            mySel.text = mySel.text.substring(0, mySel.cursorIdx) + c + mySel.text.substring(mySel.cursorIdx, mySel.text.length);
+            mySel.cursorIdx += 1;
+
+            // clear the ghost canvas for next time
+            clear(gctx);
+            // invalidate because we might need the selection border to disappear
+            invalidate();
+       }
+    }
+
+    function invalidate() {
+      canvasValid = false;
+    }
+
+    function isInsideBox(mx, my){
+        var l = boxes.length;
+        for (var i = 0; i < l; i++) {
+           if(boxes[i].isInBox(mx, my)) return boxes[i];
+        }
+        return false;
+    }
+
+    // Sets mx,my to the mouse position relative to the canvas
+    // unfortunately this can be tricky, we have to worry about padding and borders
+    function getMouse(e) {
+          var element = canvas, offsetX = 0, offsetY = 0;
+
+          if (element.offsetParent) {
+            do {
+              offsetX += element.offsetLeft;
+              offsetY += element.offsetTop;
+            } while ((element = element.offsetParent));
+          }
+
+          // Add padding and border style widths to offset
+          offsetX += stylePaddingLeft;
+          offsetY += stylePaddingTop;
+
+          offsetX += styleBorderLeft;
+          offsetY += styleBorderTop;
+
+          mx = e.pageX - offsetX;
+          my = e.pageY - offsetY
+    }
+
+    function focusOut(){
+        mySel = null;
+        invalidate();
+        mainDraw();
+    }
+
+    function wrapWord(context, word, maxWidth){
+
+        var line = '';
+        var wrap = [];
+        for(var n = 0; n < word.length; n++){
+
+          var testLine = line + word[n];
+          var metrics = context.measureText(testLine);
+          var testWidth = metrics.width;
+
+          if (testWidth > maxWidth && n > 0) {
+            wrap.push(line);
+            line = word[n];
+          }
+          else line = testLine;
+
+        }
+        wrap.push(line);
+
+        return wrap;
+    }
+
+    function wrapSentence(context, text, x, y, maxWidth, lineH) {
+        var words = text.split(' ');
+        var line = '';
+
+        var maxTextWidth = 0;
+        var maxTextHeight = 0;
+        var maxWidthWold = 0;
+        var infoLines = [];
+        var infoLn;
+
+        for(var n = 0; n < words.length; n++) {
+          // if one word is to big, split it
+          if(context.measureText(words[n]).width > maxWidth){
+            var worldArray = wrapWord(context, words[n], maxWidth);
+            words = words.slice(0, n).concat( worldArray ).concat( words.slice(n+1) );
+          }
+
+          maxWidthWold = Math.max(maxWidthWold, context.measureText(words[n]).width);
+
+
+          var testLine = line + words[n] + ' ';
+          var metrics = context.measureText(testLine);
+          var testWidth = metrics.width;
+
+
+          if (testWidth > maxWidth && n > 0) {
+            context.fillText(line, x, y);
+//            if(line.slice(-1) == ' ') line = line.substring(0, line.length - 1);
+            infoLn = {width: context.measureText(line).width, nbKey: line.length, txt: line};
+            infoLines.push(infoLn);
+            line = words[n] + ' ';
+            y += lineH;
+            maxTextHeight += lineH;
+          }
+          else {
+            line = testLine;
+            var metrics = context.measureText(testLine);
+            maxTextWidth = Math.max(metrics.width, maxTextWidth);
+
+          }
+        }
+//        if(line.slice(-1) == ' ') line = line.substring(0, line.length - 1);
+        context.fillText(line, x, y);
+        infoLn = {width: context.measureText(line).width, nbKey: line.length, txt: line};
+        infoLines.push(infoLn);
+
+        return {width: maxTextWidth - 9, infoLines: infoLines, height: maxTextHeight + lineH, maxWidthWold: maxWidthWold};
+    }
+
+    // x,y coord corner top-left
+    function wrapText(context, text, x, y, maxWidth, lineH){
+        var lines = text.split('\n');
+        var maxTextWidth = 0;
+        var maxTextHeight = 0;
+        var maxWidthWold = 0;
+        var infoLines = [];
+
+        for (var i = 0; i < lines.length; i++) {
+            var textDimension = wrapSentence(context, lines[i], x, y, maxWidth, lineH);
+            maxTextWidth = Math.max(textDimension.width, maxTextWidth);
+
+            for(var j=0; j < textDimension.infoLines.length; ++j){
+               infoLines.push(textDimension.infoLines[j]);
+            }
+            y += textDimension.height;
+            maxTextHeight += textDimension.height;
+//            maxWidthWold = Math.max(maxWidthWold, textDimension.maxWidthWold);
+        }
+        maxWidthWold = Math.max(context.measureText("TT").width, 10);
+        return {widthText: maxTextWidth, infoLines: infoLines, height: maxTextHeight, maxWidthWold: 10};
+    }
+
+
+
+    // If you dont want to use <body onLoad='init()'>
+    // You could uncomment this init() reference and place the script reference inside the body tag
+    init();
+    window.init = init;
+
+    var addText = document.getElementById('addTextButton');
+    addText.onclick = function(){
+       addRect();
+    };
+
+ })(window);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,7 +10,7 @@ $(function(){
     var backgroundColorSelector = $('#backgroundColorSelector');
 
     var palette = $('#paletteImg');
-    var write = $('#writeTextButton');
+    var write = $('#square-where-we-draw');
 
 //    create a canvas for get the color
     var canvas = document.createElement('canvas');
@@ -51,7 +51,7 @@ $(function(){
         $('.selectColor').css("color", rgba);
 
         // redraw the text with the right color
-        write.click();
+        write.mouseup();
     });
 
 });
