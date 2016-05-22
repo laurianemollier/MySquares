@@ -45,7 +45,10 @@
     <div id="draw-square">
         <div class="row">
             <div class="col-md-3">
-                <button class="btn btn-default" type="button">
+                <button class="btn btn-default" type="button" id="previewHistoric">
+                    <i class="fa fa-undo"></i>
+                </button>
+                <button class="btn btn-default" type="button" id="nextHistoric">
                     <i class="fa fa-undo"></i>
                 </button>
             </div>
@@ -56,11 +59,11 @@
             </div>
             <div class="col-md-3" id="dealWithText">
                 <button class="btn btn-default" id="addTextButton" type="button"> + Add text</button>
-                @for(i <- 1 to 8) {
-                <div class="row">
-                    <div class="col-md-6"> Text @i: </div>
+                @for(i <- 0 to 7) {
+                <div class="row" style="display: none;" id="manageText@i">
+                    <div class="col-md-6"> Text @(i + 1): </div>
                     <div class="col-md-3">
-                        <button class="btn btn-default" type="button">
+                        <button class="btn btn-default" type="button" id="deleteText@i">
                             <i class="fa fa-trash"></i>
                         </button>
                     </div>

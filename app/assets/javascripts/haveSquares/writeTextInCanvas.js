@@ -38,7 +38,6 @@
     var isResizeDrag = false;
     var expectResize = -1; // New, will save the # of the selection handle if the mouse is over one.
     var resizingByBottom = false;
-    var isWriting = false;
 
     var mx, my; // mouse coordinates
 
@@ -59,7 +58,15 @@
 
     // we use a fake canvas to draw individual shapes for selection testing
     var ghostcanvas;
-    var gctx; // fake canvas context
+    var gctx; // fake canvas ctx
+
+    // The number of text we can add
+    var maxText = 8;
+    var historic = {cursor: -1, step: []};
+    var nbMaxHistoric = 20;
+    var manageTextClass = "manageText";
+
+
 
     // since we can drag from anywhere in a node
     // instead of just its x/y corner, we need to save
@@ -107,33 +114,38 @@
 
     // New methods on the Box class
     Box.prototype = {
-      // we used to have a solo draw function
-      // but now each box is responsible for its own drawing
-      // mainDraw() will call this with the normal canvas
-      // myDown will call this with the ghost canvas with 'black'
-      draw: function(context, optionalColor) {
 
+      draw: function(ctx, historic){
           // We can skip the drawing of elements that have moved off the screen:
           if (this.x > WIDTH || this.y > HEIGHT) return;
           if (this.x + this.w < 0 || this.y + this.h < 0) return;
 
+          // draw historic
+          if(historic){
+            this.drawHistoric(ctx);
+          }
+          else{
+            this.drawNewImage(ctx);
+          }
+      },
+
+      // we used to have a solo draw function
+      // but now each box is responsible for its own drawing
+      // mainDraw() will call this with the normal canvas
+      // myDown will call this with the ghost canvas with 'black'
+      drawNewImage: function(ctx) {
+
           // write the text
-          context.font = this.fontSize + "px " + this.font;
-          context.fillStyle = colorText.style.color;
-          this.txtDim = wrapText(context, this.text, this.x + this.padding,
-                                                            this.y + this.padding + this.fontSize,
-                                                            this.w - 2*this.padding,
-                                                            this.lineH);
+          ctx.font = this.fontSize + "px " + this.font;
+          this.txtDim = this.drawText(ctx);
 
           // redimension the square
           if(resizingByBottom){
             this.y += this.h - this.txtDim.height;
           }
           this.h = this.txtDim.height;
-          if (context === gctx) context.fillStyle = 'black';
-          else context.fillStyle = this.fill;
+          this.drawBox(ctx);
 
-          context.fillRect(this.x,this.y,this.w,this.h);
 
           this.minW = this.txtDim.maxWidthWold;
           this.minH = this.fontSize*1.4 + this.padding*2;
@@ -155,89 +167,124 @@
           this.cursorY = this.cursorLine * this.lineH + this.y ;
           var line = infoLines[this.cursorLine].txt;
           var txt = line.substring(0, this.cursorIdx - nbKeys);
-          this.cursorX = context.measureText(txt).width + this.x;
-
-          if(mySel === this) this.setCursor(context);
+          this.cursorX = ctx.measureText(txt).width + this.x;
 
 
-
-        // draw selection
-        // this is a stroke along the box and also 8 new selection handles
-        if (mySel === this) {
-          context.strokeStyle = mySelColor;
-          context.lineWidth = mySelWidth;
-          context.strokeRect(this.x,this.y,this.w,this.h);
-
-          // draw the boxes
-
-          var half = mySelBoxSize / 2;
-
-          // 0  1  2
-          // 3     4
-          // 5  6  7
-
-          // top left, middle, right
-          selectionHandles[0].x = this.x-half;
-          selectionHandles[0].y = this.y-half;
-
-          selectionHandles[1].x = this.x+this.w/2-half;
-          selectionHandles[1].y = this.y-half;
-
-          selectionHandles[2].x = this.x+this.w-half;
-          selectionHandles[2].y = this.y-half;
-
-          //middle left
-          selectionHandles[3].x = this.x-half;
-          selectionHandles[3].y = this.y+this.h/2-half;
-
-          //middle right
-          selectionHandles[4].x = this.x+this.w-half;
-          selectionHandles[4].y = this.y+this.h/2-half;
-
-          //bottom left, middle, right
-          selectionHandles[6].x = this.x+this.w/2-half;
-          selectionHandles[6].y = this.y+this.h-half;
-
-          selectionHandles[5].x = this.x-half;
-          selectionHandles[5].y = this.y+this.h-half;
-
-          selectionHandles[7].x = this.x+this.w-half;
-          selectionHandles[7].y = this.y+this.h-half;
-
-
-          context.fillStyle = mySelBoxColor;
-          for (var i = 0; i < 8; i ++) {
-            var cur = selectionHandles[i];
-            context.fillRect(cur.x, cur.y, mySelBoxSize, mySelBoxSize);
+          if(mySel === this){
+            this.drawCursor(ctx);
+            this.drawHandles(ctx);
           }
+      },
+      drawHistoric: function(ctx, htc){
+        var hist = historic.step[historic.cursor];
+
+        this.drawText(ctx, htc);
+        this.drawBox(ctx);
+        if(mySel === this){
+          this.drawCursor(ctx);
+          this.drawHandles(ctx);
         }
-
-      }, // end draw
-
-
+      },
       isInBox: function(mx, my){
         return this.x <= mx && mx <= (this.x + this.w) && this.y <= my && my <= (this.y + this.h);
       },
-
       selectText: function(){
 
       },
-      setCursor: function(ctx){
+      drawCursor: function(ctx){
         ctx.beginPath();
         ctx.moveTo(this.cursorX, this.cursorY);
         ctx.lineTo(this.cursorX, this.cursorY + this.cursorH);
         ctx.lineWidth = 2;
         ctx.strokeStyle = this.fontColor;
         ctx.stroke();
+      },
+      drawText: function(ctx, historic){
+          if(historic) ctx.fillStyle = this.fontColor;
+          else ctx.fillStyle = colorText.style.color;
+          return wrapText(ctx, this.text, this.x + this.padding,
+                                                            this.y + this.padding + this.fontSize,
+                                                            this.w - 2*this.padding,
+                                                            this.lineH);
+
+      },
+      drawBox: function(ctx){
+        if (ctx === gctx) ctx.fillStyle = 'black';
+        else ctx.fillStyle = this.fill;
+        ctx.fillRect(this.x,this.y,this.w,this.h);
+      },
+
+      // draw selection
+      // this is a stroke along the box and also 8 new selection handles
+      drawHandles: function(ctx){
+
+        ctx.strokeStyle = mySelColor;
+        ctx.lineWidth = mySelWidth;
+        ctx.strokeRect(this.x,this.y,this.w,this.h);
+
+        // draw the boxes
+
+        var half = mySelBoxSize / 2;
+
+        // 0  1  2
+        // 3     4
+        // 5  6  7
+
+        // top left, middle, right
+        selectionHandles[0].x = this.x-half;
+        selectionHandles[0].y = this.y-half;
+
+        selectionHandles[1].x = this.x+this.w/2-half;
+        selectionHandles[1].y = this.y-half;
+
+        selectionHandles[2].x = this.x+this.w-half;
+        selectionHandles[2].y = this.y-half;
+
+        //middle left
+        selectionHandles[3].x = this.x-half;
+        selectionHandles[3].y = this.y+this.h/2-half;
+
+        //middle right
+        selectionHandles[4].x = this.x+this.w-half;
+        selectionHandles[4].y = this.y+this.h/2-half;
+
+        //bottom left, middle, right
+        selectionHandles[6].x = this.x+this.w/2-half;
+        selectionHandles[6].y = this.y+this.h-half;
+
+        selectionHandles[5].x = this.x-half;
+        selectionHandles[5].y = this.y+this.h-half;
+
+        selectionHandles[7].x = this.x+this.w-half;
+        selectionHandles[7].y = this.y+this.h-half;
+
+
+        ctx.fillStyle = mySelBoxColor;
+        for (var i = 0; i < 8; i ++) {
+          var cur = selectionHandles[i];
+          ctx.fillRect(cur.x, cur.y, mySelBoxSize, mySelBoxSize);
+        }
+
+
       }
+
 
     }
 
     //Initialize a new Box, add it, and invalidate the canvas
     function addRect() {
-      var rect = new Box;
-      boxes.push(rect);
-      invalidate();
+      var nbBoxes = boxes.length;
+      if(nbBoxes < maxText){
+        var rect = new Box;
+        boxes.push(rect);
+        invalidateAndAddHistoric();
+        document.getElementById(manageTextClass + nbBoxes).style.display = "block";
+      }
+    }
+    function deleteRect(i){
+        document.getElementById(manageTextClass + (boxes.length - 1)).style.display = "none";
+        boxes.splice(i, 1);
+        invalidateAndAddHistoric();
     }
 
     // initialize our canvas, add a ghost canvas, set draw loop
@@ -291,7 +338,7 @@
     }
 
 
-    //wipes the canvas context
+    //wipes the canvas ctx
     function clear(c){
         c.clearRect(0, 0, WIDTH, HEIGHT);
     }
@@ -301,15 +348,28 @@
     // It only ever does something if the canvas gets invalidated by our code
     function mainDraw() {
       if (canvasValid == false) {
-        ctx.fillStyle = colorBackground.style.color;
+
+        var hist = historic.step.length -1 != historic.cursor;
+
+        if(hist) {
+            var h = historic.step[historic.cursor];
+            ctx.fillStyle = h.colorBackground;
+            colorBackground.style.color = h.colorBackground;
+            boxes = h.boxes;
+            if(boxes.length > 0) colorText.style.color = h.boxes[0].fontColor;
+            displayManageTextOnHistoric();
+
+        }
+        else ctx.fillStyle = colorBackground.style.color;
         ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
         // Add stuff you want drawn in the background all the time here
 
         // draw all boxes
+
         var l = boxes.length;
         for (var i = 0; i < l; i++) {
-          boxes[i].draw(ctx); // we used to call drawshape, but now each box draws itself
+          boxes[i].draw(ctx, hist); // we used to call drawshape, but now each box draws itself
         }
 
         // Add stuff you want drawn on top all the time here
@@ -419,7 +479,7 @@
 
           var cur = selectionHandles[i];
 
-          // we dont need to use the ghost context because
+          // we dont need to use the ghost ctx because
           // selection handles will always be rectangles
           if (mx >= cur.x && mx <= cur.x + mySelBoxSize &&
               my >= cur.y && my <= cur.y + mySelBoxSize) {
@@ -466,6 +526,7 @@
 
     // Happens when the mouse is clicked in the canvas
     function myDown(e){
+
       getMouse(e);
 
       //we are over a selection box
@@ -477,13 +538,12 @@
       clear(gctx);
       var l = boxes.length;
       for (var i = l-1; i >= 0; i--) {
-        // draw shape onto ghost context
-        boxes[i].draw(gctx, 'black');
+        // draw shape onto ghost ctx
+        boxes[i].draw(gctx);
 
         // get image data at the mouse x,y pixel
         var imageData = gctx.getImageData(mx, my, 1, 1);
         var index = (mx + my * imageData.width) * 4;
-
         // if the mouse pixel exists, select and break
         if (imageData.data[3] > 0) {
           mySel = boxes[i];
@@ -508,25 +568,63 @@
     }
 
     function myUp(e){
-      getMouse(e);
-      var box = isInsideBox(mx, my);
-      if(box){
-        if(box.text == box.defaultText){
-//          box.text = "";
-//          box.fontColor = "back";
-        }
-        box.setCursor(ctx);
-      }
+
 
       isDrag = false;
       isResizeDrag = false;
       resizingByBottom = false;
-//    isWriting = false;
+
 
       expectResize = -1;
-      invalidate();
+      invalidateAndAddHistoric();
+
     }
 
+    function addHistoric(){
+        // if to much historic, delete the latest step
+        if(historic.step.length > nbMaxHistoric){
+            historic.step.splice(0, 1);
+            historic.cursor -= 1;
+        }
+        var saveBoxes = [];
+        for(var i=0; i<boxes.length; ++i){
+            // Save new step
+            var rect = new Box;
+
+            rect.x = boxes[i].x;
+            rect.y = boxes[i].y;
+            rect.w = boxes[i].w;
+            rect.h = boxes[i].h;
+            rect.padding = boxes[i].padding;
+            rect.fill = boxes[i].fill;
+            rect.text = boxes[i].text;
+            rect.font = boxes[i].font;
+            rect.fontSize = boxes[i].fontSize;
+            rect.fontColor = colorText.style.color;
+            rect.lineH = boxes[i].lineH;
+            rect.cursorX = boxes[i].cursorX;
+            rect.cursorY = boxes[i].cursorY;
+            rect.cursorH = boxes[i].cursorH;
+            saveBoxes.push(rect);
+        }
+        var current = {boxes: saveBoxes, colorBackground: colorBackground.style.color};
+
+        historic.cursor += 1;
+        if(historic.cursor == historic.step.length){
+            historic.step.push(current);
+        }
+        else{
+            historic.step.splice(historic.cursor, historic.step.length);
+            historic.step.push(current);
+        }
+    };
+
+    function previewHistoric(){
+        if(historic.cursor > 0) historic.cursor -= 1;
+    }
+    function nextHistoric(){
+        if(historic.cursor < historic.step.length - 1) historic.cursor += 1;
+    }
 
     // get key code
     function keyDown(e){
@@ -585,6 +683,7 @@
             if(mySel.cursorIdx > 0){
                mySel.cursorIdx += -1;
                mySel.text = mySel.text.substring(0, mySel.cursorIdx) + mySel.text.substring(mySel.cursorIdx + 1, mySel.text.length);
+               invalidateAndAddHistoric();
             }
           }
        }
@@ -609,10 +708,14 @@
             // clear the ghost canvas for next time
             clear(gctx);
             // invalidate because we might need the selection border to disappear
-            invalidate();
+            invalidateAndAddHistoric();
        }
     }
 
+    function invalidateAndAddHistoric(){
+        addHistoric();
+        invalidate();
+    }
     function invalidate() {
       canvasValid = false;
     }
@@ -654,14 +757,14 @@
         mainDraw();
     }
 
-    function wrapWord(context, word, maxWidth){
+    function wrapWord(ctx, word, maxWidth){
 
         var line = '';
         var wrap = [];
         for(var n = 0; n < word.length; n++){
 
           var testLine = line + word[n];
-          var metrics = context.measureText(testLine);
+          var metrics = ctx.measureText(testLine);
           var testWidth = metrics.width;
 
           if (testWidth > maxWidth && n > 0) {
@@ -676,7 +779,7 @@
         return wrap;
     }
 
-    function wrapSentence(context, text, x, y, maxWidth, lineH) {
+    function wrapSentence(ctx, text, x, y, maxWidth, lineH) {
         var words = text.split(' ');
         var line = '';
 
@@ -688,23 +791,23 @@
 
         for(var n = 0; n < words.length; n++) {
           // if one word is to big, split it
-          if(context.measureText(words[n]).width > maxWidth){
-            var worldArray = wrapWord(context, words[n], maxWidth);
+          if(ctx.measureText(words[n]).width > maxWidth){
+            var worldArray = wrapWord(ctx, words[n], maxWidth);
             words = words.slice(0, n).concat( worldArray ).concat( words.slice(n+1) );
           }
 
-          maxWidthWold = Math.max(maxWidthWold, context.measureText(words[n]).width);
+          maxWidthWold = Math.max(maxWidthWold, ctx.measureText(words[n]).width);
 
 
           var testLine = line + words[n] + ' ';
-          var metrics = context.measureText(testLine);
+          var metrics = ctx.measureText(testLine);
           var testWidth = metrics.width;
 
 
           if (testWidth > maxWidth && n > 0) {
-            context.fillText(line, x, y);
+            ctx.fillText(line, x, y);
 //            if(line.slice(-1) == ' ') line = line.substring(0, line.length - 1);
-            infoLn = {width: context.measureText(line).width, nbKey: line.length, txt: line};
+            infoLn = {width: ctx.measureText(line).width, nbKey: line.length, txt: line};
             infoLines.push(infoLn);
             line = words[n] + ' ';
             y += lineH;
@@ -712,21 +815,21 @@
           }
           else {
             line = testLine;
-            var metrics = context.measureText(testLine);
+            var metrics = ctx.measureText(testLine);
             maxTextWidth = Math.max(metrics.width, maxTextWidth);
 
           }
         }
 //        if(line.slice(-1) == ' ') line = line.substring(0, line.length - 1);
-        context.fillText(line, x, y);
-        infoLn = {width: context.measureText(line).width, nbKey: line.length, txt: line};
+        ctx.fillText(line, x, y);
+        infoLn = {width: ctx.measureText(line).width, nbKey: line.length, txt: line};
         infoLines.push(infoLn);
 
         return {width: maxTextWidth - 9, infoLines: infoLines, height: maxTextHeight + lineH, maxWidthWold: maxWidthWold};
     }
 
     // x,y coord corner top-left
-    function wrapText(context, text, x, y, maxWidth, lineH){
+    function wrapText(ctx, text, x, y, maxWidth, lineH){
         var lines = text.split('\n');
         var maxTextWidth = 0;
         var maxTextHeight = 0;
@@ -734,7 +837,7 @@
         var infoLines = [];
 
         for (var i = 0; i < lines.length; i++) {
-            var textDimension = wrapSentence(context, lines[i], x, y, maxWidth, lineH);
+            var textDimension = wrapSentence(ctx, lines[i], x, y, maxWidth, lineH);
             maxTextWidth = Math.max(textDimension.width, maxTextWidth);
 
             for(var j=0; j < textDimension.infoLines.length; ++j){
@@ -744,21 +847,50 @@
             maxTextHeight += textDimension.height;
 //            maxWidthWold = Math.max(maxWidthWold, textDimension.maxWidthWold);
         }
-        maxWidthWold = Math.max(context.measureText("TT").width, 10);
+        maxWidthWold = Math.max(ctx.measureText("TT").width, 10);
         return {widthText: maxTextWidth, infoLines: infoLines, height: maxTextHeight, maxWidthWold: 10};
     }
 
-
+    function displayManageTextOnHistoric(){
+        for(var i=0; i<maxText; ++i){
+            var display = "none";
+            if(i<boxes.length) display = "block";
+            document.getElementById(manageTextClass + i).style.display = display;
+        }
+    }
 
     // If you dont want to use <body onLoad='init()'>
     // You could uncomment this init() reference and place the script reference inside the body tag
     init();
     window.init = init;
 
+
+
+    // add text when clicking on the addButton
     var addText = document.getElementById('addTextButton');
     addText.onclick = function(){
        addRect();
     };
+
+    // set the delete text button
+    var className = 'deleteText';
+    for(var i=0; i<maxText; ++i){
+        document.getElementById(className + i).onclick = function(){
+            var idx = this.id[this.id.length - 1];
+            deleteRect(parseInt(idx));
+            canvas.focusout();
+        }
+    }
+
+    // set the historic button
+    document.getElementById('previewHistoric').onclick = function(){
+        previewHistoric();
+        canvas.focusout();
+    }
+    document.getElementById('nextHistoric').onclick = function(){
+        nextHistoric();
+        canvas.focusout();
+    }
 
  })(window);
 
