@@ -51,7 +51,7 @@ $(function(){
         $('.selectColor').css("color", rgba);
 
         // redraw the text with the right color
-        write.mouseup();
+        write.focusout();
     });
 
 });
