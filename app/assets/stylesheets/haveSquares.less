@@ -31,33 +31,39 @@
 }
 
 
+/* second step */
 
 #draw-square{
     margin-top: 30px;
 }
 
+
+
+
 #square-where-we-draw{
     cursor:text;
     z-index: 1;
 }
-
-#writeTextDiv{
-    position: absolute;
-    z-index: 2;
+/* input in the canvas */
+.boxTextarea{
+    border: none;
+    resize: horizontal;
+    cursor: pointer;
+    overflow: hidden;
+    height:  50px;
+    border: inset 2px transparent;
+}
+.boxTextarea:active {
+    border: inset 2px red;
+}
+.boxTextarea:focus {
+    border: inset 2px blue;
 }
 
-#writeTextDiv textarea{
-    width: 100%;
-    max-width: 100%;
-    min-width: 100%;
+
+#dealWithText input {
     color: black;
 }
-
-#writeTextDiv button{
-    margin-top: 20px;
-}
-
-
 
 
 
