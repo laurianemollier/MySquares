@@ -51,6 +51,7 @@
 
 </script>
 
+<script src="@routes.Assets.versioned("javascripts/html2canvas.js")"> </script>
 
 <!--Second step: Draw into the square -->
 <script>
@@ -73,9 +74,6 @@
 <script src="@routes.Assets.versioned("javascripts/haveSquares/select-color.js")"> </script>
 
 
-
-
-
 <!--Third step: Confirm you square, login, share-->
 
 <script>
@@ -83,22 +81,37 @@
     var previewSquare = $("#previewSquare");
     var finalSquareInput = $("#finalSquareString");
 
+
+    // show the square preview
+    var width = previewSquare.width();
+    previewSquare.height(width).width(width);
+    previewSquare.attr("height", width).attr("width", width);
+    $("#previewSquareArea").hide();
+
+    var ctx = previewSquare.get(0).getContext("2d");
     purchaseButton.click(function(){
+        html2canvas($('#divCanvas').get(0), {
+          onrendered: function(canvas) {
+            //document.body.appendChild(canvas);
+            // add preview
+            ctx.drawImage(canvas, 0, 0, width, width);
 
-        goToStep3();
+            // register image in the final form
+            finalSquareInput.val(canvas.toDataURL());
+          }
+        });
 
-        // show the square preview
-        var width = previewSquare.width();
-        previewSquare.height(width).width(width);
-        previewSquare.attr("height", width).attr("width", width);
-
-        var dataURL = squareWeDraw.get(0).toDataURL();
-        var ctx = previewSquare.get(0).getContext("2d");
-        ctx.drawImage(squareWeDraw.get(0), 0, 0, width, width);
+        setTimeout(function(){
+            goToStep3();
+        }, 2000);
 
 
-        // register image in the final form
-        finalSquareInput.val(dataURL);
+
+
+
+
+
+
     });
 </script>
 
