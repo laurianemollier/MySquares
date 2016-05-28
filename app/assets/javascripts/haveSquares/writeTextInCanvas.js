@@ -387,18 +387,26 @@
       palette.show("slow");
     }
     function mouseMove(e){
-              getMouse(e);
-
-      // set cursor
-      setCursor();
-
-
+      getMouse(e);
       if(isDrag) {
-        mySel.x = mx - offsetx;
-        mySel.y = my - offsety;
+        var newX = mx - offsetx;
+        var newY = my - offsety;
+
+        // do not move beyond borders
+        if(newX <= 0) newX = 0;
+        if(newX >= (WIDTH - mySel.w)) newX = WIDTH - mySel.w;
+        if(newY <= 0) newY= 0;
+        if(newY >= (HEIGHT - mySel.h)) newY = HEIGHT - mySel.h;
+
+        mySel.x = newX;
+        mySel.y = newY;
 
         // something is changing position so we better invalidate the canvas!
         invalidate();
+      }
+      else{
+        // set cursor
+        setCursor();
       }
     }
     // Sets mx,my to the mouse position relative to the canvas
