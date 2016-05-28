@@ -16,6 +16,7 @@
     // for the colors
     var colorText = document.getElementById('iconText');
     var colorBackground = document.getElementById('iconBackground');
+    var palette = $('#paletteImg');
 
     // holds all our boxes
     var boxes = [];
@@ -149,6 +150,12 @@
       isInBox: function(){
         return this.x <= mx && mx <= (this.x + this.w) && this.y <= my && my <= (this.y + this.h);
       },
+      setCursor: function(){
+        if(this.isInResizeButton()){
+            this.textarea.style.cursor = "e-resize";
+        }
+        else this.textarea.style.cursor = "move";
+      },
       isInResizeButton: function(){
         var dimR = 15;
         var x = this.x + this.w;
@@ -234,7 +241,7 @@
       setInterval(mainDraw, INTERVAL);
 
       // set our events. Up and down are for dragging,
-//      canvas.focusout = focusOut;
+      canvas.onfocusout = focusOut;
 
       // add a large green rectangle
       addRect();
@@ -345,12 +352,11 @@
       canvasValid = false;
     }
 
-    function isInsideBox(mx, my){
+    function setCursor(){
         var l = boxes.length;
         for (var i = 0; i < l; i++) {
-           if(boxes[i].isInBox(mx, my)) return boxes[i];
+           if(boxes[i].isInBox()) boxes[i].setCursor();
         }
-        return false;
     }
 
 
@@ -377,10 +383,17 @@
         mySel.h = parseInt(mySel.textarea.style.height, 10);
         console.log(mySel.w)
       }
+
+      palette.show("slow");
     }
     function mouseMove(e){
+              getMouse(e);
+
+      // set cursor
+      setCursor();
+
+
       if(isDrag) {
-        getMouse(e);
         mySel.x = mx - offsetx;
         mySel.y = my - offsety;
 
@@ -414,14 +427,10 @@
     function mouseOut(e){
         mouseMove(e);
     }
-//    function reDraw(){
-//        invalidate();
-//        mainDraw();
-//    }
-//    function focusOut(){
-//        mySel = null;
-//        reDraw();
-//    }
+    function focusOut(){
+        mySel = null;
+        invalidate();
+    }
 
     function setZIndex(){
       if(mySel){
