@@ -19,12 +19,14 @@ $(function(){
 
     /* deal with the selection of tools. Witch one select the color and display the palette */
     textColorSelector.click(function(){
-        iconText.addClass(selectColorId);
-        iconBackground.removeClass(selectColorId);
+        if(!iconText.hasClass(selectColorId) && !iconBackground.hasClass(selectColorId)){
+            iconText.addClass(selectColorId);
+            iconBackground.removeClass(selectColorId);
 
-        $(this).addClass(selectedClass);
-        backgroundColorSelector.removeClass(selectedClass);
-        palette.show("slow");
+            $(this).addClass(selectedClass);
+            backgroundColorSelector.removeClass(selectedClass);
+            palette.show("slow");
+        }
     });
 
     backgroundColorSelector.click(function(){

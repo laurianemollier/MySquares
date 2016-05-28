@@ -1788,9 +1788,23 @@ _html2canvas.Parse = function (images, options) {
       textValue = el.placeholder;
     }
 
-    textNode = doc.createTextNode(textValue);
+    var txt = textValue.split('\n');
+    console.log(txt)
+    for(var i=0; i< txt.length; ++i){
+      t(txt[i], valueWrap, el, stack);
+    }
+//    textNode = doc.createTextNode(textValue);
+//    valueWrap.appendChild(textNode);
+//    body.appendChild(valueWrap);
+//
+//    renderText(el, textNode, stack);
+//    body.removeChild(valueWrap);
+  }
 
+  function t(textValue, valueWrap, el, stack){
+    var textNode = doc.createTextNode(textValue);
     valueWrap.appendChild(textNode);
+    valueWrap.appendChild(doc.createElement("br"));
     body.appendChild(valueWrap);
 
     renderText(el, textNode, stack);
@@ -2103,7 +2117,7 @@ _html2canvas.Parse = function (images, options) {
         }
         break;
       case "TEXTAREA":
-        if ((element.value || element.placeholder || "").length > 0){
+        if ((element.value /* || element.placeholder */|| "").length > 0){ //TODO: custom /**/
           renderFormValue(element, bounds, stack);
         }
         break;
