@@ -16,7 +16,7 @@
     // for the colors
     var colorText = document.getElementById('iconText');
     var colorBackground = document.getElementById('iconBackground');
-    var palette = $('#paletteImg');
+    var textColorSelector = $('#textColorSelector');
 
     // holds all our boxes
     var boxes = [];
@@ -63,7 +63,8 @@
 
     // The number of text we can add
     var maxText = 8;
-    var historic = {cursor: 0, step: []};
+    var isHistoric = false;
+    var historic = {cursor: -1, step: []};
     var nbMaxHistoric = 20;
     var manageTextClass = "manageText";
 
@@ -95,12 +96,11 @@
 
       this.w = 300 + 10; // default width and height?
       this.h = this.fontSize*3;
-//      this.h = 90;
       this.x = WIDTH/2 - this.w/2;
       this.y = HEIGHT/3;
 
       this.minFontSize = 15;
-      this.textarea
+      this.textarea;
 
       this.zIndex;
     }
@@ -108,17 +108,34 @@
     // New methods on the Box class
     Box.prototype = {
 
-      draw: function(ctx, historic){
+      clone: function(){
+        var newB = new Box;
+        newB.fill = this.fill;
+
+        newB.text = this.text;
+        newB.font = this.font;
+        newB.fontSize = this.fontSize;
+        newB.fontColor = this.fontColor;
+        newB.fontOpacity = this.fontOpacity;
+
+        newB.w = this.w;
+        newB.h = this.h;
+        newB.x = this.x;
+        newB.y = this.y;
+
+        newB.minFontSize = this.minFontSize;
+        newB.textarea = this.textarea.cloneNode();
+
+        newB.zIndex = this.zIndex;
+
+        return newB;
+      },
+      draw: function(ctx){
           // We can skip the drawing of elements that have moved off the screen:
           if (this.x > WIDTH || this.y > HEIGHT) return;
           if (this.x + this.w < 0 || this.y + this.h < 0) return;
-          // draw historic
-          if(historic){
-            this.drawHistoric(ctx);
-          }
-          else{
-            this.drawNewImage(ctx);
-          }
+
+          this.drawNewImage(ctx);
       },
 
       // we used to have a solo draw function
@@ -136,16 +153,6 @@
 
           this.textarea.style.zIndex = this.zIndex;
 
-      },
-      drawHistoric: function(ctx, htc){
-        var hist = historic.step[historic.cursor];
-        this.measureText(ctx);
-        this.drawBox(ctx);
-        if(mySel === this){
-          this.drawCursor(ctx);
-          this.drawHandles(ctx);
-        }
-        this.drawText(ctx, htc);
       },
       isInBox: function(){
         return this.x <= mx && mx <= (this.x + this.w) && this.y <= my && my <= (this.y + this.h);
@@ -165,49 +172,69 @@
     }
 
     //Initialize a new Box, add it, and invalidate the canvas
-    function addRect() {
+    function addRect(box) {
       var nbBoxes = boxes.length;
       if(nbBoxes < maxText){
+        var rect;
+        if(box) rect = box;
+        else rect = newBox();
+
+        addEventOnBox(rect);
+
+        contentCanvas.appendChild(rect.textarea);
+        boxes.push(rect);
+        invalidate();
+        document.getElementById(manageTextClass + nbBoxes).style.display = "block";
+        if(!isHistoric) addHistoric();
+      }
+    }
+    function newBox(){
+       var nbBoxes = boxes.length;
+
         var rect = new Box;
         rect.textarea = document.createElement('textarea');
         rect.textarea.placeholder = defaultText;
         rect.textarea.className = classNameTextarea;
         rect.textarea.id = "textareaInCanvas" + nbBoxes;
 
-
         rect.textarea.style.display = "block";
         rect.textarea.style.position = "absolute";
 
+        rect.textarea.rows = 1;
+//        rect.textarea.cols = 20;
+//        rect.w = rect.textarea.style.width;
+//        rect.h = rect.textarea.style.height;
+
         rect.textarea.style.zIndex = nbBoxes;
-        this.zIndex = nbBoxes;
+//        this.zIndex = nbBoxes;
 
         rect.textarea.style.left = rect.x;
         rect.textarea.style.top = rect.y;
         rect.textarea.style.width = rect.w;
-        rect.textarea.style.height = rect.h;
-
+//        rect.textarea.style.height = rect.h;
+        return rect;
+    }
+    function addEventOnBox(rect){
         rect.textarea.onmousedown = mouseDown;
         rect.textarea.onmouseup = mouseUp;
         rect.textarea.onmousemove = mouseMove;
         rect.textarea.onmouseout = mouseOut;
         rect.textarea.onkeyup = keyUp;
-
-
-        contentCanvas.appendChild(rect.textarea);
-        boxes.push(rect);
-
-        invalidate();
-        document.getElementById(manageTextClass + nbBoxes).style.display = "block";
-        addHistoric();
-      }
+        rect.textarea.ondblclick = dblClick;
     }
     function deleteRect(i){
-        contentCanvas.removeChild(boxes[i].textarea)
+        contentCanvas.removeChild(boxes[i].textarea);
         document.getElementById(manageTextClass + (boxes.length - 1)).style.display = "none";
         boxes.splice(i, 1);
         invalidate();
     }
-
+    function deleteAllRect(){
+        for(var i=0; i<boxes.length; ++i){
+            contentCanvas.removeChild(boxes[i].textarea);
+            document.getElementById(manageTextClass + (boxes.length - 1)).style.display = "none";
+        }
+        boxes = []; // TODO: Est ce que les objetcs sont effacer?
+    }
     function changeFontSize(i, fontSize){
         boxes[i].fontSize = fontSize;
         mySel = boxes[i];
@@ -259,16 +286,17 @@
     function mainDraw() {
       if (canvasValid == false) {
 
-        var hist = historic.step.length != historic.cursor;
-
-        if(hist) {
+        if(isHistoric) {
             var h = historic.step[historic.cursor];
             ctx.fillStyle = h.colorBackground;
             colorBackground.style.color = h.colorBackground;
-            boxes = h.boxes;
             if(boxes.length > 0) colorText.style.color = h.boxes[0].fontColor;
-            displayManageTextOnHistoric();
 
+            deleteAllRect();
+            for(var i=0; i<h.boxes.length; ++i){
+                addRect(h.boxes[i]);
+            }
+            isHistoric = false;
         }
         else ctx.fillStyle = colorBackground.style.color;
         ctx.fillRect(0, 0, WIDTH, HEIGHT);
@@ -279,7 +307,7 @@
 
         var l = boxes.length;
         for (var i = 0; i < l; i++) {
-          boxes[i].draw(ctx, hist); // we used to call drawshape, but now each box draws itself
+          boxes[i].draw(ctx); // we used to call drawshape, but now each box draws itself
         }
 
         // Add stuff you want drawn on top all the time here
@@ -288,63 +316,43 @@
       }
     }
 
-    // Happens when the mouse is moving inside the canvas
 
-    // Happens when the mouse is clicked in the canvas
     function addHistoric(){
-
         // if to much historic, delete the latest step
         if(historic.step.length > nbMaxHistoric){
             historic.step.splice(0, 1);
             historic.cursor -= 1;
         }
+
         var saveBoxes = [];
         for(var i=0; i<boxes.length; ++i){
             // Save new step
-            var rect = new Box;
-            rect.x = boxes[i].x;
-            rect.y = boxes[i].y;
-            rect.w = boxes[i].w;
-            rect.h = boxes[i].h;
-            rect.padding = boxes[i].padding;
-            rect.fill = boxes[i].fill;
-            rect.text = boxes[i].text;
-            rect.font = boxes[i].font;
-            rect.fontSize = boxes[i].fontSize;
-            rect.fontColor = colorText.style.color;
-            rect.lineH = boxes[i].lineH;
-            rect.cursorX = boxes[i].cursorX;
-            rect.cursorY = boxes[i].cursorY;
-            rect.cursorH = boxes[i].cursorH;
-            rect.cursorIdx = boxes[i].cursorIdx;
-            rect.writeDefaultText = boxes[i].writeDefaultText;
-
+            var rect = boxes[i].clone();
             saveBoxes.push(rect);
-
         }
         var current = {boxes: saveBoxes, colorBackground: colorBackground.style.color};
 
 
         historic.cursor += 1;
-        if(historic.cursor == historic.step.length + 1){
+        if(historic.cursor == historic.step.length){
             historic.step.push(current);
         }
         else{
             historic.step = historic.step.slice(0, historic.cursor);
             historic.step.push(current);
-            historic.cursor = historic.step.length;
+            historic.cursor = historic.step.length -1;
         }
-
     };
 
     function previewHistoric(){
-        if(historic.cursor == historic.step.length && historic.cursor > 0) historic.cursor -= 2;
-        else if(historic.cursor > 0) historic.cursor -= 1;
-         reDraw();
+        if(historic.cursor > 0) historic.cursor -= 1;
+        invalidate();
+        isHistoric = true;
     }
     function nextHistoric(){
-        if(historic.cursor < historic.step.length) historic.cursor += 1;
-        reDraw();
+        if(historic.cursor < historic.step.length -1) historic.cursor += 1;
+        invalidate();
+        isHistoric = true;
     }
 
 
@@ -381,10 +389,9 @@
       else{
         mySel.w = parseInt(mySel.textarea.style.width, 10);
         mySel.h = parseInt(mySel.textarea.style.height, 10);
-        console.log(mySel.w)
       }
-
-      palette.show("slow");
+      textColorSelector.click();
+      addHistoric();
     }
     function mouseMove(e){
       getMouse(e);
@@ -409,6 +416,10 @@
         setCursor();
       }
     }
+    function dblClick(){
+        mySel.textarea.select();
+    }
+
     // Sets mx,my to the mouse position relative to the canvas
     // unfortunately this can be tricky, we have to worry about padding and borders
     function getMouse(e) {
@@ -438,6 +449,7 @@
     function focusOut(){
         mySel = null;
         invalidate();
+        addHistoric();
     }
 
     function setZIndex(){
@@ -456,14 +468,13 @@
           mySel = boxes[id];
         }
         resizeTextarea();
+        addHistoric();
     }
     function resizeTextarea(){
       mySel.textarea.style.height = 'auto';
       mySel.h = mySel.textarea.scrollHeight;
       mySel.textarea.style.height = mySel.textarea.scrollHeight+'px';
     }
-
-
 
     function displayManageTextOnHistoric(){
         for(var i=0; i<maxText; ++i){

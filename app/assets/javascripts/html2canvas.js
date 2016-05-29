@@ -1788,21 +1788,25 @@ _html2canvas.Parse = function (images, options) {
       textValue = el.placeholder;
     }
 
-    var txt = textValue.split('\n');
-    console.log(txt)
-    for(var i=0; i< txt.length; ++i){
-      t(txt[i], valueWrap, el, stack);
+    if(el.nodeName === "TEXTAREA"){
+      var txt = getDisplayedTextTextarea(el).split('\n');
+      for(var i=0; i< txt.length; ++i){
+        renderFormValueHelper(txt[i], valueWrap, el, stack);
+      }
     }
-//    textNode = doc.createTextNode(textValue);
-//    valueWrap.appendChild(textNode);
-//    body.appendChild(valueWrap);
-//
-//    renderText(el, textNode, stack);
-//    body.removeChild(valueWrap);
+    else{
+      textNode = doc.createTextNode(textValue); // TODO: original code
+      valueWrap.appendChild(textNode);
+      body.appendChild(valueWrap);
+
+      renderText(el, textNode, stack);
+      body.removeChild(valueWrap);
+    }
   }
 
-  function t(textValue, valueWrap, el, stack){
+  function renderFormValueHelper(textValue, valueWrap, el, stack){
     var textNode = doc.createTextNode(textValue);
+
     valueWrap.appendChild(textNode);
     valueWrap.appendChild(doc.createElement("br"));
     body.appendChild(valueWrap);
@@ -1810,6 +1814,50 @@ _html2canvas.Parse = function (images, options) {
     renderText(el, textNode, stack);
     body.removeChild(valueWrap);
   }
+  /* take text in textarea and split to long words with \n for an perfect display without overflow*/
+  function getDisplayedTextTextarea(textarea){
+      var test = textarea.cloneNode();
+      test.value = "";
+      document.body.appendChild(test);
+
+      var text = "";
+      if(textarea.value.length > 0){
+          var paragraphs = textarea.value.split('\n');
+          var words;
+          for(var i=0; i< paragraphs.length; ++i){
+              words = paragraphs[i].split(' ');
+              for(var j=0; j<words.length; ++j){
+                  text += getDisplayedWordTextarea(textarea, test, words[j]);
+                  if(j != words.length - 1) text += ' ';
+              }
+              if(i != paragraphs.length - 1) text += '\n';
+          }
+      }
+      document.body.removeChild(test);
+      return text;
+  }
+  /* split to long word with \n for an perfect display without overflow */
+  function getDisplayedWordTextarea(textarea, test, word){
+      var newWord = "";
+      var oldH;
+      var newH;
+
+      for(var i=0; i<word.length; ++i){
+          oldH = test.scrollHeight;
+
+          test.value += word[i];
+          test.style.height = 'auto';
+          test.style.height = test.scrollHeight + 'px';
+          newH = test.scrollHeight;
+          if(newH > oldH){
+              newWord += '\n';
+          }
+          newWord += word[i];
+      }
+      return newWord;
+  }
+
+
 
   function drawImage (ctx) {
     ctx.drawImage.apply(ctx, Array.prototype.slice.call(arguments, 1));

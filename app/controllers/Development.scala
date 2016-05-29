@@ -21,6 +21,23 @@ object Development extends Controller  {
     Ok(views.html.index("C'est la doc!!!!"))
   }
 
+  def dev = Action{
+    Ok(views.html.dev());
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   def init = Action {
     def square = Array.ofDim[(String, Int)](nbSquares).map{ tupple =>
@@ -58,5 +75,8 @@ object Development extends Controller  {
     )
     Ok("regarde dans taboite mail!!!!!")
   }
+
+
+
 
 }

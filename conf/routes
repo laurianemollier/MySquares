@@ -11,6 +11,8 @@ GET     /init                          controllers.Development.init
 
 GET     /mail                          controllers.Development.mailtest
 
+GET     /dev                           controllers.Development.dev
+
 
 
 
