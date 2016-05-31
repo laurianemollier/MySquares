@@ -1,9 +1,0 @@
-@(login: Boolean)
-
-@css = {
-<link href="@routes.Assets.versioned("stylesheets/termsConditions.css")" rel="stylesheet">
-}
-
-@js = {}
-
-@commonToAllPage.template(css, sidebar(), mainBarColumn(), js, login)

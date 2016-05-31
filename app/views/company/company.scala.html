@@ -1,9 +1,0 @@
-@(contactData: Map[String, String], login: Boolean)
-
-
-@css = {
-<link href="@routes.Assets.versioned("stylesheets/company.css")" rel="stylesheet">
-}
-@js = {}
-
-@commonToAllPage.template(css, sidebar(), mainBarColumn(contactData), js, login)
