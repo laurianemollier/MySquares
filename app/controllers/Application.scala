@@ -1,84 +1,51 @@
 package controllers
 
-
-import play.api._
-import play.api.mvc._
+import javax.inject.Inject
 
 
-import models._
-import models.RegisterData.registerForm
-import models.LoginData.loginForm
-import models.SelectedSquare.selectedSquareForm
+import controllers.routes
+import controllers.FlashSession._
+import models.LittleSquare
 
-
-
+import dao.{LittleSquareRepo, UserRepo}
+import play.api.mvc.{Action, Call, Controller, RequestHeader}
+import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import settings.Global._
+import models.LoginData._
+import models.RegisterData._
+import models.SelectedSquare._
 
-object Application extends Controller {
+import scala.concurrent.Future
 
+class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) extends Controller {
 
+  def home = Action.async { implicit request =>
+    littleSquareRepo.all().map(littleSquares => {
+      val squares: Seq[(String, Long)] = littleSquares.map(ls => (ls.img, ls.idUser))
 
-
-// get the session params
-  def connected(implicit request : RequestHeader) = request.session.get("email") match{
-    case Some(s) => true
-    case None => false
-  }
-
-  def getUserId(implicit request : RequestHeader): Option[Int] = request.session.get("idUser") match{
-    case Some(id) => Some(id.toInt)
-    case None => None
-  }
-
-
-
-  def redirectByFlash(implicit request : RequestHeader, default: Call = routes.Application.home()): Call = {
-    val redirection = Map(
-      "haveSquares" -> routes.Application.haveSquares(idCurrentMS),
-      "home" -> routes.Application.home()
-    )
-
-    request.flash.get("redirection") match {
-      case None => default
-      case Some(redirect) => redirection.get(redirect).getOrElse(default)
-    }
-  }
-
-  def getRedirectionFlashString(implicit request : RequestHeader): String =
-    request.flash.get("redirection").getOrElse("")
-
-  def home = Action{ implicit request =>
-    Api.getSquare(idCurrentMS) match {
-      case null => BadRequest(views.html.errorPage.error404(connected)) // TODO: dire qu'il faut contacter
-      case square: Square => {
-        val idxSquaresUser: Seq[Int] = getUserId match {
-          case None => Seq()
-          case Some(userId) => square.squares.zipWithIndex.filter({
-            case ((img, idUsers), idxSquare) => userId == idUsers
-          }).map{
-            case ((img, idUsers), idxSquare) =>  idxSquare
-          }
-        }
-
-        Ok(views.html.home.home(square, idxSquaresUser, connected))
-      }
-    }
-  }
-
-  def haveSquares(id: Int) = Action{ implicit request =>
-    Api.getSquare(id) match {
-      case null => BadRequest(views.html.errorPage.error404(connected))
-      case square: Square => {
-        // You need to be authentified if you want to have a square
-        if(connected){
-          Ok(views.html.haveSquares.haveSquares(square, connected)(selectedSquareForm))
-        }
-        else {
-          Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm)).flashing{
-            "redirection" -> "haveSquares"
-          }
+      val idxSquaresUser: Seq[Int] = getUserId match {
+        case None => Seq()
+        case Some(userId) => squares.zipWithIndex.filter({
+          case ((img, idUsers), idxSquare) => userId == idUsers
+        }).map{
+          case ((img, idUsers), idxSquare) =>  idxSquare
         }
       }
+      Ok(views.html.home.home(squares, nbSquaresOneEdge, idxSquaresUser, connected))
+    })
+  }
+
+  def haveSquares(id: Int) = Action.async{ implicit request =>
+    if(connected){
+      littleSquareRepo.all().map(littleSquares => {
+        val squares: Seq[(String, Long)] = littleSquares.map(ls => (ls.img, ls.idUser))
+        Ok(views.html.haveSquares.haveSquares(squares, nbSquaresOneEdge, connected)(selectedSquareForm))
+      })
+    }
+    else {
+      Future().map(_ => Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm)).flashing {
+        "redirection" -> "haveSquares"
+      })
     }
   }
 
@@ -90,11 +57,6 @@ object Application extends Controller {
     Ok(views.html.company.company(contactData, connected))
   }
 
-// login - register - contact
-  object LogRegCont extends Enumeration {
-    type LogRegCont = Value
-    val login, register, contact = Value
-  }
 
   def register = loginRegisterContact(LogRegCont.register)
   def login = loginRegisterContact(LogRegCont.login)
@@ -119,8 +81,9 @@ object Application extends Controller {
     Ok(views.html.errorPage.error404(connected))
   }
 
-}
 
+
+}
 
 
 

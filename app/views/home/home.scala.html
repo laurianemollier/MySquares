@@ -1,6 +1,6 @@
 @import models.Square._
 
-@(square: Square, idxSquaresUser: Seq[Int], login: Boolean)(implicit flash: Flash)
+@(squares: Seq[(String, Long)], nbSquaresOneEdge: Int, idxSquaresUser: Seq[Int], login: Boolean)(implicit flash: Flash)
 <!--TODO: Comprendre pk ca ma charche pas comme ça =>  jsSquares-->
 
 @css = {
@@ -8,7 +8,7 @@
     <link href="@routes.Assets.versioned("stylesheets/home.css")" rel="stylesheet">
 }
 
-@js(square: Square) = {
+@js() = {
 
 <script src="@routes.Assets.versioned("javascripts/drawMS/coords-in-canvas.js")"></script>
 <script src="@routes.Assets.versioned("javascripts/drawMS/draw-ms.js")"></script>
@@ -27,11 +27,11 @@
     //TODO: Comprendre pk ca ma charche pas comme ça
     //var jsSquares = [square.squares.map(t =>"\"" + t._1 + "\"").mkString(",")];
 
-    var squaresString = "@square.squares.map(t =>t._1).mkString("specialBase64")";
+    var squaresString = "@squares.map(t =>t._1).mkString("specialBase64")";
     var jsSquares = squaresString.split("specialBase64");
 
     // use for compute and draw the little squares
-    var nbSquaresOneEdge = @square.nbSquaresOneEdge;
+    var nbSquaresOneEdge = @nbSquaresOneEdge;
     var littleSL = canvasWidth / nbSquaresOneEdge;
 
 
@@ -90,7 +90,7 @@
     previewSquare.attr("height", widthP).attr("width", widthP);
 
 
-    showPreviewSquare(square, previewSquare.get(0), jsSquares, @square.nbSquaresOneEdge);
+    showPreviewSquare(square, previewSquare.get(0), jsSquares, @nbSquaresOneEdge);
 
 
 
@@ -113,4 +113,4 @@
 
 }
 
-@commonToAllPage.template(css, sidebar(), mainBarColumn(flash), js(square), login)
+@commonToAllPage.template(css, sidebar(), mainBarColumn(flash), js(), login)

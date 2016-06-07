@@ -1,6 +1,8 @@
 @import settings.Helpers._
 @import helper._
-@import controllers.Application.LogRegCont._
+@import settings.Global.LogRegCont._
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
 
 @(submitSquareForm: Form[SelectedSquare])(implicit message: RequestHeader)
 
@@ -94,7 +96,7 @@
                             <hr/>
 
                             <div>
-                                @helper.form(action = routes.Api.selectSquare, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "submitSquareForm") {
+                                @form(action = routes.Api.selectSquare, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "submitSquareForm") {
                                 @CSRF.formField
                                 @repeat(submitSquareForm("emailsToSend"), min = 3){ emailField =>
                                 <div class="form-group">

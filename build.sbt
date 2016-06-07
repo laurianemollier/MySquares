@@ -1,39 +1,40 @@
 import sbt._
 import Keys._
 
-name := "MySquares"
+name := """play-slick-example"""
 
 version := "1.0-SNAPSHOT"
 
-scalaVersion := "2.11.6"
+lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-Common.settings
+scalaVersion := "2.11.7"
+
+routesGenerator := InjectedRoutesGenerator
+
+resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
 
 libraryDependencies ++= Seq(
+  "com.typesafe.play" %% "play-slick" % "2.0.0",
+  "com.typesafe.play" %% "play-slick-evolutions" % "2.0.0",
+  "com.h2database" % "h2" % "1.4.187",
+  "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.0" % "test",
+  specs2 % Test,
+  filters,
   "org.webjars" %% "webjars-play" % "2.3.0",
   "org.webjars" % "angularjs" % "1.2.19",
   "org.webjars" % "bootstrap" % "3.2.0" exclude("org.webjars", "jquery"),
   "org.webjars" % "requirejs" % "2.1.14-1" exclude("org.webjars", "jquery")
 )
 
-libraryDependencies += filters
+resolvers += "Sonatype snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
 
-pipelineStages := Seq(rjs, digest, gzip)
+fork in run := true
 
-lazy val db = project in file("modules/db")
+includeFilter in (Assets, LessKeys.less) := "*.less"
 
-lazy val web = (project in file("modules/web"))
-  .enablePlugins(PlayScala)
-  .dependsOn(db).aggregate(db)
 
-lazy val users = (project in file("modules/users"))
-  .enablePlugins(PlayScala)
-  .dependsOn(web, db).aggregate(web, db)
 
-lazy val root = (project in file("."))
-  .enablePlugins(PlayScala)
-  .dependsOn(web, db, users)
-  .aggregate(web, db, users)
+
 
 scalacOptions in ThisBuild ++= Seq(
   "-target:jvm-1.7",
@@ -48,7 +49,3 @@ scalacOptions in ThisBuild ++= Seq(
   "-Ywarn-dead-code",
   "-language:reflectiveCalls"
 )
-
-
-includeFilter in (Assets, LessKeys.less) := "*.less"
-//excludeFilter in (Assets, LessKeys.less) := "_*.less"

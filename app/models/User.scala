@@ -1,8 +1,8 @@
 package models
 
 import play.api.data.Forms._
+import play.api.data.validation.{Constraint, Invalid, Valid, ValidationError}
 import play.api.data.{Form, Mapping}
-import play.api.data.validation.{ValidationError, Invalid, Valid, Constraint}
 import play.api.libs.json.Json
 
 case class RegisterData(email: String, password: String, verifyingPassword: String, termCondition: Boolean)
@@ -56,13 +56,6 @@ object RegisterData{
 }
 
 
-case class User(email: String, passwordHash: String, salt1: Seq[Int], salt2: Int)
-
-object User{
-  implicit val format = Json.format[User]
-}
-
-
 case class LoginData(email: String, password: String)
 
 
@@ -73,4 +66,13 @@ object LoginData{
       "password" -> nonEmptyText
     )(LoginData.apply)(LoginData.unapply)
   }
+}
+
+
+
+
+case class User(id: Long, email: String, passwordHash: String, salt1: String, salt2: Int)
+
+object User{
+  implicit val format = Json.format[User]
 }
