@@ -1,0 +1,33 @@
+@(colors: Array[Array[Int]], nbSquaresOneEdge: Int, login: Boolean, registerForm: Form[RegisterData], loginForm: Form[LoginData], errorMessage: String = "")(implicit message: RequestHeader)
+
+@css = {}
+
+@js(colors: Array[Array[Int]], nbSquaresOneEdge: Int) = {
+
+<!-- display gray and colored mySquare MySquare-->
+<script src="@routes.Assets.versioned("javascripts/square-canvas.js")"></script>
+<script>
+
+    var jsColors = [@colors.map(array => "[" + array.mkString(",") + "]").mkString(",")];
+
+    var coloredSquare = document.getElementById("coloredSquare");
+    var graySquare = document.getElementById("graySquare");
+
+    var canvasWidth = graySquare.clientWidth;
+    drawSquares(jsColors, @nbSquaresOneEdge, coloredSquare, canvasWidth);
+    drawSquares(jsColors, @nbSquaresOneEdge, graySquare, canvasWidth, true);
+
+</script>
+
+
+<!-- deal with the display of the register and login form-->
+<script src="@routes.Assets.versioned("javascripts/haveSquares/display-login-register.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/formValidation.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/loginFormValidation.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/registerFormValidation.js")"></script>
+}
+
+
+
+
+@commonToAllPage.template(css, sidebar(), mainBarColumn(registerForm, loginForm, errorMessage)(message), js(colors, nbSquaresOneEdge), login)

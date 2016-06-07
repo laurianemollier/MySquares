@@ -1,0 +1,60 @@
+**Changelog:**
+
+**Version 1.5.1:**
+
+- Made some customization for bootstrap.min.css for layout problem. 
+
+**Version 1.5:**
+
+- Updated bootstrap css and js files from 3.3.4 to 3.3.50.
+- Updated jquery from 1.11.2 to 1.11.3.
+- Updated HTML5Shiv from 3.7.2 to 3.7.3.
+- Updated animate.css to latest version.
+- Updated isotope to version 2.2.0.
+- Updated Count To to latest version.
+- Updated flot to version 0.8.3.
+- Updated prettyPhoto to version 3.1.6.
+- Updated revolution plugin to version 4.6.4. Replaced jquery.themepunch.plugins.min.js with jquery.themepunch.tools.min.js. (all html files).
+- Removed reference to the countdown plugin file in all html files except coming-soon.html. (all html files).
+
+**Version 1.4:**
+
+- Added max width to the wrapper. (style.css)
+- Updated Bootstrap to version 3.3.2.
+- Updated Font Awesome CSS to version 4.3.0.
+- Updated Jquery to version 1.11.2.
+- Updated Fonts folder to version 4.3.0.
+- Updated HTML5Shiv to version 3.7.2.
+- Updated Images Loaded Plugin to version 3.1.8.
+- Updated Isotope Plugin to version 2.1.0.
+- Updated CountDown Plugin to version 2.0.2.
+- Updated Mansory Plugin to version 3.2.2.
+- Added jQuery Plugin file for CountDown Plugin.
+- Minor style fix (style.css)
+
+**Version 1.3.5:**
+
+- Image width bug fix in index file.(style.css)
+- Bug fix in navigation dropdown menu.(all .html files with navigation menu, style.css)
+
+**Version 1.3:**
+
+- Scroll to top bug fixed. (custom.js)
+- Extra left spacing reduced in column-index.html file by adding class with page-mainbar class. (column-index.html, style.css)
+- Google font links removed from all html files and added in stylesheet. (all .html files, style.css)
+- Added documentation.
+
+**Version 1.2.1:**
+
+- Updated Bootstrap to version 3.1.1.
+- Updated jQuery to latest version. 
+
+**Version 1.2:**
+
+- Bootstrap anchor button fix. (style.css).
+- Added buttons in Landing page. (style.css & landing-page.html).
+- Added new Index file (index-column.html) (style.css, custom.js).
+
+**Verion 1.0:**
+
+- Initial Release

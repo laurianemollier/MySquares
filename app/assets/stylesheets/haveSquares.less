@@ -1,0 +1,229 @@
+@import "main.less";
+
+.squares{
+    width: 100%;
+    background-color: #222;
+}
+.selectedSquare{
+    background-color: blue;
+
+}
+
+#graySquare{
+    position: absolute;
+    z-index: 0;
+    background-color: gray;
+}
+#coloredSquare{
+    position: absolute;
+    z-index: 1;
+    background: black;
+}
+
+/* the cursor is set in tha javascript file*/
+#selectedSquare{
+    position: relative;
+    top: -15px;
+    padding-top: 15px;
+    background-color: transparent;
+    z-index: 2;
+    cursor: pointer;
+}
+
+
+/* second step */
+
+#draw-square{
+    margin-top: 30px;
+}
+
+#divCanvas{
+    padding: 0;
+}
+
+
+#square-where-we-draw{
+    cursor:text;
+    z-index: 1;
+}
+/* input in the canvas */
+.boxTextarea{
+    border: none;
+    resize: horizontal;
+    cursor: pointer;
+    overflow: hidden;
+    height:  50px;
+    border: inset 2px transparent;
+}
+.boxTextarea:active {
+    border: inset 2px red;
+}
+.boxTextarea:focus {
+    border: inset 2px blue;
+}
+
+
+#dealWithText input {
+    color: black;
+}
+
+
+/* Step 2, main column: */
+
+#square-where-we-draw{
+	background-color: white;
+	position: center;
+}
+
+#dealWithText{
+
+}
+#dealWithText > button{
+    margin-bottom: 10px;
+
+}
+#dealWithText > div{
+    margin-bottom: 10px;
+
+}
+
+
+
+/* Step 3*/
+
+#previewSquare{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* for the palette */
+#palette{
+    background-color: #222;
+    border: 3px groove #e63131;
+    padding: 5px;
+    padding-left: 6px;
+
+}
+#palette > div>div{
+    margin-bottom: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+/* */
+#palette > div> img{
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: url("/assets/images/pipette.png"), copy !important;
+
+}
+
+#palette .selected{
+    background-color: #363636;
+}
+
+
+/* selection of color*/
+#palette span{
+    width: 96%;
+    height: 40px;
+    margin: 1%;
+    border: 2px solid black !important;
+    cursor: default;
+}
+
+/* button for continue*/
+#palette button{
+    width: 96%;
+    height: 38px;
+    margin: 1%;
+}
+
+
+
+
+
+
+
+
+
+/* step menu */
+#green_and_orange_step_menu {
+	margin:0;
+	margin-bottom: 20px;
+	padding: 0;
+	display:inline-table;
+	list-style:none;
+	width: 100%;
+}
+#green_and_orange_step_menu li{
+	display:inline;
+	float:left;
+	background:url(/assets/images/step_orange_green.gif) no-repeat -50px bottom;
+	height:41px;
+	line-height:41px;
+	font-size:15px;
+	padding:0 30px 0 25px;
+	position:relative;
+	cursor: default;
+}
+#green_and_orange_step_menu li.clickable{
+	cursor: pointer;
+}
+#green_and_orange_step_menu li span{
+	margin:0px;
+	z-index:2000;
+	background:url(/assets/images/step_orange_green.gif)
+	no-repeat left bottom; display:block; position:absolute;
+	height:41px; line-height:41px;
+	width:13px;
+	top:0;
+	left:-10px;
+	padding:0;
+}
+#green_and_orange_step_menu li.inprogress {
+	background-position:-50px 0px;
+}
+#green_and_orange_step_menu li.inprogress span, #green_and_orange_step_menu li.lastinprogress span{
+	background-position:left 0px;
+}
+#green_and_orange_step_menu li.done {
+	background-position: -50px -41px;
+	cursor: pointer;
+}
+#green_and_orange_step_menu li.done span, #green_and_orange_step_menu li.ldone span {
+	background-position:left -41px;
+}
+#green_and_orange_step_menu li.frist, #green_and_orange_step_menu li.done,
+#green_and_orange_step_menu li.inprogress, #green_and_orange_step_menu li.ldone,
+#green_and_orange_step_menu li.lastinprogress {
+	color:#FFF;
+}
+#green_and_orange_step_menu li.frist {
+	background-position: -20px 0px;
+}
+#green_and_orange_step_menu li.fdone {
+	background-position: -20px -41px;
+	cursor: pointer;
+}
+#green_and_orange_step_menu li.last {
+	background-position: right bottom;
+}
+#green_and_orange_step_menu li.lastinprogress {
+	background-position: right 0;
+}
+#green_and_orange_step_menu li.ldone {
+	background-position: right -41px;
+	cursor: pointer;
+}

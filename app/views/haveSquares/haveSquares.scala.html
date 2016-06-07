@@ -1,0 +1,118 @@
+@import models.Square._
+@(squares: Seq[(String, Long)], nbSquaresOneEdge: Int, login: Boolean)(submitSquareForm: Form[SelectedSquare])(implicit message: RequestHeader)
+
+<!--TODO: Comprendre pk ca ma charche pas comme ça =>  jsSquares-->
+
+<input type="hidden" id="selectedSquareJson" value="">
+@css = {
+<!-- For this page-->
+<link href="@routes.Assets.versioned("stylesheets/haveSquares.css")" rel="stylesheet">
+}
+
+@js() = {
+<!--Step selection -->
+<script src="@routes.Assets.versioned("javascripts/haveSquares/sept-selection.js")"> </script>
+
+<!-- Selection of the square-->
+<script src="@routes.Assets.versioned("javascripts/drawMS/draw-check.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/drawMS/coords-in-canvas.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/drawMS/select-squares.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/drawMS/draw-ms.js")"></script>
+
+<!-- First Step: Set the MySquare where we selection the square we want -->
+<script>
+    // common for the 2 canvas
+
+    // array of colors and free squares
+    var squaresString = "@squares.map(t =>t._1).mkString("specialBase64")"; //TODO: Peut beuger
+    var jsSquares = squaresString.split("specialBase64");
+
+    var coloredSquare = document.getElementById("coloredSquare");
+    var canvasWidth = coloredSquare.clientWidth;
+
+    // use for compute and draw the little squares
+    var nbSquaresOneEdge = @nbSquaresOneEdge;
+    var littleSL = canvasWidth / nbSquaresOneEdge;
+
+
+    // draw the square
+    drawSquares(jsSquares, nbSquaresOneEdge, coloredSquare, canvasWidth);
+
+    // add event for select the squares
+
+    // canvas where we will draw the selected squares and event
+    var canvasToDraw = document.getElementById("selectedSquare");
+    canvasToDraw.width = canvasWidth;
+    canvasToDraw.height = canvasWidth;
+    var contextToDraw = canvasToDraw.getContext('2d');
+
+    // add event to the canvas to draw
+    selectSquares(canvasToDraw);
+
+</script>
+
+<script src="@routes.Assets.versioned("javascripts/html2canvas.js")"> </script>
+
+<!--Second step: Draw into the square -->
+<script>
+    // set the square height
+    var squareWeDraw = $("#square-where-we-draw");
+    var width = squareWeDraw.width();
+    squareWeDraw.height(width).width(width);
+    squareWeDraw.attr("height", width).attr("width", width);
+    $("#draw-square").hide();
+
+    // set the textArea height
+    var textArea = $("#writeTextTextArea")
+    textArea.height(textArea.width());
+</script>
+<!--able to draw text and change color-->
+<script src="@routes.Assets.versioned("javascripts/haveSquares/writeTextInCanvas.js")"> </script>
+<!--<script src="@routes.Assets.versioned("javascripts/haveSquares/wrapText.js")"> </script>-->
+
+<!--deal with the color selection in the palette-->
+<script src="@routes.Assets.versioned("javascripts/haveSquares/select-color.js")"> </script>
+
+
+<!--Third step: Confirm you square, login, share-->
+
+<script>
+    var purchaseButton = $("#purchaseSquares");
+    var previewSquare = $("#previewSquare");
+    var finalSquareInput = $("#finalSquareString");
+
+
+    // show the square preview
+    var width = previewSquare.width();
+    previewSquare.height(width).width(width);
+    previewSquare.attr("height", width).attr("width", width);
+    $("#previewSquareArea").hide();
+
+    var ctx = previewSquare.get(0).getContext("2d");
+    purchaseButton.click(function(){
+        html2canvas($('#divCanvas').get(0), {
+          onrendered: function(canvas) {
+            //document.body.appendChild(canvas);
+            // add preview
+            ctx.drawImage(canvas, 0, 0, width, width);
+
+            // register image in the final form
+            finalSquareInput.val(canvas.toDataURL());
+          }
+        });
+
+        setTimeout(function(){
+            goToStep3();
+        }, 2000);
+    });
+</script>
+
+<!-- deal with the display of the register and login form-->
+<script src="@routes.Assets.versioned("javascripts/haveSquares/display-login-register.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/formValidation.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/loginFormValidation.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/loginRegisterContact/registerFormValidation.js")"></script>
+}
+
+
+@commonToAllPage.template(css, sidebar()(message), mainBarColumn(submitSquareForm)(message), js(), login)

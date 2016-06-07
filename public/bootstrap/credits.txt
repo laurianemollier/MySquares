@@ -1,0 +1,19 @@
+**Credits:**
+
+- Bootstrap- http://getbootstrap.com
+- jQuery- http://jquery.com
+- HTML5Shiv- @afarkas @jdalton @jon_neal @rem
+- Respond- Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas.
+- Font awesome icon- http://fortawesome.github.io/Font-Awesome/
+- Photos- http://pixabay.com
+- prettyPhoto- http://www.no-margin-for-errors.com
+- Isotope- http://isotope.metafizzy.co
+- Cycle- http://jquery.malsup.com/cycle/
+- Countdown- http://keith-wood.name/countdown.html
+- Flot- http://www.flotcharts.org/
+- Revolution Slider- http://www.greensock.com
+- Waypoints- https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
+- CountTo- https://github.com/mhuggins/jquery-countTo
+- Animate CSS- http://daneden.github.io/animate.css/
+- Masonry- http://masonry.desandro.com
+- Imageloaded- http://desandro.github.io/imagesloaded/

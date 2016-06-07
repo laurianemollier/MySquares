@@ -1,13 +1,69 @@
-# Routes
-# This file defines all application routes (Higher priority routes first)
-# ~~~~
-
-# An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
-# An example controller showing how to use dependency injection
-GET     /count                      controllers.CountController.count
-# An example controller showing how to write asynchronous code
-GET     /message                    controllers.AsyncController.message
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /css/*file                    controllers.Assets.at(path="/boostrap/theme/css", file)
+
+
+# Documentation play and developement
+GET     /icon                          controllers.Development.icon
+
+GET     /doc                           controllers.Development.doc
+
+GET     /init                          controllers.Development.init
+
+
+
+
+
+
+# Home page
+GET           /                       controllers.Application.home
+
+GET           /how-it-works           controllers.Application.howItWorks
+
+GET           /company                controllers.Application.company
+
+GET           /register               controllers.Application.register
+
+GET           /login                  controllers.Application.login
+
+GET           /contact                controllers.Application.contact
+
+GET           /no-found               controllers.Application.noFound
+
+# get Square
+
+#current month
+
+GET           /get-squares/:id        controllers.Application.haveSquares(id: Int)
+
+GET           /confirmSquares         controllers.Application.confirmSquares
+
+GET           /terms-and-conditions   controllers.Application.termsConditions
+
+
+
+
+
+
+
+#API
+
+
+POST          /selectSquare           controllers.Api.selectSquare
+
+POST          /user                   controllers.Api.addUser
+
+GET           /users                  controllers.Api.getUsers
+
+POST          /login                  controllers.Api.login
+
+GET           /logout                 controllers.Api.logout
+
+GET           /squares                controllers.Api.getSquares
+
+
+
+
+
