@@ -36,7 +36,7 @@ fork in run := true
 includeFilter in (Assets, LessKeys.less) := "*.less"
 
 
-
+herokuAppName in Compile := "whispering-sands-84392"
 
 
 //scalacOptions in ThisBuild ++= Seq(
