@@ -42,7 +42,7 @@ class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserR
       })
     }
     else {
-      Future().map(_ => Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm)).flashing {
+      Future(1).map(_ => Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm)).flashing {
         "redirection" -> "haveSquares"
       })
     }
