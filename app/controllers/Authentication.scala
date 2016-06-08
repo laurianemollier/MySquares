@@ -1,125 +1,16 @@
 package controllers
 
-import controllers.Api._
-import controllers.Application.LogRegCont
-import controllers.Application.redirectByFlash
-import controllers.Application.getRedirectionFlashString
-
-
-
-import play.api.mvc.Action
-import sorm.Persisted
-
 import java.security.MessageDigest
-import play.api.Logger
-import play.api.libs.Crypto
 
 import models._
-import models.RegisterData.registerForm
-import models.LoginData.loginForm
-import sun.security.util.Password
+import play.api.Logger
+import play.api.libs.Crypto
+import play.api.mvc.Action
+
 
 import scala.util.Random
 
 object Authentication {
-
-  // user
-  def addUser = Action{ implicit request =>
-    registerForm.bindFromRequest.fold(
-      errorFrom => {
-        BadRequest(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.register, errorFrom, loginForm))
-      },
-      user => {
-        val responseUser = askAddUser(user.email, user.password)
-        responseUser.get("FTP").get.toInt match {
-          case 331 => Redirect(routes.Application.login()).flashing(
-            "email" -> user.email
-          )
-          case 200 => Redirect(redirectByFlash(request)).flashing(
-            "login" -> "success"
-          ).withSession(
-            "email" -> user.email,
-            "idUser" -> responseUser.get("idUser").get
-          )
-        }
-      }
-    )
-  }
-
-  def askAddUser(email: String, password: String): Map[String, String] ={
-    DB.query[User].whereEqual("email", email).fetchOne() match {
-      case Some(user) => Map(
-        "FTP" -> 331.toString,
-        "email" -> email // User name exists already, need password
-      )
-      case None => {
-        val (hashPassword, salt1, salt2) = encryptPassword(password)
-        DB.save(User(email, hashPassword, salt1.map{b => b.toInt}, salt2))
-        val idUser = DB.query[User].whereEqual("email", email).fetchOneId().get // TODO: verrifer que ce truc est bon
-
-        Map(
-          "FTP" -> 200.toString,
-          "email" -> email,
-          "idUser" -> idUser.toString
-        )
-      }
-    }
-  }
-
-
-  /**
-   * Action for login. Form: loginForm
-   * @return
-   */
-  def login = Action { implicit request =>
-    loginForm.bindFromRequest.fold(
-      errorForm => {
-        BadRequest(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, errorForm))
-      },
-      loginData => {
-        askLogin(loginData.email, loginData.password) match {
-          case 200 => Redirect(redirectByFlash(request)).flashing(
-            "login" -> "success"
-          ).withSession(
-            "email" -> loginData.email,
-            "idUser" -> getIdUser(loginData.email).toString
-          )
-          case _ => Redirect(routes.Api.login()).flashing(
-            "errorLogin" -> "",
-            "redirection" -> getRedirectionFlashString // TODO: redirection after the second login does not work
-          )
-        }
-      }
-    )
-  }
-
-  /**
-   * Aks to login
-   * @param email The given email
-   * @param password The given password
-   * @return FTP server return codes
-   */
-  def askLogin(email: String, password: String): Int = {
-    getUser(email) match {
-      case None => 430
-      case Some(userDB) => {
-        if(verifyPassword(password, userDB.passwordHash, userDB.salt1.map{i => i.toByte}, userDB.salt2)){
-          200
-        }
-        else 331 // User name okay, need password
-      }
-    }
-
-  }
-
-  /**
-   * Get the user's id
-   * @param email The given email
-   * @return The user's id
-   */
-  def getIdUser(email: String): Long ={
-    DB.query[User].whereEqual("email", email).fetchOneId().get
-  }
 
   /**
    * Verifying if the given password, salted with the provided salts, corresponds to the hash
@@ -214,7 +105,6 @@ object Authentication {
     (saltPassword, salt, s2)
   }
 
-
   /**
    * Provide a salt
    * @return An Array[Byte] of random bytes
@@ -242,7 +132,7 @@ object Authentication {
    * @return The encrypted id
    */
   def encrypId(id: String): String = {
-    Crypto.encryptAES(id)
+    Crypto.encryptAES(id) // TODO
   }
 
   /**
@@ -253,4 +143,5 @@ object Authentication {
   def decrypId(id: String): String = {
     Crypto.decryptAES(id)
   }
+
 }

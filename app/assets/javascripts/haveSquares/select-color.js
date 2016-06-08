@@ -16,10 +16,14 @@ $(function(){
     var canvas = document.createElement('canvas');
     var context = canvas.getContext('2d');
 
+    var clickedOne = false;
+
 
     /* deal with the selection of tools. Witch one select the color and display the palette */
     textColorSelector.click(function(){
-        if(!iconText.hasClass(selectColorId) && !iconBackground.hasClass(selectColorId)){
+        if(!iconText.hasClass(selectColorId) && !clickedOne){
+            clickedOne = true; 
+
             iconText.addClass(selectColorId);
             iconBackground.removeClass(selectColorId);
 

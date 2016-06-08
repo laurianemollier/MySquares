@@ -1,11 +1,13 @@
 @import settings.Helpers._
 @import helper._
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
 
 @(loginForm: Form[LoginData])(implicit message: RequestHeader)
 
 
 <!--Login Form -->
-@helper.form(action = routes.Api.login, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "loginForm") {
+@form(action = routes.Api.login, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "loginForm") {
 @CSRF.formField
 <div class="form-group">
     <div class="col-sm-12">

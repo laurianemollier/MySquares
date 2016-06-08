@@ -1,14 +1,8 @@
 package settings
 
-import models._
-import play.api._
-import play.api.mvc._
-import com.typesafe.config.{Config, ConfigFactory}
-import play.filters.csrf._
-
 import scala.util.Random
 
-object Global extends WithFilters(CSRFFilter()) with GlobalSettings {
+object Global {
 
   // square data
   val nbSquaresOneEdge = 20
@@ -18,9 +12,15 @@ object Global extends WithFilters(CSRFFilter()) with GlobalSettings {
 
   val r = new Random()
 
+
+
+
+
+
+
   // TODO: Mettre dans le footer aussi et reoganiser le code
   //contact data
-  val contactData = Map("phoneNumber" -> "+33 4 50 62 29 24",
+  val contactData: Map[String, String] = Map("phoneNumber" -> "+33 4 50 62 29 24",
     "email" -> "mollierlaurian@gmail.com",
     "address" -> "Not yet available"
   )
@@ -42,15 +42,9 @@ object Global extends WithFilters(CSRFFilter()) with GlobalSettings {
     else array
   }
 
-  override def onStart(app: Application) {
-
-
-//    // Here I use typesafe config to get config data out of application conf
-//    val cfg: Config = ConfigFactory.load()
-//
-//
-//    val initialValue = cfg.getInt(shared.initial)
-//    // set initial value for shared
-//    Shared.setData(initialValue)
+  // login - register - contact
+  object LogRegCont extends Enumeration {
+    type LogRegCont = Value
+    val login, register, contact = Value
   }
 }

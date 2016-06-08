@@ -1,5 +1,8 @@
 @import settings.Helpers._
 @import helper._
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+
 @(registerForm: Form[RegisterData])(implicit message: RequestHeader)
 
 <!--<form class="form-horizontal" role="form" action="@routes.Api.addUser" method="post">-->
