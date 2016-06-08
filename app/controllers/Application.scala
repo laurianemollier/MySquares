@@ -3,7 +3,6 @@ package controllers
 import javax.inject.Inject
 
 
-import controllers.routes
 import controllers.FlashSession._
 import models.LittleSquare
 

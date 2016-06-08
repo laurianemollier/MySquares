@@ -2,7 +2,6 @@ package controllers
 
 
 import javax.inject.Inject
-import controllers.routes
 import play.api.mvc.{Action, Call, Controller, RequestHeader}
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 
