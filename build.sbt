@@ -19,7 +19,11 @@ libraryDependencies ++= Seq(
   "com.h2database" % "h2" % "1.4.187",
   "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.0" % "test",
   specs2 % Test,
-  filters
+  filters,
+  "org.webjars" %% "webjars-play" % "2.3.0",
+//  "org.webjars" % "angularjs" % "1.2.19",
+  "org.webjars" % "bootstrap" % "3.2.0" exclude("org.webjars", "jquery")
+//  "org.webjars" % "requirejs" % "2.1.14-1" exclude("org.webjars", "jquery")
 )
 
 resolvers += "Sonatype snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
