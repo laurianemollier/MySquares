@@ -22,7 +22,7 @@ libraryDependencies ++= Seq(
   filters,
   "org.webjars" %% "webjars-play" % "2.3.0",
 //  "org.webjars" % "angularjs" % "1.2.19",
-  "org.webjars" % "bootstrap" % "3.2.0" exclude("org.webjars", "jquery")
+  "org.webjars" % "bootstrap" % "3.2.0" exclude("org.webjars", "jquery"),
   "org.webjars" % "requirejs" % "2.1.14-1" exclude("org.webjars", "jquery")
 )
 
