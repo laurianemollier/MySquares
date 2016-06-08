@@ -29,14 +29,14 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) exte
   def selectSquare = Action.async { implicit request =>
     getUserId match {
       case None => {
-        Future().map(_ =>
+        Future(1).map(_ =>
           Redirect(routes.Application.login())
         )
       }
       case Some(idUser) => {
         selectedSquareForm.bindFromRequest.fold(
           errorForm => {
-            Future().map(_ => Redirect(routes.Application.contact()).flashing(
+            Future(1).map(_ => Redirect(routes.Application.contact()).flashing(
               "mainError" -> "Le formulaire pour pour selectionner les petits carree ne sont pas bon"
             ))
           },
@@ -71,7 +71,7 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) exte
   def login = Action.async { implicit request =>
     loginForm.bindFromRequest.fold(
       errorForm => {
-        Future().map(_ =>
+        Future(1).map(_ =>
           BadRequest(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, errorForm))
         )
       },
@@ -100,7 +100,7 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) exte
   def addUser = Action.async{ implicit request =>
     registerForm.bindFromRequest.fold(
       errorFrom => {
-        Future().map(_ =>
+        Future(1).map(_ =>
           BadRequest(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.register, errorFrom, loginForm))
         )
       },
