@@ -7,8 +7,8 @@ addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.5.0")
 
 addSbtPlugin("com.jamesward" %% "play-auto-refresh" % "0.0.14")
 
-addSbtPlugin("com.typesafe.sbt" % "sbt-less" % "1.0.6")
-
+//addSbtPlugin("com.typesafe.sbt" % "sbt-less" % "1.0.6")
+addSbtPlugin("com.typesafe.sbt" % "sbt-less" % "1.1.0")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-rjs" % "1.0.1")
 
