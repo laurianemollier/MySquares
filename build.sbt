@@ -1,7 +1,7 @@
 import sbt._
 import Keys._
 
-name := """play-slick-example"""
+name := """square-it-wtf"""
 
 version := "1.0-SNAPSHOT"
 
@@ -23,8 +23,11 @@ libraryDependencies ++= Seq(
   "org.webjars" %% "webjars-play" % "2.3.0",
 //  "org.webjars" % "angularjs" % "1.2.19",
   "org.webjars" % "bootstrap" % "3.2.0" exclude("org.webjars", "jquery"),
-  "org.webjars" % "requirejs" % "2.1.14-1" exclude("org.webjars", "jquery")
+  "org.webjars" % "requirejs" % "2.1.14-1" exclude("org.webjars", "jquery"),
+  "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
 )
+
+//square-it-wtf in Compile := "obscure-sierra-7788"
 
 resolvers += "Sonatype snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
 
