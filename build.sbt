@@ -27,7 +27,7 @@ libraryDependencies ++= Seq(
   "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
 )
 
-square-it-wtf in Compile := "obscure-sierra-7788"
+//square-it-wtf in Compile := "obscure-sierra-7788"
 
 resolvers += "Sonatype snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
 
