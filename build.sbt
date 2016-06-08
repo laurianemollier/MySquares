@@ -1,7 +1,7 @@
 import sbt._
 import Keys._
 
-name := """MySquare"""
+name := """square-it-wtf"""
 
 version := "1.0-SNAPSHOT"
 
