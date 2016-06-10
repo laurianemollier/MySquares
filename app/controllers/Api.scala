@@ -4,6 +4,7 @@ package controllers
 import javax.inject.Inject
 import play.api.mvc.{Action, Call, Controller, RequestHeader}
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
+import scala.concurrent.duration._
 
 import dao.{LittleSquareRepo, UserRepo}
 import controllers.Authentication._
@@ -14,8 +15,11 @@ import models.SelectedSquare._
 import models.{LittleSquare, User}
 import controllers.FlashSession._
 
-import scala.concurrent.Future
 
+import scala.concurrent.{Await, Future}
+
+
+// TODO: You are using status code '200' with flashing, which should only be used with a redirect status!
 class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) extends Controller {
 
 
@@ -77,11 +81,11 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) exte
       },
       loginData => {
         askLogin(loginData.email, loginData.password).map{case (ftp, user) => ftp match {
-          case 200 => Redirect(redirectByFlash(request)).flashing(
-            "login" -> "success"
-          ).withSession(
+          case 200 => Redirect(redirectByFlash(request)).withSession(
             "email" -> loginData.email,
             "idUser" -> user.get.id.toString
+          ).flashing(
+            "login" -> "success"
           )
           case _ => Redirect(routes.Api.login()).flashing(
             "errorLogin" -> "",
@@ -110,11 +114,11 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) exte
           case 331 => Redirect(routes.Application.login()).flashing(
             "email" -> user.email
           )
-          case 200 => Redirect(redirectByFlash(request)).flashing(
-            "login" -> "success"
-          ).withSession(
+          case 200 => Redirect(redirectByFlash(request)).withSession(
             "email" -> user.email,
-            "idUser" -> res.get("idUser").get
+            "idUser" -> 1.toString//res.get("idUser").get
+          ).flashing(
+            "login" -> "success"
           )
         })
       }
@@ -144,7 +148,7 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) exte
         Map(
           "FTP" -> 200.toString,
           "email" -> email,
-          "idUser" -> idUser.toString
+          "idUser" -> Await.result(idUser, 10 seconds).toString
         )
       }
     })

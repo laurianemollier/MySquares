@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/square-it-wtf -Dhttp.port=5432 -Dplay.evolutions.db.default.autoApply=true -Ddb.default.driver=org.postgresql.Driver -Ddb.default.url=postgres://ohgacnwidvxyii:oKte4DbdyrLx2_c3aIzrBBNKcV@ec2-54-228-226-93.eu-west-1.compute.amazonaws.com:5432/d5iv8h7fq8bs5i
+web: target/universal/stage/bin/square-it-wtf -Dhttp.port=${PORT} -Dplay.evolutions.db.default.autoApply=true -Ddb.default.driver=org.postgresql.Driver -Ddb.default.url=${DATABASE_URL}

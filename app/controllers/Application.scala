@@ -16,6 +16,9 @@ import models.SelectedSquare._
 
 import scala.concurrent.Future
 
+
+// TODO: You are using status code '200' with flashing, which should only be used with a redirect status!
+
 class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) extends Controller {
 
   def home = Action.async { implicit request =>
