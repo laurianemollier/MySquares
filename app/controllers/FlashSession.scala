@@ -16,6 +16,8 @@ object FlashSession {
     case None => None
   }
 
+  def getUserEmail(implicit request : RequestHeader): Option[String] = request.session.get("email")
+
   def redirectByFlash(implicit request : RequestHeader, default: Call = routes.Application.home()): Call = {
     val redirection = Map(
       "haveSquares" -> routes.Application.haveSquares(idCurrentMS),

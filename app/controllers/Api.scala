@@ -58,6 +58,13 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo, mail
     )
   }
 
+  def emailSeeMySquare(to: String, from: String) = Email(
+    "Discover",
+    "Square it FROM <" + from +">",
+    Seq("Miss TO <"+ to +">"),
+    bodyText = Some("blabalabalablabalablabalb")
+  )
+
   def selectSquare = Action.async { implicit request =>
     getUserId match {
       case None => {
@@ -75,6 +82,12 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo, mail
           selectedSquare => {
             addSelectedSquare(selectedSquare.idxSquare, idUser, selectedSquare.img).map(ftp => ftp match {
               case 200 => {
+                val emails = selectedSquare.emailsToSend.filter(op => op.isDefined).map(op => op.get)
+                for(email <- emails){
+                  val toSend =  emailSeeMySquare(email, getUserEmail.get)
+                  mailerClient.send(toSend)
+                }
+
                 //TODO: Envoyer les email
                 Redirect(routes.Application.home()) // TODO: montrer qu'on a bien selectionné son petit carré.
               }

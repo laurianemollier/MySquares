@@ -42,9 +42,7 @@ $(function(){
         palette.show("slow");
     });
 
-    /* deal with the color selection */
-    palette.click(function(e){
-        var img = $(this).get(0);
+    function selectColor(img, e){
         if(canvas.width != img.width || canvas.height != img.height){
             canvas.width = img.width;
             canvas.height = img.height;
@@ -58,6 +56,28 @@ $(function(){
 
         // redraw the text with the right color
         write.focusout();
+    }
+
+    var down = false;
+
+    /* deal with the color selection */
+    palette.mouseup(function(e){
+        var img = $(this).get(0);
+        selectColor(img, e);
+        down = false;
+    });
+
+    palette.mousedown(function(e){
+        down = true;
+        return false;
+    });
+
+    palette.mousemove(function(e){
+        if(down) {
+            var img = $(this).get(0);
+            selectColor(img, e);
+        }
+        return false;
     });
 
 });
