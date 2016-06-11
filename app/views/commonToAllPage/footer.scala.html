@@ -1,3 +1,5 @@
+@(companyData: Map[String, String])
+
 <!-- Footer Start -->
 
 <div class="footer">
@@ -8,7 +10,7 @@
                 <div class="footer-widget">
                     <!-- Logo Icon -->
                     <!-- Heading -->
-                    <h2><a href="/"><img src="@routes.Assets.versioned("/images/logo.png")"/> MySquare</a></h2>
+                    <h2><a href="/"><img src="@routes.Assets.versioned("/images/logo.png")"/> @companyData("name")</a></h2>
                     <!-- Paragraph -->
                     <p> Every month a new MySquare. Display your creativity to the whole world by owning your little space on the Internet
                         Stay in touch and see the latest creation from artists like you!
@@ -48,8 +50,8 @@
                     <!-- Heading -->
                     <h5><i class="fa fa-map-marker br-yellow"></i> Contact Us</h5>
                     <address>
-                        <span><i class="fa fa-envelope br-green"></i> <a href="mailto:mollierlauriane@@gmail.com" target="_top">mollierlauriane@@gmail.com</a></span>
-                        <span><i class="fa fa-file br-blue"></i> <a href="tel:+4915214656616">+49 152 14656616</a></span>
+                        <span><i class="fa fa-envelope br-green"></i> <a href="mailto:mollierlauriane@@gmail.com" target="_top">@companyData("email")</a></span>
+                        <span><i class="fa fa-file br-blue"></i> <a href="tel:@companyData("phoneNumber")">@companyData("phoneNumber")</a></span>
                     </address>
                 </div>
             </div>
@@ -69,7 +71,7 @@
             </div>
         </div>
         <!-- Footer Copyright -->
-        @commonToAllPage.copyright()
+        @commonToAllPage.copyright(companyData)
     </div>
 </div>
 

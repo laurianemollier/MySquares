@@ -1,6 +1,4 @@
-@import models.Square._
-
-@(squares: Seq[(String, Long)], nbSquaresOneEdge: Int, idxSquaresUser: Seq[Int], login: Boolean)(implicit flash: Flash)
+@(squares: Seq[(String, Long)], nbSquaresOneEdge: Int, idxSquaresUser: Seq[Int], companyData: Map[String, String], login: Boolean)(implicit flash: Flash)
 <!--TODO: Comprendre pk ca ma charche pas comme ça =>  jsSquares-->
 
 @css = {
@@ -113,4 +111,4 @@
 
 }
 
-@commonToAllPage.template(css, sidebar(), mainBarColumn(flash), js(), login)
+@commonToAllPage.template(css, sidebar(login), mainBarColumn(flash), js(), companyData, login)

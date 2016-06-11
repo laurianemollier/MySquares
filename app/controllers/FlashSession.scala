@@ -19,7 +19,8 @@ object FlashSession {
   def redirectByFlash(implicit request : RequestHeader, default: Call = routes.Application.home()): Call = {
     val redirection = Map(
       "haveSquares" -> routes.Application.haveSquares(idCurrentMS),
-      "home" -> routes.Application.home()
+      "home" -> routes.Application.home(),
+      "company" -> routes.Application.company()
     )
 
     request.flash.get("redirection") match {

@@ -1,3 +1,6 @@
+@(companyData: Map[String, String])
+
+
 <!-- Main-bar Column -->
 
 <div class="page-mainbar">
@@ -20,7 +23,7 @@
                 <li class="row">
                     <span class="col-xs-1">1.3</span>
                      <p class="col-xs-11">If you register with our website, submit any material to our website or use any of our website
-                    services, MySquares will ask you to expressly agree to these terms and conditions.</p>
+                    services, @companyData("name") will ask you to expressly agree to these terms and conditions.</p>
                 </li>
                 <li class="row">
                     <span class="col-xs-1">1.4</span>
@@ -36,7 +39,7 @@
             <ul>
                 <li class="row">
                     <span class="col-xs-1">2.1</span>
-                    <p class="col-xs-11">Copyright (c) 2015 Lauriane Mollier.</p>
+                    <p class="col-xs-11">Copyright (c) 2015 @companyData("owner").</p>
                 </li>
                 <li class="row">
                     <span class="col-xs-1">2.2</span>
@@ -150,7 +153,7 @@
                 </li>
                 <li class="row">
                     <span class="col-xs-1">3.7</span>
-                     <p class="col-xs-11">MySquares reserve the right to restrict access to areas of our website, or indeed our whole website,
+                     <p class="col-xs-11">@companyData("name") reserve the right to restrict access to areas of our website, or indeed our whole website,
                     at our discretion; you must not circumvent or bypass, or attempt to circumvent or bypass,
                     any access restriction measures on our website.</p>
                 </li>
@@ -255,7 +258,7 @@
             <ul>
                 <li class="row">
                     <span class="col-xs-1">6.1</span>
-                     <p class="col-xs-11">If you register for an account with our website, MySquares will provide you with /
+                     <p class="col-xs-11">If you register for an account with our website, @companyData("name") will provide you with /
                     you will be asked to choose a user ID and password.</p>
                 </li>
                 <li class="row">
@@ -290,7 +293,7 @@
             <ul>
                 <li class="row">
                     <span class="col-xs-1">7.1</span>
-                     <p class="col-xs-11">MySquares may:
+                     <p class="col-xs-11">@companyData("name") may:
                     <ul>
                         <li class="row">
                             <span class="col-xs-1"></span>
@@ -359,8 +362,8 @@
                 <li class="row">
                     <span class="col-xs-1">8.7</span>
                      <p class="col-xs-11">Without prejudice to our other rights under these terms and conditions, if you breach any provision
-                    of these terms and conditions in any way, or if MySquares reasonably suspect that you have breached
-                    these terms and conditions in any way, MySquares may delete, unpublish or edit any or all of your
+                    of these terms and conditions in any way, or if @companyData("name") reasonably suspect that you have breached
+                    these terms and conditions in any way, @companyData("name") may delete, unpublish or edit any or all of your
                     content.</p>
                 </li>
             </ul>
@@ -492,7 +495,7 @@
             <ul>
                 <li class="row">
                     <span class="col-xs-1">10.1</span>
-                     <p class="col-xs-11">MySquares do not warrant or represent:</p>
+                     <p class="col-xs-11">@companyData("name") do not warrant or represent:</p>
                     <ul>
                         <li class="row">
                             <span class="col-xs-1">(a)</span>
@@ -512,16 +515,16 @@
                 </li>
                 <li class="row">
                     <span class="col-xs-1">10.2</span>
-                     <p class="col-xs-11">MySquares reserve the right to discontinue or alter any or all of our website services, and to stop
+                     <p class="col-xs-11">@companyData("name") reserve the right to discontinue or alter any or all of our website services, and to stop
                     publishing our website, at any time in our sole discretion without notice or explanation; and save
                     to the extent expressly provided otherwise in these terms and conditions, you will not be entitled
                     to any compensation or other payment upon the discontinuance or alteration of any website services,
-                    or if MySquares stop publishing the website.</p>
+                    or if @companyData("name") stop publishing the website.</p>
 
                 </li>
                 <li class="row">
                     <span class="col-xs-1">10.3</span>
-                     <p class="col-xs-11">To the maximum extent permitted by applicable law and subject to Section 11.1, MySquares exclude all
+                     <p class="col-xs-11">To the maximum extent permitted by applicable law and subject to Section 11.1, @companyData("name") exclude all
                     representations and warranties relating to the subject matter of these terms and conditions,
                     our website and the use of our website.</p>
                 </li>
@@ -580,33 +583,33 @@
                 <li class="row">
                     <span class="col-xs-1">11.3</span>
                      <p class="col-xs-11">To the extent that our website and the information and services on our website are provided
-                    free of charge, MySquares will not be liable for any loss or damage of any nature.</p>
+                    free of charge, @companyData("name") will not be liable for any loss or damage of any nature.</p>
                 </li>
                 <li class="row">
                     <span class="col-xs-1">11.4</span>
-                     <p class="col-xs-11">MySquares will not be liable to you in respect of any losses arising
+                     <p class="col-xs-11">@companyData("name") will not be liable to you in respect of any losses arising
                     out of any event or events beyond our reasonable control.</p>
                 </li>
                 <li class="row">
                     <span class="col-xs-1">11.5</span>
-                     <p class="col-xs-11">MySquares will not be liable to you in respect of any business losses, including
+                     <p class="col-xs-11">@companyData("name") will not be liable to you in respect of any business losses, including
                     (without limitation) loss of or damage to profits, income, revenue, use, production,
                     anticipated savings, business, contracts, commercial opportunities or goodwill.</p>
                 </li>
                 <li class="row">
                     <span class="col-xs-1">11.6</span>
-                     <p class="col-xs-11">MySquares will not be liable to you in respect of any loss or corruption of any data,
+                     <p class="col-xs-11">@companyData("name") will not be liable to you in respect of any loss or corruption of any data,
                     database or software.</p>
                 </li>
                 <li class="row">
                     <span class="col-xs-1">11.7</span>
-                     <p class="col-xs-11">MySquares will not be liable to you in respect of any special,
+                     <p class="col-xs-11">@companyData("name") will not be liable to you in respect of any special,
                     indirect or consequential loss or damage.</p>
                 </li>
                 <li class="row">
                     <span class="col-xs-1">11.8</span>
-                     <p class="col-xs-11">You accept that MySquares have an interest in limiting the personal liability of our officers and
-                    employees and, having regard to that interest, you acknowledge that MySquares are a limited
+                     <p class="col-xs-11">You accept that @companyData("name") have an interest in limiting the personal liability of our officers and
+                    employees and, having regard to that interest, you acknowledge that @companyData("name") are a limited
                     liability entity; you agree that you will not bring any claim personally against our officers or
                     employees in respect of any losses you suffer in connection with the website or these terms and
                     conditions (this will not, of course, limit or exclude the liability of the limited liability entity
@@ -624,8 +627,8 @@
                     <span class="col-xs-1">12.1</span>
                     <ul>
                          <p class="col-xs-11">Without prejudice to our other rights under these terms and conditions, if you breach these
-                        terms and conditions in any way, or if MySquares reasonably suspect that you have breached
-                        these terms and conditions in any way, MySquares may:</p>
+                        terms and conditions in any way, or if @companyData("name") reasonably suspect that you have breached
+                        these terms and conditions in any way, @companyData("name") may:</p>
                         <li class="row">
                             <span class="col-xs-1"></span>
                             <span class="col-xs-1">(a)</span>
@@ -667,7 +670,7 @@
                 </li>
                 <li class="row">
                     <span class="col-xs-1">12.2</span>
-                     <p class="col-xs-11">Where MySquares suspend or prohibit or block your access to our website or a part of our website,
+                     <p class="col-xs-11">Where @companyData("name") suspend or prohibit or block your access to our website or a part of our website,
                     you must not take any action to circumvent such suspension or prohibition or blocking (including
                     without limitation creating and/or using a different account).</p>
                 </li>
@@ -682,22 +685,22 @@
             <ul>
                 <li class="row">
                     <span class="col-xs-1">13.1</span>
-                     <p class="col-xs-11">MySquares may revise these terms and conditions from time to time.</p>
+                     <p class="col-xs-11">@companyData("name") may revise these terms and conditions from time to time.</p>
                 </li>
                 <li class="row">
                     <span class="col-xs-1">13.2</span>
                      <p class="col-xs-11">The revised terms and conditions shall apply to the use of our website from the date of publication
                     of the revised terms and conditions on the website, and you hereby waive any right you may otherwise
-                    have to be notified of, or to consent to, revisions of these terms and conditions. / MySquares will
+                    have to be notified of, or to consent to, revisions of these terms and conditions. / @companyData("name") will
                     give you written notice of any revision of these terms and conditions, and the revised terms and
-                    conditions will apply to the use of our website from the date that MySquares give you such notice;
+                    conditions will apply to the use of our website from the date that @companyData("name") give you such notice;
                     if you do not agree to the revised terms and conditions, you must stop using our website.</p>
                 </li>
                 <li class="row">
                     <span class="col-xs-1">13.3</span>
-                     <p class="col-xs-11">If you have given your express agreement to these terms and conditions, MySquares will ask for your
+                     <p class="col-xs-11">If you have given your express agreement to these terms and conditions, @companyData("name") will ask for your
                     express agreement to any revision of these terms and conditions; and if you do not give your express
-                    agreement to the revised terms and conditions within such period as MySquares may specify, MySquares
+                    agreement to the revised terms and conditions within such period as @companyData("name") may specify, @companyData("name")
                     will disable or delete your account on the website, and you must stop using the website.</p>
                 </li>
             </ul>
@@ -709,7 +712,7 @@
             <ul>
                 <li class="row">
                     <span class="col-xs-1">14.1</span>
-                     <p class="col-xs-11">You hereby agree that MySquares may assign, transfer, sub-contract or otherwise deal
+                     <p class="col-xs-11">You hereby agree that @companyData("name") may assign, transfer, sub-contract or otherwise deal
                     with our rights and/or obligations under these terms and conditions.</p>
                 </li>
                 <li class="row">
@@ -775,12 +778,12 @@
             <ul>
                 <li class="row">
                     <span class="col-xs-1">18.1</span>
-                     <p class="col-xs-11">This website is owned and operated by Lauriane Mollier.</p>
+                     <p class="col-xs-11">This website is owned and operated by @companyData("owner").</p>
                 </li>
                 <li class="row">
                     <span class="col-xs-1">18.2</span>
-                     <p class="col-xs-11">You can contact us using our website contact form, by email to laurianemollier@@gmail.com
-                    or by telephone on +33450622924.</p>
+                     <p class="col-xs-11">You can contact us using our website contact form, by email to @companyData("email")
+                    or by telephone on @companyData("phoneNumber").</p>
                 </li>
             </ul>
         </li>

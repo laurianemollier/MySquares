@@ -1,6 +1,9 @@
 import sbt._
 import Keys._
 
+//10223710
+
+
 name := """square-it-wtf"""
 
 version := "1.0-SNAPSHOT"
@@ -24,7 +27,8 @@ libraryDependencies ++= Seq(
 //  "org.webjars" % "angularjs" % "1.2.19",
   "org.webjars" % "bootstrap" % "3.2.0" exclude("org.webjars", "jquery"),
   "org.webjars" % "requirejs" % "2.1.14-1" exclude("org.webjars", "jquery"),
-  "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
+  "org.postgresql" % "postgresql" % "9.4-1201-jdbc41",
+  "com.typesafe.play" %% "play-mailer" % "5.0.0-M1"
 )
 
 //square-it-wtf in Compile := "obscure-sierra-7788"

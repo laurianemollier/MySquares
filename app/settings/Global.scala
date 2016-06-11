@@ -12,18 +12,17 @@ object Global {
 
   val r = new Random()
 
-
-
-
-
-
-
-  // TODO: Mettre dans le footer aussi et reoganiser le code
-  //contact data
-  val contactData: Map[String, String] = Map("phoneNumber" -> "+33 4 50 62 29 24",
+  val companyData: Map[String, String] =
+    Map("phoneNumber" -> "+33 4 50 62 29 24",
     "email" -> "mollierlaurian@gmail.com",
-    "address" -> "Not yet available"
+    "address" -> "Not yet available",
+    "name" -> "Square it",
+    "owner" -> "Lauriane Mollier"
   )
+
+
+
+
 
   object MySquareName extends Enumeration {
     type MySquareName = Value

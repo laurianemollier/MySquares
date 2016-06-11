@@ -13,6 +13,7 @@ import settings.Global._
 import models.LoginData._
 import models.RegisterData._
 import models.SelectedSquare._
+import models.ContactData._
 
 import scala.concurrent.Future
 
@@ -33,7 +34,7 @@ class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserR
           case ((img, idUsers), idxSquare) =>  idxSquare
         }
       }
-      Ok(views.html.home.home(squares, nbSquaresOneEdge, idxSquaresUser, connected))
+      Ok(views.html.home.home(squares, nbSquaresOneEdge, idxSquaresUser, companyData, connected))
     })
   }
 
@@ -41,22 +42,24 @@ class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserR
     if(connected){
       littleSquareRepo.all().map(littleSquares => {
         val squares: Seq[(String, Long)] = littleSquares.map(ls => (ls.img, ls.idUser))
-        Ok(views.html.haveSquares.haveSquares(squares, nbSquaresOneEdge, connected)(selectedSquareForm))
+        Ok(views.html.haveSquares.haveSquares(squares, nbSquaresOneEdge, companyData, connected)(selectedSquareForm))
       })
     }
     else {
-      Future(1).map(_ => Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm)).flashing {
+      Future(1).map(_ => Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm, contactForm, companyData)).flashing {
         "redirection" -> "haveSquares"
       })
     }
   }
 
   def howItWorks = Action{ implicit request =>
-    Ok(views.html.howItWorks.howItWorks(connected))
+    Ok(views.html.howItWorks.howItWorks(companyData, connected))
   }
 
   def company = Action{ implicit request =>
-    Ok(views.html.company.company(contactData, connected))
+    Ok(views.html.company.company(contactForm, companyData, connected)).flashing {
+      "redirection" -> "company"
+    }
   }
 
 
@@ -65,22 +68,16 @@ class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserR
   def contact = loginRegisterContact(LogRegCont.contact)
 
   def loginRegisterContact(redirect: LogRegCont.LogRegCont) = Action{ implicit request =>
-    Ok(views.html.loginRegisterContact.loginRegisterContact(redirect, registerForm, loginForm))
+    Ok(views.html.loginRegisterContact.loginRegisterContact(redirect, registerForm, loginForm, contactForm, companyData))
   }
 
 
   def termsConditions = Action{ implicit request =>
-    Ok(views.html.termsConditions.termsConditions(connected))
+    Ok(views.html.termsConditions.termsConditions(companyData, connected))
   }
-
-
-  def confirmSquares = Action{ implicit request =>
-    Ok(views.html.confirmSquares.confirmSquares(colors, nbSquaresOneEdge, connected, registerForm, loginForm))
-  }
-
 
   def noFound = Action{ implicit request =>
-    Ok(views.html.errorPage.error404(connected))
+    Ok(views.html.errorPage.error404(companyData, connected))
   }
 
 

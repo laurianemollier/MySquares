@@ -1,4 +1,4 @@
-@(contactData: Map[String, String], login: Boolean)
+@(contactForm: Form[ContactData], companyData: Map[String, String], login: Boolean)(implicit message: RequestHeader,  flash: Flash)
 
 
 @css = {
@@ -6,4 +6,4 @@
 }
 @js = {}
 
-@commonToAllPage.template(css, sidebar(), mainBarColumn(contactData), js, login)
+@commonToAllPage.template(css, sidebar(), mainBarColumn(contactForm, companyData)(message, flash), js, companyData, login)

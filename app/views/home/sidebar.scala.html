@@ -1,11 +1,15 @@
+@(login: Boolean)
+
 <!-- Inner Page Content Sidebar -->
 
 @commonToAllPage.sidebar("br-black")("January's MS")("Welcome to the first MySquare of the world! Make your choice and take part in History!!")
 
 <div class="sidebar-link col-disable">
 
+    @if(login){
     <!-- Legend -->
     <div id="legendDiv">
+
         <div class="row">
             <div class="col-md-3" id="highlightYourSquareExDiv">
                 <canvas id="highlightYourSquareEx" style="width: 100%;">
@@ -19,6 +23,7 @@
             </div>
         </div>
     </div>
+    }
 
     <!-- Preview selected square-->
     <div id="previewSquareArea">

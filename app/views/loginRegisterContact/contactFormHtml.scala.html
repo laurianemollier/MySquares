@@ -1,0 +1,35 @@
+@import settings.Helpers._
+@import helper._
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+
+@(contactForm: Form[ContactData])(implicit message: RequestHeader)
+
+@form(action = routes.Api.contactUs, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "contactForm") {
+@CSRF.formField
+    <div class="form-group">
+        <div class="col-sm-12">
+            @inputText(contactForm("email"),
+            args = 'class -> "form-control",
+            'id -> "emailContact",
+            'placeholder -> "Email",
+            'type -> "email")
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            @textarea(contactForm("text"),
+            args = 'class -> "form-control",
+            'id -> "textContact",
+            'placeholder -> "Comments",
+            'type -> "textarea",
+            'rows -> 3)
+        </div>
+    </div>
+    <div class="form-group text-center">
+        <div class="col-sm-12">
+            <button type="button" id="contactButton" class="btn btn-black">Submit</button>&nbsp;
+        </div>
+    </div>
+}
+

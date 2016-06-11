@@ -11,16 +11,23 @@ import controllers.Authentication._
 import settings.Global.LogRegCont
 import models.LoginData._
 import models.RegisterData._
+import models.ContactData._
 import models.SelectedSquare._
 import models.{LittleSquare, User}
 import controllers.FlashSession._
+import settings.Global._
 
 
 import scala.concurrent.{Await, Future}
 
+// email
+import play.api.libs.mailer._
+import java.io.File
+import org.apache.commons.mail.EmailAttachment
+
 
 // TODO: You are using status code '200' with flashing, which should only be used with a redirect status!
-class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) extends Controller {
+class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo, mailerClient: MailerClient) extends Controller {
 
 
   def getSquares = Action.async { implicit request =>
@@ -28,6 +35,27 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) exte
   }
   def getUsers = Action.async { implicit request =>
     userRepo.all().map(s => Ok(s.map(l => l.toString).mkString(" ")))
+  }
+
+
+  def contactUs = Action{ implicit request =>
+    contactForm.bindFromRequest.fold(
+      errorForm => {
+          BadRequest(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.contact, registerForm, loginForm, errorForm, companyData))
+      },
+      contactData => {
+        val email = Email(
+          "Simple email",
+          "Square it FROM <" + contactData.email +">",
+          Seq("Miss TO <mollierlauriane@gmail.com>"),
+          bodyText = Some("From:" +  contactData.email + " \n \n " + contactData.text)
+        )
+        mailerClient.send(email)
+        Redirect(redirectByFlash(request)).flashing(
+          "sendEmail" -> "Email send"
+        )
+      }
+    )
   }
 
   def selectSquare = Action.async { implicit request =>
@@ -60,8 +88,6 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) exte
     }
   }
 
-
-
   def logout = Action { implicit request =>
     Redirect(routes.Application.home()).withNewSession.flashing(
       "logout" -> ""
@@ -76,7 +102,7 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) exte
     loginForm.bindFromRequest.fold(
       errorForm => {
         Future(1).map(_ =>
-          BadRequest(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, errorForm))
+          BadRequest(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, errorForm, contactForm, companyData))
         )
       },
       loginData => {
@@ -105,7 +131,7 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) exte
     registerForm.bindFromRequest.fold(
       errorFrom => {
         Future(1).map(_ =>
-          BadRequest(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.register, errorFrom, loginForm))
+          BadRequest(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.register, errorFrom, loginForm, contactForm, companyData))
         )
       },
       user => {

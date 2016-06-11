@@ -1,4 +1,4 @@
-@(login: Boolean)
+@(companyData: Map[String, String], login: Boolean)
 
 <!-- Header Start -->
 <div class="header">
@@ -16,7 +16,7 @@
                     <!-- Logo -->
                     <div class="logo">
                         <!-- Heading -->
-                        <h1><a href="/" class="coucou"><img src="@routes.Assets.versioned("/images/logo.png")"/> MySquare</a></h1>
+                        <h1><a href="/" class="coucou"><img src="@routes.Assets.versioned("/images/logo.png")"/> @companyData("name")</a></h1>
                     </div>
                 </div>
 

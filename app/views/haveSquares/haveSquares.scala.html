@@ -1,5 +1,5 @@
 @import models.Square._
-@(squares: Seq[(String, Long)], nbSquaresOneEdge: Int, login: Boolean)(submitSquareForm: Form[SelectedSquare])(implicit message: RequestHeader)
+@(squares: Seq[(String, Long)], nbSquaresOneEdge: Int, companyData: Map[String, String], login: Boolean)(submitSquareForm: Form[SelectedSquare])(implicit message: RequestHeader)
 
 <!--TODO: Comprendre pk ca ma charche pas comme ça =>  jsSquares-->
 
@@ -115,4 +115,4 @@
 }
 
 
-@commonToAllPage.template(css, sidebar()(message), mainBarColumn(submitSquareForm)(message), js(), login)
+@commonToAllPage.template(css, sidebar()(message), mainBarColumn(submitSquareForm)(message), js(), companyData, login)

@@ -318,41 +318,41 @@
 
 
     function addHistoric(){
-        // if to much historic, delete the latest step
-        if(historic.step.length > nbMaxHistoric){
-            historic.step.splice(0, 1);
-            historic.cursor -= 1;
-        }
-
-        var saveBoxes = [];
-        for(var i=0; i<boxes.length; ++i){
-            // Save new step
-            var rect = boxes[i].clone();
-            saveBoxes.push(rect);
-        }
-        var current = {boxes: saveBoxes, colorBackground: colorBackground.style.color};
-
-
-        historic.cursor += 1;
-        if(historic.cursor == historic.step.length){
-            historic.step.push(current);
-        }
-        else{
-            historic.step = historic.step.slice(0, historic.cursor);
-            historic.step.push(current);
-            historic.cursor = historic.step.length -1;
-        }
+//        // if to much historic, delete the latest step
+//        if(historic.step.length > nbMaxHistoric){
+//            historic.step.splice(0, 1);
+//            historic.cursor -= 1;
+//        }
+//
+//        var saveBoxes = [];
+//        for(var i=0; i<boxes.length; ++i){
+//            // Save new step
+//            var rect = boxes[i].clone();
+//            saveBoxes.push(rect);
+//        }
+//        var current = {boxes: saveBoxes, colorBackground: colorBackground.style.color};
+//
+//
+//        historic.cursor += 1;
+//        if(historic.cursor == historic.step.length){
+//            historic.step.push(current);
+//        }
+//        else{
+//            historic.step = historic.step.slice(0, historic.cursor);
+//            historic.step.push(current);
+//            historic.cursor = historic.step.length -1;
+//        }
     };
 
     function previewHistoric(){
-        if(historic.cursor > 0) historic.cursor -= 1;
-        invalidate();
-        isHistoric = true;
+//        if(historic.cursor > 0) historic.cursor -= 1;
+//        invalidate();
+//        isHistoric = true;
     }
     function nextHistoric(){
-        if(historic.cursor < historic.step.length -1) historic.cursor += 1;
-        invalidate();
-        isHistoric = true;
+//        if(historic.cursor < historic.step.length -1) historic.cursor += 1;
+//        invalidate();
+//        isHistoric = true;
     }
 
 

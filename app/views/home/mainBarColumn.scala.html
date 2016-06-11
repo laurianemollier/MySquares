@@ -1,22 +1,6 @@
 @(flash: Flash)
 
-@flash.get("login").map{ _ =>
-<p class="progress-bar-success">
-    <!-- TODO: Faire l'angalis-->
-    Welcome!!!!!
-    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-</p>
-}
-
-@flash.get("logout").map{ _ =>
-<p class="progress-bar-success">
-    <!-- TODO: Faire l'angalis-->
-    Bye bye!!!!!!!!!
-    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-</p>
-}
-
-
+@views.html.commonToAllPage.flash(flash)
 
 
 <!-- 1• step: select the square-->

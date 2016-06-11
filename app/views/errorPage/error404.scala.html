@@ -1,4 +1,4 @@
-@(login: Boolean)
+@(companyData: Map[String, String], login: Boolean)
 
 @css = {
 <link href="@routes.Assets.versioned("stylesheets/errorPage.css")" rel="stylesheet">
@@ -49,7 +49,7 @@
 
 }
 
-@commonToAllPage.template(css, Html(""), mainBarColumn, js, login, true)
+@commonToAllPage.template(css, Html(""), mainBarColumn, js, companyData, login, true)
 
 
 

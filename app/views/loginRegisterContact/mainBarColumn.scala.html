@@ -2,7 +2,7 @@
 @import helper._
 @import settings.Global.LogRegCont._
 
-@(redirect: LogRegCont, registerForm: Form[RegisterData], loginForm: Form[LoginData])(implicit message: RequestHeader, flash: Flash)
+@(redirect: LogRegCont, registerForm: Form[RegisterData], loginForm: Form[LoginData], contactForm: Form[ContactData])(implicit message: RequestHeader, flash: Flash)
 
 
 <!-- Main-bar Column -->
@@ -10,39 +10,7 @@
     <div class="container">
         <div class="page-mainbar login">
 
-
-            @flash.get("email").map{ email =>
-            <p class="progress-bar-warning">
-                <!-- TODO: correction de l'anglais -->
-                The email: @email is already registered.
-                Did you <a>forget your password? </a>
-
-                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </p>
-            }
-            @flash.get("errorLogin").map{ _ =>
-            <p class="progress-bar-danger">
-                Login failed. Invalid userID or password.
-                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </p>
-            }
-            @flash.get("haveToLogin").map{ _ =>
-            <p class="progress-bar-warning">
-                <!-- TODO: correction de l'anglais -->
-                Before select your squares, you have to login or to register yourself
-                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </p>
-            }
-
-<!--TODO: Add the message to textarea-->
-            @flash.get("mainError").map{ _ =>
-            <p class="progress-bar-danger">
-                A error occur during the process. It is the Beta version, please send us the following message. <br>
-                Thank you for your comprehension.
-                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </p>
-            }
-
+            @views.html.commonToAllPage.flash(flash)
 
             <!-- Login/Register Content -->
             <div class="login-content">
@@ -92,24 +60,7 @@
                     <div class="tab-pane fade @if(redirect == contact) {in active} br-green" id="contact">
                         <!-- Heading -->
                         <h2>Contact Us</h2>
-                        <form role="form">
-                            <div class="form-group">
-                                <!-- form input -->
-                                <input type="text" class="form-control" id="name" placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <!-- form input -->
-                                <input type="email" class="form-control" id="email" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <!-- form textarea -->
-                                <textarea class="form-control" id="comment" rows="3" placeholder="Comments"></textarea>
-                            </div>
-                            <div class="form-group text-center">
-                                <!-- form Submit and reset button -->
-                                <button type="button" class="btn btn-black">Submit</button>&nbsp;
-                            </div>
-                        </form>
+                        @contactFormHtml(contactForm)(message)
                     </div>
                 </div>
             </div>

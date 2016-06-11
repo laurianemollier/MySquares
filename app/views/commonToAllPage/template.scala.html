@@ -1,10 +1,10 @@
-@(css: Html, sidebar: Html, mainBarColumn: Html, js: Html, login: Boolean, justOneColonm: Boolean = false)
+@(css: Html, sidebar: Html, mainBarColumn: Html, js: Html, companyData: Map[String, String], login: Boolean, justOneColonm: Boolean = false)
 
 <!DOCTYPE html>
 <html>
 <head>
     <!-- Title here -->
-    <title>FlatMania, Blank Page</title>
+    <title>@companyData("name")</title>
     <!-- Description, Keywords and Author -->
     <meta name="description" content="Your description">
     <meta name="keywords" content="Your,Keywords">
@@ -32,7 +32,7 @@
 <div class="wrapper white">
 
     <!-- Header-->
-    @commonToAllPage.header(login)
+    @commonToAllPage.header(companyData, login)
 
     <!-- Inner Page Content // Start -->
 
@@ -58,7 +58,7 @@
 
 
     <!-- Footer-->
-    @commonToAllPage.footer()
+    @commonToAllPage.footer(companyData)
 
 
 

@@ -38,8 +38,6 @@ GET           /no-found               controllers.Application.noFound
 
 GET           /get-squares/:id        controllers.Application.haveSquares(id: Int)
 
-GET           /confirmSquares         controllers.Application.confirmSquares
-
 GET           /terms-and-conditions   controllers.Application.termsConditions
 
 
@@ -58,6 +56,8 @@ POST          /user                   controllers.Api.addUser
 GET           /users                  controllers.Api.getUsers
 
 POST          /login                  controllers.Api.login
+
+POST          /contactUs              controllers.Api.contactUs
 
 GET           /logout                 controllers.Api.logout
 

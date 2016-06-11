@@ -1798,7 +1798,6 @@ _html2canvas.Parse = function (images, options) {
       textNode = doc.createTextNode(textValue); // TODO: original code
       valueWrap.appendChild(textNode);
       body.appendChild(valueWrap);
-
       renderText(el, textNode, stack);
       body.removeChild(valueWrap);
     }
@@ -1814,6 +1813,7 @@ _html2canvas.Parse = function (images, options) {
     renderText(el, textNode, stack);
     body.removeChild(valueWrap);
   }
+
   /* take text in textarea and split to long words with \n for an perfect display without overflow*/
   function getDisplayedTextTextarea(textarea){
       var test = textarea.cloneNode();
@@ -1825,22 +1825,27 @@ _html2canvas.Parse = function (images, options) {
           var paragraphs = textarea.value.split('\n');
           var words;
           for(var i=0; i< paragraphs.length; ++i){
+              if(i != 0) text += '\n';
               words = paragraphs[i].split(' ');
               for(var j=0; j<words.length; ++j){
+                  if(j != 0) text += ' ';
                   text += getDisplayedWordTextarea(textarea, test, words[j]);
-                  if(j != words.length - 1) text += ' ';
+                  //console.log(text)
               }
-              if(i != paragraphs.length - 1) text += '\n';
           }
       }
       document.body.removeChild(test);
       return text;
   }
+
   /* split to long word with \n for an perfect display without overflow */
   function getDisplayedWordTextarea(textarea, test, word){
+
       var newWord = "";
       var oldH;
       var newH;
+
+      var firstLine = true;
 
       for(var i=0; i<word.length; ++i){
           oldH = test.scrollHeight;
@@ -1850,10 +1855,22 @@ _html2canvas.Parse = function (images, options) {
           test.style.height = test.scrollHeight + 'px';
           newH = test.scrollHeight;
           if(newH > oldH){
-              newWord += '\n';
+              if(firstLine){
+                newWord = ' ' + newWord;
+                firstLine = false;
+              }
+              newWord += test.value.substring(0, test.value.length - 1) + ' ';
+              test.value = word[i];
+              test.style.height = 'auto';
+              test.style.height = test.scrollHeight + 'px';
           }
-          newWord += word[i];
+
       }
+      newWord += test.value + " ";
+      test.value = "";
+      test.style.height = 'auto';
+      test.style.height = test.scrollHeight + 'px';
+      console.log(newWord)
       return newWord;
   }
 
