@@ -1,4 +1,5 @@
-@(companyData: Map[String, String], login: Boolean)
+@(companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
+
 
 <!-- Header Start -->
 <div class="header">
@@ -28,7 +29,7 @@
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle br-orange" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span class="sr-only">Toggle navigation</span>
+                                <span class="sr-only">@messages("commonToAllPage.nagivationMenu.toggle")</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -41,11 +42,11 @@
 
 
                                 <li>
-                                    <a href="/get-squares/1" class="br-red big">
+                                    <a href="/get-squares/@companyData("idCurrentMS")" class="br-red big">
                                         <!-- Link Icon 29 46 -->
                                         <i class="fa fa-qrcode link-icon"></i>
                                         <!-- Link Title -->
-                                        <span class="link-title">Get my Square</span>
+                                        <span class="link-title">@messages("commonToAllPage.nagivationMenu.getSquare")</span>
                                     </a>
                                 </li>
 
@@ -54,7 +55,7 @@
                                         <!-- Link Icon -->
                                         <i class="fa fa-cog link-icon"></i>
                                         <!-- Link Title -->
-                                        <span class="link-title">How it works ?</span>
+                                        <span class="link-title">@messages("commonToAllPage.nagivationMenu.howItWorks")</span>
                                     </a>
                                 </li>
 
@@ -64,7 +65,7 @@
                                         <!-- Link Icon -->
                                         <i class="fa fa-home link-icon"></i>
                                         <!-- Link Title -->
-                                        <span class="link-title">Company</span>
+                                        <span class="link-title">@messages("commonToAllPage.nagivationMenu.compagny")</span>
                                     </a>
 
                                 </li>
@@ -82,14 +83,13 @@
                                         <!-- Link Title -->
                                         <span class="link-title">
                                             @if(login){
-                                                Logout
+                                                @messages("commonToAllPage.nagivationMenu.logout")
                                             }else{
-                                                Login
+                                                @messages("commonToAllPage.nagivationMenu.login")
                                             }
                                         </span>
                                     </a>
                                 </li>
-
 
                             </ul>
                         </div><!-- /.navbar-collapse -->

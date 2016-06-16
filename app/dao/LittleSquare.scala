@@ -32,7 +32,9 @@ class LittleSquareRepo @Inject()(protected val dbConfigProvider: DatabaseConfigP
     db.run(LittleSquares.filter(_.idUser === idUser).result)
 
   def all(): Future[Seq[LittleSquare]] =
-    db.run(LittleSquares.result)
+    db.run(LittleSquares.result).map(_.sortBy(_.idx))
+
+
 
   def modify(littleSquares: LittleSquare): Future[Int] =
     db.run(LittleSquares.insertOrUpdate(littleSquares)) // Add protection

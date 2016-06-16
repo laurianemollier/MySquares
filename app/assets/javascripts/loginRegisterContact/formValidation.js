@@ -9,7 +9,7 @@ function inputNonEmpty(id){
         return true;
     }
     else{
-        input.placeholder = "Field required"; //TODO
+        input.placeholder = formValidation_fieldRequired; 
         input.className = classError +" "+ input.className;
         input.value = "";
         return false;
@@ -27,7 +27,7 @@ function emailCheck(id) {
     }
     else{
         input.className = classError +" "+ input.className;
-        input.placeholder = "Write a valid email address"; //TODO
+        input.placeholder = formValidation_writeValideEmail;
         input.value = "";
         return false;
     }
@@ -47,8 +47,8 @@ function passwordCheck(idPassword, idVerifyingPassword) {
     // if the password do not set to the regex
     if(!regexPassword.test(inputPass.value)){
         inputPass.className = classError + " " + inputPass.className;
-        inputPass.placeholder = "8-30 Characters, 1 upper case, 1 lowercase, 1 number"; //TODO
-        inputVerify.placeholder = "Confirm your password"; // TODO
+        inputPass.placeholder = formValidation_passwordRegex; 
+        inputVerify.placeholder = formValidation_confirmPassword;
         inputPass.value = "";
         inputVerify.value = "";
 
@@ -58,8 +58,8 @@ function passwordCheck(idPassword, idVerifyingPassword) {
     else if(inputVerify.value != inputPass.value){
         inputPass.className = classError + " " + inputPass.className;
         inputVerify.className = classError + " " + inputVerify.className;
-        inputPass.placeholder = "Not the same password"; // TODO
-        inputVerify.placeholder = "Not the same password"; // TODO
+        inputPass.placeholder = formValidation_notSamePassword; 
+        inputVerify.placeholder = formValidation_notSamePassword;
         inputPass.value = "";
         inputVerify.value = "";
         return false;

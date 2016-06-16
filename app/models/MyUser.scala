@@ -71,8 +71,8 @@ object LoginData{
 
 
 
-case class User(id: Long, email: String, passwordHash: String, salt1: String, salt2: Int)
+case class MyUser(id: Long, email: String, passwordHash: String, salt1: String, salt2: Int)
 
-object User{
-  implicit val format = Json.format[User]
+object MyUser{
+  implicit val format = Json.format[MyUser]
 }

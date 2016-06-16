@@ -14,7 +14,14 @@ object FlashSession {
   def getUserId(implicit request : RequestHeader): Option[Long] = request.session.get("idUser") match{
     case Some(id) => Some(id.toLong)
     case None => None
+
   }
+
+  def cookieEmail = "wtf.squareit.www.email"
+
+  def cookieHash = "wtf.squareit.www.passwordHash"
+
+
 
   def getUserEmail(implicit request : RequestHeader): Option[String] = request.session.get("email")
 

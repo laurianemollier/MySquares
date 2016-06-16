@@ -1,3 +1,5 @@
+@()(implicit messages: Messages, lang: Lang)
+
 <!-- Inner Page Content Sidebar -->
 
-@commonToAllPage.sidebar("br-blue")("How it works ?")("Are you in trouble? This page may help you to find the solution to your problem")
+@commonToAllPage.sidebar("br-blue")(messages("commonToAllPage.nagivationMenu.howItWorks"))(messages("howItWorks.sidebar.text"))

@@ -1,9 +1,8 @@
 @import settings.Helpers._
 @import helper._
 @import play.api.Play.current
-@import play.api.i18n.Messages.Implicits._
 
-@(registerForm: Form[RegisterData])(implicit message: RequestHeader)
+@(registerForm: Form[RegisterData])(implicit message: RequestHeader, messages: Messages, lang: Lang)
 
 <!--<form class="form-horizontal" role="form" action="@routes.Api.addUser" method="post">-->
 @helper.form(action = routes.Api.addUser, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "formRegister") {
@@ -16,7 +15,7 @@
         @helper.inputText(registerForm("email"),
         args = 'class -> "form-control",
         'id -> "emailReg",
-        'placeholder -> "Email",
+        'placeholder -> messages("form.email"),
         'type -> "email")
     </div>
 </div>
@@ -25,7 +24,7 @@
         @helper.inputPassword(registerForm("password"),
         args = 'class -> "form-control",
         'id -> "passwordReg",
-        'placeholder -> "Password")
+        'placeholder -> messages("form.password"))
     </div>
 </div>
 <div class="form-group">
@@ -33,7 +32,7 @@
         @helper.inputPassword(registerForm("verifyingPassword"),
         args = 'class -> "form-control",
         'id -> "confirmPassword",
-        'placeholder -> "Confirm your password")
+        'placeholder -> messages("form.confirmPassword"))
     </div>
 </div>
 <div class="form-group">
@@ -41,9 +40,9 @@
         <div class="checkbox">
             <label id="labelTermCondition">
                 @helper.checkbox(field = registerForm("termCondition"), args = 'id -> "checkboxReg")
-                Accept
+                @messages("commonToAllPage.termsConditions.accept")
                 <a target="_blank" href="/terms-and-conditions" target="_blank">
-                    All Terms & Conditions </a>
+                    @messages("commonToAllPage.termsConditions.link") </a>
             </label>
             <div class="clearfix"></div>
         </div>
@@ -56,7 +55,7 @@
 
 <div class="form-group text-center">
     <div class="col-sm-12">
-        <button type="button" id="buttonReg" class="btn btn-black">Registration</button>&nbsp;
+        <button type="button" id="buttonReg" class="btn btn-black">@messages("button.registration")</button>&nbsp;
     </div>
 </div>
 }

@@ -1,4 +1,6 @@
-@(companyData: Map[String, String])
+@import play.api.i18n.Messages.Implicits._
+
+@(companyData: Map[String, String])(implicit messages: Messages, lang: Lang)
 
 
 <!-- Main-bar Column -->

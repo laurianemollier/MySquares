@@ -1,20 +1,67 @@
+@import play.api.i18n.Messages.Implicits._
+
+@()(implicit messages: Messages, lang: Lang)
+
 <!-- Main-bar Column -->
 
-<div class="page-mainbar c-soon">
-    <!-- Coming Soon Content -->
-    <div class="c-soon-content br-black">
-        <!-- Heading -->
-        <h5>We are on the way...</h5>
-        <!-- Big Heading -->
-        <h2>Coming Soon<span>!!!</span></h2>
-        <!-- Paragraph -->
-        <p>We are working hard to provide you with the best support. Sorry for the inconvenience.</p>
-        <!-- Countdown Html -->
-        <div class="countdown">
-            <div id="countdown"></div>
+<div class="page-mainbar aboutus">
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <img src="@routes.Assets.versioned("/images/slide1-" + lang.code + ".png")">
         </div>
-        <div class="clearfix"></div>
-        <!-- Heading -->
+        <div class="col-md-6 col-sm-6">
+                <!-- suggestion -->
+            <h3>@messages("howItWorks.mainBarColumn.slide1.title")</h3>
+            <p>
+                @messages("howItWorks.mainBarColumn.slide1.text")
+            </p>
+        </div>
+    </div>
 
+    <br/>
+
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+                <!-- suggestion -->
+            <h3> @messages("howItWorks.mainBarColumn.slide2.title")</h3>
+            <p>
+                @messages("howItWorks.mainBarColumn.slide2.text")
+
+            </p>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <img src="@routes.Assets.versioned("/images/slide2-" + lang.code + ".png")">
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <img src="@routes.Assets.versioned("/images/slide3-" + lang.code + ".png")">
+        </div>
+        <div class="col-md-6 col-sm-6">
+                <!-- suggestion -->
+            <h3> @messages("howItWorks.mainBarColumn.slide3.title")</h3>
+            <p>
+                @messages("howItWorks.mainBarColumn.slide3.text")
+            </p>
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+                <!-- suggestion -->
+            <h3> @messages("howItWorks.mainBarColumn.slide4.title") </h3>
+            <p>
+                @messages("howItWorks.mainBarColumn.slide4.text")
+            </p>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <img src="@routes.Assets.versioned("/images/slide4.png")">
+        </div>
     </div>
 </div>
+

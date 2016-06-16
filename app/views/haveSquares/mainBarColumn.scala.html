@@ -2,18 +2,17 @@
 @import helper._
 @import settings.Global.LogRegCont._
 @import play.api.Play.current
-@import play.api.i18n.Messages.Implicits._
 
-@(submitSquareForm: Form[SelectedSquare])(implicit message: RequestHeader)
+
+@(submitSquareForm: Form[SelectedSquare])(implicit message: RequestHeader, messages: Messages, lang: Lang)
 
 <div class="page-mainbar career">
 
-
     <!-- in progress: inprogress,  done: fdone-->
     <ul id="green_and_orange_step_menu" class="row">
-        <li id="septMenuLi1" class="col-md-4 frist inprogress" >Select a square</li>
-        <li id="septMenuLi2" class="col-md-4 "> Model you square<span></span></li>
-        <li id="septMenuLi3" class="col-md-4 last"> Share with friends<span></span></li>
+        <li id="septMenuLi1" class="col-md-4 frist inprogress" >@messages("haveSquares.mainBarColumn.septMenuLi1")</li>
+        <li id="septMenuLi2" class="col-md-4 ">@messages("haveSquares.mainBarColumn.septMenuLi2")<span></span></li>
+        <li id="septMenuLi3" class="col-md-4 last">@messages("haveSquares.mainBarColumn.septMenuLi3") <span></span></li>
     </ul>
 
     <!-- 1• step: select the square-->
@@ -30,10 +29,10 @@
                 <div class="tab-pane">
                     <canvas id="coloredSquare" class="squares">
                         <!-- TODO: Verifier avant la mise en marche du site -->
-                        <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour!!!!!</p>
+                        <p>@messages("canvas.notSupproted")</p>
                     </canvas>
                     <canvas id="selectedSquare">
-                        <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour!!!!!</p>
+                        <p>@messages("canvas.notSupproted")</p>
                     </canvas>
                 </div>
             </div>
@@ -54,11 +53,11 @@
             </div>
             <div class="col-md-6" id="divCanvas">
                 <canvas id="square-where-we-draw" style="width: 100%; height: 100px">
-                    <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour!!!!!</p>
+                    <p>@messages("canvas.notSupproted")</p>
                 </canvas>
             </div>
             <div class="col-md-3" id="dealWithText">
-                <button class="btn btn-default" id="addTextButton" type="button"> + Add text</button>
+                <button class="btn btn-default" id="addTextButton" type="button"> + @messages("button.addText")</button>
                 @for(i <- 0 to 7) {
                 <div class="row" style="display: none;" id="manageText@i">
                     <div class="col-md-6"> Text @(i + 1): </div>
@@ -79,7 +78,7 @@
             <div class="col-md-offset-3 col-md-6">
                 <div>
                     <button id="purchaseSquares" type="button" class="btn btn-default btn-lg btn-circle">
-                        Purchase
+                        @messages("button.purchase")
                         <i class="fa fa-angle-right"></i>
                     </button>
                 </div>
@@ -101,7 +100,7 @@
                         <div class="pricing-item br-lblack">
                             <!-- Login -->
                             <div id="loginDv">
-                                <h2>Share your Square with your friends: </h2>
+                                <h2>@messages("haveSquares.mainBarColumn.shareWithFriends") </h2>
                             </div>
 
                             <hr/>
@@ -112,7 +111,7 @@
                                 @repeat(submitSquareForm("emailsToSend"), min = 3){ emailField =>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        @inputText(emailField, args = 'class -> "form-control", 'placeholder -> "Email to your friend !")
+                                        @inputText(emailField, args = 'class -> "form-control", 'placeholder -> messages("form.emailYourFriend"))
                                     </div>
                                 </div>
                                 }
@@ -124,7 +123,7 @@
                                 <div class="row">
                                     <div class="col-md-offset-2 col-md-8 col-sm-12">
                                         <!-- Button -->
-                                        <button type="submit" id="registerDisplayButton" class="btn btn-default btn-circle">Have your Square <i class="fa fa-angle-right"></i></button>
+                                        <button type="submit" id="registerDisplayButton" class="btn btn-default btn-circle">@messages("button.squareIt") <i class="fa fa-angle-right"></i></button>
                                     </div>
                                 </div>
                                 }

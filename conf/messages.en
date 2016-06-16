@@ -1,0 +1,114 @@
+button.search =  Search
+button.addText = Add text
+button.purchase = Purchase
+button.squareIt = Square it !
+button.write = Write
+button.background = Background
+button.submit= Submit
+button.login = Login
+button.registration = Registration
+
+
+form.emailYourFriend = Email to your friend !
+form.comments = Comments
+form.email = Email
+form.yourEmail= Your email
+form.password = Password
+form.forgetPassword = Forget Password
+form.confirmPassword = Confirm your password
+
+canvas.notSupproted = Soory, you browser can not display Canvas element. He is to old. Download a new version!
+
+
+commonToAllPage.commingSoon.onTheway= We are on the way...
+commonToAllPage.commingSoon.commingSoon= Coming Soon
+commonToAllPage.commingSoon.workingHard= We are working hard to provide you with the best support. Sorry for the inconvenience.
+
+commonToAllPage.flash.login= Welcome!!!!!
+commonToAllPage.flash.logout= Bye bye!!!!!!!!!
+commonToAllPage.flash.sendEmail= You email have been successfully send.
+commonToAllPage.flash.email= The email: ''{0}''' is already registered. Did you
+commonToAllPage.flash.forgetPasword = forget your password?
+commonToAllPage.flash.errorLogin= Login failed. Invalid userID or password.
+commonToAllPage.flash.haveToLogin= Before select your squares, you have to login or to register yourself.
+commonToAllPage.flash.mainError= A error occur during the process. It is the Beta version, please send us the following message. Thank you for your comprehension.
+
+
+commonToAllPage.footer.textSidebar= Every month a new MySquare. Display your creativity to the whole world by owning your little space on the Internet. Stay in touch and see the latest creation from artists like you!
+
+commonToAllPage.nagivationMenu.socialNetworks= Social networks
+commonToAllPage.nagivationMenu.contactUs= Contact Us
+commonToAllPage.nagivationMenu = Navigation Menu
+commonToAllPage.nagivationMenu.toggle = Toggle navigation
+commonToAllPage.nagivationMenu.home= Home
+commonToAllPage.nagivationMenu.getSquare= Get my Square
+commonToAllPage.nagivationMenu.howItWorks= How it works ?
+commonToAllPage.nagivationMenu.compagny= Company
+commonToAllPage.nagivationMenu.register= Register
+commonToAllPage.nagivationMenu.login= Login
+commonToAllPage.nagivationMenu.logout= Logout
+
+commonToAllPage.termsConditions.link= All Terms & Conditions
+commonToAllPage.termsConditions.accept = Accept
+
+termsConditions.sidebar.title = Terms & Conditions
+termsConditions.sidebar.text = Here you can find our Terms & Conditions. If you have any questions, feel free to contact us.
+
+
+
+compagny.sidebar.text= "Who are we? Do you want to contact us? Do you have any suggestion? These is you section "
+compagny.mainBarColumn.email = Email
+compagny.mainBarColumn.address= Address
+compagny.mainBarColumn.voiceCall= Voice Call
+
+compagny.mainBarColumn.letUsImprove= Let us improve
+compagny.mainBarColumn.suggestion= Any suggestion?
+compagny.mainBarColumn.leaveFeedback= Leave us your feedback and we will do our best to improve our service
+
+
+
+errorPage.oops = Oops
+errorPage.weAreSorry= We are sorry, the page you requested cannot be found.
+
+
+
+haveSquares.mainBarColumn.septMenuLi1= Select a square
+haveSquares.mainBarColumn.septMenuLi2= Model you square
+haveSquares.mainBarColumn.septMenuLi3= Share with friends
+
+haveSquares.mainBarColumn.shareWithFriends = Share your Square with your friends:
+haveSquares.sidebar.yourSquare = Your Square
+haveSquares.sidebar.text = Display your creativity to the whole world by owning your little space on the Internet
+
+
+home.sidebar.text= Welcome to the first MySquare of the world! Make your choice and take part in History!!
+home.sidebar.title = The first square
+home.sidebar.showSquare = Show your square
+home.sidebar.theDisplayedSquare= The Square
+
+
+
+howItWorks.mainBarColumn.slide1.title=  Select your square
+howItWorks.mainBarColumn.slide1.text= Pick up the perfect place for your idea: choose your square in the grill.
+
+howItWorks.mainBarColumn.slide2.title= Costumize it !
+howItWorks.mainBarColumn.slide2.text= Let's play: write, color, draw ! The limit is just your imagination!
+
+howItWorks.mainBarColumn.slide3.title= Square it !
+howItWorks.mainBarColumn.slide3.text= Display your creation to the world: who will have the best idea?
+
+howItWorks.mainBarColumn.slide4.title= Enjoy !
+howItWorks.mainBarColumn.slide4.text= Become popular! People enjoy what you have created!
+
+howItWorks.sidebar.text = Are you in trouble? This page may help you to find the solution to your problem
+
+
+
+#
+#termsConditions
+#
+#termsConditions.mainBarColumn
+#
+#termsConditions.sidebar
+
+

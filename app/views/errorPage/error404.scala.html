@@ -1,4 +1,4 @@
-@(companyData: Map[String, String], login: Boolean)
+@(companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
 
 @css = {
 <link href="@routes.Assets.versioned("stylesheets/errorPage.css")" rel="stylesheet">
@@ -19,9 +19,9 @@
                 <!-- Coming Soon Content -->
                 <div class="error-content br-red">
                     <!-- Heading -->
-                    <h2>Oops<span>!!!</span> it<span>'</span>s <span>404!!!</span></h2>
+                    <h2>@messages("errorPage.oops")<span>!!!</span> it<span>'</span>s <span>404!!!</span></h2>
                     <!-- paragraph -->
-                    <p>We are sorry, the page you requested cannot be found.</p>
+                    <p>@messages("errorPage.weAreSorry")</p>
                     <!-- Border design for page -->
                     <div class="line-border"></div>
                     <!-- Form, search button and input box -->
@@ -29,15 +29,14 @@
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Type to search">
                         </div>
-                        <button type="button" class="btn btn-info">Search</button>
+                        <button type="button" class="btn btn-info">@messages("button.search")</button>
                     </form>
                     <!-- Visited link list -->
                     <div class="link-list">
-                        <a href="index.html">Home</a>
-                        <a href="#">About us</a>
-                        <a href="contactus.html">Contact</a>
-                        <a href="#">Testimonial</a>
-                        <a href="#">Careers</a>
+                        <a href="/">@messages("commonToAllPage.nagivationMenu.home")</a>
+                        <a href="/get-squares/@companyData("idCurrentMS")">@messages("commonToAllPage.nagivationMenu.getSquare")</a>
+                        <a href="/how-it-works">@messages("commonToAllPage.nagivationMenu.howItWorks")</a>
+                        <a href="/company">@messages("commonToAllPage.nagivationMenu.company")</a>
                     </div>
                 </div>
             </div>
@@ -49,7 +48,7 @@
 
 }
 
-@commonToAllPage.template(css, Html(""), mainBarColumn, js, companyData, login, true)
+@commonToAllPage.template(css, Html(""), mainBarColumn, js, companyData, login, true)(messages, lang)
 
 
 

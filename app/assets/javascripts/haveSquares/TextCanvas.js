@@ -84,7 +84,7 @@
       this.fill = 'rgba(235, 235, 235, 0)';
 
       this.writeDefaultText = true;
-      this.defaultText = 'Type your text here';
+      this.defaultText = TextCanvas_placeHolder;
       this.defaultTextFontColor = 'gray';
 
       this.text = "";

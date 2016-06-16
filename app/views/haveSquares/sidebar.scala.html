@@ -1,10 +1,12 @@
 @import settings.Helpers._
 @import helper._
+@import play.api.i18n.Messages.Implicits._
 
-@()(implicit message: RequestHeader)
+@()(implicit messages: Messages, lang: Lang)
+
 
 <!-- Inner Page Content Sidebar -->
-@commonToAllPage.sidebar("br-red")("Get my Square")("Display your creativity to the whole world by owning your little space on the Internet")
+@commonToAllPage.sidebar("br-red")(messages("commonToAllPage.nagivationMenu.getSquare"))(messages("haveSquares.sidebar.text"))
         <!-- Sidebar Links -->
         <div class="sidebar-link col-disable">
 
@@ -17,12 +19,12 @@
                     <!--</div>-->
                     <div class="col-md-5">
                         <div id="textColorSelector">
-                            <i style="color: black;" class="fa fa-font" id="iconText"></i> Write
+                            <i style="color: black;" class="fa fa-font" id="iconText"></i> @messages("button.write")
                         </div>
                     </div>
                     <div class="col-md-7">
                         <div id="backgroundColorSelector">
-                            <i style="color: white;" class="fa fa-square" id="iconBackground"></i> Background
+                            <i style="color: white;" class="fa fa-square" id="iconBackground"></i> @messages("button.background")
                         </div>
                     </div>
                 </div>
@@ -54,10 +56,10 @@
 
             <!-- Preview selected square-->
             <div id="previewSquareArea">
-                <h3>Your MySquare </h3>
+                <h3>@messages("haveSquares.sidebar.yourSquare") </h3>
                 <!-- Other Plans Item -->
                 <canvas id="previewSquare" style="width: 100%;">
-                    <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour!!!!!</p>
+                    <p>@messages("canvas.notSupproted")</p>
                 </canvas>
             </div>
         </div>

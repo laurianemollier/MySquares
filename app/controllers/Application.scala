@@ -8,6 +8,9 @@ import models.LittleSquare
 
 import dao.{LittleSquareRepo, UserRepo}
 import play.api.mvc.{Action, Call, Controller, RequestHeader}
+import play.api.i18n.{I18nSupport, MessagesApi, Messages, Lang}
+
+
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import settings.Global._
 import models.LoginData._
@@ -20,7 +23,8 @@ import scala.concurrent.Future
 
 // TODO: You are using status code '200' with flashing, which should only be used with a redirect status!
 
-class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) extends Controller {
+@javax.inject.Inject
+class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserRepo, val messagesApi: MessagesApi) extends Controller with I18nSupport{
 
   def home = Action.async { implicit request =>
     littleSquareRepo.all().map(littleSquares => {
@@ -42,18 +46,21 @@ class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserR
     if(connected){
       littleSquareRepo.all().map(littleSquares => {
         val squares: Seq[(String, Long)] = littleSquares.map(ls => (ls.img, ls.idUser))
-        Ok(views.html.haveSquares.haveSquares(squares, nbSquaresOneEdge, companyData, connected)(selectedSquareForm))
+        Ok(views.html.haveSquares.haveSquares(squares, nbSquaresOneEdge, companyData, connected)(selectedSquareForm)).withLang(Lang("en"))
       })
     }
     else {
-      Future(1).map(_ => Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm, contactForm, companyData)).flashing {
+//      implicit val userLang = Lang("fr")
+      Future(Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm, contactForm, companyData))
+        .withLang(Lang("en"))
+        .flashing{
         "redirection" -> "haveSquares"
       })
     }
   }
 
   def howItWorks = Action{ implicit request =>
-    Ok(views.html.howItWorks.howItWorks(companyData, connected))
+    Ok(views.html.howItWorks.howItWorks(companyData, connected)).withLang(Lang("en"))
   }
 
   def company = Action{ implicit request =>
@@ -68,7 +75,7 @@ class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserR
   def contact = loginRegisterContact(LogRegCont.contact)
 
   def loginRegisterContact(redirect: LogRegCont.LogRegCont) = Action{ implicit request =>
-    Ok(views.html.loginRegisterContact.loginRegisterContact(redirect, registerForm, loginForm, contactForm, companyData))
+    Ok(views.html.loginRegisterContact.loginRegisterContact(redirect, registerForm, loginForm, contactForm, companyData)).withLang(Lang("en"))
   }
 
 

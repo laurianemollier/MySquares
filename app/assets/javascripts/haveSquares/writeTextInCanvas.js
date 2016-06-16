@@ -17,6 +17,7 @@
     var colorText = document.getElementById('iconText');
     var colorBackground = document.getElementById('iconBackground');
     var textColorSelector = $('#textColorSelector');
+    var displayPalette = false;
 
     // holds all our boxes
     var boxes = [];
@@ -390,7 +391,11 @@
         mySel.w = parseInt(mySel.textarea.style.width, 10);
         mySel.h = parseInt(mySel.textarea.style.height, 10);
       }
-      textColorSelector.click();
+      if(displayPalette){
+        textColorSelector.click();
+        displayPalette = false;
+      }
+
       addHistoric();
     }
     function mouseMove(e){

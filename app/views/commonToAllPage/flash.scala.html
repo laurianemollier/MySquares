@@ -1,26 +1,25 @@
-@(flash: Flash)
+@(flash: Flash)(implicit messages: Messages, lang: Lang)
+
 
 
 @flash.get("login").map{ _ =>
 <p class="progress-bar-success">
     <!-- TODO: Faire l'angalis-->
-    Welcome!!!!!
+    @messages("commonToAllPage.flash.login")
     <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </p>
 }
 
 @flash.get("logout").map{ _ =>
 <p class="progress-bar-success">
-    <!-- TODO: Faire l'angalis-->
-    Bye bye!!!!!!!!!
+    @messages("commonToAllPage.flash.logout")
     <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </p>
 }
 
 @flash.get("sendEmail").map{ _ =>
 <p class="progress-bar-success">
-    <!-- TODO: Faire l'angalis-->
-    You email have been successfully send.
+    @messages("commonToAllPage.flash.sendEmail")
     <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </p>
 }
@@ -28,23 +27,22 @@
 
 @flash.get("email").map{ email =>
 <p class="progress-bar-warning">
-    <!-- TODO: correction de l'anglais -->
-    The email: @email is already registered.
-    Did you <a>forget your password? </a>
+    @messages("commonToAllPage.flash.email", email)
+    <a>@messages("commonToAllPage.flash.forgetPasword") </a>
 
     <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </p>
 }
 @flash.get("errorLogin").map{ _ =>
 <p class="progress-bar-danger">
-    Login failed. Invalid userID or password.
+    @messages("commonToAllPage.flash.errorLogin")
     <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </p>
 }
 @flash.get("haveToLogin").map{ _ =>
 <p class="progress-bar-warning">
     <!-- TODO: correction de l'anglais -->
-    Before select your squares, you have to login or to register yourself
+    @messages("commonToAllPage.flash.haveToLogin")
     <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </p>
 }
@@ -52,8 +50,7 @@
 <!--TODO: Add the message to textarea-->
 @flash.get("mainError").map{ _ =>
 <p class="progress-bar-danger">
-    A error occur during the process. It is the Beta version, please send us the following message. <br>
-    Thank you for your comprehension.
+    @messages("commonToAllPage.flash.mainError")
     <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </p>
 }

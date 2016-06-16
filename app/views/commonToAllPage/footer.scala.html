@@ -1,4 +1,5 @@
-@(companyData: Map[String, String])
+@(companyData: Map[String, String])(implicit messages: Messages, lang: Lang)
+
 
 <!-- Footer Start -->
 
@@ -12,8 +13,7 @@
                     <!-- Heading -->
                     <h2><a href="/"><img src="@routes.Assets.versioned("/images/logo.png")"/> @companyData("name")</a></h2>
                     <!-- Paragraph -->
-                    <p> Every month a new MySquare. Display your creativity to the whole world by owning your little space on the Internet
-                        Stay in touch and see the latest creation from artists like you!
+                    <p> @messages("commonToAllPage.footer.textSidebar")
                     </p>
                 </div>
             </div>
@@ -21,22 +21,22 @@
                 <!-- Footer Widget -->
                 <div class="footer-widget">
                     <!-- Heading -->
-                    <h5><i class="fa fa-plus br-red"></i> Navigation Menu</h5>
+                    <h5><i class="fa fa-plus br-red"></i> @messages("commonToAllPage.nagivationMenu")</h5>
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <!-- Menu Icons link -->
                             <ul class="list-unstyled">
-                                <li><a href="/"><i class="fa fa-home br-purple"></i> Home</a></li>
-                                <li><a href="/get-squares/january"><i class="fa fa-qrcode br-red"></i> Get my Squares</a></li>
-                                <li><a href="/how-it-works"><i class="fa fa-cog br-blue"></i> How it works ?</a></li>
+                                <li><a href="/"><i class="fa fa-home br-purple"></i> @messages("commonToAllPage.nagivationMenu.home") </a></li>
+                                <li><a href="/get-squares/@companyData("idCurrentMS")"><i class="fa fa-qrcode br-red"></i> @messages("commonToAllPage.nagivationMenu.getSquare")</a></li>
+                                <li><a href="/how-it-works"><i class="fa fa-cog br-blue"></i> @messages("commonToAllPage.nagivationMenu.howItWorks")</a></li>
 
                             </ul>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <!-- Menu Icons link -->
                             <ul class="list-unstyled">
-                                <li><a href="/compagny"><i class="fa fa-home br-yellow"></i> Company</a></li>
-                                <li><a href="/register"><i class="fa fa-sign-in br-black"></i> Register</a></li>
+                                <li><a href="/compagny"><i class="fa fa-home br-yellow"></i> @messages("commonToAllPage.nagivationMenu.compagny")</a></li>
+                                <li><a href="/register"><i class="fa fa-sign-in br-black"></i> @messages("commonToAllPage.nagivationMenu.register")</a></li>
 
                             </ul>
                         </div>
@@ -48,7 +48,7 @@
                 <!-- Footer Widget -->
                 <div class="footer-widget">
                     <!-- Heading -->
-                    <h5><i class="fa fa-map-marker br-yellow"></i> Contact Us</h5>
+                    <h5><i class="fa fa-map-marker br-yellow"></i> @messages("commonToAllPage.nagivationMenu.contactUs")</h5>
                     <address>
                         <span><i class="fa fa-envelope br-green"></i> <a href="mailto:mollierlauriane@@gmail.com" target="_top">@companyData("email")</a></span>
                         <span><i class="fa fa-file br-blue"></i> <a href="tel:@companyData("phoneNumber")">@companyData("phoneNumber")</a></span>
@@ -59,7 +59,7 @@
                 <!-- Footer Widget -->
                 <div class="footer-widget">
                     <!-- Heading -->
-                    <h5><i class="fa fa-comment br-lblue"></i>  Social networks </h5>
+                    <h5><i class="fa fa-comment br-lblue"></i> @messages("commonToAllPage.nagivationMenu.socialNetworks")  </h5>
 
                     <!-- Social Media -->
                     <div class="social" class="footer-widget">

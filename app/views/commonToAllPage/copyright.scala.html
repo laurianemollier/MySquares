@@ -1,5 +1,6 @@
-@(companyData: Map[String, String])
+@(companyData: Map[String, String])(implicit messages: Messages, lang: Lang)
+
 
 <div class="footer-copyright">
-    <p>&copy; Copyright 2014 <a href="#">@companyData("name")</a></p>
+    <p>&copy; Copyright 2016 <a href="#">@companyData("name")</a></p>
 </div>

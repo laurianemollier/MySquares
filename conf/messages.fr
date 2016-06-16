@@ -1,0 +1,3 @@
+
+
+canvas.notSupproted = Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour!!!!!

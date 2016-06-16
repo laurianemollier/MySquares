@@ -2,7 +2,7 @@
 @import helper._
 @import settings.Global.LogRegCont._
 
-@(redirect: LogRegCont, registerForm: Form[RegisterData], loginForm: Form[LoginData], contactForm: Form[ContactData])(implicit message: RequestHeader, flash: Flash)
+@(redirect: LogRegCont, registerForm: Form[RegisterData], loginForm: Form[LoginData], contactForm: Form[ContactData])(implicit message: RequestHeader, flash: Flash, messages: Messages, lang: Lang)
 
 
 <!-- Main-bar Column -->
@@ -45,7 +45,7 @@
                         <!-- Heading -->
                         <h2>Login</h2>
                         <!-- Sign in -->
-                        @loginFormHtml(loginForm)(message)
+                        @loginFormHtml(loginForm)(message, messages, lang)
                     </div>
 
                     <!-- Second Content for Nav bar -->
@@ -53,14 +53,14 @@
                         <!-- Heading -->
                         <h2>Registration</h2>
                         <!-- Sign Up -->
-                        @registerFormHtml(registerForm)(message)
+                        @registerFormHtml(registerForm)(message, messages, lang)
                     </div>
 
                     <!-- Third Content for Nav bar -->
                     <div class="tab-pane fade @if(redirect == contact) {in active} br-green" id="contact">
                         <!-- Heading -->
                         <h2>Contact Us</h2>
-                        @contactFormHtml(contactForm)(message)
+                        @contactFormHtml(contactForm)(message, messages, lang)
                     </div>
                 </div>
             </div>

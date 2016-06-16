@@ -63,6 +63,7 @@ GET           /logout                 controllers.Api.logout
 
 GET           /squares                controllers.Api.getSquares
 
+GET           /loginByCookies         controllers.Api.loginByCookies
 
 
 

@@ -1,9 +1,8 @@
 @import settings.Helpers._
 @import helper._
 @import play.api.Play.current
-@import play.api.i18n.Messages.Implicits._
 
-@(loginForm: Form[LoginData])(implicit message: RequestHeader)
+@(loginForm: Form[LoginData])(implicit message: RequestHeader, messages: Messages, lang: Lang)
 
 
 <!--Login Form -->
@@ -14,7 +13,7 @@
         @inputText(loginForm("email"),
         args = 'class -> "form-control",
         'id -> "emailLogin",
-        'placeholder -> "Email",
+        'placeholder -> messages("form.email"),
         'type -> "email")
     </div>
 </div>
@@ -23,20 +22,20 @@
         @inputPassword(loginForm("password"),
         args = 'class -> "form-control",
         'id -> "passwordLogin",
-        'placeholder -> "Password")
+        'placeholder -> messages("form.password"))
     </div>
 </div>
 <div class="form-group">
     <div class="col-sm-12">
         <div class="checkbox">
-            <span class="pull-right"><a href="#">Forget Password</a></span>
+            <span class="pull-right"><a href="#">@messages("form.forgetPassword")</a></span>
             <div class="clearfix"></div>
         </div>
     </div>
 </div>
 <div class="form-group text-center">
     <div class="col-sm-12">
-        <button type="button" id="loginButton" class="btn btn-black">Login</button>&nbsp;
+        <button type="button" id="loginButton" class="btn btn-black">@messages("button.login")</button>&nbsp;
     </div>
 </div>
 }

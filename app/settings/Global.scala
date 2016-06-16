@@ -17,7 +17,8 @@ object Global {
     "email" -> "mollierlaurian@gmail.com",
     "address" -> "Not yet available",
     "name" -> "Square it",
-    "owner" -> "Lauriane Mollier"
+    "owner" -> "Lauriane Mollier",
+      "idCurrentMS" -> "1"
   )
 
 

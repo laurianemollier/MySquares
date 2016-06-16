@@ -1,4 +1,4 @@
-@(css: Html, sidebar: Html, mainBarColumn: Html, js: Html, companyData: Map[String, String], login: Boolean, justOneColonm: Boolean = false)
+@(css: Html, sidebar: Html, mainBarColumn: Html, js: Html, companyData: Map[String, String], login: Boolean, justOneColonm: Boolean = false)(implicit messages: Messages, lang: Lang)
 
 <!DOCTYPE html>
 <html>
@@ -32,12 +32,13 @@
 <div class="wrapper white">
 
     <!-- Header-->
-    @commonToAllPage.header(companyData, login)
+    @commonToAllPage.header(companyData, login)(messages, lang)
 
     <!-- Inner Page Content // Start -->
 
 
 
+    <textarea style="color: black;"></textarea>
     <div class="inner-page">
         <div class="container">
             @if(justOneColonm){
@@ -58,7 +59,7 @@
 
 
     <!-- Footer-->
-    @commonToAllPage.footer(companyData)
+    @commonToAllPage.footer(companyData)(messages, lang)
 
 
 
@@ -67,7 +68,7 @@
 
 
     <!-- This Page JavaScript -->
-    @commonToAllPage.js()
+    @commonToAllPage.js()(messages, lang)
 
     <!-- Javascript files -->
     @js

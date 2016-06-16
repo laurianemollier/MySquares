@@ -1,9 +1,8 @@
 @import settings.Helpers._
 @import helper._
 @import play.api.Play.current
-@import play.api.i18n.Messages.Implicits._
 
-@(contactForm: Form[ContactData])(implicit message: RequestHeader)
+@(contactForm: Form[ContactData])(implicit message: RequestHeader, messages: Messages, lang: Lang)
 
 @form(action = routes.Api.contactUs, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "contactForm") {
 @CSRF.formField
@@ -12,7 +11,7 @@
             @inputText(contactForm("email"),
             args = 'class -> "form-control",
             'id -> "emailContact",
-            'placeholder -> "Email",
+            'placeholder -> messages("form.yourEmail"),
             'type -> "email")
         </div>
     </div>
@@ -21,14 +20,14 @@
             @textarea(contactForm("text"),
             args = 'class -> "form-control",
             'id -> "textContact",
-            'placeholder -> "Comments",
+            'placeholder -> messages("form.comments"),
             'type -> "textarea",
-            'rows -> 3)
+            'rows -> 8)
         </div>
     </div>
     <div class="form-group text-center">
         <div class="col-sm-12">
-            <button type="button" id="contactButton" class="btn btn-black">Submit</button>&nbsp;
+            <button type="button" id="contactButton" class="btn btn-black">@messages("button.submit")</button>&nbsp;
         </div>
     </div>
 }

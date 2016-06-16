@@ -1,3 +1,7 @@
+@()(implicit messages: Messages, lang: Lang)
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +10,7 @@
     @commonToAllPage.css()
 </head>
 <body>
+@messages("home.hello")
 
         <div class="header-information-link">
             <a href="/register" data-toggle="tab">

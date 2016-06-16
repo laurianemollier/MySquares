@@ -1,7 +1,10 @@
+@()(implicit messages: Messages, lang: Lang)
+
 <!-- jQuery -->
-<script src="@routes.Assets.versioned("bootstrap/theme/js/jquery.js")"></script>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="@routes.Assets.versioned("bootstrap/theme/js/bootstrap.js")"></script>
+
 <!-- Cycle JS -->
 <script type="text/javascript" src="@routes.Assets.versioned("bootstrap/theme/js/jquery.cycle.all.js")"></script>
 <!-- jQuery flot -->
@@ -32,6 +35,8 @@
 <!--Fade function-->
 <script src="@routes.Assets.versioned("javascripts/fade.js")"> </script>
 
+<!-- Select message for javascript-->
+<script src="@routes.Assets.versioned("javascripts/messages/messages-"+lang.code+".js")"> </script>
 
 <!-- Function for have the relative coordonate-->
 <!--TODO: Verify it works for all browsers-->

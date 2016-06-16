@@ -1,9 +1,12 @@
-@(contactForm: Form[ContactData], companyData: Map[String, String], login: Boolean)(implicit message: RequestHeader,  flash: Flash)
+@(contactForm: Form[ContactData], companyData: Map[String, String], login: Boolean)(implicit message: RequestHeader, flash: Flash, messages: Messages, lang: Lang)
 
 
 @css = {
-<link href="@routes.Assets.versioned("stylesheets/company.css")" rel="stylesheet">
+    <link href="@routes.Assets.versioned("stylesheets/company.css")" rel="stylesheet">
 }
-@js = {}
+@js = {
+    <script src="@routes.Assets.versioned("javascripts/loginRegisterContact/formValidation.js")"></script>
+    <script src="@routes.Assets.versioned("javascripts/loginRegisterContact/contactFormValidation.js")"></script>
+}
 
-@commonToAllPage.template(css, sidebar(), mainBarColumn(contactForm, companyData)(message, flash), js, companyData, login)
+@commonToAllPage.template(css, sidebar()(messages, lang), mainBarColumn(contactForm, companyData)(message, flash, messages, lang), js, companyData, login)(messages, lang)

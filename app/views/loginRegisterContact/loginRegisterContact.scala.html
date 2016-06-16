@@ -1,6 +1,6 @@
 @import settings.Global.LogRegCont._
 
-@(redirect: LogRegCont, registerForm: Form[RegisterData], loginForm: Form[LoginData], contactForm: Form[ContactData], companyData: Map[String, String])(implicit message: RequestHeader, flash: Flash)
+@(redirect: LogRegCont, registerForm: Form[RegisterData], loginForm: Form[LoginData], contactForm: Form[ContactData], companyData: Map[String, String])(implicit message: RequestHeader, messages: Messages, lang: Lang, flash: Flash)
 
 
 @css = {
@@ -15,4 +15,4 @@
 
 }
 
-@commonToAllPage.template(css, Html(""), mainBarColumn(redirect, registerForm, loginForm, contactForm)(message, flash), js, companyData, false, true)
+@commonToAllPage.template(css, Html(""), mainBarColumn(redirect, registerForm, loginForm, contactForm)(message, flash, messages, lang), js, companyData, false, true)(messages, lang)

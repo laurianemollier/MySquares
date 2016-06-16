@@ -6,16 +6,12 @@ import play.api.libs.functional.syntax._
 import play.api.libs.json._
 
 
-
-
-
-
 /**
  *
  * @param nbSquaresOneEdge the square number in one edge. The total amount of square is nbSquaresOneEdge*nbSquaresOneEdge
  * @param squares the hole MySquare. Caracterized by the image produce by the user in base 64, and the user id who produce it
  */
-case class Square(nbSquaresOneEdge: Int, squares: Seq[(String, Int)]){
+case class Square(nbSquaresOneEdge: Int, squares: Seq[(String, Long)]){
 
   if(squares.length != nbSquaresOneEdge*nbSquaresOneEdge){
     throw new IllegalArgumentException("Array must be of size nbSquaresOneEdge*nbSquaresOneEdge")
@@ -28,7 +24,7 @@ object Square{
 
   implicit val write: Writes[Square] = (
   (JsPath \ "number of square on one edge").write[Int] and
-  (JsPath \ "squares").write[Seq[(String, Int)]]
+  (JsPath \ "squares").write[Seq[(String, Long)]]
   )(unlift(Square.unapply))
 }
 

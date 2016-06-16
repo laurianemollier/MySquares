@@ -1,4 +1,4 @@
-@(companyData: Map[String, String], login: Boolean)
+@(companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
 
 @css = {
 <link href="@routes.Assets.versioned("stylesheets/termsConditions.css")" rel="stylesheet">
@@ -6,4 +6,4 @@
 
 @js = {}
 
-@commonToAllPage.template(css, sidebar(), mainBarColumn(companyData), js, companyData, login)
+@commonToAllPage.template(css, sidebar()(messages, lang), mainBarColumn(companyData)(messages, lang), js, companyData, login)(messages, lang)
