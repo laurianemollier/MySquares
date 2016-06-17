@@ -75,19 +75,19 @@ class AskDB @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) {
     })
   }
 
-
   /**
-   * Verify if the square is not already taken, if not, add this square
-   * @param idUser user's id who want the square
-   * @param idxSquare the index of the selected square
-   * @param img the image produce by the user in base 64
-   * @return FTP server return codes
-   */
-  def addSelectedSquare(idxSquare: Int, idUser: Long, img: String): Future[Int] ={
-    littleSquareRepo.findByIdx(idxSquare).map(ls =>
+    *
+    * @param idSquare The square idx
+    * @param idx the index of the selected square in the square
+    * @param idUser user's id who want the square
+    * @param img the image produce by the user in base 64
+    * @return FTP server return codes
+    */
+  def addSelectedSquare(idSquare: Int, idx: Int, idUser: Long, img: String): Future[Int] ={
+    littleSquareRepo.findByIdx(idSquare, idx).map(ls =>
       if(ls.idUser != -1) 504
       else{
-        val newLs = LittleSquare(idxSquare, idUser, img: String)
+        val newLs = LittleSquare(ls.id, idSquare, idx, idUser, img)
         littleSquareRepo.modify(newLs)
         200
       }

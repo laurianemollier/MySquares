@@ -86,15 +86,13 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo,
             ))
           },
           selectedSquare => {
-            askDB.addSelectedSquare(selectedSquare.idxSquare, idUser, selectedSquare.img).map(ftp => ftp match {
+            askDB.addSelectedSquare(selectedSquare.idMS, selectedSquare.idxSquare, idUser, selectedSquare.img).map(ftp => ftp match {
               case 200 => {
                 val emails = selectedSquare.emailsToSend.filter(op => op.isDefined).map(op => op.get)
                 for(email <- emails){
                   val toSend =  emailSeeMySquare(email, getUserEmail.get)
                   mailerClient.send(toSend)
                 }
-
-                //TODO: Envoyer les email
                 Redirect(routes.Application.home()) // TODO: montrer qu'on a bien selectionné son petit carré.
               }
               case _ => Redirect(routes.Application.contact()).flashing(

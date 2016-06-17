@@ -7,8 +7,11 @@ import dao.{LittleSquareRepo, UserRepo}
 import play.api.i18n.{I18nSupport, Lang, Messages, MessagesApi}
 import play.api.mvc.{Action, Call, Controller, RequestHeader}
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
-import settings.Global._
+import scala.concurrent.duration._
+import models.Squares._
 import controllers.FlashSession._
+
+import scala.concurrent.Await
 
 // email
 import play.api.libs.mailer._
@@ -28,14 +31,12 @@ val img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcUAAAHCCAYAAACexNI8AAA
 
 
   def init = Action.async{
-    littleSquareRepo.addAll()
-//    for(i <- 0 until 100){
-      val s = LittleSquare(30, 1.toLong, img)
-      littleSquareRepo.modify(s)
-//    }
-
+    for(s <- squares){
+      littleSquareRepo.addSquare(s.id, s.nbSquares)
+    }
     def moi = MyUser(1, "mollierlauriane@gmail.com", "fd4ae5a0bbdbcea31860440ccd0ad02cb34f2870e7bd26032876b839c11dc", "57,13,-104,103,-117,40",11)
     userRepo.add(moi)
+
     littleSquareRepo.all().map(s => Ok(s.map(l => l.toString).mkString(" ")))
   }
 
@@ -72,7 +73,16 @@ val img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcUAAAHCCAYAAACexNI8AAA
     Ok(views.html.icon()).withLang(Lang("fr"))
   }
   def doc = Action {
-    Ok(views.html.index("C'est la doc!!!!"))
+    Ok(Await.result(littleSquareRepo.all(idCurrentSquare), 10000000 seconds).toString())
+//    Ok(views.html.index("C'est la doc!!!!"))
+  }
+
+  def testB = Action{
+    Ok(views.html.testB())
+  }
+
+  def test = Action{
+    Ok(views.html.test())
   }
 
 

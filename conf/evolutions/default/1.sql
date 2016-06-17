@@ -11,7 +11,9 @@ CREATE TABLE "MY_USER"(
 );
 
 CREATE TABLE "LITTLE_SQUARE"(
-    "IDX" integer NOT NULL PRIMARY KEY,
+    "ID" SERIAL PRIMARY KEY,
+    "ID_SQUARE" integer NOT NULL,
+    "IDX" integer NOT NULL,
     "IMG" text NOT NULL,
     "USER_ID" integer NOT NULL
 );

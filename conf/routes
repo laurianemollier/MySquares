@@ -12,6 +12,9 @@ GET     /doc                           controllers.Development.doc
 
 GET     /init                          controllers.Development.init
 
+GET     /test                          controllers.Development.test
+GET     /test-with-bootstrap                          controllers.Development.testB
+
 
 
 

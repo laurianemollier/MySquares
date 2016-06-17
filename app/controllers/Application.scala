@@ -17,6 +17,7 @@ import models.LoginData._
 import models.RegisterData._
 import models.SelectedSquare._
 import models.ContactData._
+import models.Squares._
 
 import scala.concurrent.Future
 
@@ -27,7 +28,7 @@ import scala.concurrent.Future
 class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserRepo, val messagesApi: MessagesApi) extends Controller with I18nSupport{
 
   def home = Action.async { implicit request =>
-    littleSquareRepo.all().map(littleSquares => {
+    littleSquareRepo.all(idCurrentSquare).map(littleSquares => {
       val squares: Seq[(String, Long)] = littleSquares.map(ls => (ls.img, ls.idUser))
 
       val idxSquaresUser: Seq[Int] = getUserId match {
@@ -38,24 +39,29 @@ class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserR
           case ((img, idUsers), idxSquare) =>  idxSquare
         }
       }
-      Ok(views.html.home.home(squares, nbSquaresOneEdge, idxSquaresUser, companyData, connected))
+      Ok(views.html.home.home(squares, nbSquaresOneEdge(idCurrentSquare), idxSquaresUser, companyData, connected))
     })
   }
 
   def haveSquares(id: Int) = Action.async{ implicit request =>
-    if(connected){
-      littleSquareRepo.all().map(littleSquares => {
-        val squares: Seq[(String, Long)] = littleSquares.map(ls => (ls.img, ls.idUser))
-        Ok(views.html.haveSquares.haveSquares(squares, nbSquaresOneEdge, companyData, connected)(selectedSquareForm)).withLang(Lang("en"))
-      })
+    if(isDefine(id)){
+      if(connected){
+        littleSquareRepo.all(id).map(littleSquares => {
+          val squares: Seq[(String, Long)] = littleSquares.map(ls => (ls.img, ls.idUser))
+          Ok(views.html.haveSquares.haveSquares(squares, nbSquaresOneEdge(id), companyData, connected)(selectedSquareForm)).withLang(Lang("en"))
+        })
+      }
+      else {
+        //      implicit val userLang = Lang("fr")
+        Future(Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm, contactForm, companyData))
+          .withLang(Lang("en"))
+          .flashing{
+            "redirection" -> "haveSquares"
+          })
+      }
     }
-    else {
-//      implicit val userLang = Lang("fr")
-      Future(Ok(views.html.loginRegisterContact.loginRegisterContact(LogRegCont.login, registerForm, loginForm, contactForm, companyData))
-        .withLang(Lang("en"))
-        .flashing{
-        "redirection" -> "haveSquares"
-      })
+    else{
+      Future.successful(Ok(views.html.errorPage.error404(companyData, connected)))
     }
   }
 
@@ -64,7 +70,7 @@ class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserR
   }
 
   def company = Action{ implicit request =>
-    Ok(views.html.company.company(contactForm, companyData, connected)).flashing {
+    Ok(views.html.company.company(contactForm, companyData, connected)).flashing{
       "redirection" -> "company"
     }
   }

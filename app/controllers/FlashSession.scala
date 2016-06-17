@@ -1,7 +1,7 @@
 package controllers
 
 import play.api.mvc.{Call, RequestHeader}
-import settings.Global._
+import models.Squares._
 
 
 object FlashSession {
@@ -27,7 +27,7 @@ object FlashSession {
 
   def redirectByFlash(implicit request : RequestHeader, default: Call = routes.Application.home()): Call = {
     val redirection = Map(
-      "haveSquares" -> routes.Application.haveSquares(idCurrentMS),
+      "haveSquares" -> routes.Application.haveSquares(idCurrentSquare),
       "home" -> routes.Application.home(),
       "company" -> routes.Application.company()
     )

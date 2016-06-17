@@ -36,17 +36,17 @@ commonToAllPage.flash.mainError= A error occur during the process. It is the Bet
 
 commonToAllPage.footer.textSidebar= Every month a new MySquare. Display your creativity to the whole world by owning your little space on the Internet. Stay in touch and see the latest creation from artists like you!
 
-commonToAllPage.nagivationMenu.socialNetworks= Social networks
-commonToAllPage.nagivationMenu.contactUs= Contact Us
-commonToAllPage.nagivationMenu = Navigation Menu
-commonToAllPage.nagivationMenu.toggle = Toggle navigation
-commonToAllPage.nagivationMenu.home= Home
-commonToAllPage.nagivationMenu.getSquare= Get my Square
-commonToAllPage.nagivationMenu.howItWorks= How it works ?
+commonToAllPage.nagivationMenu.socialNetworks=Social networks
+commonToAllPage.nagivationMenu.contactUs=Contact Us
+commonToAllPage.nagivationMenu=Navigation Menu
+commonToAllPage.nagivationMenu.toggle =Toggle navigation
+commonToAllPage.nagivationMenu.home=Home
+commonToAllPage.nagivationMenu.getSquare=Get my Square
+commonToAllPage.nagivationMenu.howItWorks=How it works?
 commonToAllPage.nagivationMenu.compagny= Company
-commonToAllPage.nagivationMenu.register= Register
-commonToAllPage.nagivationMenu.login= Login
-commonToAllPage.nagivationMenu.logout= Logout
+commonToAllPage.nagivationMenu.register=Register
+commonToAllPage.nagivationMenu.login=Login
+commonToAllPage.nagivationMenu.logout=Logout
 
 commonToAllPage.termsConditions.link= All Terms & Conditions
 commonToAllPage.termsConditions.accept = Accept
