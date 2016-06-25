@@ -20,21 +20,21 @@
                         <a href="#login" class="br-red" data-toggle="tab">
                             <!-- Icon -->
                             <i class="fa fa-sign-in"></i>
-                            <span>Login</span>
+                            <span>@messages("button.login")</span>
                         </a>
                     </li>
                     <li @if(redirect == register) {class="active"}>
                         <a href="#register" class="br-lblue" data-toggle="tab">
                             <!-- Icon -->
                             <i class="fa fa-user-plus"></i>
-                            <span>Sign Up</span>
+                            <span>@messages("button.signUp")</span>
                         </a>
                     </li>
                     <li @if(redirect == contact) {class="active"}>
                         <a href="#contact" class="br-green" data-toggle="tab">
                             <!-- Icon -->
                             <i class="fa fa-user"></i>
-                            <span>Contact</span>
+                            <span>@messages("button.contact")</span>
                         </a>
                     </li>
                 </ul>
@@ -43,7 +43,14 @@
                     <!-- First Content for Nav bar -->
                     <div class="tab-pane fade @if(redirect == login) {in active} br-red" id="login">
                         <!-- Heading -->
-                        <h2>Login</h2>
+                        <h2>@messages("button.login")</h2>
+                        <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false">@messages("button.loginFaceBook")</div>
+
+                        <p class="separator-hr">
+                            <span class="br-red">
+                                @messages("separator.or")
+                            </span>
+                        </p>
                         <!-- Sign in -->
                         @loginFormHtml(loginForm)(message, messages, lang)
                     </div>
@@ -51,15 +58,22 @@
                     <!-- Second Content for Nav bar -->
                     <div class=" tab-pane fade @if(redirect == register){in active} br-lblue" id="register">
                         <!-- Heading -->
-                        <h2>Registration</h2>
+                        <h4>@messages("loginRegisterContact.loginWithFaceBook.in") <span>2 @messages("loginRegisterContact.loginWithFaceBook.seconds")</span> @messages("loginRegisterContact.loginWithFaceBook.withFacebook")</h4>
+                        <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false">@messages("button.registrationFaceBook")</div>
+                        <p class="separator-hr">
+                            <span class="br-lblue">
+                                @messages("separator.or")
+                            </span>
+                        </p>
                         <!-- Sign Up -->
+                        <h4>@messages("loginRegisterContact.loginWithFaceBook.in") <span>30 @messages("loginRegisterContact.loginWithFaceBook.seconds")</span> @messages("loginRegisterContact.loginWithFaceBook.withEmail")</h4>
                         @registerFormHtml(registerForm)(message, messages, lang)
                     </div>
 
                     <!-- Third Content for Nav bar -->
                     <div class="tab-pane fade @if(redirect == contact) {in active} br-green" id="contact">
                         <!-- Heading -->
-                        <h2>Contact Us</h2>
+                        <h2>@messages("button.contactUs")</h2>
                         @contactFormHtml(contactForm)(message, messages, lang)
                     </div>
                 </div>

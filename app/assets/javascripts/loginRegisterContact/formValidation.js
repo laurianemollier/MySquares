@@ -16,22 +16,30 @@ function inputNonEmpty(id){
     }
 
 }
-function emailCheck(id) {
+
+function checkRegex(id, regex, placeholder){
     var input = document.getElementById(id);
 
-//     work at 99.99%
-    var regex = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
     if (regex.test(input.value)){
         input.className = input.className.replace(classError, "");
         return true;
     }
     else{
         input.className = classError +" "+ input.className;
-        input.placeholder = formValidation_writeValideEmail;
+        input.placeholder = placeholder;
         input.value = "";
         return false;
     }
+}
 
+function nameCheck(id){
+    var regex = /^[a-zA-Z àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+$/i;
+    return checkRegex(id, regex, formValidation_nameComporteJustLetter);
+}
+function emailCheck(id) {
+//     work at 99.99%
+    var regex = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+    return checkRegex(id, regex, formValidation_writeValideEmail);
 };
 
 

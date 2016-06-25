@@ -44,14 +44,16 @@ class UserRepo @Inject()(protected val dbConfigProvider: DatabaseConfigProvider)
 
   private class UserTable(tag: Tag) extends Table[MyUser](tag, "MY_USER"){
     def id = column[Long]("ID", O.AutoInc, O.PrimaryKey)
+    def firstName = column[String]("FIRST_NAME")
+    def lastName = column[String]("LAST_NAME")
     def email = column[String]("EMAIL")
     def passwordHash = column[String]("PASSWORD_HASH")
     def salt1 = column[String]("SALT1")
     def salt2 = column[Int]("SALT2")
 
-    def * = (id, email, passwordHash, salt1, salt2) <> ((MyUser.apply _).tupled, MyUser.unapply)
-    def ? = (id.?, email.?, passwordHash.?, salt1.?, salt2.?).shaped.<>({ r => import r._; _1.map(_ =>
-      (MyUser.apply _).tupled((_1.get, _2.get, _3.get, _4.get, _5.get))) }, (_: Any) =>
+    def * = (id, firstName, lastName, email, passwordHash, salt1, salt2) <> ((MyUser.apply _).tupled, MyUser.unapply)
+    def ? = (id.?, firstName.?, lastName.?, email.?, passwordHash.?, salt1.?, salt2.?).shaped.<>({ r => import r._; _1.map(_ =>
+      (MyUser.apply _).tupled((_1.get, _2.get, _3.get, _4.get, _5.get, _6.get, _7.get))) }, (_: Any) =>
       throw new Exception("Inserting into ? projection not supported."))
 
   }

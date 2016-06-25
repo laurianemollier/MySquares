@@ -5,20 +5,20 @@ import play.api.data.validation.{Constraint, Invalid, Valid, ValidationError}
 import play.api.data.{Form, Mapping}
 import play.api.libs.json.Json
 
-case class RegisterData(email: String, password: String, verifyingPassword: String, termCondition: Boolean)
+case class RegisterData(firstName: String, lastName: String, email: String, password: String, verifyingPassword: String)
 
 object RegisterData{
   implicit val format = Json.format[RegisterData]
 
 
   /** constains and form for registeration **/
-  val acceptedTermsAndConditions: Constraint[Boolean] = Constraint("constraints.termAndConditions")({
-    bool => {
-      if(bool) Valid
-      else Invalid(Seq(ValidationError("You must accepte termes and conditions")))
-    }
-  })
-  val termCondition : Mapping[Boolean] = boolean.verifying(acceptedTermsAndConditions)
+//  val acceptedTermsAndConditions: Constraint[Boolean] = Constraint("constraints.termAndConditions")({
+//    bool => {
+//      if(bool) Valid
+//      else Invalid(Seq(ValidationError("You must accepte termes and conditions")))
+//    }
+//  })
+//  val termCondition : Mapping[Boolean] = boolean.verifying(acceptedTermsAndConditions)
 
 
   // Password matching expression. Password must be at least 8 characters, no more than 30 characters, // TODO: Change to 10 et fair le meme pour javascript
@@ -42,14 +42,30 @@ object RegisterData{
       else Invalid(Seq(ValidationError("The two given password are not matching")))
   })
 
+  val regName = """^[a-zA-Z àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+$""".r
+  val nameCheck: Constraint[String] = Constraint("constraints.passwordCheck")({
+    plainText =>
+      val errors = plainText match {
+        case regName() => Nil
+        case _ => Seq(ValidationError("This name has certain characters that aren't allowed."))
+      }
+      if (errors.isEmpty) Valid
+      else Invalid(errors)
+  })
+
+  val firstName = nonEmptyText.verifying(nameCheck)
+  val lastName = nonEmptyText.verifying(nameCheck)
+
+
 
 
   /** register form **/
   val registerForm: Form[RegisterData] = Form{
-    mapping("email" -> email,
+    mapping("firstName" -> firstName,
+      "lastName" -> lastName,
+      "email" -> email,
       "password" -> password,
-      "verifyingPassword" -> nonEmptyText(minLength = 8, maxLength = 30),
-      "termCondition" -> termCondition
+      "verifyingPassword" -> nonEmptyText(minLength = 8, maxLength = 30)
     )(RegisterData.apply)(RegisterData.unapply) verifying(samePassword)
   }
 
@@ -71,7 +87,7 @@ object LoginData{
 
 
 
-case class MyUser(id: Long, email: String, passwordHash: String, salt1: String, salt2: Int)
+case class MyUser(id: Long, firstName: String, lastName: String, email: String, passwordHash: String, salt1: String, salt2: Int)
 
 object MyUser{
   implicit val format = Json.format[MyUser]

@@ -4,6 +4,8 @@
 
 CREATE TABLE "MY_USER"(
     "ID" SERIAL PRIMARY KEY,
+    "FIRST_NAME" varchar(255) NOT NULL,
+    "LAST_NAME" varchar(255) NOT NULL,
     "EMAIL" varchar(255) NOT NULL,
     "PASSWORD_HASH" text NOT NULL,
     "SALT1" varchar(255) NOT NULL,

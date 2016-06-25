@@ -34,7 +34,7 @@ val img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcUAAAHCCAYAAACexNI8AAA
     for(s <- squares){
       littleSquareRepo.addSquare(s.id, s.nbSquares)
     }
-    def moi = MyUser(1, "mollierlauriane@gmail.com", "fd4ae5a0bbdbcea31860440ccd0ad02cb34f2870e7bd26032876b839c11dc", "57,13,-104,103,-117,40",11)
+    def moi = MyUser(1, "Lauriane", "Mollier", "mollierlauriane@gmail.com", "fd4ae5a0bbdbcea31860440ccd0ad02cb34f2870e7bd26032876b839c11dc", "57,13,-104,103,-117,40",11)
     userRepo.add(moi)
 
     littleSquareRepo.all().map(s => Ok(s.map(l => l.toString).mkString(" ")))

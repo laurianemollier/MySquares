@@ -3,7 +3,8 @@
     document.getElementById("buttonReg").onclick = function(){
         var result = emailCheck("emailReg");
         result = passwordCheck("passwordReg", "confirmPassword") && result;
-        result = checkboxCheck("checkboxReg", "labelTermCondition") && result;
+        result = nameCheck("lastNameReg") && result;
+        result = nameCheck("firstNameReg") && result;
         if(result){
            formRegister.submit();
         }

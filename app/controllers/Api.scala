@@ -170,7 +170,7 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo,
         )
       },
       user => {
-        val responseUser = askDB.askAddUser(user.email, user.password)
+        val responseUser = askDB.askAddUser(user.firstName, user.lastName, user.email, user.password)
         responseUser.map(res => res.get("FTP").get.toInt match {
           case 331 => Redirect(routes.Application.login()).flashing(
             "email" -> user.email

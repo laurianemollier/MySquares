@@ -13,14 +13,17 @@ import scala.concurrent.{Await, Future}
 class AskDB @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) {
 
   /**
-   * Check if the user do not already exist
-   * @param email The given email
-   * @param password The given password
-   * @return FTP server return codes, key: "FTP"
-   *         the email, key: "email"
-   *         The user id if everything is all right, key: "idUser"
-   */
-  def askAddUser(email: String, password: String): Future[Map[String, String]] ={
+    * Check if the user do not already exist
+    * @param firstName The given firstName
+    * @param lastName The given lastName
+    * @param email The given email
+    * @param password The given password
+    * @return FTP server return codes, key: "FTP"
+    *         the email, key: "email"
+    *         The user id if everything is all right, key: "idUser"
+    */
+
+  def askAddUser(firstName: String, lastName: String, email: String, password: String): Future[Map[String, String]] ={
     userRepo.getUser(email).map( opUser => opUser match {
       case Some(user) => Map(
         "FTP" -> 331.toString,
@@ -28,7 +31,7 @@ class AskDB @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo) {
       )
       case None => {
         val (hashPassword, salt1, salt2) = encryptPassword(password)
-        val user = MyUser(1, email, hashPassword, salt1.mkString(","), salt2)
+        val user = MyUser(1, firstName, lastName, email, hashPassword, salt1.mkString(","), salt2)
         val idUser = userRepo.add(user)
 
         Map(

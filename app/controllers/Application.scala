@@ -24,7 +24,6 @@ import scala.concurrent.Future
 
 // TODO: You are using status code '200' with flashing, which should only be used with a redirect status!
 
-@javax.inject.Inject
 class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserRepo, val messagesApi: MessagesApi) extends Controller with I18nSupport{
 
   def home = Action.async { implicit request =>

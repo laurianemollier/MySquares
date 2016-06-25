@@ -9,7 +9,20 @@
 @CSRF.formField
 
 
-
+<div class="form-group">
+    <div class="col-sm-6">
+    @helper.inputText(registerForm("firstName"),
+        args = 'class -> "form-control",
+        'id -> "firstNameReg",
+        'placeholder -> messages("form.firstName"))
+    </div>
+    <div class="col-sm-6">
+    @helper.inputText(registerForm("lastName"),
+        args = 'class -> "form-control",
+        'id -> "lastNameReg",
+        'placeholder -> messages("form.lastName"))
+    </div>
+</div>
 <div class="form-group">
     <div class="col-sm-12">
         @helper.inputText(registerForm("email"),
@@ -37,13 +50,11 @@
 </div>
 <div class="form-group">
     <div class="col-sm-12">
-        <div class="checkbox">
-            <label id="labelTermCondition">
-                @helper.checkbox(field = registerForm("termCondition"), args = 'id -> "checkboxReg")
+        <div class="termCondition">
                 @messages("commonToAllPage.termsConditions.accept")
                 <a target="_blank" href="/terms-and-conditions" target="_blank">
                     @messages("commonToAllPage.termsConditions.link") </a>
-            </label>
+
             <div class="clearfix"></div>
         </div>
     </div>

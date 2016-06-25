@@ -4,7 +4,6 @@
 
 @(loginForm: Form[LoginData])(implicit message: RequestHeader, messages: Messages, lang: Lang)
 
-
 <!--Login Form -->
 @form(action = routes.Api.login, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "loginForm") {
 @CSRF.formField

@@ -1,25 +1,23 @@
-@(css: Html, sidebar: Html, mainBarColumn: Html, js: Html, companyData: Map[String, String], login: Boolean, justOneColonm: Boolean = false)(implicit messages: Messages, lang: Lang)
+@(css: Html, sidebar: Html, mainBarColumn: Html, js: Html, companyData: Map[String, String], login: Boolean, justOneColonm: Boolean = false, facebook: Boolean = false)(implicit messages: Messages, lang: Lang)
 
 <!DOCTYPE html>
 <html>
 <head>
     <!-- Title here -->
     <title>@companyData("name")</title>
-    <!-- Description, Keywords and Author -->
-    <meta name="description" content="Your description">
-    <meta name="keywords" content="Your,Keywords">
-    <meta name="author" content="ResponsiveWebInc">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url"                content="http://www.square-it.wtf/" />
+    <meta property="og:title"              content="Square your idea !" />
+    <meta property="og:description"        content="Display your creativity to the whole world by owning your little space on the Internet" />
+    <meta property="og:image"              content="" />
+    <meta property="og:site_name"          content="@companyData("name")" />
 
     <!-- Styles -->
 
 
     @commonToAllPage.css()
     @css
-
-
-
+        
 
 
     <!-- Favicon -->
@@ -27,6 +25,26 @@
 </head>
 
 <body>
+
+    <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId      : '1454825051201753',
+                    xfbml      : true,
+                    version    : 'v2.6'
+                });
+            };
+
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+
 
 <!-- Body Wrapper -->
 <div class="wrapper white">

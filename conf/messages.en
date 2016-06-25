@@ -5,17 +5,24 @@ button.squareIt = Square it !
 button.write = Write
 button.background = Background
 button.submit= Submit
-button.login = Login
+button.login =Login
+button.signUp=Sign Up
+button.contact=Contact
+button.contactUs=Contact Us
+button.loginFaceBook=Login with Facebook
+button.registrationFaceBook=Registration with Facebook
 button.registration = Registration
 
 
-form.emailYourFriend = Email to your friend !
-form.comments = Comments
-form.email = Email
-form.yourEmail= Your email
-form.password = Password
-form.forgetPassword = Forget Password
-form.confirmPassword = Confirm your password
+form.emailYourFriend =Email to your friend !
+form.comments =Comments
+form.email =Email
+form.firstName =First name
+form.lastName =Last name
+form.yourEmail=Your email
+form.password =Password
+form.forgetPassword =Forget Password
+form.confirmPassword =Confirm your password
 
 canvas.notSupproted = Soory, you browser can not display Canvas element. He is to old. Download a new version!
 
@@ -48,8 +55,8 @@ commonToAllPage.nagivationMenu.register=Register
 commonToAllPage.nagivationMenu.login=Login
 commonToAllPage.nagivationMenu.logout=Logout
 
-commonToAllPage.termsConditions.link= All Terms & Conditions
-commonToAllPage.termsConditions.accept = Accept
+commonToAllPage.termsConditions.link= Terms & Conditions
+commonToAllPage.termsConditions.accept = By clicking Registration (by email or by Facebook), you agree to all our
 
 termsConditions.sidebar.title = Terms & Conditions
 termsConditions.sidebar.text = Here you can find our Terms & Conditions. If you have any questions, feel free to contact us.
@@ -102,6 +109,13 @@ howItWorks.mainBarColumn.slide4.text= Become popular! People enjoy what you have
 
 howItWorks.sidebar.text = Are you in trouble? This page may help you to find the solution to your problem
 
+loginRegisterContact.loginWithFaceBook.in=In
+loginRegisterContact.loginWithFaceBook.seconds=seconds
+loginRegisterContact.loginWithFaceBook.withEmail=with your email
+loginRegisterContact.loginWithFaceBook.withFacebook=with Facebook
+
+
+separator.or=or
 
 
 #
