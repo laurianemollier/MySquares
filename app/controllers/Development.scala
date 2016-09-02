@@ -73,8 +73,8 @@ val img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcUAAAHCCAYAAACexNI8AAA
     Ok(views.html.icon()).withLang(Lang("fr"))
   }
   def doc = Action {
-    Ok(Await.result(littleSquareRepo.all(idCurrentSquare), 10000000 seconds).toString())
-//    Ok(views.html.index("C'est la doc!!!!"))
+//    Ok(Await.result(littleSquareRepo.all(idCurrentSquare), 10000000 seconds).toString())
+    Ok(views.html.index("C'est la doc!!!!"))
   }
 
   def testB = Action{

@@ -88,12 +88,13 @@ class Api @Inject()(littleSquareRepo: LittleSquareRepo, userRepo: UserRepo,
           selectedSquare => {
             askDB.addSelectedSquare(selectedSquare.idMS, selectedSquare.idxSquare, idUser, selectedSquare.img).map(ftp => ftp match {
               case 200 => {
-                val emails = selectedSquare.emailsToSend.filter(op => op.isDefined).map(op => op.get)
-                for(email <- emails){
-                  val toSend =  emailSeeMySquare(email, getUserEmail.get)
-                  mailerClient.send(toSend)
-                }
-                Redirect(routes.Application.home()) // TODO: montrer qu'on a bien selectionné son petit carré.
+//                val emails = selectedSquare.emailsToSend.filter(op => op.isDefined).map(op => op.get)
+//                for(email <- emails){
+//                  val toSend =  emailSeeMySquare(email, getUserEmail.get)
+//                  mailerClient.send(toSend)
+//                }
+                // Redirect to share
+                Redirect(routes.Application.share(selectedSquare.idMS, selectedSquare.idxSquare))
               }
               case _ => Redirect(routes.Application.contact()).flashing(
                   "mainError" -> "Le formulaire pour pour selectionner les petits carree ne sont pas bon" // TODO

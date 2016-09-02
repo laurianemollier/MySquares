@@ -1,0 +1,34 @@
+@()(implicit messages: Messages, lang: Lang)
+
+<div class="page-mainbar career">
+    <div id="share-with-friend">
+        <div class="page-mainbar pricing">
+            <!-- Pricing Table -->
+            <div class="pricing-table">
+                <div class="row">
+                    <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
+
+                        <div class="pricing-item br-lblack">
+
+                            <div id="loginDv">
+                                <h4>@messages("haveSquares.mainBarColumn.shareWithFriends") </h4>
+                            </div>
+
+                            <div class="fb-send" data-href="https://developers.facebook.com/docs/plugins/" data-size="large"></div>
+
+                            <p class="separator-hr">
+                                <span class="br-bg-black">
+                                @messages("separator.or")
+                                </span>
+                            </p>
+
+                            <!-- Login -->
+
+                            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Partager</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

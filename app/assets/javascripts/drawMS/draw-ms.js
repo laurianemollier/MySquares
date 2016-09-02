@@ -10,6 +10,7 @@ function drawSquares(squares, nbSquaresOneEdge, canvas, canvasWidth){
 
 
     // row i, column j
+    // draw each little square if available, or let it in black
     var context = canvas.getContext('2d');
     for(var i=0; i<nbSquaresOneEdge; ++i){
         for(var j=0; j<nbSquaresOneEdge; ++j){

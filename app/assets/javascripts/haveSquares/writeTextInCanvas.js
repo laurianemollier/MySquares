@@ -524,13 +524,13 @@
 
     }
 
-    // set the historic button
-    document.getElementById('previewHistoric').onclick = function(){
-        previewHistoric();
-    }
-    document.getElementById('nextHistoric').onclick = function(){
-        nextHistoric();
-    }
+//    // set the historic button
+//    document.getElementById('previewHistoric').onclick = function(){
+//        previewHistoric();
+//    }
+//    document.getElementById('nextHistoric').onclick = function(){
+//        nextHistoric();
+//    }
 
  })(window);
 

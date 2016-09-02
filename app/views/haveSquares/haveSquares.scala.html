@@ -77,31 +77,20 @@
 
 <script>
     var purchaseButton = $("#purchaseSquares");
-    var previewSquare = $("#previewSquare");
     var finalSquareInput = $("#finalSquareString");
 
-
-    // show the square preview
-    var width = previewSquare.width();
-    previewSquare.height(width).width(width);
-    previewSquare.attr("height", width).attr("width", width);
-    $("#previewSquareArea").hide();
-
-    var ctx = previewSquare.get(0).getContext("2d");
     purchaseButton.click(function(){
+
         html2canvas($('#divCanvas').get(0), {
           onrendered: function(canvas) {
-            //document.body.appendChild(canvas);
-            // add preview
-            ctx.drawImage(canvas, 0, 0, width, width);
-
             // register image in the final form
             finalSquareInput.val(canvas.toDataURL());
           }
         });
 
+        // submit form
         setTimeout(function(){
-            goToStep3();
+            $("#submitSquareForm").submit();
         }, 2000);
     });
 </script>

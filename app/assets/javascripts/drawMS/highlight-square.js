@@ -24,7 +24,6 @@ function highlightSquares(canvasToDraw, idxSquares, nbSquaresOneEdge, littleSL){
     for(var i=0; i<idxSquares.length; ++i){
         var coord = coordTopLeft(idxSquares[i], nbSquaresOneEdge, littleSL);
         highlight(coord.x, coord.y, littleSL, cxt);
-
     }
 };
 

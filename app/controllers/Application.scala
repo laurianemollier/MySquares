@@ -38,7 +38,7 @@ class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserR
           case ((img, idUsers), idxSquare) =>  idxSquare
         }
       }
-      Ok(views.html.home.home(squares, nbSquaresOneEdge(idCurrentSquare), idxSquaresUser, companyData, connected))
+      Ok(views.html.home.home(squares, idCurrentSquare, nbSquaresOneEdge(idCurrentSquare), idxSquaresUser, companyData, connected))
     })
   }
 
@@ -64,6 +64,13 @@ class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserR
     }
   }
 
+  def share(idSquare: Int, idLS: Int) = Action.async{ implicit request =>
+    littleSquareRepo.findByIdx(idSquare, idLS).map(ls =>
+      if(ls.isValid) Ok(views.html.shareSquare.shareSquare(ls, companyData, connected))
+      else Ok(views.html.errorPage.error404(companyData, connected))
+    )
+  }
+
   def howItWorks = Action{ implicit request =>
     Ok(views.html.howItWorks.howItWorks(companyData, connected)).withLang(Lang("en"))
   }
@@ -73,7 +80,6 @@ class Application @Inject()( littleSquareRepo: LittleSquareRepo, userRepo: UserR
       "redirection" -> "company"
     }
   }
-
 
   def register = loginRegisterContact(LogRegCont.register)
   def login = loginRegisterContact(LogRegCont.login)

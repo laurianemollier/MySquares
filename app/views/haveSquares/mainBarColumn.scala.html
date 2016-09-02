@@ -76,74 +76,27 @@
         <br/>
         <div class="row">
             <div class="col-md-offset-3 col-md-6">
+                @form(action = routes.Api.selectSquare, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "submitSquareForm") {
+                @CSRF.formField
+
+                @inputText(submitSquareForm("idMS"), args = 'type -> "hidden", 'id -> "idMS")
+                @inputText(submitSquareForm("idxSquare"), args = 'type -> "hidden", 'id -> "idxSelectedSquare")
+                @inputText(submitSquareForm("img"), args = 'type -> "hidden", 'id -> "finalSquareString")
+
                 <div>
                     <button id="purchaseSquares" type="button" class="btn btn-default btn-lg btn-circle">
-                        @messages("button.purchase")
+                        @messages("button.squareIt")
                         <i class="fa fa-angle-right"></i>
                     </button>
                 </div>
+                }
             </div>
         </div>
     </div>
 
-
-
     
-
-
     <!-- 3• step: Share and connect-->
     <div id="share-with-friend" style="display: none;">
-        <div class="page-mainbar pricing">
-            <!-- Pricing Table -->
-            <div class="pricing-table">
-                <div class="row">
-                    <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-
-                        <div class="pricing-item br-lblack">
-                            <div class="fb-send" data-href="http://www.square-it.wtf/" data-layout="button_count" data-colorscheme="dark">
-                            </div>
-
-                            <p class="separator-hr">
-                                <span class="br-bg-black">
-                                @messages("separator.or")
-                                </span>
-                            </p>
-
-                            <!-- Login -->
-                            <div id="loginDv">
-                                <h2>@messages("haveSquares.mainBarColumn.shareWithFriends") </h2>
-                            </div>
-
-
-
-                            <div>
-                                @form(action = routes.Api.selectSquare, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "submitSquareForm") {
-                                @CSRF.formField
-                                @repeat(submitSquareForm("emailsToSend"), min = 3){ emailField =>
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        @inputText(emailField, args = 'class -> "form-control", 'placeholder -> messages("form.emailYourFriend"))
-                                    </div>
-                                </div>
-                                }
-
-                                @inputText(submitSquareForm("idMS"), args = 'type -> "hidden", 'id -> "idMS")
-                                @inputText(submitSquareForm("idxSquare"), args = 'type -> "hidden", 'id -> "idxSelectedSquare")
-                                @inputText(submitSquareForm("img"), args = 'type -> "hidden", 'id -> "finalSquareString")
-
-                                <div class="row">
-                                    <div class="col-md-offset-2 col-md-8 col-sm-12">
-                                        <!-- Button -->
-                                        <button type="submit" id="registerDisplayButton" class="btn btn-default btn-circle">@messages("button.squareIt") <i class="fa fa-angle-right"></i></button>
-                                    </div>
-                                </div>
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <script>

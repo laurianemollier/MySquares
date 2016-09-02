@@ -1,0 +1,30 @@
+@(ls: LittleSquare, companyData: Map[String, String], login: Boolean)(implicit message: RequestHeader, messages: Messages, lang: Lang)
+
+
+@css = {
+
+}
+
+@js() = {
+
+<!-- Preview -->
+<script>
+    var previewSquare = $("#previewSquare");
+
+        // show the square preview
+    var width = previewSquare.width();
+    previewSquare.height(width).width(width);
+    previewSquare.attr("height", width).attr("width", width);
+
+    var ctx = previewSquare.get(0).getContext("2d");
+
+    var image = new Image();
+    image.onload = function() {
+        ctx.drawImage(image, 0, 0, width, width);
+    };
+    image.src = "@ls.img";
+</script>
+}
+
+
+@commonToAllPage.template(css, sidebar(ls)(messages, lang), mainBarColumn()(messages, lang), js(), companyData, login)(messages, lang)

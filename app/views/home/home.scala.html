@@ -1,4 +1,4 @@
-@(squares: Seq[(String, Long)], nbSquaresOneEdge: Int, idxSquaresUser: Seq[Int], companyData: Map[String, String], login: Boolean)(implicit flash: Flash, messages: Messages, lang: Lang)
+@(squares: Seq[(String, Long)], idMS: Int, nbSquaresOneEdge: Int, idxSquaresUser: Seq[Int], companyData: Map[String, String], login: Boolean)(implicit flash: Flash, messages: Messages, lang: Lang)
 <!--TODO: Comprendre pk ca ma charche pas comme ça =>  jsSquares-->
 
 
@@ -40,7 +40,6 @@
 
     // add event to the canvas to draw
 
-
     // canvas where we will draw the selected squares and event
     var canvasToDraw = $("#highlightSquare");
     var width = canvasWidth;
@@ -80,7 +79,7 @@
 
 
 <!--Set the square previus-->
-<script src="@routes.Assets.versioned("javascripts/home/showPreviewSquare.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/home/event-MS.js")"></script>
 <script>
     var previewSquare = $("#previewSquare");
     var widthP = previewSquare.width();
@@ -88,7 +87,7 @@
     previewSquare.attr("height", widthP).attr("width", widthP);
 
 
-    showPreviewSquare(square, previewSquare.get(0), jsSquares, @nbSquaresOneEdge);
+    eventMS(square, previewSquare.get(0), jsSquares, @nbSquaresOneEdge, @idMS);
 
 
 

@@ -3,7 +3,7 @@
     var lastFlyOverSquareIndex = -1;
 
 // littleSquareIncrease must be even
-function showPreviewSquare(squareCanvas, previewSquare, jsSquares, nbSquaresOneEdge){
+function eventMS(squareCanvas, previewSquare, jsSquares, nbSquaresOneEdge, idMS){
 
     var littleSL = squareCanvas.width / nbSquaresOneEdge;
     var cxt = previewSquare.getContext('2d');
@@ -12,6 +12,7 @@ function showPreviewSquare(squareCanvas, previewSquare, jsSquares, nbSquaresOneE
         lastFlyOverSquareIndex = -1;
      }, false);
 
+    // show the preview
     squareCanvas.addEventListener('mousemove', function(e) {
         var coords = coordsIntheCanvas(this.relMouseCoords(e), nbSquaresOneEdge, littleSL, 0);
 
@@ -26,4 +27,18 @@ function showPreviewSquare(squareCanvas, previewSquare, jsSquares, nbSquaresOneE
         }
         lastFlyOverSquareIndex = coords.squareIndexEvent;
     }, false);
+
+        // redirect to share on click
+        squareCanvas.addEventListener('click', function(e) {
+            var coords = coordsIntheCanvas(this.relMouseCoords(e), nbSquaresOneEdge, littleSL, 0);
+
+            if(jsSquares[coords.squareIndexEvent] != ""){ // if the square exist
+                // redirect
+                window.location.href = window.location.origin + "/share/" + idMS + "-" + coords.squareIndexEvent; // To change
+console.log("dd")
+
+            }
+            lastFlyOverSquareIndex = coords.squareIndexEvent;
+        }, false);
+
 };

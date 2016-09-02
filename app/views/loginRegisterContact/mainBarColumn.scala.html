@@ -44,7 +44,7 @@
                     <div class="tab-pane fade @if(redirect == login) {in active} br-red" id="login">
                         <!-- Heading -->
                         <h2>@messages("button.login")</h2>
-                        <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false">@messages("button.loginFaceBook")</div>
+                        <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false" data-scope="public_profile">@messages("button.loginFaceBook")</div>
 
                         <p class="separator-hr">
                             <span class="br-red">

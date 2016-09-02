@@ -17,6 +17,12 @@ GET     /test-with-bootstrap                          controllers.Development.te
 
 
 
+# Api extern
+
+#GET    /loginFacebook                  controllers.ApiDeMerde
+
+
+
 
 
 
@@ -39,9 +45,11 @@ GET           /no-found               controllers.Application.noFound
 
 #current month
 
-GET           /get-squares/:id        controllers.Application.haveSquares(id: Int)
+GET           /get-squares/$id<[0-9]+>                controllers.Application.haveSquares(id: Int)
 
-GET           /terms-and-conditions   controllers.Application.termsConditions
+GET           /terms-and-conditions                   controllers.Application.termsConditions
+
+GET           /share/$idSquare<[0-9]+>-$idLS<[0-9]+>   controllers.Application.share(idSquare: Int, idLS: Int)
 
 
 
