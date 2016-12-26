@@ -10,7 +10,9 @@ function inputNonEmpty(id){
     }
     else{
         input.placeholder = formValidation_fieldRequired; 
-        input.className = classError +" "+ input.className;
+        if(input.className.indexOf(classError) == -1){
+            input.className = classError + input.className;
+        }
         input.value = "";
         return false;
     }
@@ -25,7 +27,9 @@ function checkRegex(id, regex, placeholder){
         return true;
     }
     else{
-        input.className = classError +" "+ input.className;
+        if(input.className.indexOf(classError) == -1){
+            input.className = classError + input.className;
+        }
         input.placeholder = placeholder;
         input.value = "";
         return false;
@@ -54,8 +58,10 @@ function passwordCheck(idPassword, idVerifyingPassword) {
 
     // if the password do not set to the regex
     if(!regexPassword.test(inputPass.value)){
-        inputPass.className = classError + " " + inputPass.className;
-        inputPass.placeholder = formValidation_passwordRegex; 
+        if(inputPass.className.indexOf(classError) == -1){
+            inputPass.className = classError + inputPass.className;
+        }
+        inputPass.placeholder = formValidation_passwordRegex;
         inputVerify.placeholder = formValidation_confirmPassword;
         inputPass.value = "";
         inputVerify.value = "";
@@ -64,9 +70,13 @@ function passwordCheck(idPassword, idVerifyingPassword) {
     }
     // if the 2 given passwords are not correct
     else if(inputVerify.value != inputPass.value){
-        inputPass.className = classError + " " + inputPass.className;
-        inputVerify.className = classError + " " + inputVerify.className;
-        inputPass.placeholder = formValidation_notSamePassword; 
+        if(inputPass.className.indexOf(classError) == -1){
+            inputPass.className = classError + inputPass.className;
+        }
+        if(inputVerify.className.indexOf(classError) == -1){
+            inputVerify.className = classError + inputVerify.className;
+        }
+        inputPass.placeholder = formValidation_notSamePassword;
         inputVerify.placeholder = formValidation_notSamePassword;
         inputPass.value = "";
         inputVerify.value = "";
@@ -91,11 +101,9 @@ function checkboxCheck(id, idLabel){
         return true;
     }
     else{
-        label.className = classError + " " + label.className;
+        if(label.className.indexOf(classError) == -1){
+            label.className = classError + label.className;
+        }
         return false;
     }
 };
-
-
-
-
